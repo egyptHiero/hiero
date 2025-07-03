@@ -1,0 +1,2422 @@
+     x      y  width height     font str
+---------------
+    72     28     21     12  g_d0_f1 imnt
+    94     28      8     12  g_d0_f1  
+   100     27     40     10  g_d0_f2 the West
+   139     27      7     10  g_d0_f2  
+   145     27    148     10  g_d0_f3 [ noun - loc. ] {cryptic } A4C - V13
+---------------
+    45     59      0     12  g_d0_f1 
+    45     59     18     12  g_d0_f1 imn
+    63     59      8     12  g_d0_f1  
+    69     58     30     10  g_d0_f2 hidden
+    99     58      7     10  g_d0_f2  
+   105     58    139     10  g_d0_f3 [ adjective ] {late egyptian} A5A
+---------------
+    53     96      0     12  g_d0_f1 
+    53     96     28     12  g_d0_f1 inm a
+    80     96      8     12  g_d0_f1  
+    86     94     91     10  g_d0_f2 (Priestess of Bastet)
+   177     94      7     10  g_d0_f2  
+   183     94    106     10  g_d0_f3 [ noun - title ] A5A - D36
+---------------
+   131    127      0     12  g_d0_f1 
+   131    127     49     12  g_d0_f1 inm wnwt
+   180    127      8     12  g_d0_f1  
+   186    126    146     10  g_d0_f2 He who hides the hours (epithet)
+   332    126      7     10  g_d0_f2  
+   337    126    294     10  g_d0_f3 [ noun - title ] A5A - E34 - N35 - W24 - X1 - N14 - N5 - N33A - A40
+---------------
+    60    159      0     12  g_d0_f1 
+    60    159     46     12  g_d0_f1 imn nTrw
+   106    159      8     12  g_d0_f1  
+   112    158    108     10  g_d0_f2 the most hidden of gods
+   219    158      7     10  g_d0_f2  
+   225    158    100     10  g_d0_f3 {epithet} A5A - R8 - Z3
+---------------
+    95    191      0     12  g_d0_f1 
+    95    191     27     12  g_d0_f1 imnty
+   121    191      8     12  g_d0_f1  
+   127    190     63     10  g_d0_f2 the Westerner
+   190    190      7     10  g_d0_f2  
+   196    190    195     10  g_d0_f3 [ noun - div. ] A5A - X1 - D36 - X1 - Z4 - A40
+---------------
+    45    222      0     12  g_d0_f1 
+    45    222     18     12  g_d0_f1 wab
+    63    222      8     12  g_d0_f1  
+    69    221    242     10  g_d0_f2 pure, purify oneself, bathe, cleanse, purification, purity
+   311    221      7     10  g_d0_f2  
+   316    221    100     10  g_d0_f3 [ adjective + noun ] A6
+---------------
+    45    254      0     12  g_d0_f1 
+    45    254     18     12  g_d0_f1 wab
+    63    254      8     12  g_d0_f1  
+    69    253     49     10  g_d0_f2 Wab Priest
+   118    253      7     10  g_d0_f2  
+   124    253     73     10  g_d0_f3 [ noun - title ] A6
+---------------
+    45    285      0     12  g_d0_f1 
+    45    285     18     12  g_d0_f1 wab
+    63    285      8     12  g_d0_f1  
+    69    284    141     10  g_d0_f2 be a Priest, do Priestly services
+   210    284     10     10  g_d0_f2  
+   217    284     12     10  g_d0_f3 A6
+---------------
+    45    317      0     12  g_d0_f1 
+    45    317     18     12  g_d0_f1 wab
+    63    317      8     12  g_d0_f1  
+    69    316     59     10  g_d0_f2 free (woman)
+   128    316      7     10  g_d0_f2  
+   134    316     48     10  g_d0_f3 [ noun ] A6
+---------------
+    87    349      0     12  g_d0_f1 
+    87    349     29     12  g_d0_f1 wabwt
+   116    349      8     12  g_d0_f1  
+   122    348     67     10  g_d0_f2 priestly service
+   189    348      7     10  g_d0_f2  
+   195    348    125     10  g_d0_f3 [ noun ] A6 - D58 - G43 - X1
+---------------
+    58    380      0     12  g_d0_f1 
+    58    380     42     12  g_d0_f1 wab Hmt
+   100    380      8     12  g_d0_f1  
+   106    379     42     10  g_d0_f2 Priestess
+   148    379      7     10  g_d0_f2  
+   153    379    121     10  g_d0_f3 [ noun - title ] A6 - N42 - X1
+---------------
+    65    412      0     12  g_d0_f1 
+    65    412     54     12  g_d0_f1 wab 200 ?
+   119    412      8     12  g_d0_f1  
+   125    411     70     10  g_d0_f2 (Priestly Title ?)
+   195    411      7     10  g_d0_f2  
+   200    411    115     10  g_d0_f3 [ noun - title ] A6 - V1 - V1
+---------------
+    65    443      0     12  g_d0_f1 
+    65    443     21     12  g_d0_f1 wabt
+    86    443      8     12  g_d0_f1  
+    92    442    256     10  g_d0_f2 embalming place, tomb, sanctuary, workshop, utility room
+   348    442      7     10  g_d0_f2  
+   353    442    123     10  g_d0_f3 [ noun - arch. ] A6 - X1 - O1
+---------------
+   107    475      0     12  g_d0_f1 
+   107    475     21     12  g_d0_f1 wabt
+   128    475      8     12  g_d0_f1  
+   134    474    100     10  g_d0_f2 foodstuff (as payment)
+   234    474      7     10  g_d0_f2  
+   239    474    171     10  g_d0_f3 [ noun - food ] A6 - X1 - X2 - X4 - W22
+---------------
+    68    507      0     12  g_d0_f1 
+    68    507     21     12  g_d0_f1 wabt
+    89    507      8     12  g_d0_f1  
+    95    505    101     10  g_d0_f2 food (to be distributed)
+   196    505      7     10  g_d0_f2  
+   202    505    119     10  g_d0_f3 [ noun - food ] A6 - X1 - X4
+---------------
+    45    538      0     12  g_d0_f1 
+    45    538     18     12  g_d0_f1 wab
+    63    538      8     12  g_d0_f1  
+    69    537    242     10  g_d0_f2 pure, purify oneself, bathe, cleanse, purification, purity
+   311    537      7     10  g_d0_f2  
+   316    537    106     10  g_d0_f3 [ adjective + noun ] A6A
+---------------
+    50    570      0     12  g_d0_f1 
+    50    570     54     12  g_d0_f1 bAgi / wrd
+   103    570      8     12  g_d0_f1  
+   109    569    191     10  g_d0_f2 weariness, languor, slackness, remissness
+   300    569      7     10  g_d0_f2  
+   306    569     48     10  g_d0_f3 [ noun ] A7
+   424    592      0     10  g_d0_f3 
+   424    592      6     10  g_d0_f3 2
+---------------
+    50     28     23     12  g_d0_f1 Hmsi
+    72     28      8     12  g_d0_f1  
+    78     27    174     10  g_d0_f2 sit, sit down, dwell (in), seat (someone)
+   252     27      7     10  g_d0_f2  
+   258     27     45     10  g_d0_f3 [ verb ] A7
+---------------
+    50     59      0     12  g_d0_f1 
+    50     59     18     12  g_d0_f1 gnn
+    68     59      8     12  g_d0_f1  
+    74     58     54     10  g_d0_f2 to be tender
+   127     58      7     10  g_d0_f2  
+   133     58     45     10  g_d0_f3 [ verb ] A7
+---------------
+    62     92      0     12  g_d0_f1 
+    62     92     42     12  g_d0_f1 wrDw ib
+   104     92      8     12  g_d0_f1  
+   110     91     80     10  g_d0_f2 (a name of Osiris)
+   190     91      7     10  g_d0_f2  
+   196     91    176     10  g_d0_f3 [ noun - title ] {greco-roman} A7-F34-Z1
+---------------
+    76    126      0     12  g_d0_f1 
+    76    126     24     12  g_d0_f1 gngn
+   100    126      8     12  g_d0_f1  
+   106    125     78     10  g_d0_f2 be soft, be tender
+   185    125      7     10  g_d0_f2  
+   190    125    121     10  g_d0_f3 [ verb ] A7 - N35 - A7 - N35
+---------------
+    60    157      0     12  g_d0_f1 
+    60    157     27     12  g_d0_f1 wrDw
+    86    157      8     12  g_d0_f1  
+    92    156     27     10  g_d0_f2 weary
+   119    156     10     10  g_d0_f2  
+   127    156     40     10  g_d0_f3 A7 - Z3A
+---------------
+    50    189      0     12  g_d0_f1 
+    50    189     20     12  g_d0_f1 hnw
+    70    189      8     12  g_d0_f1  
+    76    188     30     10  g_d0_f2 rejoice
+   105    188      7     10  g_d0_f2  
+   111    188     45     10  g_d0_f3 [ verb ] A8
+---------------
+    79    225      0     12  g_d0_f1 
+    79    225     20     12  g_d0_f1 hnw
+    99    225      8     12  g_d0_f1  
+   105    224     80     10  g_d0_f2 associates, family
+   185    224      7     10  g_d0_f2  
+   190    224    111     10  g_d0_f3 [ noun ] A8 - A1 - B1 - Z2
+---------------
+    73    257      0     12  g_d0_f1 
+    73    257     20     12  g_d0_f1 hnw
+    93    257      8     12  g_d0_f1  
+    99    255     76     10  g_d0_f2 (a body of water)
+   175    255      7     10  g_d0_f2  
+   180    255     76     10  g_d0_f3 [ noun ] A8 - N36
+---------------
+    96    288      0     12  g_d0_f1 
+    96    288     15     12  g_d0_f1 xbt
+   111    288      8     12  g_d0_f1  
+   117    287     81     10  g_d0_f2 place of execution
+   199    287      7     10  g_d0_f2  
+   204    287     97     10  g_d0_f3 [ noun ] A8 - O51 - Y1
+---------------
+    73    320      0     12  g_d0_f1 
+    73    320     18     12  g_d0_f1 xmt
+    91    320      8     12  g_d0_f1  
+    97    319     83     10  g_d0_f2 Place of Slaughter
+   179    319      7     10  g_d0_f2  
+   185    319    141     10  g_d0_f3 [ noun ] {late egyptian} A8 - T29
+---------------
+    42    351      0     12  g_d0_f1 
+    42    351      6     12  g_d0_f1 .f
+    48    351      8     12  g_d0_f1  
+    54    350     78     10  g_d0_f2 he, him, his, it, its
+   132    350      7     10  g_d0_f2  
+   138    350     92     10  g_d0_f3 [ suffix pronoun ] A9
+---------------
+    42    383      0     12  g_d0_f1 
+    42    383     14     12  g_d0_f1 ATp
+    56    383      8     12  g_d0_f1  
+    62    382     63     10  g_d0_f2 load, be laden
+   125    382     10     10  g_d0_f2  
+   133    382     12     10  g_d0_f3 A9
+---------------
+    42    414      0     12  g_d0_f1 
+    42    414     11     12  g_d0_f1 fAi
+    53    414      8     12  g_d0_f1  
+    59    413     95     10  g_d0_f2 Carrier, Delivery man
+   154    413      8     10  g_d0_f2  
+   159    413     73     10  g_d0_f3 [ noun - title ] A9
+---------------
+    55    446      0     12  g_d0_f1 
+    55    446     14     12  g_d0_f1 ATp
+    68    446      8     12  g_d0_f1  
+    74    445    130     10  g_d0_f2 be heavy laden (with trouble)
+   204    445      7     10  g_d0_f2  
+   210    445     72     10  g_d0_f3 [ verb ] A9 - A24
+---------------
+    55    477      0     12  g_d0_f1 
+    55    477     13     12  g_d0_f1 fAy
+    68    477      8     12  g_d0_f1  
+    74    476    134     10  g_d0_f2 weight, value, amount, reward
+   208    476      7     10  g_d0_f2  
+   214    476     74     10  g_d0_f3 [ noun ] A9 - A24
+---------------
+    55    509      0     12  g_d0_f1 
+    55    509     11     12  g_d0_f1 fAi
+    66    509      8     12  g_d0_f1  
+    72    508     77     10  g_d0_f2 carry, support, lift
+   149    508      7     10  g_d0_f2  
+   154    508     72     10  g_d0_f3 [ verb ] A9 - A24
+---------------
+   186    541      0     12  g_d0_f1 
+   186    541     36     12  g_d0_f1 fAi mhr
+   222    541      8     12  g_d0_f1  
+   228    540    111     10  g_d0_f2 Milkman, Milk jug Carrier
+   339    540      7     10  g_d0_f2  
+   344    540    322     10  g_d0_f3 [ noun - title ] A9 - A24 - G17 - D36 - O4 - Z5 - N35 - Z4 - W23 - A24 - A2
+---------------
+    71    573      0     12  g_d0_f1 
+    71    573     13     12  g_d0_f1 fAy
+    84    573      8     12  g_d0_f1  
+    90    572    134     10  g_d0_f2 weight, value, amount, reward
+   225    572      7     10  g_d0_f2  
+   230    572    102     10  g_d0_f3 [ noun ] A9 - A24 - O39
+   424    592      0     10  g_d0_f3 
+   424    592      6     10  g_d0_f3 3
+---------------
+    66     28     14     12  g_d0_f1 ATp
+    80     28      8     12  g_d0_f1  
+    86     27     63     10  g_d0_f2 load, be laden
+   149     27      8     10  g_d0_f2  
+   155     27    107     10  g_d0_f3 [ noun + verb ] A9 - D36
+---------------
+    66     59      0     12  g_d0_f1 
+    66     59     22     12  g_d0_f1 ATpw
+    88     59      8     12  g_d0_f1  
+    94     58     50     10  g_d0_f2 load, cargo
+   144     58      7     10  g_d0_f2  
+   149     58     96     10  g_d0_f3 [ noun ] A9 - D36 - Z2
+---------------
+    81     91      0     12  g_d0_f1 
+    81     91     22     12  g_d0_f1 ATpw
+   103     91      8     12  g_d0_f1  
+   109     90     50     10  g_d0_f2 load, cargo
+   159     90      7     10  g_d0_f2  
+   164     90    117     10  g_d0_f3 [ noun ] A9 - G43 - Y1 - Z2
+---------------
+    68    123      0     12  g_d0_f1 
+    68    123     16     12  g_d0_f1 fAyt
+    84    123      8     12  g_d0_f1  
+    90    122     67     10  g_d0_f2 portable shrine
+   157    122      7     10  g_d0_f2  
+   163    122    157     10  g_d0_f3 [ noun - arch. ] A9 - M17 - M17 - X1
+---------------
+    75    155      0     12  g_d0_f1 
+    75    155     22     12  g_d0_f1 Atpw
+    97    155      8     12  g_d0_f1  
+   103    154     25     10  g_d0_f2 cargo
+   128    154      7     10  g_d0_f2  
+   134    154    132     10  g_d0_f3 [ noun ] A9 - Q3 - Z7 - Y1 - Z2
+---------------
+    78    187      0     12  g_d0_f1 
+    78    187     13     12  g_d0_f1 kAt
+    91    187      8     12  g_d0_f1  
+    97    186    158     10  g_d0_f2 work, construction, craft, profession
+   256    186      7     10  g_d0_f2  
+   261    186    111     10  g_d0_f3 [ noun ] A9 - X1 - Y1 - Z2
+---------------
+    47    219      0     12  g_d0_f1 
+    47    219     13     12  g_d0_f1 kAt
+    60    219      8     12  g_d0_f1  
+    66    218    158     10  g_d0_f2 work, construction, craft, profession
+   224    218      7     10  g_d0_f2  
+   230    218     69     10  g_d0_f3 [ noun ] A9 - Z3
+---------------
+    75    251      0     12  g_d0_f1 
+    75    251     22     12  g_d0_f1 Atpw
+    97    251      8     12  g_d0_f1  
+   103    249     25     10  g_d0_f2 cargo
+   128    249      7     10  g_d0_f2  
+   134    249    110     10  g_d0_f3 [ noun ] A9 - Z7 - Y1 - Z2
+---------------
+    50    282      0     12  g_d0_f1 
+    50    282     12     12  g_d0_f1 Xn
+    62    282      8     12  g_d0_f1  
+    68    281     75     10  g_d0_f2 Rower, Oarsman
+   143    281      7     10  g_d0_f2  
+   149    281     78     10  g_d0_f3 [ noun - title ] A10
+---------------
+    45    314      0     12  g_d0_f1 
+    45    314     17     12  g_d0_f1 mSa
+    62    314      8     12  g_d0_f1  
+    68    313     46     10  g_d0_f2 expedition
+   114    313      7     10  g_d0_f2  
+   120    313     54     10  g_d0_f3 [ noun ] A12
+---------------
+    45    345      0     12  g_d0_f1 
+    45    345     17     12  g_d0_f1 mSa
+    62    345      8     12  g_d0_f1  
+    68    344     58     10  g_d0_f2 march, travel
+   126    344      7     10  g_d0_f2  
+   132    344     51     10  g_d0_f3 [ verb ] A12
+---------------
+    77    377      0     12  g_d0_f1 
+    77    377     17     12  g_d0_f1 mSa
+    94    377      8     12  g_d0_f1  
+   100    376     59     10  g_d0_f2 Army, Troops
+   159    376      7     10  g_d0_f2  
+   165    376    141     10  g_d0_f3 [ noun - title ] A12 - A1 - B1 - Z3
+---------------
+    65    413      0     12  g_d0_f1 
+    65    413     17     12  g_d0_f1 mSa
+    82    413      8     12  g_d0_f1  
+    88    411    299     10  g_d0_f2 Soldiers, Army, Infantry, Gang (of workmen), Expedition, Campaign
+   387    411      7     10  g_d0_f2  
+   392    411    120     10  g_d0_f3 [ noun - title ] A12 - A1 - Z2
+---------------
+    65    446      0     12  g_d0_f1 
+    65    446     17     12  g_d0_f1 mSa
+    82    446      8     12  g_d0_f1  
+    88    445     46     10  g_d0_f2 expedition
+   134    445      7     10  g_d0_f2  
+   140    445    102     10  g_d0_f3 [ noun ] A12 - D54 - Z2
+---------------
+    69    478      0     12  g_d0_f1 
+    69    478     17     12  g_d0_f1 mSa
+    86    478      8     12  g_d0_f1  
+    92    477    139     10  g_d0_f2 make an expedition, expedition
+   231    477      7     10  g_d0_f2  
+   236    477    106     10  g_d0_f3 [ verb + noun ] A12 - P1
+---------------
+    70    515      0     12  g_d0_f1 
+    70    515     17     12  g_d0_f1 mSa
+    87    515      8     12  g_d0_f1  
+    93    513    299     10  g_d0_f2 Soldiers, Army, Infantry, Gang (of workmen), Expedition, Campaign
+   392    513      7     10  g_d0_f2  
+   397    513    140     10  g_d0_f3 [ noun - title ] A12 - Z2 - A1 - Z2
+---------------
+    49    546      0     12  g_d0_f1 
+    49    546     17     12  g_d0_f1 mSa
+    66    546      8     12  g_d0_f1  
+    72    545     98     10  g_d0_f2 Army, Troops, Infantry
+   170    545      7     10  g_d0_f2  
+   176    545     99     10  g_d0_f3 [ noun - title ] A12 - Z3
+---------------
+    68    578      0     12  g_d0_f1 
+    68    578     17     12  g_d0_f1 mSa
+    85    578      8     12  g_d0_f1  
+    91    577     59     10  g_d0_f2 Army, Troops
+   150    577      7     10  g_d0_f2  
+   156    577    140     10  g_d0_f3 [ noun - title ] A12 - Z5 - Z5 - Z3
+   424    592      0     10  g_d0_f3 
+   424    592      6     10  g_d0_f3 4
+---------------
+    53     26     12     12  g_d0_f1 mt
+    65     26      8     12  g_d0_f1  
+    71     25     77     10  g_d0_f2 die, perish, death
+   148     25      7     10  g_d0_f2  
+   154     25     85     10  g_d0_f3 [ verb + noun ] A14
+---------------
+    53     55      0     12  g_d0_f1 
+    53     55     29     12  g_d0_f1 smAiw
+    82     55      8     12  g_d0_f1  
+    88     54     54     10  g_d0_f2 companions
+   142     54      7     10  g_d0_f2  
+   148     54    120     10  g_d0_f3 [ noun ] {late egyptian} A14
+---------------
+    53     85      0     12  g_d0_f1 
+    53     85     12     12  g_d0_f1 mt
+    65     85      8     12  g_d0_f1  
+    71     84     77     10  g_d0_f2 die, perish, death
+   148     84      7     10  g_d0_f2  
+   154     84    106     10  g_d0_f3 [ verb + noun ] A14 - X1
+---------------
+    58    117      0     12  g_d0_f1 
+    58    117     26     12  g_d0_f1 xftyw
+    84    117      8     12  g_d0_f1  
+    90    116     91     10  g_d0_f2 enemies, opponents
+   181    116      7     10  g_d0_f2  
+   186    116     82     10  g_d0_f3 [ noun ] A14A-Z2B
+---------------
+    53    145      0     12  g_d0_f1 
+    53    145     11     12  g_d0_f1 xr
+    63    145      8     12  g_d0_f1  
+    69    144     95     10  g_d0_f2 fall (in military sense)
+   164    144      7     10  g_d0_f2  
+   170    144     51     10  g_d0_f3 [ verb ] A15
+---------------
+    53    173      0     12  g_d0_f1 
+    53    173     19     12  g_d0_f1 xrw
+    71    173      8     12  g_d0_f1  
+    77    172     46     10  g_d0_f2 battle, war
+   124    172      7     10  g_d0_f2  
+   129    172     54     10  g_d0_f3 [ noun ] A15
+---------------
+    53    201      0     12  g_d0_f1 
+    53    201     19     12  g_d0_f1 xrw
+    71    201      8     12  g_d0_f1  
+    77    200    162     10  g_d0_f2 enemy, heretic, foe (of known origin)
+   240    200      7     10  g_d0_f2  
+   245    200     54     10  g_d0_f3 [ noun ] A15
+---------------
+    53    232      0     12  g_d0_f1 
+    53    232     15     12  g_d0_f1 sxr
+    68    232      8     12  g_d0_f1  
+    74    231    255     10  g_d0_f2 overthrow, throw down, force into place (dislocated bone)
+   329    231      7     10  g_d0_f2  
+   335    231    118     10  g_d0_f3 [ causative verb ] A15 - X1
+---------------
+    42    263      0     12  g_d0_f1 
+    42    263     18     12  g_d0_f1 ksw
+    60    263      8     12  g_d0_f1  
+    66    262     37     10  g_d0_f2 bowings
+   103    262      7     10  g_d0_f2  
+   109    262     54     10  g_d0_f3 [ noun ] A16
+---------------
+    42    295      0     12  g_d0_f1 
+    42    295     43     12  g_d0_f1 xy / Xrd
+    85    295      8     12  g_d0_f1  
+    91    294     43     10  g_d0_f2 child, boy
+   134    294      7     10  g_d0_f2  
+   140    294     54     10  g_d0_f3 [ noun ] A17
+---------------
+    42    327      0     12  g_d0_f1 
+    42    327     23     12  g_d0_f1 iHms
+    65    327      8     12  g_d0_f1  
+    71    325    131     10  g_d0_f2 Attendant, household servant
+   202    325      7     10  g_d0_f2  
+   208    325     78     10  g_d0_f3 [ noun - title ] A17
+---------------
+    58    358      0     12  g_d0_f1 
+    58    358     17     12  g_d0_f1 Xrd
+    75    358      8     12  g_d0_f1  
+    81    357     94     10  g_d0_f2 child, become a child
+   175    357     10     10  g_d0_f2  
+   183    357     39     10  g_d0_f3 A17 - A1
+---------------
+    79    390      0     12  g_d0_f1 
+    79    390     41     12  g_d0_f1 Xrd nxx
+   120    390      8     12  g_d0_f1  
+   126    389     60     10  g_d0_f2 an older child
+   186    389      7     10  g_d0_f2  
+   191    389    101     10  g_d0_f3 [ noun ] A17 - A1 - A19
+---------------
+    68    422      0     12  g_d0_f1 
+    68    422     25     12  g_d0_f1 Xrdw
+    93    422      8     12  g_d0_f1  
+    99    421     43     10  g_d0_f2 childhood
+   142    421      7     10  g_d0_f2  
+   148    421    106     10  g_d0_f3 [ noun ] A17 - A17 - A17
+---------------
+    65    454      0     12  g_d0_f1 
+    65    454      8     12  g_d0_f1 TA
+    73    454      8     12  g_d0_f1  
+    79    453     16     10  g_d0_f2 boy
+    95    453      7     10  g_d0_f2  
+   101    453     81     10  g_d0_f3 [ noun ] A17 - D53
+---------------
+    63    485      0     12  g_d0_f1 
+    63    485     17     12  g_d0_f1 Xrd
+    79    485      8     12  g_d0_f1  
+    85    484     16     10  g_d0_f2 boy
+   102    484      7     10  g_d0_f2  
+   107    484     76     10  g_d0_f3 [ noun ] A17 - G7
+---------------
+    63    517      0     12  g_d0_f1 
+    63    517     21     12  g_d0_f1 xnnt
+    84    517      8     12  g_d0_f1  
+    90    516     43     10  g_d0_f2 childhood
+   133    516     10     10  g_d0_f2  
+   141    516     40     10  g_d0_f3 A17 - G7
+---------------
+   106    551      0     12  g_d0_f1 
+   106    551     31     12  g_d0_f1 msdmt
+   137    551      8     12  g_d0_f1  
+   143    550    141     10  g_d0_f2 black eye paint, galena, stibium
+   284    550      7     10  g_d0_f2  
+   289    550    207     10  g_d0_f3 [ noun - min. ] A17 - N26 - G14 - X1 - N33 - Z2
+---------------
+    88    583      0     12  g_d0_f1 
+    88    583     50     12  g_d0_f1 Xrd n kAp
+   138    583      8     12  g_d0_f1  
+   144    582    121     10  g_d0_f2 child of the (Royal) nursery
+   265    582      7     10  g_d0_f2  
+   271    582    125     10  g_d0_f3 [ noun ] A17 - N35 - R5 - O1
+   424    592      0     10  g_d0_f3 
+   424    592      6     10  g_d0_f3 5
+---------------
+    82     28     19     12  g_d0_f1 papa
+   102     28      8     12  g_d0_f1  
+   108     27    140     10  g_d0_f2 to give birth, to bear, to be born
+   247     27      7     10  g_d0_f2  
+   253     27    122     10  g_d0_f3 [ verb ] A17-Q3-A17-Q3-B3
+---------------
+    88     60      0     12  g_d0_f1 
+    88     60     19     12  g_d0_f1 papa
+   108     60      8     12  g_d0_f1  
+   114     59     35     10  g_d0_f2 to shine
+   149     59      7     10  g_d0_f2  
+   155     59    123     10  g_d0_f3 [ verb ] A17-Q3-L1-W10-N5
+---------------
+    86     92      0     12  g_d0_f1 
+    86     92     57     12  g_d0_f1 Xrdw n mH
+   143     92      8     12  g_d0_f1  
+   149     91     70     10  g_d0_f2 small children ?
+   219     91      7     10  g_d0_f2  
+   225     91    129     10  g_d0_f3 [ noun ] A17 - Z2 - N35 - D42
+---------------
+    86    124      0     12  g_d0_f1 
+    86    124     13     12  g_d0_f1 xft
+    99    124      8     12  g_d0_f1  
+   105    123     24     10  g_d0_f2 when
+   129    123      7     10  g_d0_f2  
+   135    123    184     10  g_d0_f3 [ conjunction ] {cryptic } A17A - E13 - N16
+---------------
+    63    155      0     12  g_d0_f1 
+    63    155     52     12  g_d0_f1 imty pHwy
+   115    155      8     12  g_d0_f1  
+   121    154     85     10  g_d0_f2 district of Pelusium
+   205    154      7     10  g_d0_f2  
+   211    154     99     10  g_d0_f3 [ noun - loc. ] A18-F22
+---------------
+    54    187      0     12  g_d0_f1 
+    54    187     21     12  g_d0_f1 imty
+    75    187      8     12  g_d0_f1  
+    81    186    158     10  g_d0_f2 foster child (of king of Lower Egypt)
+   239    186      7     10  g_d0_f2  
+   245    186     75     10  g_d0_f3 [ noun ] A18 - X1
+---------------
+    55    218      0     12  g_d0_f1 
+    55    218     15     12  g_d0_f1 imt
+    70    218      8     12  g_d0_f1  
+    76    217     21     10  g_d0_f2 Buto
+    97    217      7     10  g_d0_f2  
+   102    217    127     10  g_d0_f3 [ noun - loc. ] A18 - X1 - O49
+---------------
+    50    250      0     12  g_d0_f1 
+    50    250     19     12  g_d0_f1 iAwi
+    69    250      8     12  g_d0_f1  
+    75    249    230     10  g_d0_f2 be aged, attain old age, old age, the old, the elderly
+   304    249      7     10  g_d0_f2  
+   310    249     85     10  g_d0_f3 [ verb + noun ] A19
+---------------
+    50    281      0     12  g_d0_f1 
+    50    281     17     12  g_d0_f1 tnw
+    67    281      8     12  g_d0_f1  
+    73    280     42     10  g_d0_f2 tired land
+   115    280      7     10  g_d0_f2  
+   120    280     54     10  g_d0_f3 [ noun ] A19
+---------------
+    50    313      0     12  g_d0_f1 
+    50    313     14     12  g_d0_f1 iky
+    64    313      8     12  g_d0_f1  
+    69    312     81     10  g_d0_f2 Quarryman, Miner
+   150    312      7     10  g_d0_f2  
+   156    312     78     10  g_d0_f3 [ noun - title ] A19
+---------------
+    50    345      0     12  g_d0_f1 
+    50    345     13     12  g_d0_f1 wr
+    62    345      8     12  g_d0_f1  
+    68    343     89     10  g_d0_f2 Great one, Magnate
+   158    343      7     10  g_d0_f2  
+   163    343     78     10  g_d0_f3 [ noun - title ] A19
+---------------
+    50    376      0     12  g_d0_f1 
+    50    376     13     12  g_d0_f1 wr
+    62    376      8     12  g_d0_f1  
+    68    375    197     10  g_d0_f2 noble, great, eminent, grandiose (of festival)
+   265    375      7     10  g_d0_f2  
+   271    375     71     10  g_d0_f3 [ adjective ] A19
+---------------
+    50    408      0     12  g_d0_f1 
+    50    408     57     12  g_d0_f1 smsw / iAw
+   107    408      8     12  g_d0_f1  
+   113    407     55     10  g_d0_f2 elder, eldest
+   167    407     10     10  g_d0_f2  
+   175    407     18     10  g_d0_f3 A19
+---------------
+    66    439      0     12  g_d0_f1 
+    66    439     13     12  g_d0_f1 wr
+    78    439      8     12  g_d0_f1  
+    84    438     89     10  g_d0_f2 Great one, Magnate
+   174    438      7     10  g_d0_f2  
+   179    438     99     10  g_d0_f3 [ noun - title ] A19 - A1
+---------------
+    66    471      0     12  g_d0_f1 
+    66    471     26     12  g_d0_f1 smsw
+    92    471      8     12  g_d0_f1  
+    98    470     27     10  g_d0_f2 eldest
+   125    470      7     10  g_d0_f2  
+   130    470    126     10  g_d0_f3 [ adjective + noun ] A19 - A1
+---------------
+    70    503      0     12  g_d0_f1 
+    70    503     22     12  g_d0_f1 ikwy
+    92    503      8     12  g_d0_f1  
+    98    502    195     10  g_d0_f2 Gang of Quarrymen, Gang of Stonemasons
+   293    502      7     10  g_d0_f2  
+   298    502    102     10  g_d0_f3 [ noun ] A19 - G43 - Z3
+---------------
+    83    539      0     12  g_d0_f1 
+    83    539     58     12  g_d0_f1 iAw nfr wrt
+   140    539      8     12  g_d0_f1  
+   146    538    104     10  g_d0_f2 very beautiful old age ?
+   251    538     10     10  g_d0_f2  
+   259    538    121     10  g_d0_f3 A19 - F35 - G36 - D21 - X1
+---------------
+    70    570      0     12  g_d0_f1 
+    70    570     13     12  g_d0_f1 wr
+    83    570      8     12  g_d0_f1  
+    89    569     58     10  g_d0_f2 great, mighty
+   147    569      7     10  g_d0_f2  
+   152    569     94     10  g_d0_f3 [ adjective ] A19 - G7
+   424    592      0     10  g_d0_f3 
+   424    592      6     10  g_d0_f3 6
+---------------
+    78     28     14     12  g_d0_f1 iky
+    92     28      8     12  g_d0_f1  
+    98     27     81     10  g_d0_f2 Quarryman, Miner
+   179     27      7     10  g_d0_f2  
+   185     27    156     10  g_d0_f3 [ noun - title ] A19 - M17 - M17 - A1
+---------------
+   128     60      0     12  g_d0_f1 
+   128     60     23     12  g_d0_f1 wrnS
+   151     60      8     12  g_d0_f1  
+   157     59     44     10  g_d0_f2 doorposts
+   201     59      7     10  g_d0_f2  
+   207     59    193     10  g_d0_f3 [ noun - arch. ] A19-N35-N37-Z7-M3-Z2-O1
+---------------
+    57     92      0     12  g_d0_f1 
+    57     92     26     12  g_d0_f1 smsw
+    83     92      8     12  g_d0_f1  
+    89     91     80     10  g_d0_f2 grow old, be aged
+   170     91      7     10  g_d0_f2  
+   175     91     78     10  g_d0_f3 [ verb ] A19 - S29
+---------------
+    72    123      0     12  g_d0_f1 
+    72    123     13     12  g_d0_f1 wr
+    85    123      8     12  g_d0_f1  
+    91    122     89     10  g_d0_f2 Great one, Magnate
+   180    122      7     10  g_d0_f2  
+   186    122    125     10  g_d0_f3 [ noun - title ] A19 - T14 - A1
+---------------
+    96    155      0     12  g_d0_f1 
+    96    155     13     12  g_d0_f1 wr
+   108    155      8     12  g_d0_f1  
+   114    154     89     10  g_d0_f2 Great one, Magnate
+   204    154      7     10  g_d0_f2  
+   209    154    153     10  g_d0_f3 [ noun - title ] A19 - T14 - N25 - A1
+---------------
+    62    186      0     12  g_d0_f1 
+    62    186     19     12  g_d0_f1 iAwt
+    81    186      8     12  g_d0_f1  
+    87    185     33     10  g_d0_f2 old age
+   120    185      7     10  g_d0_f2  
+   126    185     75     10  g_d0_f3 [ noun ] A19 - X1
+---------------
+    79    218      0     12  g_d0_f1 
+    79    218     26     12  g_d0_f1 smsw
+   105    218      8     12  g_d0_f1  
+   111    217     80     10  g_d0_f2 the Elder (epithet)
+   192    217      7     10  g_d0_f2  
+   197    217    190     10  g_d0_f3 [ noun - div. ] {late egyptian} A19 - Z7 - G7
+---------------
+    93    254      0     12  g_d0_f1 
+    93    254     13     12  g_d0_f1 wr
+   106    254      8     12  g_d0_f1  
+   112    253     89     10  g_d0_f2 Great one, Magnate
+   201    253      7     10  g_d0_f2  
+   207    253    197     10  g_d0_f3 [ noun - title ] A19 - Z7 - M17 - M17 - A1 - Z2
+---------------
+   129    286      0     12  g_d0_f1 
+   129    286     51     12  g_d0_f1 smsw hAyt
+   180    286      8     12  g_d0_f1  
+   186    285     81     10  g_d0_f2 Elder of the Portal
+   266    285      7     10  g_d0_f2  
+   272    285    244     10  g_d0_f3 [ noun - title ] A19 - Z7 - O4 - G1 - M17 - M17 - X1 - O1
+---------------
+    61    317      0     12  g_d0_f1 
+    61    317     26     12  g_d0_f1 smsw
+    87    317      8     12  g_d0_f1  
+    93    316     27     10  g_d0_f2 eldest
+   120    316      7     10  g_d0_f2  
+   126    316     92     10  g_d0_f3 [ adjective ] A20 - A1
+---------------
+    45    349      0     12  g_d0_f1 
+    45    349      9     12  g_d0_f1 sr
+    54    349      8     12  g_d0_f1  
+    60    348    135     10  g_d0_f2 Nobleman, Magistrate, Official
+   195    348      7     10  g_d0_f2  
+   201    348     78     10  g_d0_f3 [ noun - title ] A21
+---------------
+    45    380      0     12  g_d0_f1 
+    45    380     13     12  g_d0_f1 aHa
+    58    380      8     12  g_d0_f1  
+    64    379     39     10  g_d0_f2 stand up
+   103    379      8     10  g_d0_f2  
+   109    379     51     10  g_d0_f3 [ verb ] A21
+---------------
+    45    412      0     12  g_d0_f1 
+    45    412     13     12  g_d0_f1 aHa
+    58    412      8     12  g_d0_f1  
+    64    411     66     10  g_d0_f2 [your] position
+   130    411      7     10  g_d0_f2  
+   136    411     54     10  g_d0_f3 [ noun ] A21
+---------------
+    61    444      0     12  g_d0_f1 
+    61    444      9     12  g_d0_f1 sr
+    70    444      8     12  g_d0_f1  
+    76    443     31     10  g_d0_f2 Official
+   107    443      7     10  g_d0_f2  
+   113    443     99     10  g_d0_f3 [ noun - title ] A21 - A1
+---------------
+    81    479      0     12  g_d0_f1 
+    81    479     17     12  g_d0_f1 srw
+    98    479      8     12  g_d0_f1  
+   104    478     36     10  g_d0_f2 Officials
+   140    478      7     10  g_d0_f2  
+   146    478    175     10  g_d0_f3 [ plural noun - title ] A21 - A1 - G43 - Z2
+---------------
+    65    511      0     12  g_d0_f1 
+    65    511      9     12  g_d0_f1 sr
+    75    511      8     12  g_d0_f1  
+    81    510     31     10  g_d0_f2 Official
+   112    510      7     10  g_d0_f2  
+   117    510    105     10  g_d0_f3 [ noun - title ] A21 - A19
+---------------
+    58    543      0     12  g_d0_f1 
+    58    543      9     12  g_d0_f1 sr
+    67    543      8     12  g_d0_f1  
+    73    542     31     10  g_d0_f2 Official
+   104    542      7     10  g_d0_f2  
+   110    542    105     10  g_d0_f3 [ noun - title ] A21 - A40
+---------------
+    65    574      0     12  g_d0_f1 
+    65    574      9     12  g_d0_f1 sr
+    75    574      8     12  g_d0_f1  
+    81    573     31     10  g_d0_f2 Official
+   112    573      7     10  g_d0_f2  
+   117    573    101     10  g_d0_f3 [ noun - title ] A21 - G7
+   424    592      0     10  g_d0_f3 
+   424    592      6     10  g_d0_f3 7
+---------------
+    81     32     17     12  g_d0_f1 srw
+    98     32      8     12  g_d0_f1  
+   104     31     86     10  g_d0_f2 Officials, Grandees
+   190     31      7     10  g_d0_f2  
+   196     31    175     10  g_d0_f3 [ plural noun - title ] A21 - G43 - A1 - Z2
+---------------
+    66     64      0     12  g_d0_f1 
+    66     64     84     12  g_d0_f1 wr mDw tA mHw
+   149     64      8     12  g_d0_f1  
+   155     63    184     10  g_d0_f2 Magnate of the Great Ten of Lower Egypt
+   340     63      7     10  g_d0_f2  
+   345     63    191     10  g_d0_f3 [ noun - title ] {uncertain of M28} A21 - M28
+---------------
+    72     95      0     12  g_d0_f1 
+    72     95     43     12  g_d0_f1 smsw ist
+   116     95      8     12  g_d0_f1  
+   122     94     85     10  g_d0_f2 Elder of the Palace
+   207     94      7     10  g_d0_f2  
+   213     94    150     10  g_d0_f3 [ noun - title ] A21 - M40 - X1 - O1
+---------------
+    71    127      0     12  g_d0_f1 
+    71    127     17     12  g_d0_f1 srw
+    88    127      8     12  g_d0_f1  
+    94    126     36     10  g_d0_f2 Officials
+   130    126      7     10  g_d0_f2  
+   136    126    147     10  g_d0_f3 [ plural noun - title ] A21 - Z7 - A1
+---------------
+    75    159      0     12  g_d0_f1 
+    75    159      9     12  g_d0_f1 sr
+    85    159      8     12  g_d0_f1  
+    91    158     29     10  g_d0_f2 Prince
+   119    158      7     10  g_d0_f2  
+   125    158    121     10  g_d0_f3 [ noun - title ] A21 - Z7 - G7
+---------------
+    75    195      0     12  g_d0_f1 
+    75    195     17     12  g_d0_f1 srw
+    93    195      8     12  g_d0_f1  
+    99    194    121     10  g_d0_f2 Officials, Princes, Notables
+   219    194      7     10  g_d0_f2  
+   225    194    168     10  g_d0_f3 [ plural noun - title ] A21 - Z7 - A1 - Z2
+---------------
+   121    227      0     12  g_d0_f1 
+   121    227     17     12  g_d0_f1 bnS
+   137    227      8     12  g_d0_f1  
+   143    225     92     10  g_d0_f2 doorposts, doorjamb
+   235    225      7     10  g_d0_f2  
+   241    225    232     10  g_d0_f3 [ noun - arch. ] A21A - N35 - N37 - Z7 - M3 - Z2 - O1
+---------------
+    45    258      0     12  g_d0_f1 
+    45    258     12     12  g_d0_f1 ity
+    57    258      8     12  g_d0_f1  
+    63    257     46     10  g_d0_f2 Sovereign
+   109    257      7     10  g_d0_f2  
+   114    257     78     10  g_d0_f3 [ noun - title ] A23
+---------------
+    42    290      0     12  g_d0_f1 
+    42    290     11     12  g_d0_f1 wt
+    53    290      8     12  g_d0_f1  
+    59    289    111     10  g_d0_f2 bandage, wrap up, strain
+   170    289      7     10  g_d0_f2  
+   176    289     51     10  g_d0_f3 [ verb ] A24
+---------------
+    42    321      0     12  g_d0_f1 
+    42    321     15     12  g_d0_f1 nxt
+    57    321      8     12  g_d0_f1  
+    63    320    169     10  g_d0_f2 strong, victorious, stiff, hard, obdurate
+   232    320      7     10  g_d0_f2  
+   238    320     71     10  g_d0_f3 [ adjective ] A24
+---------------
+    42    353      0     12  g_d0_f1 
+    42    353     15     12  g_d0_f1 nxt
+    57    353      8     12  g_d0_f1  
+    63    352     29     10  g_d0_f2 victory
+    93    352      7     10  g_d0_f2  
+    98    352     54     10  g_d0_f3 [ noun ] A24
+---------------
+    42    384      0     12  g_d0_f1 
+    42    384     40     12  g_d0_f1 rmT sAw
+    82    384      8     12  g_d0_f1  
+    88    383     78     10  g_d0_f2 Captive, Prisoner
+   165    383      7     10  g_d0_f2  
+   171    383     78     10  g_d0_f3 [ noun - title ] A24
+---------------
+    42    416      0     12  g_d0_f1 
+    42    416     20     12  g_d0_f1 skAp
+    62    416      8     12  g_d0_f1  
+    68    415     62     10  g_d0_f2 cover up, roof
+   130    415      7     10  g_d0_f2  
+   135    415    128     10  g_d0_f3 [ causative verb - arch. ] A24
+---------------
+    81    447      0     12  g_d0_f1 
+    81    447     26     12  g_d0_f1 mniw
+   107    447      8     12  g_d0_f1  
+   113    446     46     10  g_d0_f2 Herdsman
+   160    446      8     10  g_d0_f2  
+   165    446    134     10  g_d0_f3 [ noun - title ] A24 - G43 - D40
+---------------
+    89    480      0     12  g_d0_f1 
+    89    480     53     12  g_d0_f1 Hwny r Hr
+   142    480      8     12  g_d0_f1  
+   148    479     33     10  g_d0_f2 combat
+   181    479      7     10  g_d0_f2  
+   186    479    172     10  g_d0_f3 [ noun ] A24 - N35 - Z4 - D21 - D2 - Z1
+---------------
+   102    512      0     12  g_d0_f1 
+   102    512     36     12  g_d0_f1 Hwi ini
+   138    512      8     12  g_d0_f1  
+   144    511    104     10  g_d0_f2 (ship part, masthead ?)
+   247    511      7     10  g_d0_f2  
+   253    511    228     10  g_d0_f3 [ noun - boat ] A24 - Z7 - M17 - K1 - N35 - Z7 - Z3A
+---------------
+    73    544      0     12  g_d0_f1 
+    73    544     17     12  g_d0_f1 Hwi
+    90    544      8     12  g_d0_f1  
+    96    543     79     10  g_d0_f2 beat, strike, smite
+   175    543      7     10  g_d0_f2  
+   181    543     78     10  g_d0_f3 [ verb ] A25 - D36
+---------------
+    88    575      0     12  g_d0_f1 
+    88    575     14     12  g_d0_f1 Hw
+   102    575      8     12  g_d0_f1  
+   108    574    172     10  g_d0_f2 Soldier, Combatant, Beater, Herdsman
+   281    574      7     10  g_d0_f2  
+   286    574    134     10  g_d0_f3 [ noun - title ] A25 - G43 - D40
+   424    592      0     10  g_d0_f3 
+   424    592      6     10  g_d0_f3 8
+---------------
+    73     28     17     12  g_d0_f1 Hwi
+    90     28      8     12  g_d0_f1  
+    96     27     79     10  g_d0_f2 beat, strike, smite
+   175     27      7     10  g_d0_f2  
+   180     27     85     10  g_d0_f3 [ verb ] A25 - G248
+---------------
+    73     60      0     12  g_d0_f1 
+    73     60     14     12  g_d0_f1 nis
+    87     60      8     12  g_d0_f1  
+    93     59     89     10  g_d0_f2 utterance, recitation
+   182     59      7     10  g_d0_f2  
+   187     59    129     10  g_d0_f3 [ noun ] A25 - N23 - Z1 - N35
+---------------
+    45     91      0     12  g_d0_f1 
+    45     91      6     12  g_d0_f1 ?
+    51     91      8     12  g_d0_f1  
+    57     90     47     10  g_d0_f2 (unknown)
+   104     90      7     10  g_d0_f2  
+   110     90     90     10  g_d0_f3 {administration} A26
+---------------
+    45    123      0     12  g_d0_f1 
+    45    123      3     12  g_d0_f1 i
+    48    123      8     12  g_d0_f1  
+    54    122     19     10  g_d0_f2 Oh !
+    73    122      7     10  g_d0_f2  
+    79    122     80     10  g_d0_f3 [ interjection ] A26
+---------------
+    55    154      0     12  g_d0_f1 
+    55    154     35     12  g_d0_f1 nis mD
+    90    154      8     12  g_d0_f1  
+    96    153     74     10  g_d0_f2 Caller of the Ten
+   169    153      8     10  g_d0_f2  
+   175    153    105     10  g_d0_f3 [ noun - title ] A26 - V20
+---------------
+    45    186      0     12  g_d0_f1 
+    45    186      9     12  g_d0_f1 in
+    54    186      8     12  g_d0_f1  
+    60    185     34     10  g_d0_f2 to bring
+    94    185      7     10  g_d0_f2  
+   100    185    129     10  g_d0_f3 [ verb ] {Naukratis Stela} A27
+---------------
+    45    217      0     12  g_d0_f1 
+    45    217     21     12  g_d0_f1 aHaw
+    66    217      8     12  g_d0_f1  
+    72    216    116     10  g_d0_f2 Porter, Servant, Attendant
+   188    216      7     10  g_d0_f2  
+   194    216     78     10  g_d0_f3 [ noun - title ] A28
+---------------
+    45    249      0     12  g_d0_f1 
+    45    249     13     12  g_d0_f1 qAt
+    58    249      8     12  g_d0_f1  
+    64    248     28     10  g_d0_f2 height
+    92    248      7     10  g_d0_f2  
+    97    248     54     10  g_d0_f3 [ noun ] A28
+---------------
+    45    281      0     12  g_d0_f1 
+    45    281     18     12  g_d0_f1 qAyt
+    63    281      8     12  g_d0_f1  
+    69    279    109     10  g_d0_f2 high ground, arable land
+   178    279      7     10  g_d0_f2  
+   184    279     54     10  g_d0_f3 [ noun ] A28
+---------------
+    65    312      0     12  g_d0_f1 
+    65    312     13     12  g_d0_f1 Haa
+    79    312      8     12  g_d0_f1  
+    85    311     30     10  g_d0_f2 rejoice
+   114    311      7     10  g_d0_f2  
+   120    311    138     10  g_d0_f3 [ verb ] {late egyptian} A28 - A8
+---------------
+    61    344      0     12  g_d0_f1 
+    61    344     21     12  g_d0_f1 aHaw
+    82    344      8     12  g_d0_f1  
+    88    343    116     10  g_d0_f2 Porter, Servant, Attendant
+   204    343      7     10  g_d0_f2  
+   210    343    106     10  g_d0_f3 [ noun - title ] A28 - G43
+---------------
+    58    375      0     12  g_d0_f1 
+    58    375     13     12  g_d0_f1 qAi
+    71    375      8     12  g_d0_f1  
+    77    374    116     10  g_d0_f2 be raised on high, uplifted
+   192    374      7     10  g_d0_f2  
+   198    374    112     10  g_d0_f3 [ verb infinitive ] A28 - X1
+---------------
+    52    407      0     12  g_d0_f1 
+    52    407     13     12  g_d0_f1 qAi
+    65    407      8     12  g_d0_f1  
+    71    406    222     10  g_d0_f2 tall, high, long, exalted, be raised on high, uplifted
+   293    406      8     10  g_d0_f2  
+   298    406    133     10  g_d0_f3 [ adjective + verb ] A28 - Y1V
+---------------
+    52    439      0     12  g_d0_f1 
+    52    439     13     12  g_d0_f1 qAt
+    65    439      8     12  g_d0_f1  
+    71    438     28     10  g_d0_f2 height
+    98    438      7     10  g_d0_f2  
+   104    438     81     10  g_d0_f3 [ noun ] A28 - Y1V
+---------------
+    55    470      0     12  g_d0_f1 
+    55    470     18     12  g_d0_f1 qAyt
+    73    470      8     12  g_d0_f1  
+    79    469     54     10  g_d0_f2 high ground
+   132    469      7     10  g_d0_f2  
+   138    469     74     10  g_d0_f3 [ noun ] A28 - Z5
+---------------
+    55    502      0     12  g_d0_f1 
+    55    502     10     12  g_d0_f1 HA
+    65    502      8     12  g_d0_f1  
+    71    501    103     10  g_d0_f2 white bull with red ears
+   174    501      7     10  g_d0_f2  
+   179    501    100     10  g_d0_f3 [ noun - ani. ] A28 - Z5
+---------------
+    42    534      0     12  g_d0_f1 
+    42    534     16     12  g_d0_f1 iAw
+    58    534      8     12  g_d0_f1  
+    64    532     80     10  g_d0_f2 adoration, praises
+   144    532      7     10  g_d0_f2  
+   150    532     54     10  g_d0_f3 [ noun ] A30
+---------------
+    42    565      0     12  g_d0_f1 
+    42    565     18     12  g_d0_f1 dwA
+    60    565      8     12  g_d0_f1  
+    66    564    133     10  g_d0_f2 to worship, to praise, to adore
+   199    564      7     10  g_d0_f2  
+   205    564     51     10  g_d0_f3 [ verb ] A30
+   424    592      0     10  g_d0_f3 
+   424    592      6     10  g_d0_f3 9
+---------------
+    80     28     24     12  g_d0_f1 twAw
+   103     28      8     12  g_d0_f1  
+   109     27    235     10  g_d0_f2 support ?, activity or occupation of a tomb labourer ?
+   344     27      7     10  g_d0_f2  
+   350     27    121     10  g_d0_f3 [ noun ] A30 - Z7 - A24 - A1
+---------------
+    57     63      0     12  g_d0_f1 
+    57     63     26     12  g_d0_f1 antyw
+    84     63      8     12  g_d0_f1  
+    90     62     66     10  g_d0_f2 myrrh, incense
+   156     62      7     10  g_d0_f2  
+   161     62    144     10  g_d0_f3 [ noun - flora ] A31 - X1 - N33AV
+---------------
+    86     94      0     12  g_d0_f1 
+    86     94     36     12  g_d0_f1 nbt Hyt
+   122     94      8     12  g_d0_f1  
+   128     93     43     10  g_d0_f2 Nephthys
+   171     93      7     10  g_d0_f2  
+   177     93    230     10  g_d0_f3 [ noun - div. ] {cryptic} A32 - V28 - M17 - M17 - V13
+---------------
+    45    126      0     12  g_d0_f1 
+    45    126     26     12  g_d0_f1 mniw
+    71    126      8     12  g_d0_f1  
+    77    125     46     10  g_d0_f2 Herdsman
+   123    125      8     10  g_d0_f2  
+   129    125     78     10  g_d0_f3 [ noun - title ] A33
+---------------
+   184    158      0     12  g_d0_f1 
+   184    158     52     12  g_d0_f1 mniw siwt
+   236    158      8     12  g_d0_f1  
+   242    156     44     10  g_d0_f2 Shepherd
+   285    156      7     10  g_d0_f2  
+   291    156    331     10  g_d0_f3 [ noun - title ] A33 - G1 - Z5 - Z5 - Z5 - A24 - J18 - Z1 - M23 - Z7 - F27 - A1
+---------------
+   126    189      0     12  g_d0_f1 
+   126    189     26     12  g_d0_f1 mniw
+   152    189      8     12  g_d0_f1  
+   158    188     96     10  g_d0_f2 Herdsman, Shepherd
+   254    188      7     10  g_d0_f2  
+   260    188    230     10  g_d0_f3 [ noun - title ] A33 - G1 - Z5 - Z5 - Z5 - Z5 - Z5 - A24
+---------------
+   102    222      0     12  g_d0_f1 
+   102    222     26     12  g_d0_f1 mniw
+   128    222      8     12  g_d0_f1  
+   135    221     46     10  g_d0_f2 Herdsman
+   181    221      8     10  g_d0_f2  
+   187    221    168     10  g_d0_f3 [ noun - title ] A33 - G1 - Z7 - Y1 - A24
+---------------
+   140    253      0     12  g_d0_f1 
+   140    253     52     12  g_d0_f1 mniw siwt
+   191    253      8     12  g_d0_f1  
+   197    252     44     10  g_d0_f2 Shepherd
+   241    252      7     10  g_d0_f2  
+   246    252    297     10  g_d0_f3 [ noun - title ] A33 - M17 - Z5 - Y1 - A24 - S29 - M17 - Z7 - F28 - Z1
+---------------
+   142    285      0     12  g_d0_f1 
+   142    285     48     12  g_d0_f1 mniw anx
+   190    285      8     12  g_d0_f1  
+   196    284     42     10  g_d0_f2 Goatherd
+   238    284      7     10  g_d0_f2  
+   243    284    269     10  g_d0_f3 [ noun - title ] A33 - M17 - Z5 - Z5 - A24 - S34 - N35 - J1 - Y1
+---------------
+    74    317      0     12  g_d0_f1 
+    74    317     26     12  g_d0_f1 mniw
+   100    317      8     12  g_d0_f1  
+   106    316     46     10  g_d0_f2 Herdsman
+   152    316      8     10  g_d0_f2  
+   158    316    154     10  g_d0_f3 [ noun - title ] A33 - M17 - Z7 - A24
+---------------
+    75    350      0     12  g_d0_f1 
+    75    350     26     12  g_d0_f1 mniw
+   101    350      8     12  g_d0_f1  
+   107    349     46     10  g_d0_f2 Herdsman
+   153    349      8     10  g_d0_f2  
+   159    349    155     10  g_d0_f3 [ noun - title ] A33 - M17 - Z7 - D40
+---------------
+    87    382      0     12  g_d0_f1 
+    87    382     26     12  g_d0_f1 mniw
+   113    382      8     12  g_d0_f1  
+   119    381     46     10  g_d0_f2 Herdsman
+   165    381      8     10  g_d0_f2  
+   171    381    166     10  g_d0_f3 [ noun - title ] A33 - Z5 - Z5 - Z5 - A24
+---------------
+    69    414      0     12  g_d0_f1 
+    69    414     26     12  g_d0_f1 mniw
+    95    414      8     12  g_d0_f1  
+   101    412     46     10  g_d0_f2 Herdsman
+   147    412      8     10  g_d0_f2  
+   153    412    120     10  g_d0_f3 [ noun - title ] A33 - Z7 - Y1
+---------------
+    50    445      0     12  g_d0_f1 
+    50    445     18     12  g_d0_f1 mni
+    68    445      8     12  g_d0_f1  
+    74    444     37     10  g_d0_f2 to guard
+   111    444      7     10  g_d0_f2  
+   116    444     58     10  g_d0_f3 [ verb ] A33B
+---------------
+    50    477      0     12  g_d0_f1 
+    50    477     26     12  g_d0_f1 mniw
+    76    477      8     12  g_d0_f1  
+    82    476     46     10  g_d0_f2 Herdsman
+   128    476      8     10  g_d0_f2  
+   134    476     85     10  g_d0_f3 [ noun - title ] A33B
+---------------
+    45    508      0     12  g_d0_f1 
+    45    508     22     12  g_d0_f1 xwsi
+    67    508      8     12  g_d0_f1  
+    73    507    242     10  g_d0_f2 pound, beat up, beat flat, build up, build, construct, stir
+   315    507      7     10  g_d0_f2  
+   321    507     58     10  g_d0_f3 [ verb ] A34A
+---------------
+    50    540      0     12  g_d0_f1 
+    50    540     11     12  g_d0_f1 qd
+    61    540      8     12  g_d0_f1  
+    67    539    119     10  g_d0_f2 Builder, method of building
+   186    539      7     10  g_d0_f2  
+   191    539     78     10  g_d0_f3 [ noun - title ] A35
+---------------
+    50    571      0     12  g_d0_f1 
+    50    571     11     12  g_d0_f1 qd
+    61    571      8     12  g_d0_f1  
+    67    570     21     10  g_d0_f2 build
+    88    570      7     10  g_d0_f2  
+    94    570    129     10  g_d0_f3 [ verb ] {Naukratis Stela} A35
+   421    592      0     10  g_d0_f3 
+   421    592     11     10  g_d0_f3 10
+---------------
+    50     28     57     12  g_d0_f1 qdw / iqdw
+   107     28      8     12  g_d0_f1  
+   113     27     76     10  g_d0_f2 Bricklayer, Potter
+   189     27      7     10  g_d0_f2  
+   195     27     78     10  g_d0_f3 [ noun - title ] A35
+---------------
+    62     59      0     12  g_d0_f1 
+    62     59     11     12  g_d0_f1 qd
+    74     59      8     12  g_d0_f1  
+    80     58     89     10  g_d0_f2 build, fashion (men)
+   168     58      7     10  g_d0_f2  
+   174     58    109     10  g_d0_f3 [ verb - arch. ] A35 - A24
+---------------
+    78     91      0     12  g_d0_f1 
+    78     91     57     12  g_d0_f1 qdw / iqdw
+   136     91      8     12  g_d0_f1  
+   142     90     76     10  g_d0_f2 Bricklayer, Potter
+   218     90      7     10  g_d0_f2  
+   223     90    125     10  g_d0_f3 [ noun - title ] A35 - A24 - A1
+---------------
+    73    123      0     12  g_d0_f1 
+    73    123     11     12  g_d0_f1 qd
+    84    123      8     12  g_d0_f1  
+    90    121     21     10  g_d0_f2 build
+   111    121      7     10  g_d0_f2  
+   117    121    110     10  g_d0_f3 [ verb - arch. ] A35 - D40
+---------------
+   147    154      0     12  g_d0_f1 
+   147    154     33     12  g_d0_f1 qd inb
+   179    154      8     12  g_d0_f1  
+   185    153    104     10  g_d0_f2 Builder of walls, Mason
+   289    153      7     10  g_d0_f2  
+   294    153    265     10  g_d0_f3 [ noun - title ] A35 - D40 - M17 - K1 - N35 - D58 - O36A - A1
+---------------
+   106    190      0     12  g_d0_f1 
+   106    190     11     12  g_d0_f1 qd
+   118    190      8     12  g_d0_f1  
+   124    189     21     10  g_d0_f2 build
+   145    189      7     10  g_d0_f2  
+   151    189    171     10  g_d0_f3 [ verb - arch. ] A35 - Y1 - A24 - A1 - Z2
+---------------
+    62    222      0     12  g_d0_f1 
+    62    222     16     12  g_d0_f1 afty
+    78    222      8     12  g_d0_f1  
+    84    221     32     10  g_d0_f2 Brewer
+   116    221      7     10  g_d0_f2  
+   121    221    120     10  g_d0_f3 [ noun - title ] A36 - X1 - Z4
+---------------
+    78    253      0     12  g_d0_f1 
+    78    253     16     12  g_d0_f1 afty
+    94    253      8     12  g_d0_f1  
+   100    252     32     10  g_d0_f2 Brewer
+   132    252      7     10  g_d0_f2  
+   138    252    146     10  g_d0_f3 [ noun - title ] A36 - X1 - Z4 - A24
+---------------
+    55    285      0     12  g_d0_f1 
+    55    285     16     12  g_d0_f1 afty
+    71    285      8     12  g_d0_f1  
+    77    284     32     10  g_d0_f2 Brewer
+   109    284      7     10  g_d0_f2  
+   114    284    126     10  g_d0_f3 [ noun - title ] A36A - X1 - Z4
+---------------
+    50    317      0     12  g_d0_f1 
+    50    317     13     12  g_d0_f1 atx
+    63    317      8     12  g_d0_f1  
+    69    316     55     10  g_d0_f2 strain, mash
+   123    316      7     10  g_d0_f2  
+   129    316     58     10  g_d0_f3 [ verb ] A36C
+---------------
+    70    348      0     12  g_d0_f1 
+    70    348     13     12  g_d0_f1 atx
+    83    348      8     12  g_d0_f1  
+    89    347     55     10  g_d0_f2 strain, mash
+   144    347      7     10  g_d0_f2  
+   149    347     90     10  g_d0_f3 [ verb ] A36C - A417
+---------------
+    50    380      0     12  g_d0_f1 
+    50    380     13     12  g_d0_f1 atx
+    63    380      8     12  g_d0_f1  
+    69    379     73     10  g_d0_f2 sift, strain, mash
+   142    379      7     10  g_d0_f2  
+   147    379     51     10  g_d0_f3 [ verb ] A37
+---------------
+    62    412      0     12  g_d0_f1 
+    62    412     14     12  g_d0_f1 aftt
+    76    412      8     12  g_d0_f1  
+    82    411     65     10  g_d0_f2 female Brewer
+   147    411      7     10  g_d0_f2  
+   153    411    162     10  g_d0_f3 [ feminine noun - title ] A37 - X1 - X1
+---------------
+    62    443      0     12  g_d0_f1 
+    62    443     16     12  g_d0_f1 afty
+    78    443      8     12  g_d0_f1  
+    84    442     32     10  g_d0_f2 Brewer
+   116    442      7     10  g_d0_f2  
+   121    442    120     10  g_d0_f3 [ noun - title ] A37 - X1 - Z4
+---------------
+    53    473      0     12  g_d0_f1 
+    53    473     13     12  g_d0_f1 qis
+    66    473      8     12  g_d0_f1  
+    72    472     86     10  g_d0_f2 Cusae (El Kusiyah)
+   158    472      7     10  g_d0_f2  
+   164    472     78     10  g_d0_f3 [ noun - loc. ] A38
+---------------
+    74    507      0     12  g_d0_f1 
+    74    507     13     12  g_d0_f1 qis
+    87    507      8     12  g_d0_f1  
+    93    506     86     10  g_d0_f2 Cusae (El Kusiyah)
+   180    506      7     10  g_d0_f2  
+   185    506    154     10  g_d0_f3 [ noun - loc. ] A38 - S29 - Z4 - O49
+---------------
+    50    538      0     12  g_d0_f1 
+    50    538     13     12  g_d0_f1 qis
+    63    538      8     12  g_d0_f1  
+    69    537     86     10  g_d0_f2 Cusae (El Kusiyah)
+   155    537      7     10  g_d0_f2  
+   161    537     78     10  g_d0_f3 [ noun - loc. ] A39
+---------------
+    42    570      0     12  g_d0_f1 
+    42    570      3     12  g_d0_f1 i
+    45    570      8     12  g_d0_f1  
+    51    569     41     10  g_d0_f2 I, me, my
+    92    569      7     10  g_d0_f2  
+    98    569     95     10  g_d0_f3 [ suffix pronoun ] A40
+   421    592      0     10  g_d0_f3 
+   421    592     11     10  g_d0_f3 11
+---------------
+    64     31      7     12  g_d0_f1 it
+    70     31      8     12  g_d0_f1  
+    76     30    176     10  g_d0_f2 father, grandfather, stepfather, ancestor
+   252     30      7     10  g_d0_f2  
+   258     30    113     10  g_d0_f3 [ noun ] A40 - X1 - I9 - Z2
+---------------
+    50     62      0     12  g_d0_f1 
+    50     62     17     12  g_d0_f1 sAw
+    67     62      8     12  g_d0_f1  
+    73     61     33     10  g_d0_f2 Keeper
+   105     61      7     10  g_d0_f2  
+   111     61     85     10  g_d0_f3 [ noun - title ] A40B
+---------------
+    70     98      0     12  g_d0_f1 
+    70     98     13     12  g_d0_f1 iry
+    83     98      8     12  g_d0_f1  
+    89     97    133     10  g_d0_f2 companion, accomplice, mate
+   223     97      7     10  g_d0_f2  
+   228     97    102     10  g_d0_f3 [ noun ] A40B - A1 - Z2
+---------------
+    81    130      0     12  g_d0_f1 
+    81    130     43     12  g_d0_f1 iry rdwy
+   125    130      8     12  g_d0_f1  
+   131    129    129     10  g_d0_f2 fellow, colleague, companion
+   260    129      7     10  g_d0_f2  
+   265    129    115     10  g_d0_f3 [ noun ] A40B - D56 - D56
+---------------
+   145    162      0     12  g_d0_f1 
+   145    162     17     12  g_d0_f1 sAw
+   162    162      8     12  g_d0_f1  
+   168    161     78     10  g_d0_f2 take heed of me !
+   246    161      7     10  g_d0_f2  
+   251    161    196     10  g_d0_f3 [ verb ] A40B - G1 - A24 - X1 - Z7 - D21 - A1
+---------------
+   140    194      0     12  g_d0_f1 
+   140    194     17     12  g_d0_f1 sAw
+   157    194      8     12  g_d0_f1  
+   163    193     39     10  g_d0_f2 beware !
+   202    193     10     10  g_d0_f2  
+   210    193    221     10  g_d0_f3 A40B - G1 - M17 - Z7 - M17 - D40 - X1 - N35 - Z2
+---------------
+   103    225      0     12  g_d0_f1 
+   103    225     17     12  g_d0_f1 sAw
+   120    225      8     12  g_d0_f1  
+   126    224     45     10  g_d0_f2 to restrain
+   171    224      7     10  g_d0_f2  
+   177    224    148     10  g_d0_f3 [ verb ] A40B - G1 - Z5 - Z5 - A24
+---------------
+   126    257      0     12  g_d0_f1 
+   126    257     17     12  g_d0_f1 sAw
+   143    257      8     12  g_d0_f1  
+   149    256     54     10  g_d0_f2 to withstand
+   202    256      8     10  g_d0_f2  
+   208    256    168     10  g_d0_f3 [ verb ] A40B - G1 - Z5 - Z5 - Y1 - A24
+---------------
+    92    289      0     12  g_d0_f1 
+    92    289     17     12  g_d0_f1 sAw
+   109    289      8     12  g_d0_f1  
+   115    288     64     10  g_d0_f2 to have a care
+   179    288      7     10  g_d0_f2  
+   185    288    127     10  g_d0_f3 [ verb ] A40B - G1 - Z7 - A24
+---------------
+   103    321      0     12  g_d0_f1 
+   103    321     17     12  g_d0_f1 sAw
+   120    321      8     12  g_d0_f1  
+   126    319     55     10  g_d0_f2 to beware of
+   181    319      7     10  g_d0_f2  
+   187    319    128     10  g_d0_f3 [ verb ] A40B - G1 - Z7 - D40
+---------------
+   115    352      0     12  g_d0_f1 
+   115    352     17     12  g_d0_f1 sAw
+   132    352      8     12  g_d0_f1  
+   138    351    100     10  g_d0_f2 to have a care, to tend
+   238    351      8     10  g_d0_f2  
+   244    351    148     10  g_d0_f3 [ verb ] A40B - G1 - Z7 - Y1 - A24
+---------------
+   117    384      0     12  g_d0_f1 
+   117    384     17     12  g_d0_f1 sAw
+   134    384      8     12  g_d0_f1  
+   140    383     31     10  g_d0_f2 to tend
+   171    383      7     10  g_d0_f2  
+   176    383    148     10  g_d0_f3 [ verb ] A40B - G1 - Z7 - Y1 - A24
+---------------
+   115    416      0     12  g_d0_f1 
+   115    416     17     12  g_d0_f1 sAw
+   132    416      8     12  g_d0_f1  
+   138    415     94     10  g_d0_f2 Defender, (Cow)herd
+   231    415      7     10  g_d0_f2  
+   237    415    175     10  g_d0_f3 [ noun - title ] A40B - G1 - Z7 - Y1 - A24
+---------------
+   153    448      0     12  g_d0_f1 
+   153    448     40     12  g_d0_f1 sAw sSw
+   194    448      8     12  g_d0_f1  
+   200    447     68     10  g_d0_f2 Record Keeper
+   268    447      7     10  g_d0_f2  
+   273    447    264     10  g_d0_f3 [ noun - title ] A40B - G1 - Z7 - Y1 - A24 - Y3 - Z7 - V12 - Z2
+---------------
+   116    480      0     12  g_d0_f1 
+   116    480     17     12  g_d0_f1 sAw
+   133    480      8     12  g_d0_f1  
+   139    479     50     10  g_d0_f2 to preserve
+   189    479      7     10  g_d0_f2  
+   195    479    168     10  g_d0_f3 [ verb ] A40B - G1 - Z7 - Z4 - Y1 - A24
+---------------
+   103    512      0     12  g_d0_f1 
+   103    512     17     12  g_d0_f1 sAw
+   120    512      8     12  g_d0_f1  
+   126    511     29     10  g_d0_f2 to split
+   155    511      7     10  g_d0_f2  
+   161    511    149     10  g_d0_f3 [ verb ] A40B - G1 - Z7 - Z9 - D40
+---------------
+   103    545      0     12  g_d0_f1 
+   103    545     17     12  g_d0_f1 sAw
+   120    545      8     12  g_d0_f1  
+   126    544     28     10  g_d0_f2 feeble
+   153    544      7     10  g_d0_f2  
+   159    544    169     10  g_d0_f3 [ adjective ] A40B - G1 - Z7 - Z9 - D40
+---------------
+   126    578      0     12  g_d0_f1 
+   126    578     17     12  g_d0_f1 sAw
+   143    578      8     12  g_d0_f1  
+   149    577     90     10  g_d0_f2 to cut off (nose, ear)
+   239    577      7     10  g_d0_f2  
+   244    577    175     10  g_d0_f3 [ verb ] A40B - G1 - Z7 - Z9 - T30 - D40
+   421    592      0     10  g_d0_f3 
+   421    592     11     10  g_d0_f3 12
+---------------
+    93     29     18     12  g_d0_f1 sAyt
+   110     29      8     12  g_d0_f1  
+   116     28    120     10  g_d0_f2 enfeebled, broken, bruised
+   236     28      7     10  g_d0_f2  
+   242     28    148     10  g_d0_f3 [ adjective ] A40B - G1 - Z9 - D40
+---------------
+    93     61      0     12  g_d0_f1 
+    93     61     17     12  g_d0_f1 sAw
+   110     61      8     12  g_d0_f1  
+   116     60     82     10  g_d0_f2 to break, demolish
+   198     60      7     10  g_d0_f2  
+   204     60    128     10  g_d0_f3 [ verb ] A40B - G1 - Z9 - D40
+---------------
+    89     93      0     12  g_d0_f1 
+    89     93     17     12  g_d0_f1 sAw
+   106     93      8     12  g_d0_f1  
+   112     92    105     10  g_d0_f2 to take care, to ward off
+   217     92      7     10  g_d0_f2  
+   222     92    113     10  g_d0_f3 [ verb ] A40B - G43 - D40
+---------------
+    89    125      0     12  g_d0_f1 
+    89    125     17     12  g_d0_f1 sAw
+   106    125      8     12  g_d0_f1  
+   112    123    137     10  g_d0_f2 guard, to take care, to ward off
+   248    123      7     10  g_d0_f2  
+   254    123    133     10  g_d0_f3 [ verb ] A40B - G43 - Z7 - A24
+---------------
+   129    161      0     12  g_d0_f1 
+   129    161     58     12  g_d0_f1 mniw / sAw
+   188    161      8     12  g_d0_f1  
+   194    160     46     10  g_d0_f2 Herdsman
+   240    160      8     10  g_d0_f2  
+   246    160    251     10  g_d0_f3 [ noun - title ] A40B - M17 - M17 - Z7 - Y1 - A24 - A1 - Z2
+---------------
+   108    197      0     12  g_d0_f1 
+   108    197     26     12  g_d0_f1 mniw
+   134    197      8     12  g_d0_f1  
+   140    195     46     10  g_d0_f2 Herdsman
+   186    195      8     10  g_d0_f2  
+   192    195    222     10  g_d0_f3 [ noun - title ] A40B - M17 - Z7 - Z7 - A24 - A1 - Z2
+---------------
+    75    229      0     12  g_d0_f1 
+    75    229     26     12  g_d0_f1 sAwty
+   101    229      8     12  g_d0_f1  
+   107    228     42     10  g_d0_f2 Guardian
+   148    228      7     10  g_d0_f2  
+   154    228    154     10  g_d0_f3 [ noun - title ] A40B - X1 - Z4 - D40
+---------------
+    62    262      0     12  g_d0_f1 
+    62    262     26     12  g_d0_f1 sAwty
+    88    262      8     12  g_d0_f1  
+    94    261     38     10  g_d0_f2 Archivist
+   132    261      7     10  g_d0_f2  
+   138    261    127     10  g_d0_f3 [ noun - title ] A40B - X1 - Z7
+---------------
+    82    294      0     12  g_d0_f1 
+    82    294     17     12  g_d0_f1 sAw
+    99    294      8     12  g_d0_f1  
+   105    293    121     10  g_d0_f2 Guardian, Warden, Keeper
+   225    293      7     10  g_d0_f2  
+   231    293    153     10  g_d0_f3 [ noun - title ] A40B - Z5 - Z5 - A24
+---------------
+    92    325      0     12  g_d0_f1 
+    92    325     17     12  g_d0_f1 sAw
+   109    325      8     12  g_d0_f1  
+   115    324     82     10  g_d0_f2 Guardian, Warden
+   198    324      7     10  g_d0_f2  
+   203    324    173     10  g_d0_f3 [ noun - title ] A40B - Z5 - Z5 - Z5 - A24
+---------------
+    42    357      0     12  g_d0_f1 
+    42    357     19     12  g_d0_f1 nsw
+    61    357      8     12  g_d0_f1  
+    67    356    116     10  g_d0_f2 King of Upper Egypt, King
+   183    356      7     10  g_d0_f2  
+   188    356     78     10  g_d0_f3 [ noun - title ] A41
+---------------
+    81    388      0     12  g_d0_f1 
+    81    388     26     12  g_d0_f1 mniw
+   107    388      8     12  g_d0_f1  
+   113    387     46     10  g_d0_f2 Herdsman
+   160    387      8     10  g_d0_f2  
+   165    387    127     10  g_d0_f3 [ noun - title ] A42 - G43 - A1
+---------------
+    69    422      0     12  g_d0_f1 
+    69    422     17     12  g_d0_f1 sAw
+    86    422      8     12  g_d0_f1  
+    92    420     29     10  g_d0_f2 to split
+   121    420      7     10  g_d0_f2  
+   126    420    200     10  g_d0_f3 [ verb ] {ancient misspelling} A42A - Z7 - D40
+---------------
+    45    453      0     12  g_d0_f1 
+    45    453     19     12  g_d0_f1 nsw
+    64    453      8     12  g_d0_f1  
+    70    452    116     10  g_d0_f2 King of Upper Egypt, King
+   186    452      7     10  g_d0_f2  
+   191    452     85     10  g_d0_f3 [ noun - title ] A43B
+---------------
+    50    485      0     12  g_d0_f1 
+    50    485      3     12  g_d0_f1 i
+    53    485      8     12  g_d0_f1  
+    59    484     41     10  g_d0_f2 I, me, my
+   100    484      7     10  g_d0_f2  
+   105    484    101     10  g_d0_f3 [ suffix pronoun ] A43E
+---------------
+    42    516      0     12  g_d0_f1 
+    42    516     26     12  g_d0_f1 mniw
+    68    516      8     12  g_d0_f1  
+    74    515     46     10  g_d0_f2 Herdsman
+   120    515      8     10  g_d0_f2  
+   126    515     78     10  g_d0_f3 [ noun - title ] A47
+---------------
+    42    548      0     12  g_d0_f1 
+    42    548     13     12  g_d0_f1 iry
+    55    548      8     12  g_d0_f1  
+    61    547    127     10  g_d0_f2 Headman, Official, Guardian
+   189    547      7     10  g_d0_f2  
+   194    547     78     10  g_d0_f3 [ noun - title ] A47
+---------------
+    78    579      0     12  g_d0_f1 
+    78    579     13     12  g_d0_f1 iry
+    92    579      8     12  g_d0_f1  
+    98    578     68     10  g_d0_f2 Two Guardians
+   165    578      7     10  g_d0_f2  
+   171    578    192     10  g_d0_f3 [ noun - title ] {late egyptian} A47 - A47 - Y1
+   421    592      0     10  g_d0_f3 
+   421    592     11     10  g_d0_f3 13
+---------------
+    66     28     41     12  g_d0_f1 iry r pr
+   107     28      8     12  g_d0_f1  
+   113     27    110     10  g_d0_f2 Guardian of the Temples
+   223     27      7     10  g_d0_f2  
+   229     27    128     10  g_d0_f3 [ noun - title ] A47 - D21 - O1
+---------------
+    75     62      0     12  g_d0_f1 
+    75     62     26     12  g_d0_f1 iry at
+   101     62      8     12  g_d0_f1  
+   107     60    164     10  g_d0_f2 Hallkeeper, Keeper of the Storeroom
+   271     60      7     10  g_d0_f2  
+   276     60    149     10  g_d0_f3 [ noun - title ] A47 - D36 - X1 - O1
+---------------
+   100     93      0     12  g_d0_f1 
+   100     93     26     12  g_d0_f1 iry at
+   126     93      8     12  g_d0_f1  
+   132     92    164     10  g_d0_f2 Hallkeeper, Keeper of the Storeroom
+   296     92      7     10  g_d0_f2  
+   301     92    206     10  g_d0_f3 [ noun - title ] A47 - D36 - M17 - M17 - X1 - O1
+---------------
+    92    125      0     12  g_d0_f1 
+    92    125     45     12  g_d0_f1 iry Hnkyt
+   137    125      8     12  g_d0_f1  
+   143    124    100     10  g_d0_f2 Caretaker of the bed ?
+   244    124      7     10  g_d0_f2  
+   249    124    211     10  g_d0_f3 [ noun - title ] A47 - D39 - V31 - M17 - M17 - X1
+---------------
+    86    156      0     12  g_d0_f1 
+    86    156     91     12  g_d0_f1 iry Hnkt / sA Hnkt
+   177    156      8     12  g_d0_f1  
+   183    155    155     10  g_d0_f2 Guardian of the Offering donations
+   338    155      7     10  g_d0_f2  
+   344    155    148     10  g_d0_f3 [ noun - title ] A47 - D39 - X1 - Z2
+---------------
+   109    188      0     12  g_d0_f1 
+   109    188     46     12  g_d0_f1 iry Dbawt
+   155    188      8     12  g_d0_f1  
+   161    187    121     10  g_d0_f2 Guardian of the Ring Seals
+   282    187      7     10  g_d0_f2  
+   288    187    188     10  g_d0_f3 [ noun - title ] A47 - D46 - D58 - D36 - S20
+---------------
+    58    219      0     12  g_d0_f1 
+    58    219     12     12  g_d0_f1 sAi
+    70    219      8     12  g_d0_f1  
+    76    218     24     10  g_d0_f2 await
+   100    218      7     10  g_d0_f2  
+   105    218     78     10  g_d0_f3 [ verb ] A47 - D54
+---------------
+    74    251      0     12  g_d0_f1 
+    74    251     43     12  g_d0_f1 iry rdwy
+   117    251      8     12  g_d0_f1  
+   123    250    101     10  g_d0_f2 Attendant, Guardsman
+   224    250      7     10  g_d0_f2  
+   230    250    133     10  g_d0_f3 [ noun - title ] A47 - D56 - D56
+---------------
+    66    284      0     12  g_d0_f1 
+    66    284     41     12  g_d0_f1 iry ib ?
+   106    284      8     12  g_d0_f1  
+   112    283     21     10  g_d0_f2 wine
+   133    283      7     10  g_d0_f2  
+   139    283    189     10  g_d0_f3 [ noun - food ] A47 - F34 - Z1 - W24 - W24
+---------------
+    74    317      0     12  g_d0_f1 
+    74    317     53     12  g_d0_f1 iry nfr HAt
+   127    317      8     12  g_d0_f1  
+   133    316    107     10  g_d0_f2 Guardian of the Diadem
+   240    316      7     10  g_d0_f2  
+   246    316    146     10  g_d0_f3 [ noun - title ] A47 - F35 - F4 - X1
+---------------
+    83    349      0     12  g_d0_f1 
+    83    349     42     12  g_d0_f1 iry nfryt
+   125    349      8     12  g_d0_f1  
+   131    348     97     10  g_d0_f2 Helmsman, Navigator
+   227    348      7     10  g_d0_f2  
+   233    348    153     10  g_d0_f3 [ noun - title ] A47 - F35 - X1 - P10
+---------------
+    62    380      0     12  g_d0_f1 
+    62    380     46     12  g_d0_f1 iry smAyt
+   107    380      8     12  g_d0_f1  
+   114    379     38     10  g_d0_f2 Archivist
+   152    379      7     10  g_d0_f2  
+   157    379    126     10  g_d0_f3 [ noun - title ] A47 - F36 - X1
+---------------
+    76    412      0     12  g_d0_f1 
+    76    412     17     12  g_d0_f1 sAw
+    93    412      8     12  g_d0_f1  
+    99    411    175     10  g_d0_f2 guard, ward off, restrain, heed, to issue
+   274    411      7     10  g_d0_f2  
+   279    411     99     10  g_d0_f3 [ verb ] A47 - G1 - A24
+---------------
+    86    443      0     12  g_d0_f1 
+    86    443     17     12  g_d0_f1 sAw
+   103    443      8     12  g_d0_f1  
+   109    442    175     10  g_d0_f2 guard, ward off, restrain, heed, to issue
+   284    442      7     10  g_d0_f2  
+   290    442    101     10  g_d0_f3 [ verb ] A47 - G1 - D40
+---------------
+    77    475      0     12  g_d0_f1 
+    77    475     12     12  g_d0_f1 sAi
+    90    475      8     12  g_d0_f1  
+    96    474     84     10  g_d0_f2 linger, await, creep
+   180    474      7     10  g_d0_f2  
+   185    474    101     10  g_d0_f3 [ verb ] A47 - G1 - D54
+---------------
+   133    508      0     12  g_d0_f1 
+   133    508     46     12  g_d0_f1 sAA .ti Hr
+   179    508      8     12  g_d0_f1  
+   185    507    232     10  g_d0_f2 beware, take care not to (do), be sure you don't (do)
+   417    507      7     10  g_d0_f2  
+   423    507    220     10  g_d0_f3 [ verb ] A47 - G1 - G1 - A24 - U33 - M17 - D2 - Z1
+---------------
+   106    540      0     12  g_d0_f1 
+   106    540     21     12  g_d0_f1 sAAw
+   127    540      8     12  g_d0_f1  
+   133    538     31     10  g_d0_f2 protect
+   164    538      7     10  g_d0_f2  
+   170    538    162     10  g_d0_f3 [ verb ] {cryptic} A47 - G1 - G1 - D40
+---------------
+   101    575      0     12  g_d0_f1 
+   101    575     20     12  g_d0_f1 sAwt
+   122    575      8     12  g_d0_f1  
+   128    574    145     10  g_d0_f2 care, caution, custody, detention
+   272    574      7     10  g_d0_f2  
+   278    574    173     10  g_d0_f3 [ noun ] A47 - G1 - G43 - X1 - D40 - Z2
+   421    592      0     10  g_d0_f3 
+   421    592     11     10  g_d0_f3 14
+---------------
+   101     31     20     12  g_d0_f1 sAwt
+   122     31      8     12  g_d0_f1  
+   128     30    150     10  g_d0_f2 watch and ward, warding off (evil)
+   278     30      7     10  g_d0_f2  
+   283     30    171     10  g_d0_f3 [ verb ] A47 - G1 - G43 - X1 - D40 - Z2
+---------------
+   104     63      0     12  g_d0_f1 
+   104     63     26     12  g_d0_f1 sAwty
+   130     63      8     12  g_d0_f1  
+   136     62     62     10  g_d0_f2 guard, protect
+   198     62      7     10  g_d0_f2  
+   203     62    169     10  g_d0_f3 [ verb ] A47 - G1 - G43 - X1 - Z4 - A24
+---------------
+   102     96      0     12  g_d0_f1 
+   102     96     26     12  g_d0_f1 sAwty
+   128     96      8     12  g_d0_f1  
+   134     95     62     10  g_d0_f2 guard, protect
+   196     95      7     10  g_d0_f2  
+   202     95    171     10  g_d0_f3 [ verb ] A47 - G1 - G43 - X1 - Z4 - D40
+---------------
+   103    129      0     12  g_d0_f1 
+   103    129     26     12  g_d0_f1 sAwty
+   129    129      8     12  g_d0_f1  
+   135    127     42     10  g_d0_f2 Guardian
+   176    127      7     10  g_d0_f2  
+   182    127    198     10  g_d0_f3 [ noun - title ] A47 - G1 - G43 - X1 - Z4 - D40
+---------------
+   100    161      0     12  g_d0_f1 
+   100    161     17     12  g_d0_f1 sAw
+   117    161      8     12  g_d0_f1  
+   123    160    183     10  g_d0_f2 break, be broken, be tired (of body parts)
+   306    160     10     10  g_d0_f2  
+   314    160    116     10  g_d0_f3 A47 - G1 - G43 - Z9 - D40
+---------------
+    85    193      0     12  g_d0_f1 
+    85    193     12     12  g_d0_f1 sAi
+    98    193      8     12  g_d0_f1  
+   104    192     61     10  g_d0_f2 sift (flour etc)
+   165    192      7     10  g_d0_f2  
+   170    192    120     10  g_d0_f3 [ verb ] A47 - G1 - Z7 - A24
+---------------
+    84    225      0     12  g_d0_f1 
+    84    225     17     12  g_d0_f1 sAw
+   101    225      8     12  g_d0_f1  
+   107    224    135     10  g_d0_f2 guard, ward off, restrain, heed
+   242    224      7     10  g_d0_f2  
+   247    224    120     10  g_d0_f3 [ verb ] A47 - G1 - Z7 - A24
+---------------
+    96    256      0     12  g_d0_f1 
+    96    256     17     12  g_d0_f1 sAw
+   113    256      8     12  g_d0_f1  
+   119    255     13     10  g_d0_f2 cut
+   132    255      7     10  g_d0_f2  
+   138    255    120     10  g_d0_f3 [ verb ] A47 - G1 - Z7 - T31
+---------------
+   107    288      0     12  g_d0_f1 
+   107    288     17     12  g_d0_f1 sAw
+   124    288      8     12  g_d0_f1  
+   130    287     42     10  g_d0_f2 Defender
+   172    287      7     10  g_d0_f2  
+   177    287    168     10  g_d0_f3 [ noun - title ] A47 - G1 - Z7 - Y1 - A24
+---------------
+    58    320      0     12  g_d0_f1 
+    58    320     17     12  g_d0_f1 sAw
+    75    320      8     12  g_d0_f1  
+    81    319     82     10  g_d0_f2 Guardian, Warden
+   163    319      7     10  g_d0_f2  
+   169    319    106     10  g_d0_f3 [ noun - title ] A47 - G43
+---------------
+    73    351      0     12  g_d0_f1 
+    73    351     26     12  g_d0_f1 mniw
+    99    351      8     12  g_d0_f1  
+   105    350     46     10  g_d0_f2 Herdsman
+   152    350      8     10  g_d0_f2  
+   158    350    127     10  g_d0_f3 [ noun - title ] A47 - G43 - A1
+---------------
+    71    383      0     12  g_d0_f1 
+    71    383     17     12  g_d0_f1 sAw
+    88    383      8     12  g_d0_f1  
+    94    382    135     10  g_d0_f2 guard, ward off, restrain, heed
+   228    382      7     10  g_d0_f2  
+   234    382    105     10  g_d0_f3 [ verb ] A47 - G43 - A24
+---------------
+    81    415      0     12  g_d0_f1 
+    81    415     26     12  g_d0_f1 mniw
+   107    415      8     12  g_d0_f1  
+   113    414     46     10  g_d0_f2 Herdsman
+   159    414      8     10  g_d0_f2  
+   165    414    134     10  g_d0_f3 [ noun - title ] A47 - G43 - D40
+---------------
+   118    447      0     12  g_d0_f1 
+   118    447     41     12  g_d0_f1 sAi iit .f
+   159    447      8     12  g_d0_f1  
+   165    445    132     10  g_d0_f2 one whose coming is awaited
+   297    445      7     10  g_d0_f2  
+   302    445    232     10  g_d0_f3 [ noun ] A47 - G43 - D40 - D21 - M18 - M17 - X1 - I9
+---------------
+    81    478      0     12  g_d0_f1 
+    81    478     39     12  g_d0_f1 iry wdn
+   120    478      8     12  g_d0_f1  
+   126    477    166     10  g_d0_f2 Administrator of the Weden Offerings
+   292    477      7     10  g_d0_f2  
+   298    477    161     10  g_d0_f3 [ noun - title ] A47 - G43 - D46 - N35
+---------------
+   109    510      0     12  g_d0_f1 
+   109    510     38     12  g_d0_f1 iry wDA
+   146    510      8     12  g_d0_f1  
+   152    509    147     10  g_d0_f2 Administrator of the Storehouses
+   299    509      7     10  g_d0_f2  
+   305    509    178     10  g_d0_f3 [ noun - title ] A47 - G43 - U28 - G1 - O1
+---------------
+   106    541      0     12  g_d0_f1 
+   106    541     30     12  g_d0_f1 iry fAt
+   136    541      8     12  g_d0_f1  
+   142    540    100     10  g_d0_f2 Guardian of the Cargo
+   242    540      7     10  g_d0_f2  
+   248    540    167     10  g_d0_f3 [ noun - title ] A47 - I9 - G1 - X1 - D36
+---------------
+    99    573      0     12  g_d0_f1 
+    99    573     41     12  g_d0_f1 iry xtmt
+   140    573      8     12  g_d0_f1  
+   146    572     93     10  g_d0_f2 Guardian of the Seal
+   238    572      8     10  g_d0_f2  
+   244    572    195     10  g_d0_f3 [ noun - title ] A47 - J1 - X1 - G17 - S20 - X1
+   421    592      0     10  g_d0_f3 
+   421    592     11     10  g_d0_f3 15
+---------------
+    79     28     76     12  g_d0_f1 iry xt / iry ixt
+   155     28      8     12  g_d0_f1  
+   161     27    159     10  g_d0_f2 Overseer, Administrator, Supervisor
+   320     27      7     10  g_d0_f2  
+   325     27    161     10  g_d0_f3 [ noun - title ] A47 - J1 - X1 - Y1 - Z2
+---------------
+    79     60      0     12  g_d0_f1 
+    79     60     29     12  g_d0_f1 iry xt
+   107     60      8     12  g_d0_f1  
+   113     59    105     10  g_d0_f2 Overseer, Administrator
+   219     59      7     10  g_d0_f2  
+   224     59    161     10  g_d0_f3 [ noun - title ] A47 - J1 - X1 - Y1 - Z2
+---------------
+    65     91      0     12  g_d0_f1 
+    65     91     38     12  g_d0_f1 iry spAt
+   103     91      8     12  g_d0_f1  
+   109     90     93     10  g_d0_f2 District Administrator
+   201     90      7     10  g_d0_f2  
+   207     90     98     10  g_d0_f3 [ noun - title ] A47 - J8
+---------------
+    74    123      0     12  g_d0_f1 
+    74    123     34     12  g_d0_f1 iry iwf
+   108    123      8     12  g_d0_f1  
+   114    122    174     10  g_d0_f2 Steward of meat, Administrator of meat
+   288    122      7     10  g_d0_f2  
+   293    122    171     10  g_d0_f3 [ noun - title ] A47 - M17 - I9 - F51 - Z3
+---------------
+    57    155      0     12  g_d0_f1 
+    57    155     12     12  g_d0_f1 sAi
+    69    155      8     12  g_d0_f1  
+    75    154     24     10  g_d0_f2 await
+    99    154      7     10  g_d0_f2  
+   104    154    108     10  g_d0_f3 [ verb ] A47 - M17 - M17
+---------------
+    80    187      0     12  g_d0_f1 
+    80    187     39     12  g_d0_f1 iry bnrt
+   120    187      8     12  g_d0_f1  
+   126    186     57     10  g_d0_f2 Confectioner
+   183    186      7     10  g_d0_f2  
+   189    186    176     10  g_d0_f3 [ noun - title ] A47 - M30 - X1 - Z4 - D58
+---------------
+    83    221      0     12  g_d0_f1 
+    83    221     41     12  g_d0_f1 iry n ip
+   123    221      8     12  g_d0_f1  
+   129    220     45     10  g_d0_f2 one adept
+   174    220      7     10  g_d0_f2  
+   180    220    153     10  g_d0_f3 [ noun ] A47 - N35 - M17 - Q3 - Y1
+---------------
+   100    254      0     12  g_d0_f1 
+   100    254     54     12  g_d0_f1 iry n Snaw
+   153    254      8     12  g_d0_f1  
+   159    253    120     10  g_d0_f2 Keeper of the Workhouses
+   279    253      7     10  g_d0_f2  
+   285    253    183     10  g_d0_f3 [ noun - title ] A47 - N35 - U13 - D36 - O1
+---------------
+    99    286      0     12  g_d0_f1 
+    99    286     38     12  g_d0_f1 iry Sspt
+   137    286      8     12  g_d0_f1  
+   143    285    142     10  g_d0_f2 Guardian of the Shespet Kiosks
+   285    285      7     10  g_d0_f2  
+   290    285    200     10  g_d0_f3 [ noun - title ] A47 - N37 - O34 - Q3 - X1 - O1
+---------------
+    72    318      0     12  g_d0_f1 
+    72    318     24     12  g_d0_f1 iry S
+    96    318      8     12  g_d0_f1  
+   102    316    188     10  g_d0_f2 Custodian of gardens, Custodian of plants
+   290    316      7     10  g_d0_f2  
+   295    316    126     10  g_d0_f3 [ noun - title ] A47 - N37 - Z1
+---------------
+    63    349      0     12  g_d0_f1 
+    63    349     39     12  g_d0_f1 iry hpw
+   102    349      8     12  g_d0_f1  
+   108    348     80     10  g_d0_f2 Custodian of laws
+   188    348      7     10  g_d0_f2  
+   194    348    123     10  g_d0_f3 [ noun - title ] A47 - O4 - Q3
+---------------
+    66    381      0     12  g_d0_f1 
+    66    381     31     12  g_d0_f1 iry hp
+    97    381      8     12  g_d0_f1  
+   103    380     80     10  g_d0_f2 Custodian of laws
+   183    380      7     10  g_d0_f2  
+   188    380    144     10  g_d0_f3 [ noun - title ] A47 - O4 - Q3 - Y1
+---------------
+    65    412      0     12  g_d0_f1 
+    65    412     27     12  g_d0_f1 iry aA
+    93    412      8     12  g_d0_f1  
+    99    411     53     10  g_d0_f2 Doorkeeper
+   152    411      7     10  g_d0_f2  
+   157    411    106     10  g_d0_f3 [ noun - title ] A47 - O31
+---------------
+    66    444      0     12  g_d0_f1 
+    66    444     27     12  g_d0_f1 iry aA
+    93    444      8     12  g_d0_f1  
+    99    443     53     10  g_d0_f2 Doorkeeper
+   152    443      7     10  g_d0_f2  
+   157    443    134     10  g_d0_f3 [ noun - title ] A47 - O31 - D40
+---------------
+    78    476      0     12  g_d0_f1 
+    78    476     35     12  g_d0_f1 iry dpt
+   112    476      8     12  g_d0_f1  
+   118    474     97     10  g_d0_f2 Guardian of the boats
+   215    474      7     10  g_d0_f2  
+   221    474    128     10  g_d0_f3 [ noun - title ] A47 - P4B - X1
+---------------
+   110    507      0     12  g_d0_f1 
+   110    507     27     12  g_d0_f1 iry aA
+   137    507      8     12  g_d0_f1  
+   143    506     53     10  g_d0_f2 Doorkeeper
+   196    506      7     10  g_d0_f2  
+   202    506    184     10  g_d0_f3 [ noun - title ] A47 - O29 - D36 - G1 - O31
+---------------
+    92    539      0     12  g_d0_f1 
+    92    539     30     12  g_d0_f1 iry sd
+   122    539      8     12  g_d0_f1  
+   128    538    131     10  g_d0_f2 Keeper of the Divine Clothing
+   259    538      7     10  g_d0_f2  
+   265    538    208     10  g_d0_f3 [ noun - title ] A47 - S29 - D46 - N21 - N33 - Z2
+---------------
+    93    570      0     12  g_d0_f1 
+    93    570     41     12  g_d0_f1 iry sSrw
+   134    570      8     12  g_d0_f1  
+   140    569    207     10  g_d0_f2 Administrator of linen, Administrator of laundry
+   347    569      7     10  g_d0_f2  
+   352    569    207     10  g_d0_f3 [ noun - title ] A47 - S29 - N37 - D21 - T67 - Z3
+   421    592      0     10  g_d0_f3 
+   421    592     11     10  g_d0_f3 16
+---------------
+    96     28     36     12  g_d0_f1 iry sHD
+   132     28      8     12  g_d0_f1  
+   138     27     90     10  g_d0_f2 Controller of leprosy
+   229     27      7     10  g_d0_f2  
+   234     27    189     10  g_d0_f3 [ noun - title ] A47 - S29 - T3 - I10 - J2 - Z2
+---------------
+    69     60      0     12  g_d0_f1 
+    69     60     37     12  g_d0_f1 iry sSm
+   107     60      8     12  g_d0_f1  
+   113     59     53     10  g_d0_f2 Functionary
+   165     59      7     10  g_d0_f2  
+   171     59    131     10  g_d0_f3 [ noun - title ] A47 - S29 - T32
+---------------
+    67     91      0     12  g_d0_f1 
+    67     91     60     12  g_d0_f1 iry Tbti nsw
+   127     91      8     12  g_d0_f1  
+   133     90    128     10  g_d0_f2 Keeper of the King's sandals
+   261     90      7     10  g_d0_f2  
+   267     90    134     10  g_d0_f3 [ noun - title ] A47 - S33 - M23
+---------------
+    65    123      0     12  g_d0_f1 
+    65    123     35     12  g_d0_f1 iry pDt
+   100    123      8     12  g_d0_f1  
+   106    122     39     10  g_d0_f2 Bowman
+   145    122      7     10  g_d0_f2  
+   150    122    146     10  g_d0_f3 [ noun - title ] A47 - T10 - X1 - Z1
+---------------
+    65    155      0     12  g_d0_f1 
+    65    155     42     12  g_d0_f1 iry mxAt
+   107    155      8     12  g_d0_f1  
+   113    154     66     10  g_d0_f2 Chief of scales
+   179    154      7     10  g_d0_f2  
+   184    154    106     10  g_d0_f3 [ noun - title ] A47 - U38
+---------------
+    63    188      0     12  g_d0_f1 
+    63    188     21     12  g_d0_f1 iryw
+    84    188      8     12  g_d0_f1  
+    90    187     43     10  g_d0_f2 clothing ?
+   133    187      7     10  g_d0_f2  
+   139    187    120     10  g_d0_f3 [ noun - clo. ] A47 - V6 - Z2
+---------------
+    69    220      0     12  g_d0_f1 
+    69    220     29     12  g_d0_f1 iry aD
+    98    220      8     12  g_d0_f1  
+   104    219    146     10  g_d0_f2 Administrator of fat and grease ?
+   251    219      7     10  g_d0_f2  
+   256    219    153     10  g_d0_f3 [ noun - title ] A47 - V27 - N33 - Z2
+---------------
+    63    252      0     12  g_d0_f1 
+    63    252     13     12  g_d0_f1 iry
+    76    252      8     12  g_d0_f1  
+    82    251     81     10  g_d0_f2 ointment, unguent
+   163    251      7     10  g_d0_f2  
+   168    251    104     10  g_d0_f3 [ noun ] A47 - W24 - Z2
+---------------
+    88    285      0     12  g_d0_f1 
+    88    285     26     12  g_d0_f1 iry at
+   114    285      8     12  g_d0_f1  
+   120    284    230     10  g_d0_f2 female Hallkeeper, female Keeper of the Storeroom
+   350    284      7     10  g_d0_f2  
+   355    284    212     10  g_d0_f3 [ feminine noun - title ] A47 - X1 - D36 - X1 - O1
+---------------
+    62    316      0     12  g_d0_f1 
+    62    316     11     12  g_d0_f1 irt
+    73    316      8     12  g_d0_f1  
+    79    315     81     10  g_d0_f2 duty (of someone)
+   161    315      7     10  g_d0_f2  
+   166    315     96     10  g_d0_f3 [ noun ] A47 - X1 - Z2
+---------------
+   120    348      0     12  g_d0_f1 
+   120    348     13     12  g_d0_f1 sAA
+   133    348      8     12  g_d0_f1  
+   139    347     62     10  g_d0_f2 guard, protect
+   201    347      7     10  g_d0_f2  
+   207    347    199     10  g_d0_f3 [ verb ] A47 - X1 - Z4A - G1 - G1 - N21 - D40
+---------------
+    52    380      0     12  g_d0_f1 
+    52    380     11     12  g_d0_f1 irt
+    64    380      8     12  g_d0_f1  
+    70    379     81     10  g_d0_f2 duty (of someone)
+   151    379      7     10  g_d0_f2  
+   156    379    102     10  g_d0_f3 [ noun ] A47 - Y1V - Z3
+---------------
+    73    414      0     12  g_d0_f1 
+    73    414     53     12  g_d0_f1 iry nfr HAt
+   126    414      8     12  g_d0_f1  
+   132    413     98     10  g_d0_f2 Keeper of the Diadem
+   230    413      7     10  g_d0_f2  
+   236    413    167     10  g_d0_f3 [ noun - title ] A48 - F35 - F4 - X1 - Z1
+---------------
+    82    446      0     12  g_d0_f1 
+    82    446     27     12  g_d0_f1 iry aA
+   110    446      8     12  g_d0_f1  
+   116    445     53     10  g_d0_f2 Doorkeeper
+   169    445      7     10  g_d0_f2  
+   174    445    155     10  g_d0_f3 [ noun - title ] A48 - O29 - O31 - A1
+---------------
+    76    480      0     12  g_d0_f1 
+    76    480     53     12  g_d0_f1 iry nfr HAt
+   129    480      8     12  g_d0_f1  
+   135    479    211     10  g_d0_f2 Guardian of the Diadem, Keeper of the Diadem
+   346    479      7     10  g_d0_f2  
+   351    479    167     10  g_d0_f3 [ noun - title ] A49 - F35 - F4 - X1 - Z1
+---------------
+    84    512      0     12  g_d0_f1 
+    84    512     27     12  g_d0_f1 iry aA
+   112    512      8     12  g_d0_f1  
+   118    510     53     10  g_d0_f2 Doorkeeper
+   171    510      7     10  g_d0_f2  
+   176    510    155     10  g_d0_f3 [ noun - title ] A49 - O29 - O31 - A1
+---------------
+    45    543      0     12  g_d0_f1 
+    45    543      3     12  g_d0_f1 i
+    48    543      8     12  g_d0_f1  
+    54    542     41     10  g_d0_f2 I, me, my
+    95    542      7     10  g_d0_f2  
+   101    542     95     10  g_d0_f3 [ suffix pronoun ] A50
+---------------
+    82    575      0     12  g_d0_f1 
+    82    575     23     12  g_d0_f1 Spsw
+   105    575      8     12  g_d0_f1  
+   111    574     98     10  g_d0_f2 Costly Offerings, Gifts
+   209    574      7     10  g_d0_f2  
+   215    574    102     10  g_d0_f3 [ noun ] A50 - G43 - Z2
+   421    592      0     10  g_d0_f3 
+   421    592     11     10  g_d0_f3 17
+---------------
+    53     28     15     12  g_d0_f1 Sps
+    68     28      8     12  g_d0_f1  
+    75     27     60     10  g_d0_f2 image, statue
+   135     27      7     10  g_d0_f2  
+   141     27     81     10  g_d0_f3 [ noun ] A50 - S29
+---------------
+    68     60      0     12  g_d0_f1 
+    68     60     54     12  g_d0_f1 Sps / Spsw
+   123     60      8     12  g_d0_f1  
+   129     59    106     10  g_d0_f2 nobleman, wealthy man
+   235     59      7     10  g_d0_f2  
+   240     59    101     10  g_d0_f3 [ noun ] A50 - S29 - A1
+---------------
+    73     91      0     12  g_d0_f1 
+    73     91     15     12  g_d0_f1 Sps
+    89     91      8     12  g_d0_f1  
+    95     90     55     10  g_d0_f2 tomb chapel
+   150     90      7     10  g_d0_f2  
+   155     90    134     10  g_d0_f3 [ noun - arch. ] A50 - S29 - O1
+---------------
+    73    123      0     12  g_d0_f1 
+    73    123     23     12  g_d0_f1 Spsst
+    97    123      8     12  g_d0_f1  
+   103    122     57     10  g_d0_f2 noblewoman
+   160    122      7     10  g_d0_f2  
+   165    122    129     10  g_d0_f3 [ noun ] A50 - S29 - S29 - X1
+---------------
+    83    155      0     12  g_d0_f1 
+    83    155     28     12  g_d0_f1 Spssw
+   111    155      8     12  g_d0_f1  
+   117    154    210     10  g_d0_f2 riches, wealth, precious things, dainties (to eat)
+   327    154      7     10  g_d0_f2  
+   333    154    178     10  g_d0_f3 [ noun - food ] A50 - S29 - S29 - Y1 - Z2
+---------------
+    66    187      0     12  g_d0_f1 
+    66    187     20     12  g_d0_f1 Spss
+    86    187      8     12  g_d0_f1  
+    92    186    310     10  g_d0_f2 noble, august, well esteemed, splendid, rich, enrich, value (someone)
+   402    186      7     10  g_d0_f2  
+   407    186    152     10  g_d0_f3 [ adjective ] A50 - S29 - S29 - Y1V
+---------------
+    82    219      0     12  g_d0_f1 
+    82    219     20     12  g_d0_f1 Spss
+   102    219      8     12  g_d0_f1  
+   108    218    106     10  g_d0_f2 wealthy man, nobleman
+   215    218      7     10  g_d0_f2  
+   220    218    156     10  g_d0_f3 [ noun ] A50 - S29 - S29 - Y1V - A1
+---------------
+    74    250      0     12  g_d0_f1 
+    74    250     15     12  g_d0_f1 Sps
+    89    250      8     12  g_d0_f1  
+    95    249     30     10  g_d0_f2 august
+   125    249      7     10  g_d0_f2  
+   131    249    146     10  g_d0_f3 [ adjective ] A50 - S29 - S29 - Z4
+---------------
+    73    282      0     12  g_d0_f1 
+    73    282     19     12  g_d0_f1 Spst
+    91    282      8     12  g_d0_f1  
+    97    281     36     10  g_d0_f2 ritual jar
+   133    281      7     10  g_d0_f2  
+   139    281    161     10  g_d0_f3 [ noun - furn. ] A50 - S29 - X1 - W14
+---------------
+    76    314      0     12  g_d0_f1 
+    76    314     19     12  g_d0_f1 Spst
+    95    314      8     12  g_d0_f1  
+   101    312     36     10  g_d0_f2 ritual jar
+   137    312      7     10  g_d0_f2  
+   142    312    161     10  g_d0_f3 [ noun - furn. ] A50 - S29 - X1 - W65
+---------------
+    89    345      0     12  g_d0_f1 
+    89    345     19     12  g_d0_f1 Spst
+   108    345      8     12  g_d0_f1  
+   114    344    134     10  g_d0_f2 noblewoman, the sublime one
+   248    344      8     10  g_d0_f2  
+   253    344    144     10  g_d0_f3 [ noun ] A50 - S29 - X1 - Y1 - B1
+---------------
+    78    380      0     12  g_d0_f1 
+    78    380     28     12  g_d0_f1 Spssw
+   106    380      8     12  g_d0_f1  
+   112    379     27     10  g_d0_f2 riches
+   139    379      7     10  g_d0_f2  
+   144    379    143     10  g_d0_f3 [ noun ] A50 - S29 - X1 - Y1 - Z2
+---------------
+    74    412      0     12  g_d0_f1 
+    74    412     21     12  g_d0_f1 Spsy
+    94    412      8     12  g_d0_f1  
+   100    411     11     10  g_d0_f2 jar
+   111    411      7     10  g_d0_f2  
+   117    411    160     10  g_d0_f3 [ noun - furn. ] A50 - S29 - Z4 - W14
+---------------
+    76    444      0     12  g_d0_f1 
+    76    444     21     12  g_d0_f1 Spsy
+    97    444      8     12  g_d0_f1  
+   103    443    292     10  g_d0_f2 noble, august (of gods), splendid (of buildings), elegant, luxurious
+   395    443      7     10  g_d0_f2  
+   401    443    139     10  g_d0_f3 [ adjective ] A50 - S29 - Z4 - Y1
+---------------
+    77    475      0     12  g_d0_f1 
+    77    475     21     12  g_d0_f1 Spsy
+    97    475      8     12  g_d0_f1  
+   103    474    160     10  g_d0_f2 valuable (of plants, minerals), costly
+   264    474      7     10  g_d0_f2  
+   269    474    139     10  g_d0_f3 [ adjective ] A50 - S29 - Z4 - Y1
+---------------
+    73    508      0     12  g_d0_f1 
+    73    508     15     12  g_d0_f1 Sps
+    88    508      8     12  g_d0_f1  
+    94    507     68     10  g_d0_f2 (a plant, a fruit)
+   162    507      7     10  g_d0_f2  
+   167    507    175     10  g_d0_f3 [ noun - flora - food ] A50 - Z1 - M2 - Z2
+---------------
+    61    540      0     12  g_d0_f1 
+    61    540     15     12  g_d0_f1 Sps
+    76    540      8     12  g_d0_f1  
+    82    539     47     10  g_d0_f2 tombstone
+   129    539      7     10  g_d0_f2  
+   135    539    134     10  g_d0_f3 [ noun - arch. ] A50 - Z1 - O39
+---------------
+    80    576      0     12  g_d0_f1 
+    80    576     23     12  g_d0_f1 Spsw
+   104    576      8     12  g_d0_f1  
+   110    575     58     10  g_d0_f2 August Ones
+   168    575      7     10  g_d0_f2  
+   174    575    143     10  g_d0_f3 [ noun ] A50 - Z1 - S29 - A1 - Z2
+   421    592      0     10  g_d0_f3 
+   421    592     11     10  g_d0_f3 18
+---------------
+    67     28     15     12  g_d0_f1 Sps
+    82     28      8     12  g_d0_f1  
+    88     27     25     10  g_d0_f2 noble
+   113     27      7     10  g_d0_f2  
+   119     27    212     10  g_d0_f3 [ adjective ] {late egyptian} A50 - Z1 - S29 - S29
+---------------
+    73     59      0     12  g_d0_f1 
+    73     59     21     12  g_d0_f1 Spsy
+    93     59      8     12  g_d0_f1  
+    99     58     25     10  g_d0_f2 noble
+   124     58      7     10  g_d0_f2  
+   130     58    206     10  g_d0_f3 [ adjective ] {late egyptian} A50 - Z1 - S29 - Z4
+---------------
+    45     91      0     12  g_d0_f1 
+    45     91     21     12  g_d0_f1 Spsy
+    66     91      8     12  g_d0_f1  
+    72     90    207     10  g_d0_f2 noble, august (of gods), splendid (of buildings)
+   279     90      7     10  g_d0_f2  
+   285     90     71     10  g_d0_f3 [ adjective ] A51
+---------------
+    45    123      0     12  g_d0_f1 
+    45    123     15     12  g_d0_f1 Sps
+    60    123      8     12  g_d0_f1  
+    66    121     99     10  g_d0_f2 to establish, to endure
+   166    121      7     10  g_d0_f2  
+   171    121     51     10  g_d0_f3 [ verb ] A51
+---------------
+    45    154      0     12  g_d0_f1 
+    45    154     21     12  g_d0_f1 Spsy
+    66    154      8     12  g_d0_f1  
+    72    153    160     10  g_d0_f2 valuable (of plants, minerals), costly
+   232    153      7     10  g_d0_f2  
+   238    153     71     10  g_d0_f3 [ adjective ] A51
+---------------
+    66    190      0     12  g_d0_f1 
+    66    190     15     12  g_d0_f1 Sps
+    81    190      8     12  g_d0_f1  
+    87    189     30     10  g_d0_f2 nobles
+   117    189      7     10  g_d0_f2  
+   123    189     95     10  g_d0_f3 [ noun ] A51 - A1 - Z2
+---------------
+    66    222      0     12  g_d0_f1 
+    66    222     15     12  g_d0_f1 Sps
+    81    222      8     12  g_d0_f1  
+    87    220     30     10  g_d0_f2 august
+   118    220      7     10  g_d0_f2  
+   123    220     94     10  g_d0_f3 [ adjective ] A51 - G7
+---------------
+    69    253      0     12  g_d0_f1 
+    69    253     15     12  g_d0_f1 Sps
+    85    253      8     12  g_d0_f1  
+    91    252     99     10  g_d0_f2 to establish, to endure
+   190    252      7     10  g_d0_f2  
+   196    252     79     10  g_d0_f3 [ verb ] A51 - O34
+---------------
+    69    285      0     12  g_d0_f1 
+    69    285     15     12  g_d0_f1 Sps
+    85    285      8     12  g_d0_f1  
+    91    284     30     10  g_d0_f2 august
+   121    284      7     10  g_d0_f2  
+   127    284     99     10  g_d0_f3 [ adjective ] A51 - O34
+---------------
+    68    316      0     12  g_d0_f1 
+    68    316     15     12  g_d0_f1 Sps
+    84    316      8     12  g_d0_f1  
+    90    315     30     10  g_d0_f2 august
+   120    315      7     10  g_d0_f2  
+   126    315    120     10  g_d0_f3 [ adjective ] A51 - O34 - Z4
+---------------
+    53    348      0     12  g_d0_f1 
+    53    348     15     12  g_d0_f1 Sps
+    69    348      8     12  g_d0_f1  
+    75    347     90     10  g_d0_f2 a noble thing (to do)
+   165    347      7     10  g_d0_f2  
+   170    347     81     10  g_d0_f3 [ noun ] A51 - S29
+---------------
+    53    380      0     12  g_d0_f1 
+    53    380     51     12  g_d0_f1 Spsy / Sps
+   105    380      8     12  g_d0_f1  
+   111    379    257     10  g_d0_f2 noble, august (of gods), splendid (of buildings), venerable
+   368    379      7     10  g_d0_f2  
+   374    379     98     10  g_d0_f3 [ adjective ] A51 - S29
+---------------
+    66    411      0     12  g_d0_f1 
+    66    411     21     12  g_d0_f1 Spsy
+    87    411      8     12  g_d0_f1  
+    93    410     54     10  g_d0_f2 noble ladies
+   147    410      7     10  g_d0_f2  
+   153    410    102     10  g_d0_f3 [ noun ] A51 - S29 - B1
+---------------
+    69    443      0     12  g_d0_f1 
+    69    443     15     12  g_d0_f1 Sps
+    84    443      8     12  g_d0_f1  
+    90    442     26     10  g_d0_f2 costly
+   116    442      7     10  g_d0_f2  
+   121    442    126     10  g_d0_f3 [ adjective ] A51 - S29 - G43
+---------------
+    74    475      0     12  g_d0_f1 
+    74    475     15     12  g_d0_f1 Sps
+    89    475      8     12  g_d0_f1  
+    95    474     90     10  g_d0_f2 noble, splendid, rich
+   185    474      7     10  g_d0_f2  
+   190    474    120     10  g_d0_f3 [ adjective ] A51 - S29 - G7
+---------------
+   101    512      0     12  g_d0_f1 
+   101    512     21     12  g_d0_f1 Spsy
+   122    512      8     12  g_d0_f1  
+   128    511     57     10  g_d0_f2 noblewomen
+   185    511      7     10  g_d0_f2  
+   190    511    201     10  g_d0_f3 [ noun ] A51 - S29 - M17 - M17 - X1 - B1 - Z2
+---------------
+    77    543      0     12  g_d0_f1 
+    77    543     28     12  g_d0_f1 Spssw
+   105    543      8     12  g_d0_f1  
+   111    542    210     10  g_d0_f2 riches, wealth, precious things, dainties (to eat)
+   321    542      7     10  g_d0_f2  
+   327    542    171     10  g_d0_f3 [ noun - food ] A51 - S29 - O34 - N33A
+---------------
+    70    575      0     12  g_d0_f1 
+    70    575     28     12  g_d0_f1 Spssw
+    98    575      8     12  g_d0_f1  
+   104    574     39     10  g_d0_f2 to enrich
+   143    574      7     10  g_d0_f2  
+   149    574    140     10  g_d0_f3 [ verb ] A51 - S29 - S29 - M33A
+   421    592      0     10  g_d0_f3 
+   421    592     11     10  g_d0_f3 19
+---------------
+    84     28     25     12  g_d0_f1 Spssy
+   109     28      8     12  g_d0_f1  
+   115     27    226     10  g_d0_f2 precious things, luxuries, riches, wealth, delicacies
+   341     27      7     10  g_d0_f2  
+   346     27    177     10  g_d0_f3 [ plural noun ] A51 - S29 - S29 - Y1 - Z2
+---------------
+    83     60      0     12  g_d0_f1 
+    83     60     15     12  g_d0_f1 Sps
+    99     60      8     12  g_d0_f1  
+   105     59     30     10  g_d0_f2 august
+   135     59      7     10  g_d0_f2  
+   141     59    166     10  g_d0_f3 [ adjective ] A51 - S29 - S29 - Z4 - Y1
+---------------
+    66     91      0     12  g_d0_f1 
+    66     91     15     12  g_d0_f1 Sps
+    81     91      8     12  g_d0_f1  
+    87     90     87     10  g_d0_f2 august, magnificent
+   174     90      7     10  g_d0_f2  
+   180     90    119     10  g_d0_f3 [ adjective ] A51 - S29 - X1
+---------------
+    76    123      0     12  g_d0_f1 
+    76    123     15     12  g_d0_f1 Sps
+    91    123      8     12  g_d0_f1  
+    97    122     38     10  g_d0_f2 precious
+   136    122      7     10  g_d0_f2  
+   141    122    140     10  g_d0_f3 [ adjective ] A51 - S29 - X1 - Y1
+---------------
+    90    155      0     12  g_d0_f1 
+    90    155     21     12  g_d0_f1 Spsy
+   110    155      8     12  g_d0_f1  
+   116    154     19     10  g_d0_f2 lady
+   135    154      7     10  g_d0_f2  
+   141    154    144     10  g_d0_f3 [ noun ] A51 - S29 - X1 - Y1 - B1
+---------------
+    76    189      0     12  g_d0_f1 
+    76    189     28     12  g_d0_f1 Spssw
+   104    189      8     12  g_d0_f1  
+   110    188     27     10  g_d0_f2 riches
+   137    188      7     10  g_d0_f2  
+   143    188    143     10  g_d0_f3 [ noun ] A51 - S29 - X1 - Y1 - Z2
+---------------
+    76    221      0     12  g_d0_f1 
+    76    221     15     12  g_d0_f1 Sps
+    91    221      8     12  g_d0_f1  
+    97    219    165     10  g_d0_f2 noble, splendid, rich, valuable, costly
+   262    219      7     10  g_d0_f2  
+   268    219    119     10  g_d0_f3 [ adjective ] A51 - S29 - Y1
+---------------
+   120    252      0     12  g_d0_f1 
+   120    252     21     12  g_d0_f1 Spsy
+   141    252      8     12  g_d0_f1  
+   147    251     54     10  g_d0_f2 noble ladies
+   201    251      7     10  g_d0_f2  
+   206    251    222     10  g_d0_f3 [ noun ] A51 - S29 - Y1 - M17 - M17 - X1 - J2 - I12
+---------------
+    97    284      0     12  g_d0_f1 
+    97    284     15     12  g_d0_f1 Sps
+   112    284      8     12  g_d0_f1  
+   118    283     26     10  g_d0_f2 costly
+   144    283      7     10  g_d0_f2  
+   150    283    140     10  g_d0_f3 [ adjective ] A51 - S29 - Y1 - Z2
+---------------
+    79    315      0     12  g_d0_f1 
+    79    315     21     12  g_d0_f1 Spsy
+    99    315      8     12  g_d0_f1  
+   105    314     57     10  g_d0_f2 noblewomen
+   163    314      7     10  g_d0_f2  
+   168    314    122     10  g_d0_f3 [ noun ] A51 - S29 - Z4 - B1
+---------------
+    86    347      0     12  g_d0_f1 
+    86    347     21     12  g_d0_f1 Spsy
+   107    347      8     12  g_d0_f1  
+   113    346     57     10  g_d0_f2 noblewomen
+   170    346      7     10  g_d0_f2  
+   176    346    124     10  g_d0_f3 [ noun ] A51 - S29 - Z4 - G7
+---------------
+    76    379      0     12  g_d0_f1 
+    76    379     21     12  g_d0_f1 Spsy
+    97    379      8     12  g_d0_f1  
+   103    378    292     10  g_d0_f2 noble, august (of gods), splendid (of buildings), elegant, luxurious
+   395    378      7     10  g_d0_f2  
+   401    378    139     10  g_d0_f3 [ adjective ] A51 - S29 - Z4 - Y1
+---------------
+    77    410      0     12  g_d0_f1 
+    77    410     21     12  g_d0_f1 Spsy
+    97    410      8     12  g_d0_f1  
+   103    409     83     10  g_d0_f2 nobleness, nobility
+   186    409      7     10  g_d0_f2  
+   192    409    122     10  g_d0_f3 [ noun ] A51 - S29 - Z4 - Y1
+---------------
+    89    442      0     12  g_d0_f1 
+    89    442     15     12  g_d0_f1 Sps
+   104    442      8     12  g_d0_f1  
+   110    441     90     10  g_d0_f2 noble, splendid, rich
+   200    441      7     10  g_d0_f2  
+   206    441    166     10  g_d0_f3 [ adjective ] A51 - S29 - Z4 - Y1 - A40
+---------------
+    97    474      0     12  g_d0_f1 
+    97    474     15     12  g_d0_f1 Sps
+   112    474      8     12  g_d0_f1  
+   118    473     38     10  g_d0_f2 valuable
+   156    473      7     10  g_d0_f2  
+   161    473    162     10  g_d0_f3 [ adjective ] A51 - S29 - Z4 - Y1 - G7
+---------------
+    86    506      0     12  g_d0_f1 
+    86    506     21     12  g_d0_f1 Spsy
+   106    506      8     12  g_d0_f1  
+   112    505     30     10  g_d0_f2 nobles
+   142    505      7     10  g_d0_f2  
+   148    505    149     10  g_d0_f3 [ noun ] A51 - S29 - Z4 - Y1 - Z3A
+---------------
+    45    537      0     12  g_d0_f1 
+    45    537     21     12  g_d0_f1 Spsy
+    66    537      8     12  g_d0_f1  
+    72    536     99     10  g_d0_f2 splendid (of buildings)
+   170    536      7     10  g_d0_f2  
+   176    536     77     10  g_d0_f3 [ adjective ] A51F
+---------------
+    73    569      0     12  g_d0_f1 
+    73    569     28     12  g_d0_f1 Spssw
+   101    569      8     12  g_d0_f1  
+   107    568    210     10  g_d0_f2 riches, wealth, precious things, dainties (to eat)
+   317    568      7     10  g_d0_f2  
+   323    568    159     10  g_d0_f3 [ noun - food ] A52 - O34 - O34 - Y1
+   421    592      0     10  g_d0_f3 
+   421    592     11     10  g_d0_f3 20
+---------------

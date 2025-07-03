@@ -1,0 +1,59 @@
+{
+  "name": "dictionary-parser",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/dictionary-parser/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/dictionary-parser",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/dictionary-parser/src/main.ts",
+        "tsConfig": "apps/dictionary-parser/tsconfig.app.json",
+        "assets": ["apps/dictionary-parser/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "dictionary-parser:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "dictionary-parser:build:development"
+        },
+        "production": {
+          "buildTarget": "dictionary-parser:build:production"
+        }
+      }
+    }
+  }
+}
