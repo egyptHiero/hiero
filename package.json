@@ -2,12 +2,17 @@
   "name": "@hiero/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "@nx/js": "21.2.1",
     "@nx/workspace": "21.2.1",
-    "nx": "21.2.1"
+    "nx": "21.2.1",
+    "vitepress": "^1.6.3",
+    "vitepress-sidebar": "^1.31.1"
   }
 }
