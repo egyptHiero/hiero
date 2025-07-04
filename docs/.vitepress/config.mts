@@ -9,6 +9,7 @@ const vitePressOptions = {
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
     },
+    base: '/hiero/'
 };
 
 const vitePressSidebarOptions = {
