@@ -15,12 +15,12 @@ outline: deep
 Создаем библиотеку, добавляем npm-зависимости:
 
 ```shell
-$ npx nx g @nx/js:lib packages/db
+$ npx nx g @nx/js:lib libs/db
 ✔ Which bundler would you like to use to build the library? Choose 'none' to skip build setup. · rollup
 ✔ Which linter would you like to use? · eslint
 ✔ Which unit test runner would you like to use? · vitest
 
-$ npm i -D classic-level memory-level short-unique-id
+$ npm i classic-level memory-level short-unique-id
 ```
 
 ## LevelDb

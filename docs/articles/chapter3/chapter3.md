@@ -12,18 +12,11 @@ outline: deep
 ::: code-group
 
 ```bash  [Команда]
-$ npx create-nx-workspace@latest hiero --preset=react-monorepo
+$ npx create-nx-workspace@latest hiero --preset=apps
 ```
 
 ```ansi [Визард]
 NX Let's create a new workspace [https://nx.dev/getting-started/intro]
-✔ Application name · web
-✔ Which bundler would you like to use? · vite
-✔ Which unit test runner would you like to use? · vitest
-✔ Test runner to use for end to end (E2E) tests · playwright
-✔ Default stylesheet format · @emotion/styled
-✔ Would you like to use ESLint? · Yes
-✔ Would you like to use Prettier for code formatting? · Yes
 ✔ Which CI provider would you like to use? · github
 ```
 

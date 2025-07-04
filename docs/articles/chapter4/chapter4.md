@@ -46,3 +46,9 @@ $ npm i -D vitepress-sidebar
 ```
 и прописал настройки в файле `.vitepress/config.mts`.
 
+### Деплой на github pages
+
+[Процесс деплоя](https://vitepress.dev/guide/deploy#github-pages) детально описан на официальном сайте. Правда есть
+еще пара тонкостей
+- во-первых, задать бранч в настройках приложения https://github.com/[name]/[project]/settings/pages
+- во-вторых, нужно прописать базовый путь
