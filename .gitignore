@@ -5,6 +5,9 @@ dist
 tmp
 out-tsc
 
+# created artifacts
+/data
+
 # dependencies
 node_modules
 
@@ -43,7 +46,9 @@ Thumbs.db
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
 
+# vitepress
 docs/.vitepress/cache
 
+# vitetest
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
