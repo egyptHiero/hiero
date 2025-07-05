@@ -34,14 +34,13 @@ export const fillTableFromFile = async (
 ) => {
   const db = await dbPromise;
   const fullFileName = path.join(NDJSON_DIR, fileName);
-  const reader = await iterateDictionaryReader(
+  const reader = await iterateDictionaryReader<[string, unknown]>(
     fs
       .createReadStream(fullFileName, { autoClose: true })
       .pipe(parse())
   );
   const table = await openTable(db, reader.info);
-  // todo: remove any
-  await DbUtils.update(table, reader.iterator as any);
+  await DbUtils.update(table, reader.iterator);
   consoleProgress[fileName].success(`file ${fileName} was successfully loaded to db.`);
 
   // todo: update record count

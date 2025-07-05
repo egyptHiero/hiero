@@ -15,9 +15,9 @@ const isDictionaryInfo = (
   return !!dictionary.name && !!dictionary.language && !!dictionary.type;
 };
 
-type TIterateDictionaryReader = (readStream: Transform) => Promise<{
+type TIterateDictionaryReader = <T>(readStream: Transform) => Promise<{
   info: DictionaryInfo;
-  iterator: AsyncGenerator;
+  iterator: AsyncGenerator<T>;
 }>;
 
 /**
