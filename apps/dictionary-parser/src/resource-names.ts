@@ -1,5 +1,6 @@
 import { Dictionary } from './types';
 import path from 'node:path';
+import {RESOURCES_DIR} from "@hiero/common";
 
 const getFileName = (dictionary: Dictionary) => {
   switch (dictionary) {
@@ -13,5 +14,5 @@ const getFileName = (dictionary: Dictionary) => {
 };
 
 export const getResource = (dictionary: Dictionary) => {
-  return path.join('./resources', getFileName(dictionary));
+  return path.join(RESOURCES_DIR, getFileName(dictionary));
 };

@@ -79,6 +79,7 @@ $ npm i pdf.js-extract arg
 
 ```bash
 $ npm i ndjson
+$ npm i -D @types/ndjson
 ```
 
 ## Аргументы командной строки

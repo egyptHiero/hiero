@@ -53,7 +53,7 @@ const showHelp = () => {
   console.log();
   console.log('Examples:');
   console.log('\t# Process all the dictionaries');
-  console.log('\tnpm run parse-dictionary -- ancient vygus heroes');
+  console.log('\tnpm run parse-dictionary -- ancient vygus hieroes');
   console.log();
   console.log("\t# Process 'ancient' dictionary from page 2 to 5 with debug");
   console.log('\tnpm run parse-dictionary -- ancient --from=2 --to=5 --debug');

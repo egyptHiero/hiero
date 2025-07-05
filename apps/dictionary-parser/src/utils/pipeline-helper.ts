@@ -1,13 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { pipeline } from 'stream';
-import { PdfExtractorTransformer } from '../transformers/pdf-extractor-transformer';
-import { stringify } from 'ndjson';
-import { TPdfParseProcessor } from '../types';
-import { Transform } from 'node:stream';
-import {consoleProgress} from "@hiero/common";
-
-const NDJSON_DIR = './data/ndjson';
+import {pipeline} from 'stream';
+import {PdfExtractorTransformer} from '../transformers/pdf-extractor-transformer';
+import {stringify} from 'ndjson';
+import {TPdfParseProcessor} from '../types';
+import {Transform} from 'node:stream';
+import {consoleProgress, NDJSON_DIR} from "@hiero/common";
 
 export const createPipeline = (
   writer: Transform,
@@ -24,7 +22,7 @@ export const createPipeline = (
 
   const fullFileName = path.join(NDJSON_DIR, fileName);
 
-  fs.mkdirSync(NDJSON_DIR, { recursive: true });
+  fs.mkdirSync(NDJSON_DIR, {recursive: true});
   outputStreams.push(
     fs.createWriteStream(fullFileName, {
       flags: 'w',
