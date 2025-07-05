@@ -4,7 +4,7 @@ import { parse } from 'ndjson';
 import * as fs from 'node:fs';
 import path from "node:path";
 
-const dbPromise = createDbInstance();
+export const dbPromise = createDbInstance();
 type TInfo = Awaited<ReturnType<typeof iterateDictionaryReader>>['info'];
 
 const openTable: (db: DB, props: TInfo) => Promise<DbTable<any>> = async (
@@ -46,4 +46,3 @@ export const fillTableFromFile = async (
 
   // todo: update record count
 };
-

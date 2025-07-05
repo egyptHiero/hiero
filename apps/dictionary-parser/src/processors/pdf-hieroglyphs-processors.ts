@@ -47,7 +47,7 @@ class LetterClassificationProcessor extends PdfHieroglyphsTableProcessor<string>
   }
 
   getOutputFileName(): string {
-    return 'hieroglyphs-classification.json';
+    return 'hieroglyphs-classification.ndjson';
   }
 }
 
