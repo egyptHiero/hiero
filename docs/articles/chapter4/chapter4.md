@@ -39,7 +39,7 @@ $ npx nx dev docs
 
 ### Автогенерация сайдбара
 
-Для автоматической генерации оглавления и переходов вперед-назад добаил
+Для автоматической генерации оглавления и переходов вперед-назад добавил
 плагин [vitepress-sidebar](https://vitepress.dev/reference/default-theme-sidebar)
 ```bash
 $ npm i -D vitepress-sidebar
@@ -50,5 +50,5 @@ $ npm i -D vitepress-sidebar
 
 [Процесс деплоя](https://vitepress.dev/guide/deploy#github-pages) детально описан на официальном сайте. Правда есть
 еще пара тонкостей
-- во-первых, задать бранч в настройках приложения https://github.com/[name]/[project]/settings/pages
+- во-первых, задать бранч в настройках приложения - https://github.com/[name]/[project]/settings/pages
 - во-вторых, нужно прописать базовый путь

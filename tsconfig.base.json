@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hiero/common": ["libs/common/src/index.ts"]
+      "@hiero/common": ["libs/common/src/index.ts"],
+      "@hiero/db": ["libs/db/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
