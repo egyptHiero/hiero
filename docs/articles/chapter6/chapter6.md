@@ -16,7 +16,7 @@ outline: deep
 
 ```shell
 $ npx nx g @nx/js:lib libs/db
-✔ Which bundler would you like to use to build the library? Choose 'none' to skip build setup. · none~~~~
+✔ Which bundler would you like to use to build the library? Choose 'none' to skip build setup. · none
 ✔ Which linter would you like to use? · eslint
 ✔ Which unit test runner would you like to use? · vitest
 
@@ -27,7 +27,7 @@ $ npm i classic-level memory-level short-unique-id
 
 В базе нет классических таблиц, есть `sublevel` - изолированное пространство ключей.
 
-## Устройство
+## Устройство базы
 Заведем `sublevels` для сущностей
 - `hieroglyphs` - иероглифовы
 - `signs` -  таблички с иероглифами
@@ -38,3 +38,6 @@ $ npm i classic-level memory-level short-unique-id
 только на пользовательском.
 
 `dictionaries` - это таблица таблиц - есть добавлять и удалять словари и есть описание словаря - `DictionaryInfo`
+
+## Тесты
+

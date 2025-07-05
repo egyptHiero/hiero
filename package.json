@@ -5,6 +5,7 @@
   "scripts": {
     "parse-dictionary": "node ./dist/apps/dictionary-parser/apps/dictionary-parser/src/scripts/runner.js",
     "build-all": "nx run-many -t build",
+    "lint": "nx run-many -t lint --fix",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"

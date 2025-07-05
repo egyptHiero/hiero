@@ -1,7 +1,8 @@
 import {DB, DbTable} from '../types';
 import {createDbInstance} from '../db';
 import {asyncIterator} from '@hiero/common';
-import {DbUtils, DEFAULT_PAGE_SIZE, DictionaryItemEntity} from '@hiero/db';
+import {DbUtils, DEFAULT_PAGE_SIZE} from '../db-utils';
+import {DictionaryItemEntity} from '../entities';
 
 const SET1 = {
   A1: 'seated man',
