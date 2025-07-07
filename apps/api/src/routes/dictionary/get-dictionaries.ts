@@ -3,7 +3,7 @@ import {
   DictionaryListFilterDto as DictionaryListFilterSchema,
   PageDto as PageSchema,
 } from '../../typebox';
-import {toDictionaryInfoDto, toPageDto} from '../../dto/utils';
+import {toDictionaryInfoDto, toPageDto} from '../../dto';
 import {DB, DbUtils} from '@hiero/db';
 import {TypeBoxTypeProvider} from "@fastify/type-provider-typebox";
 import {FastifyTypeBox} from "../../types";

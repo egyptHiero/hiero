@@ -4,7 +4,7 @@ import {
   PageDto as PageDtoSchema,
   SignDto as SignDtoSchema,
 } from '../../typebox';
-import {toPageDto, toSignDto} from '../../dto/utils';
+import {toPageDto, toSignDto} from '../../dto';
 import {FastifyTypeBox} from "../../types";
 
 export const getSigns = (fastify: FastifyTypeBox, db: DB) =>

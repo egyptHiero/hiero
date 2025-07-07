@@ -4,7 +4,7 @@ import {
   SignDto as SignDtoSchema,
   SignNewDto as SignNewDtoSchema,
 } from '../../typebox';
-import {toSignDto} from '../../dto/utils';
+import {toSignDto} from '../../dto';
 import {FastifyTypeBox} from "../../types";
 
 export const postSign = (fastify: FastifyTypeBox, db: DB) =>

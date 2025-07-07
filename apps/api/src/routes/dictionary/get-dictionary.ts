@@ -4,7 +4,7 @@ import {
   PageDto as PageDtoSchema,
   ParamIdFilterDto as ParamIdFilterSchema,
 } from '../../typebox';
-import {toDictionaryItemDto, toPageDto} from '../../dto/utils';
+import {toDictionaryItemDto, toPageDto} from '../../dto';
 import {DB, DbUtils} from '@hiero/db';
 import {FastifyTypeBox} from "../../types";
 

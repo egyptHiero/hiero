@@ -1,6 +1,6 @@
 import {DB} from '@hiero/db';
 import {ParamIdFilterDto as ParamIdFilterSchema, SignDto as SignDtoSchema,} from '../../typebox';
-import {toSignDto} from '../../dto/utils';
+import {toSignDto} from '../../dto';
 import {ParamIdFilterDto, SignDto} from '../../dto';
 import {FastifyTypeBox} from "../../types";
 
