@@ -5,11 +5,10 @@ import {
 } from '../../typebox';
 import {toDictionaryInfoDto, toPageDto} from '../../dto';
 import {DB, DbUtils} from '@hiero/db';
-import {TypeBoxTypeProvider} from "@fastify/type-provider-typebox";
 import {FastifyTypeBox} from "../../types";
 
 export const getDictionaries = (fastify: FastifyTypeBox, db: DB) =>
-  fastify.withTypeProvider<TypeBoxTypeProvider>().get(
+  fastify.get(
     '/api/dictionary',
     {
       schema: {

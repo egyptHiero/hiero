@@ -10,7 +10,7 @@ describe('loader', () => {
 
         return {
           ...actualFs,
-          createReadStream: vi.fn((path: string, options?: any) => {
+          createReadStream: vi.fn(() => {
             return new Readable({
               read() {
                 this.push('{"name":"hieroglyphs-description", "type": "hieroglyphs", "language":"en" }\n');
