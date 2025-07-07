@@ -8,7 +8,8 @@
     "lint": "nx run-many -t lint --fix",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "generate-typings": "npx ts2typebox -i apps/api/src/dto/types.ts -o apps/api/src/typebox/index.ts"
   },
   "private": true,
   "devDependencies": {
@@ -41,6 +42,7 @@
     "prettier": "^2.6.2",
     "rollup": "^4.14.0",
     "swc-loader": "0.1.15",
+    "ts2typebox": "^1.6.2",
     "tslib": "^2.3.0",
     "typescript": "~5.8.2",
     "typescript-eslint": "^8.29.0",
@@ -50,9 +52,16 @@
     "vitest": "^3.0.0"
   },
   "dependencies": {
+    "@fastify/autoload": "~6.0.3",
+    "@fastify/sensible": "~6.0.2",
+    "@fastify/swagger": "^9.5.1",
+    "@fastify/swagger-ui": "^5.2.3",
+    "@fastify/type-provider-typebox": "^5.1.0",
     "arg": "^5.0.2",
     "classic-level": "^3.0.0",
     "cli-color": "^2.0.4",
+    "fastify": "~5.2.1",
+    "fastify-plugin": "~5.0.1",
     "log-update": "^6.1.0",
     "memory-level": "^3.1.0",
     "ndjson": "^2.0.0",
