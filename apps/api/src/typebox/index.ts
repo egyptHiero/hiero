@@ -6,87 +6,87 @@
  * have a look there! :]
  */
 
-import {Static, TSchema, Type} from '@sinclair/typebox';
+import { Type, Static, TSchema } from '@sinclair/typebox';
 
 export type PageDto<T extends TSchema> = Static<ReturnType<typeof PageDto<T>>>;
 export const PageDto = <T extends TSchema>(T: T) =>
-    Type.Object({
-        items: Type.Array(T),
-    });
+  Type.Object({
+    items: Type.Array(T),
+  });
 
 export type Identifiable = Static<typeof Identifiable>;
 export const Identifiable = Type.Object({
-    id: Type.String(),
+  id: Type.String(),
 });
 
 export type ParamIdFilterDto = Static<typeof ParamIdFilterDto>;
 export const ParamIdFilterDto = Type.Object({
-    id: Type.String(),
+  id: Type.String(),
 });
 
 export type ListFilterDto = Static<typeof ListFilterDto>;
 export const ListFilterDto = Type.Object({
-    from: Type.Optional(
-        Type.String({description: 'starts list after this element'})
-    ),
-    pageSize: Type.Optional(
-        Type.Number({description: 'starts list after this element'})
-    ),
+  from: Type.Optional(
+    Type.String({ description: 'starts list after this element' })
+  ),
+  pageSize: Type.Optional(
+    Type.Number({ description: 'starts list after this element' })
+  ),
 });
 
 export type QueryFilterDto = Static<typeof QueryFilterDto>;
 export const QueryFilterDto = Type.Object({
-    query: Type.Optional(Type.String({description: 'query string'})),
-    pageSize: Type.Optional(
-        Type.Number({description: 'starts list after this element'})
-    ),
+  query: Type.Optional(Type.String({ description: 'query string' })),
+  pageSize: Type.Optional(
+    Type.Number({ description: 'starts list after this element' })
+  ),
 });
 
 export type DictionaryListFilterDto = Static<typeof DictionaryListFilterDto>;
 export const DictionaryListFilterDto = Type.Composite([
-    ListFilterDto,
-    Type.Object({
-        type: Type.Optional(Type.String()),
-    }),
+  ListFilterDto,
+  Type.Object({
+    type: Type.Optional(Type.String()),
+  }),
 ]);
 
 export type DictionaryChunkParamFilterDto = Static<
-    typeof DictionaryChunkParamFilterDto
+  typeof DictionaryChunkParamFilterDto
 >;
 export const DictionaryChunkParamFilterDto = Type.Composite([
-    ParamIdFilterDto,
-    Type.Object({
-        hieroes: Type.String(),
-    }),
+  ParamIdFilterDto,
+  Type.Object({
+    hieroes: Type.String(),
+  }),
 ]);
 
 export type DictionaryInfoDto = Static<typeof DictionaryInfoDto>;
 export const DictionaryInfoDto = Type.Composite([
-    Identifiable,
-    Type.Object({
-        description: Type.Optional(Type.String()),
-        language: Type.String(),
-        link: Type.Optional(Type.String()),
-        size: Type.Optional(Type.Number()),
-    }),
+  Identifiable,
+  Type.Object({
+    description: Type.Optional(Type.String()),
+    language: Type.String(),
+    link: Type.Optional(Type.String()),
+    size: Type.Optional(Type.Number()),
+  }),
 ]);
 
 export type DictionaryItemDto = Static<typeof DictionaryItemDto>;
 export const DictionaryItemDto = Type.Composite([
-    Identifiable,
-    Type.Object({
-        i: Type.Record(Type.String(), Type.String()),
-    }),
+  Identifiable,
+  Type.Object({
+    i: Type.Record(Type.String(), Type.String()),
+  }),
 ]);
 
 export type SignNewDto = Static<typeof SignNewDto>;
 export const SignNewDto = Type.Object({
-    name: Type.String(),
-    image: Type.Optional(Type.String()),
-    classification: Type.String(),
-    description: Type.Optional(Type.String()),
-    fontSize: Type.Optional(Type.Number()),
-    dir: Type.Optional(Type.String()),
+  name: Type.String(),
+  image: Type.Optional(Type.String()),
+  classification: Type.String(),
+  description: Type.Optional(Type.String()),
+  fontSize: Type.Optional(Type.Number()),
+  dir: Type.Optional(Type.String()),
 });
 
 export type SignDto = Static<typeof SignDto>;

@@ -65,6 +65,9 @@ npm i @fastify/swagger @fastify/swagger-ui
 
 и добавим файл иницализации в папку `plugins`.
 
+При запуске сервера в `develop`-моде будет запущен также swagger-ui http://localhost:3000/docs.
+
+### OpenAPI схемы
 Теперь можно добавить схему в параметры роута:
 
 ```typescript
@@ -82,22 +85,68 @@ npm i @fastify/swagger @fastify/swagger-ui
 
 Fastify использует синтаксис OpenAPI, для описания схем эндпоинтов, а это означает, что нужно описать в терминах
 TypeBox все входные (path, querystring, body), и выходные параметры (response).
-Один из способов избавиться от ручной работы и автоматически создавать TypeBox-схемы для DTO это использовать
-библиотеку
-[ts2typebox](https://github.com/xddq/ts2typebox)
-из экосистемы
-[typebox](https://github.com/sinclairzx81/typebox).
+
+### Генерация схем
+
+При разработке API, обычно, сначала создают OpenAPI схемы и из них генерят DTO.
+Но мне кажется, что гораздо удобнее создавать сначала DTO, а уже из них создавать схемы.
+В экосистеме [typebox](https://github.com/sinclairzx81/typebox?tab=readme-ov-file#ecosystem) есть
+библиотека
+[ts2typebox](https://github.com/xddq/ts2typebox).
 Она позволяет генерировать схемы на основе существующих TypeScript-типов.
 
 ```bash
 $ npm install -D ts2typebox
 ```
 
+Осталось подключить генерацию схем в сборку. Можно добавить конфигурацию руками, а для тех, кому лень открывать
+[документацию](https://nx.dev/reference/core-api/nx/executors/run-commands) у
+`Nx` есть генератор команд:
+
+```bash
+$ nx generate @nx/workspace:run-commands \
+  --name generate-schemas \
+  --command "npx ts2typebox -i apps/api/src/dto/types.ts -o apps/api/src/typebox/index.ts" \
+  --cwd apps/api \
+  --project api
+```
+
+::: details Осталось добавить зависимость в конфигурацию билда
+
+```json5
+{
+  "targets": {
+    "build": {
+      // ...
+      "dependsOn": [
+        "generate-schemas"
+      ]
+    }
+  }
+}
+```
+
+:::
+
+### Дженерики
+
 Для роутов мы дублируем информацию в дженериках и в схеме. К счастью, в сообществе `fastify` есть плагин
 [fastify-type-provider-typebox](https://github.com/fastify/fastify-type-provider-typebox),
-который решает это проблему и типизирует параметры прямо из схемы. Больше не нужно писать дженерики в роутах.
+который решает это проблему и типизирует параметры прямо из схемы.
 
 ```bash
 $ npm i @fastify/type-provider-typebox
+```
+
+Дженерики больше не нужны, если использовать в роутах тип FastifyTypeBox вместо FastifyInstance.
+
+```typescript
+export type FastifyTypeBox = FastifyInstance<
+  RawServerDefault,
+  RawRequestDefaultExpression,
+  RawReplyDefaultExpression,
+  FastifyBaseLogger,
+  TypeBoxTypeProvider
+>;
 ```
 

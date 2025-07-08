@@ -7,22 +7,17 @@
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
+      "dependsOn": ["generate-schemas"],
       "options": {
         "platform": "node",
         "outputPath": "dist/apps/api",
-        "format": [
-          "cjs"
-        ],
+        "format": ["cjs"],
         "bundle": false,
         "main": "apps/api/src/main.ts",
         "tsConfig": "apps/api/tsconfig.app.json",
-        "assets": [
-          "apps/api/src/assets"
-        ],
+        "assets": ["apps/api/src/assets"],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
@@ -47,9 +42,7 @@
       "continuous": true,
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
-      "dependsOn": [
-        "build"
-      ],
+      "dependsOn": ["build"],
       "options": {
         "buildTarget": "api:build",
         "runBuildTargetDependencies": false
@@ -61,6 +54,14 @@
         "production": {
           "buildTarget": "api:build:production"
         }
+      }
+    },
+    "generate-schemas": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "npx ts2typebox -i src/dto/types.ts -o src/typebox/index.ts",
+        "cwd": "apps/api"
       }
     }
   }
