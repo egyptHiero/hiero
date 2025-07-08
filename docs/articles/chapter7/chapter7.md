@@ -6,7 +6,7 @@ outline: deep
 
 Добавим еще одно приложение для загрузки подготовленных данных из `ndjson` файлов.
 
-```shell
+```bash
 $ npx nx g @nx/node:application apps/dictionary-loader
 NX  Generating @nx/node:application
 ✔ Which linter would you like to use? · eslint
@@ -22,7 +22,7 @@ npx nx g vitest --project=dictionary-loader
 
 Запустив приложение, получим проинициализированную базу данных:
 
-```shell
+```bash
 $ npx nx serve dictionary-loader
 ✓ file ancient_en.ndjson was successfully loaded to db.
 ✓ file hieroglyphs-description_en.ndjson was successfully loaded to db.

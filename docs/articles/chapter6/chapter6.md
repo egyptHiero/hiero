@@ -14,7 +14,7 @@ outline: deep
 
 Создаем библиотеку, добавляем npm-зависимости:
 
-```shell
+```bash
 $ npx nx g @nx/js:lib libs/db
 ✔ Which bundler would you like to use to build the library? Choose 'none' to skip build setup. · none
 ✔ Which linter would you like to use? · eslint
