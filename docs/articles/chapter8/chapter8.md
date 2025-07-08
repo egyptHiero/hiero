@@ -65,7 +65,7 @@ npm i @fastify/swagger @fastify/swagger-ui
 
 и добавим файл иницализации в папку `plugins`.
 
-При запуске сервера в `develop`-моде будет запущен также swagger-ui http://localhost:3000/docs.
+При запуске сервера в `develop`-моде будет запущен также swagger-ui `http://localhost:3000/docs`.
 
 ### OpenAPI схемы
 Теперь можно добавить схему в параметры роута:
