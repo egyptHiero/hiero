@@ -19,17 +19,19 @@ export const getHieroglyph = (fastify: FastifyTypeBox, db: DB) =>
       },
     },
     async function (request) {
-      const upperCaseQuery = request.query.query?.toUpperCase();
+      const {query, from, pageSize} = request.query;
+      const upperCaseQuery = query?.toUpperCase();
 
       return (
         await DbUtils.getPage(db.hieroglyphs, {
+          from,
           filter: (key, value) =>
             upperCaseQuery
               ? key.toUpperCase().includes(upperCaseQuery) ||
               value?.toUpperCase().includes(upperCaseQuery)
               : true,
           mapper: (key, value) => [key, value],
-          pageSize: request.query.pageSize,
+          pageSize,
         })
       ).reduce<Record<string, string>>((acc, [key, value]) => {
         if (key && value) {

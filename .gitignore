@@ -52,3 +52,7 @@ docs/.vitepress/cache
 # vitetest
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
+
+# 18n
+/apps/api/src/locales
+/apps/web/src/locales/*/*_old.json

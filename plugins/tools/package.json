@@ -1,0 +1,14 @@
+{
+  "name": "@hiero/tools",
+  "version": "0.0.1",
+  "private": true,
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "executors": "./executors.json",
+  "dependencies": {
+    "@nx/devkit": "21.2.2",
+    "openapi-typescript": "^7.8.0",
+    "tslib": "^2.3.0"
+  }
+}

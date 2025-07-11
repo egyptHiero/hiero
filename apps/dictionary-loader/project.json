@@ -16,7 +16,6 @@
         "bundle": false,
         "main": "apps/dictionary-loader/src/main.ts",
         "tsConfig": "apps/dictionary-loader/tsconfig.app.json",
-        "assets": ["apps/dictionary-loader/src/assets"],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,

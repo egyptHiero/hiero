@@ -7,6 +7,7 @@ const MAX_ITERATIONS_FOR_UNIQUE_ID = 3;
 const uid = new ShortUniqueId({ length: 6 });
 
 const hasKey = async <T>(table: DbTable<T>, key: string) => {
+  // noinspection LoopStatementThatDoesntLoopJS
   for await (const _ of table.iterator({ gte: key, lte: key, limit: 1 })) {
     return true;
   }
@@ -57,6 +58,7 @@ async function getPage<T, R = T>(
 
 const getSize = async <T>(table: DbTable<T>): Promise<number> => {
   let count = 0;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   for await (const _ of table.iterator({ keys: true, values: false })) {
     count++;
   }
@@ -74,8 +76,9 @@ const getUniqueId = async <T>(table: DbTable<T>): Promise<string> => {
   throw new Error(`Could not obtain the unique id for ${table.prefix}`);
 };
 
-interface UpdateOptions {
+interface UpdateOptions<T> {
   batchThreshold: number;
+  mapper?: (values: string | string[]) => T;
 }
 
 async function* createBundles<T>(
@@ -95,16 +98,16 @@ async function* createBundles<T>(
 
 const update = async <T>(
   table: DbTable<T>,
-  iterator: AsyncIterable<[string, T]> | Iterable<[string, T]>,
-  options: Partial<UpdateOptions> = {}
+  iterator: AsyncIterable<[string, string | string[]]> | Iterable<[string, string | string[]]>,
+  options: Partial<UpdateOptions<T>> = {}
 ): Promise<void> => {
-  const defaultOptions: UpdateOptions = { batchThreshold: 1000 };
+  const defaultOptions: UpdateOptions<T> = { batchThreshold: 1000 };
   const { batchThreshold } = combineWithDefaults(options, defaultOptions);
 
   for await (const bundle of createBundles(iterator, batchThreshold)) {
     const batch = table.batch();
     bundle.forEach(([key, value]) => {
-      batch.put(key, value);
+      batch.put(key, options.mapper ? options.mapper(value) : value as T);
     });
     await batch.write();
   }

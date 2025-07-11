@@ -35,12 +35,12 @@ export const ListFilterDto = Type.Object({
 });
 
 export type QueryFilterDto = Static<typeof QueryFilterDto>;
-export const QueryFilterDto = Type.Object({
-  query: Type.Optional(Type.String({ description: 'query string' })),
-  pageSize: Type.Optional(
-    Type.Number({ description: 'starts list after this element' })
-  ),
-});
+export const QueryFilterDto = Type.Composite([
+  ListFilterDto,
+  Type.Object({
+    query: Type.Optional(Type.String({ description: 'query string' })),
+  }),
+]);
 
 export type DictionaryListFilterDto = Static<typeof DictionaryListFilterDto>;
 export const DictionaryListFilterDto = Type.Composite([

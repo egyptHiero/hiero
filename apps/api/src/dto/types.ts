@@ -22,15 +22,11 @@ export interface ListFilterDto {
   pageSize?: number;
 }
 
-export interface QueryFilterDto {
+export interface QueryFilterDto extends ListFilterDto {
   /**
    * @description query string
    */
   query?: string;
-  /**
-   * @description starts list after this element
-   */
-  pageSize?: number;
 }
 
 // Dictionary ------------------------------------------------------------------
@@ -69,3 +65,4 @@ export type SignNewDto = {
 export type SignDto = SignNewDto & Identifiable;
 
 // Hieroglyphs -----------------------------------------------------------------
+
