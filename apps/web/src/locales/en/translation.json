@@ -1,6 +1,8 @@
 {
   "btn": {
-    "add": "add"
+    "add": "add",
+    "cancel": "Cancel",
+    "save": "Save"
   },
   "dynamic": {
     "classification": {
@@ -34,5 +36,10 @@
       "Z": "Strokes, signs derived from Hieratic, geometrical features"
     }
   },
-  "Hello": "Hello!!!!"
+  "sign": {
+    "classification": "Classification",
+    "description": "Description",
+    "image": "Image link",
+    "name": "Name"
+  }
 }

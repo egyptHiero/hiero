@@ -18,7 +18,7 @@ import {
   width,
   WidthProps,
 } from 'styled-system';
-import * as React from 'react';
+import React from 'react';
 
 const Box = styled.div<
   HeightProps &

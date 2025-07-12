@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import createClient from 'openapi-fetch';
 import type { paths } from '../../@types/openapi-schema';
 

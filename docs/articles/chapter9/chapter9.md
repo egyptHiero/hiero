@@ -47,3 +47,8 @@ NX  Generating @nx/plugin:plugin
 ✔ Which unit test runner would you like to use? · none
 
 npx nx g @nx/plugin:executor
+
+
+###
+vite-plugin-static-copy
+npm i react-hook-form

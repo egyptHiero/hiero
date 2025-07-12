@@ -22,7 +22,6 @@
           "output": "./locales",
           "glob": "**/translation.json"
         }],
-
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
