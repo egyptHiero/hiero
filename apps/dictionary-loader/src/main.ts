@@ -1,4 +1,4 @@
-import {consoleProgress, NDJSON_DIR} from '@hiero/common';
+import {consoleProgress, NDJSON_SORTED_DIR} from '@hiero/common';
 import {fillTableFromFile} from './loader';
 import fs from 'node:fs';
 
@@ -19,7 +19,7 @@ const getErrorMessage = (error: unknown) => {
   }
 };
 
-fs.readdir(NDJSON_DIR, (err, files) =>
+fs.readdir(NDJSON_SORTED_DIR, (err, files) =>
   files
     .filter((name) => name.endsWith('.ndjson'))
     .forEach(async (name) => {
