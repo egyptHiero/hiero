@@ -78,7 +78,7 @@ const getUniqueId = async <T>(table: DbTable<T>): Promise<string> => {
 
 interface UpdateOptions<T> {
   batchThreshold: number;
-  mapper?: (values: string | string[]) => T;
+  mapper?: (values: Array<string | string[]>) => T;
 }
 
 async function* createBundles<T>(
@@ -106,8 +106,8 @@ const update = async <T>(
 
   for await (const bundle of createBundles(iterator, batchThreshold)) {
     const batch = table.batch();
-    bundle.forEach(([key, value]) => {
-      batch.put(key, options.mapper ? options.mapper(value) : value as T);
+    bundle.forEach(([key, ...values]) => {
+      batch.put(key, options.mapper ? options.mapper(values) : values as T);
     });
     await batch.write();
   }

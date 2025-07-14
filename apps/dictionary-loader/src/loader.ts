@@ -30,15 +30,24 @@ const openTable: (db: DB, props: TInfo) => Promise<DbTable<any>> = async (
   }
 };
 
+// todo: add types
 const getMapper = (type: string) => {
   switch (type) {
     case 'dictionary':
-      return ([interpretation, description]) => [({interpretation, description})]
+      return values => values.map(([interpretation, description]) => ({interpretation, description}))
+    default:
+        return values => {
+          if (values.length > 1) {
+            throw new Error(`Incorrect values ${values} for type ${type}`);
+          }
+          return values[0];
+        }
   }
 }
 
 export const fillTableFromFile = async (
-  fileName: string
+  fileName: string,
+  batchThreshold? : number
 ) => {
   const db = await dbPromise;
   const fullFileName = path.join(NDJSON_DIR, fileName);
@@ -48,7 +57,7 @@ export const fillTableFromFile = async (
       .pipe(parse())
   );
   const table = await openTable(db, reader.info);
-  await DbUtils.update(table, reader.iterator, {mapper: getMapper(reader.info.type)});
+  await DbUtils.update(table, reader.iterator, {mapper: getMapper(reader.info.type), batchThreshold});
   consoleProgress[fileName].success(`file ${fileName} was successfully loaded to db.`);
 
   // todo: update record count
