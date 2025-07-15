@@ -1,4 +1,4 @@
-import {consoleProgress, iterateDictionaryReader, NDJSON_DIR} from '@hiero/common';
+import {consoleProgress, iterateDictionaryReader, NDJSON_SORTED_DIR,} from '@hiero/common';
 import {createDbInstance, DB, DbTable, DbUtils} from '@hiero/db';
 import {parse} from 'ndjson';
 import * as fs from 'node:fs';
@@ -50,7 +50,7 @@ export const fillTableFromFile = async (
   batchThreshold? : number
 ) => {
   const db = await dbPromise;
-  const fullFileName = path.join(NDJSON_DIR, fileName);
+  const fullFileName = path.join(NDJSON_SORTED_DIR, fileName);
   const reader = await iterateDictionaryReader<[string, string | string[]]>(
     fs
       .createReadStream(fullFileName, {autoClose: true})

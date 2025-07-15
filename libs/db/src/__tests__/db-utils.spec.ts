@@ -10,10 +10,10 @@ const SET1 = {
   A3: 'man sitting on heel',
 };
 
-const DICTIONARY_SET1: Record<string, DictionaryItemEntity> = {
-  A1: [{interpretation: 'seated man'}],
-  A2: [{interpretation: 'man with hand to mouth'}],
-  A3: [{interpretation: 'man sitting on heel'}],
+const DICTIONARY_SET1 = {
+  A1: ['seated man'],
+  A2: ['man with hand to mouth'],
+  A3: ['man sitting on heel'],
 };
 
 describe('DbUtils', () => {
@@ -166,9 +166,9 @@ describe('DbUtils', () => {
           });
           await DbUtils.update(dict, getIterator());
           expect(await DbUtils.getPage(dict)).toStrictEqual([
-            DICTIONARY_SET1.A1,
-            DICTIONARY_SET1.A2,
-            DICTIONARY_SET1.A3,
+            [DICTIONARY_SET1.A1],
+            [DICTIONARY_SET1.A2],
+            [DICTIONARY_SET1.A3],
           ]);
         });
 

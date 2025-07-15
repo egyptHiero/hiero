@@ -1,8 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
-import { useClientContext } from '../../app/client-context';
+import {useQuery} from '@tanstack/react-query';
+import {useClientContext} from "../../app/context/client-context";
 
 export const useGetDictionaryList = () => {
-  const { client } = useClientContext();
+  const {client} = useClientContext();
 
   return useQuery({
     queryKey: ['dictionaries'],

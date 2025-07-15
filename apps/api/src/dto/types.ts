@@ -48,7 +48,7 @@ export interface DictionaryInfoDto extends Identifiable {
 }
 
 export interface DictionaryItemDto extends Identifiable {
-  i: Record<string, string>;
+  i: Record<string, string>[];
 }
 
 // Sign ------------------------------------------------------------------------

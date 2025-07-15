@@ -17,10 +17,10 @@ const runExecutor: PromiseExecutor<
   try {
     const ast = await openapiTS(`http://${host}:${port}/docs/json`);
     const contents = astToString(ast);
-    writeFileSync(path.join('../..', options.output), contents);
+    writeFileSync(path.join( __dirname, '../../..', options.output), contents);
     console.log('Client api was successfully generated');
   } catch (e) {
-    console.error(`${e}`);
+    console.error(`${e}`, __dirname);
   }
 
   return {

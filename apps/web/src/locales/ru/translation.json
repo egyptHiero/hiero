@@ -1,8 +1,25 @@
 {
+  "app": {
+    "sidebar": {
+      "about": "О программе",
+      "dictionaries": "Словари",
+      "signs": "Таблички",
+      "translations": "Переводы"
+    }
+  },
   "btn": {
     "add": "добавить!!!",
     "cancel": "Отмена",
     "save": "Сохранить"
+  },
+  "dictionaries": {
+    "columns": {
+      "description": "Описание",
+      "id": "Имя",
+      "language": "Язык",
+      "link": "Ссылка",
+      "size": "Кол-во"
+    }
   },
   "dynamic": {
     "classification": {

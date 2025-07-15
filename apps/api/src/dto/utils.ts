@@ -17,19 +17,20 @@ export const toDictionaryInfoDto = (
 export const toDictionaryItemDto = (
   id?: string,
   entity: DictionaryItemEntity = []
-): DictionaryItemDto | undefined =>
-  id
+): DictionaryItemDto | undefined => {
+  return id
     ? {
       id,
-      i: entity.reduce<Record<string, string>>(
+      i: entity.reduce<Record<string, string>[]>(
         (acc, {interpretation, description}) => {
-          acc[interpretation] = description ?? '';
+          acc.push({[interpretation]: description ?? ''});
           return acc;
         },
-        {}
+        []
       ),
     }
     : undefined;
+};
 
 export const toSignDto = (
   id?: string,

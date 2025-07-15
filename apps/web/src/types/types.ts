@@ -7,6 +7,11 @@ export type Identifiable = {
   id: string;
 };
 
+export type InfiniteScroll<T> = {
+  items: T[];
+  next: T;
+};
+
 export interface ParamIdFilterDto {
   id: string;
 }
@@ -48,7 +53,7 @@ export interface DictionaryInfoDto extends Identifiable {
 }
 
 export interface DictionaryItemDto extends Identifiable {
-  i: Record<string, string>;
+  i: Record<string, string>[];
 }
 
 // Sign ------------------------------------------------------------------------

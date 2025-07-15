@@ -37,7 +37,7 @@ export interface paths {
                                 id: string;
                                 i: {
                                     [key: string]: string;
-                                };
+                                }[];
                             }[];
                         };
                     };

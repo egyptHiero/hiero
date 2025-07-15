@@ -1,8 +1,25 @@
 {
+  "app": {
+    "sidebar": {
+      "about": "About",
+      "dictionaries": "Dictionaries",
+      "signs": "Signs",
+      "translations": "Translations"
+    }
+  },
   "btn": {
     "add": "add",
     "cancel": "Cancel",
     "save": "Save"
+  },
+  "dictionaries": {
+    "columns": {
+      "description": "Description",
+      "id": "Id",
+      "language": "Language",
+      "link": "Link",
+      "size": "Size"
+    }
   },
   "dynamic": {
     "classification": {
