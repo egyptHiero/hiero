@@ -3,6 +3,8 @@ import { createDbInstance } from '../db';
 import { DbUtils, GetPageProps } from '../db-utils';
 import { DictionaryInfoEntity } from '../entities';
 
+const asPage = <T>(items: T[], next?: T)=> ({items, next});
+
 describe('DB-dictionaries', () => {
   let db: DB;
 
@@ -49,15 +51,15 @@ describe('DB-dictionaries', () => {
 
       expect(
         await DbUtils.getPage(db.getDictionaryInfo(), { mapper })
-      ).toStrictEqual(['dict1']);
+      ).toStrictEqual(asPage(['dict1']));
 
       expect(
         await DbUtils.getPage(db.getDictionaryInfo('user1'), { mapper })
-      ).toStrictEqual(['dict2']);
+      ).toStrictEqual(asPage(['dict2']));
 
       expect(
         await DbUtils.getPage(db.getDictionaryInfo('user2'), { mapper })
-      ).toStrictEqual(['dict3']);
+      ).toStrictEqual(asPage(['dict3']));
     });
 
     it('and db.getDictionary opens the expected dictionary', async () => {
@@ -104,12 +106,12 @@ describe('DB-dictionaries', () => {
       const dict2 = await db.getDictionary('dict2', 'user1');
       await dict2.put('A1', [{ description: 'a2', interpretation: 'b2' }]);
 
-      expect(await DbUtils.getPage(dict1)).toStrictEqual([
+      expect(await DbUtils.getPage(dict1)).toStrictEqual(asPage([
         [{ description: 'a1', interpretation: 'b1' }],
-      ]);
-      expect(await DbUtils.getPage(dict2)).toStrictEqual([
+      ]));
+      expect(await DbUtils.getPage(dict2)).toStrictEqual(asPage([
         [{ description: 'a2', interpretation: 'b2' }],
-      ]);
+      ]));
     });
   });
 

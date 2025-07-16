@@ -39,6 +39,7 @@ export interface paths {
                                     [key: string]: string;
                                 }[];
                             }[];
+                            next?: string;
                         };
                     };
                 };
@@ -101,6 +102,7 @@ export interface paths {
                                 link?: string;
                                 size?: number;
                             }[];
+                            next?: string;
                         };
                     };
                 };
@@ -204,6 +206,7 @@ export interface paths {
                             } & {
                                 id: string;
                             })[];
+                            next?: string;
                         };
                     };
                 };

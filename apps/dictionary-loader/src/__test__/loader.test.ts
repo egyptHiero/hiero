@@ -3,6 +3,7 @@ import {DbUtils} from '@hiero/db';
 import {Readable} from "node:stream";
 
 const getData = vi.fn<() => string[]>();
+const asPage = <T>(items: T[], next?: T) => ({items, next});
 
 vi.mock('node:fs', async () => {
   const actualFs = await vi.importActual<typeof import('node:fs')>('node:fs');
@@ -32,7 +33,7 @@ describe('loader', () => {
       ])
       await fillTableFromFile('dummy');
       const db = await dbPromise;
-      expect(await DbUtils.getPage(db.hieroglyphs)).toStrictEqual(["man in vessel", "man on two giraffes"]);
+      expect(await DbUtils.getPage(db.hieroglyphs)).toStrictEqual(asPage(["man in vessel", "man on two giraffes"]));
     });
 
     it('should fill dictionary with all the values', async () => {
@@ -47,7 +48,7 @@ describe('loader', () => {
         "name": "test1",
         "language": "en"
       });
-      expect(await DbUtils.getPage(await db.getDictionary('test1'), {mapper: (key, value) => ({[key]: value})})).toStrictEqual([
+      expect(await DbUtils.getPage(await db.getDictionary('test1'), {mapper: (key, value) => ({[key]: value})})).toStrictEqual(asPage([
         {
           A1: [{
             interpretation: "a1-interpretation",
@@ -62,7 +63,7 @@ describe('loader', () => {
             description: 'a2-description-2'
           }]
         }
-      ]);
+      ]));
     });
   });
 });

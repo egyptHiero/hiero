@@ -1,7 +1,7 @@
 import {DictionaryInfoDto, DictionaryItemDto, SignDto,} from './index';
 import {DictionaryInfoEntity, DictionaryItemEntity, SignEntity} from '@hiero/db';
 
-export const toPageDto = <T>(items: T[]) => ({items});
+export const toPageDto = v => v;
 
 export const toDictionaryInfoDto = (
   id?: string,

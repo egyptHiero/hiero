@@ -1,39 +1,52 @@
 import {Transform} from 'stream';
 
+const compare = (a: string[], b: string): number => {
+  const result = a[0].localeCompare(b[0]);
+
+  if (result === 0) {
+    return JSON.stringify(a).localeCompare(JSON.stringify(b));
+  }
+
+  return result;
+}
+
 /**
  * Sort, remove duplicates and combine values for equal keys.
  */
 export class CombTransformer extends Transform {
-    private lines = [];
+  private lines: string[] = [];
 
-    constructor() {
-        super({objectMode: true});
-    }
+  constructor() {
+    super({objectMode: true});
+  }
 
-    _transform(chunk, encoding, callback) {
-        this.lines.push(chunk);
-        callback();
-    }
+  _transform(chunk, encoding, callback) {
+    this.lines.push(chunk);
+    callback();
+  }
 
-    _flush(callback) {
-        this.lines.sort((a, b) => (Array.isArray(a) && Array.isArray(b)) ? a[0].localeCompare(b[0]) : true)
-            .reduce((acc, value) => {
-                const previous = acc[acc.length - 1];
-                if (JSON.stringify(previous) !== JSON.stringify(value)) {
-                    if (Array.isArray(value) && Array.isArray(previous)) {
-                        const [key, ...values] = value;
-                        const [previousKey] = previous;
+  _flush(callback) {
+    this.lines.sort((a, b) => (Array.isArray(a) && Array.isArray(b)) ? compare(a, b) : 1)
+      .reduce((acc, value, n, arr) => {
+        const stringifiedValue = JSON.stringify(value);
+        if (JSON.stringify(arr[n-1]) !== stringifiedValue) {
+          const previous = acc[acc.length - 1];
+          if (JSON.stringify(previous) !== stringifiedValue) {
+            if (Array.isArray(value) && Array.isArray(previous)) {
+              const [key, ...values] = value;
+              const [previousKey] = previous;
 
-                        if (key === previousKey) {
-                            previous.push(...values);
-                            return acc;
-                        }
-                    }
-                    acc.push(value);
-                }
+              if (key === previousKey) {
+                previous.push(...values);
                 return acc;
-            }, [])
-            .forEach(line => this.push(line));
-        callback();
-    }
+              }
+            }
+            acc.push(value);
+          }
+        }
+        return acc;
+      }, [])
+      .forEach(line => this.push(line));
+    callback();
+  }
 }

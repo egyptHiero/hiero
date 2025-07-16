@@ -33,7 +33,7 @@ export const getHieroglyph = (fastify: FastifyTypeBox, db: DB) =>
           mapper: (key, value) => [key, value],
           pageSize,
         })
-      ).reduce<Record<string, string>>((acc, [key, value]) => {
+      ).items.reduce<Record<string, string>>((acc, [key, value]) => {
         if (key && value) {
           acc[key] = value;
         }

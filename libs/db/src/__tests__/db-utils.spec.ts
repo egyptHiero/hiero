@@ -4,6 +4,8 @@ import {asyncIterator} from '@hiero/common';
 import {DbUtils, DEFAULT_PAGE_SIZE} from '../db-utils';
 import {DictionaryItemEntity} from '../entities';
 
+const asPage = <T>(items: T[], next?: string)=> ({items, next});
+
 const SET1 = {
   A1: 'seated man',
   A2: 'man with hand to mouth',
@@ -54,17 +56,17 @@ describe('DbUtils', () => {
 
     describe('getPage()', () => {
       it('should return record from the table', async () => {
-        expect(await DbUtils.getPage(db.hieroglyphs)).toStrictEqual([
+        expect(await DbUtils.getPage(db.hieroglyphs)).toStrictEqual(asPage([
           SET1.A1,
           SET1.A2,
           SET1.A3,
-        ]);
+        ]));
       });
 
       it('should apply pageSize parameter correctly', async () => {
         expect(
           await DbUtils.getPage(db.hieroglyphs, {pageSize: 1})
-        ).toStrictEqual([SET1.A1]);
+        ).toStrictEqual(asPage([SET1.A1], 'A2'));
       });
 
       it('should apply pageSize=-1 as unlimited', async () => {
@@ -75,23 +77,23 @@ describe('DbUtils', () => {
 
         await DbUtils.update(db.hieroglyphs, data.values());
         expect(
-          await DbUtils.getPage(db.hieroglyphs, {
+          (await DbUtils.getPage(db.hieroglyphs, {
             filter: ([key]) => !!key && key.startsWith('B'),
             pageSize: -1,
-          })
+          })).items
         ).toHaveLength(DEFAULT_PAGE_SIZE + 10);
       });
 
       it('should apply from parameter correctly', async () => {
         expect(
           await DbUtils.getPage(db.hieroglyphs, {from: 'A11'})
-        ).toStrictEqual([SET1.A2, SET1.A3]);
+        ).toStrictEqual(asPage([SET1.A2, SET1.A3]));
       });
 
       it('should apply to parameter correctly', async () => {
         expect(
           await DbUtils.getPage(db.hieroglyphs, {to: 'A1'})
-        ).toStrictEqual([SET1.A1]);
+        ).toStrictEqual(asPage([SET1.A1]));
       });
 
       it('should apply filter parameter correctly', async () => {
@@ -99,12 +101,12 @@ describe('DbUtils', () => {
           await DbUtils.getPage(db.hieroglyphs, {
             filter: (key) => key === 'A1',
           })
-        ).toStrictEqual(['seated man']);
+        ).toStrictEqual(asPage(['seated man']));
         expect(
           await DbUtils.getPage(db.hieroglyphs, {
             filter: (_key, value) => !value?.includes('mouth'),
           })
-        ).toStrictEqual(['seated man', 'man sitting on heel']);
+        ).toStrictEqual(asPage(['seated man', 'man sitting on heel']));
       });
 
       it('should apply mapper parameter correctly', async () => {
@@ -112,7 +114,7 @@ describe('DbUtils', () => {
           await DbUtils.getPage(db.hieroglyphs, {
             mapper: (key) => key,
           })
-        ).toStrictEqual(['A1', 'A2', 'A3']);
+        ).toStrictEqual(asPage(['A1', 'A2', 'A3']));
       });
 
       it('should apply mapper empty parameter correctly', async () => {
@@ -124,11 +126,11 @@ describe('DbUtils', () => {
             mapper: undefined,
             pageSize: undefined,
           })
-        ).toStrictEqual([
+        ).toStrictEqual(asPage([
           'seated man',
           'man with hand to mouth',
           'man sitting on heel',
-        ]);
+        ]));
       });
     });
   });
@@ -165,11 +167,11 @@ describe('DbUtils', () => {
             language: 'en',
           });
           await DbUtils.update(dict, getIterator());
-          expect(await DbUtils.getPage(dict)).toStrictEqual([
+          expect(await DbUtils.getPage(dict)).toStrictEqual(asPage([
             [DICTIONARY_SET1.A1],
             [DICTIONARY_SET1.A2],
             [DICTIONARY_SET1.A3],
-          ]);
+          ]));
         });
 
         describe('and batchThreshold', () => {

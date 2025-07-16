@@ -1,16 +1,22 @@
-import {useQuery} from '@tanstack/react-query';
 import {useClientContext} from "../../app/context/client-context";
+import {useInfinityScroll} from "../../components/infinite-table/hook";
+import {DictionaryItemDto} from "../../types/types";
+import {DictionaryItemVO} from "./types";
 
-export const useGetDictionary = (id?: string) => {
-  const {client} = useClientContext();
+export const useGetDictionary = (
+    dictionaryName: string | undefined,
+    mapper: (item: DictionaryItemDto) => DictionaryItemVO
+  ) => {
+    const {client} = useClientContext();
 
-  return useQuery({
-    queryKey: ['dictionary', id],
-    enabled: !!id,
-    queryFn: () =>
-      id ? client.GET('/api/dictionary/{id}', {
-        params: {path: {id}},
-      }) : undefined,
-    select: (response) => response?.data?.items || [],
-  });
-};
+    return useInfinityScroll({
+      enabled: !!dictionaryName,
+      queryKey: ['dictionary', dictionaryName || ''],
+      queryFn: ({pageParam = ''}) =>
+        client.GET('/api/dictionary/{id}', {
+          params: {path: {id: dictionaryName ?? ''}, query: {from: pageParam}},
+        }),
+      mapper
+    });
+  }
+;

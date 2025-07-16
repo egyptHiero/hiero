@@ -10,7 +10,7 @@ import {SignListPage} from "../pages/sign-list";
 import {AboutPage} from "../pages/about";
 
 export const ApplicationRoutes: React.FC = () => (
-  <BrowserRouter>
+  <BrowserRouter future={{v7_relativeSplatPath: false, v7_startTransition: false}}>
     <Routes>
       <Route element={<PageLayout/>}>
         <Route path={ROUTES.DICTIONARY_LIST} element={<DictionaryListPage/>}/>

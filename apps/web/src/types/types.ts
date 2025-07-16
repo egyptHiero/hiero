@@ -1,15 +1,11 @@
 // Common ----------------------------------------------------------------------
 export interface PageDto<T> {
   items: T[];
+  next?: string
 }
 
 export type Identifiable = {
   id: string;
-};
-
-export type InfiniteScroll<T> = {
-  items: T[];
-  next: T;
 };
 
 export interface ParamIdFilterDto {

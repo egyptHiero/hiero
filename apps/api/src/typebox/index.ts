@@ -12,6 +12,7 @@ export type PageDto<T extends TSchema> = Static<ReturnType<typeof PageDto<T>>>;
 export const PageDto = <T extends TSchema>(T: T) =>
   Type.Object({
     items: Type.Array(T),
+    next: Type.Optional(Type.String()),
   });
 
 export type Identifiable = Static<typeof Identifiable>;

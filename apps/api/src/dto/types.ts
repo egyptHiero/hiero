@@ -1,6 +1,7 @@
 // Common ----------------------------------------------------------------------
 export interface PageDto<T> {
   items: T[];
+  next?: string
 }
 
 export type Identifiable = {
