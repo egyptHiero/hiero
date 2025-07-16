@@ -39,7 +39,7 @@ export const getHieroglyphsProcessorsWithOptions = ({
         firstPage: from,
         lastPage: to,
       },
-      options
+      options,
     ),
     processors,
   };

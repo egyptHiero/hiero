@@ -5,7 +5,7 @@ import { DictionaryItem } from '../types';
 import { DictionaryMetadata } from '@hiero/common';
 
 abstract class PdfHieroglyphsTableProcessor<
-  T
+  T,
 > extends PdfParseTableProcessor<T> {
   override isNewLine(chunk: PDFExtractText): boolean {
     if (chunk.fontName === 'g_d0_f9') {
@@ -32,7 +32,7 @@ class LetterClassificationProcessor extends PdfHieroglyphsTableProcessor<string>
     if (
       letter &&
       buffer.every(
-        (v) => v.fontName.endsWith('f2') || v.fontName.endsWith('f1')
+        (v) => v.fontName.endsWith('f2') || v.fontName.endsWith('f1'),
       )
     ) {
       return [
@@ -53,7 +53,7 @@ class LetterClassificationProcessor extends PdfHieroglyphsTableProcessor<string>
 
 class DictionaryProcessor extends PdfHieroglyphsTableProcessor<DictionaryItem> {
   override convert(
-    buffer: PDFExtractText[]
+    buffer: PDFExtractText[],
   ): [string, DictionaryItem] | undefined {
     const hieroName = buffer[1]?.str;
 
@@ -119,7 +119,7 @@ class HieroglyphsProcessor extends PdfHieroglyphsTableProcessor<string> {
 
 class DebugProcessor extends PdfHieroglyphsTableProcessor<string> {
   private converter = new DebugConverter((chunk) =>
-    this._getColumnIndex(chunk)
+    this._getColumnIndex(chunk),
   );
 
   override convert(_buffer: PDFExtractText[]): string {

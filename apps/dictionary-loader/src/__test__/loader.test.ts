@@ -1,9 +1,9 @@
-import {dbPromise, fillTableFromFile} from "../loader";
-import {DbUtils} from '@hiero/db';
-import {Readable} from "node:stream";
+import { dbPromise, fillTableFromFile } from '../loader';
+import { DbUtils } from '@hiero/db';
+import { Readable } from 'node:stream';
 
 const getData = vi.fn<() => string[]>();
-const asPage = <T>(items: T[], next?: T) => ({items, next});
+const asPage = <T>(items: T[], next?: T) => ({ items, next });
 
 vi.mock('node:fs', async () => {
   const actualFs = await vi.importActual<typeof import('node:fs')>('node:fs');
@@ -13,27 +13,27 @@ vi.mock('node:fs', async () => {
     createReadStream: vi.fn(() => {
       return new Readable({
         read() {
-          getData().forEach(line => this.push(`${line}\n`));
+          getData().forEach((line) => this.push(`${line}\n`));
           this.push(null);
-        }
+        },
       });
-    })
-  }
+    }),
+  };
 });
 
 describe('loader', () => {
   describe('fillTableFromFile', () => {
-
     it('should fill hieroglyphs table', async () => {
       getData.mockReturnValue([
         '{"name":"hieroglyphs-description", "type": "hieroglyphs", "language":"en" }',
         '["A37","man in vessel"]',
         '["A39","man on two giraffes"]',
-
-      ])
+      ]);
       await fillTableFromFile('dummy');
       const db = await dbPromise;
-      expect(await DbUtils.getPage(db.hieroglyphs)).toStrictEqual(asPage(["man in vessel", "man on two giraffes"]));
+      expect(await DbUtils.getPage(db.hieroglyphs)).toStrictEqual(
+        asPage(['man in vessel', 'man on two giraffes']),
+      );
     });
 
     it('should fill dictionary with all the values', async () => {
@@ -45,25 +45,36 @@ describe('loader', () => {
       await fillTableFromFile('dummy');
       const db = await dbPromise;
       expect(await db.getDictionaryInfo().get('test1')).toStrictEqual({
-        "name": "test1",
-        "language": "en"
+        name: 'test1',
+        language: 'en',
       });
-      expect(await DbUtils.getPage(await db.getDictionary('test1'), {mapper: (key, value) => ({[key]: value})})).toStrictEqual(asPage([
-        {
-          A1: [{
-            interpretation: "a1-interpretation",
-          }]
-        },
-        {
-          A2: [{
-            interpretation: "a2-interpretation-1",
-            description: 'a2-description-1'
-          }, {
-            interpretation: "a2-interpretation-2",
-            description: 'a2-description-2'
-          }]
-        }
-      ]));
+      expect(
+        await DbUtils.getPage(await db.getDictionary('test1'), {
+          mapper: (key, value) => ({ [key]: value }),
+        }),
+      ).toStrictEqual(
+        asPage([
+          {
+            A1: [
+              {
+                interpretation: 'a1-interpretation',
+              },
+            ],
+          },
+          {
+            A2: [
+              {
+                interpretation: 'a2-interpretation-1',
+                description: 'a2-description-1',
+              },
+              {
+                interpretation: 'a2-interpretation-2',
+                description: 'a2-description-2',
+              },
+            ],
+          },
+        ]),
+      );
     });
   });
 });

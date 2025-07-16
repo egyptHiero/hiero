@@ -1,23 +1,23 @@
 import React from 'react';
-import {Outlet} from "react-router-dom";
-import {Sidebar} from "./sidebar";
-import {Navbar} from "./navbar";
-import {Container} from "../../controls";
+import { Outlet } from 'react-router-dom';
+import { Sidebar } from './sidebar';
+import { Navbar } from './navbar';
+import { Container } from '../../controls';
 
 export const PageLayout: React.FC = () => {
   return (
     <Container.Flex>
-      <Sidebar/>
+      <Sidebar />
       <Container.Flex flexDirection="column" className="w-100 vh-100">
         <header>
-          <Navbar/>
+          <Navbar />
         </header>
         <main className="h-100">
           <Container.FullHeightScroller>
-            <Outlet/>
+            <Outlet />
           </Container.FullHeightScroller>
         </main>
-        <footer/>
+        <footer />
       </Container.Flex>
     </Container.Flex>
   );

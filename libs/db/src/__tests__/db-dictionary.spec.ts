@@ -3,7 +3,7 @@ import { createDbInstance } from '../db';
 import { DbUtils, GetPageProps } from '../db-utils';
 import { DictionaryInfoEntity } from '../entities';
 
-const asPage = <T>(items: T[], next?: T)=> ({items, next});
+const asPage = <T>(items: T[], next?: T) => ({ items, next });
 
 describe('DB-dictionaries', () => {
   let db: DB;
@@ -30,7 +30,7 @@ describe('DB-dictionaries', () => {
             language: 'en',
             name: 'dict2',
           },
-          'user1'
+          'user1',
         ),
         db.createDictionary(
           {
@@ -38,7 +38,7 @@ describe('DB-dictionaries', () => {
             language: 'en',
             name: 'dict3',
           },
-          'user2'
+          'user2',
         ),
       ]);
     });
@@ -46,19 +46,19 @@ describe('DB-dictionaries', () => {
     it('and getDictionaryInfo() returns expected dictionary info', async () => {
       const mapper: GetPageProps<DictionaryInfoEntity, string>['mapper'] = (
         _key,
-        value
+        value,
       ) => value.name;
 
       expect(
-        await DbUtils.getPage(db.getDictionaryInfo(), { mapper })
+        await DbUtils.getPage(db.getDictionaryInfo(), { mapper }),
       ).toStrictEqual(asPage(['dict1']));
 
       expect(
-        await DbUtils.getPage(db.getDictionaryInfo('user1'), { mapper })
+        await DbUtils.getPage(db.getDictionaryInfo('user1'), { mapper }),
       ).toStrictEqual(asPage(['dict2']));
 
       expect(
-        await DbUtils.getPage(db.getDictionaryInfo('user2'), { mapper })
+        await DbUtils.getPage(db.getDictionaryInfo('user2'), { mapper }),
       ).toStrictEqual(asPage(['dict3']));
     });
 
@@ -68,34 +68,34 @@ describe('DB-dictionaries', () => {
       expect(await db.getDictionary('dict3', 'user2')).toBeTruthy();
 
       await expect(db.getDictionary('dict1', 'user1')).rejects.toThrow(
-        'Dictionary not exists'
+        'Dictionary not exists',
       );
       await expect(db.getDictionary('dict2')).rejects.toThrow(
-        'Dictionary not exists'
+        'Dictionary not exists',
       );
       await expect(
-        async () => await db.getDictionary('dict3', 'user1')
+        async () => await db.getDictionary('dict3', 'user1'),
       ).rejects.toThrow('Dictionary not exists');
     });
 
     it('and db.removeDictionary removes the expected dictionary', async () => {
       await db.removeDictionary('dict1');
       await expect(db.getDictionary('dict1')).rejects.toThrow(
-        'Dictionary not exists'
+        'Dictionary not exists',
       );
 
       await db.removeDictionary('dict2', 'user1');
       await expect(db.getDictionary('dict2', 'user1')).rejects.toThrow(
-        'Dictionary not exists'
+        'Dictionary not exists',
       );
 
       await db.removeDictionary('dict3', 'user2');
       await expect(db.getDictionary('dict3', 'user2')).rejects.toThrow(
-        'Dictionary not exists'
+        'Dictionary not exists',
       );
 
       await expect(db.removeDictionary('dict1')).rejects.toThrow(
-        'Dictionary not exists'
+        'Dictionary not exists',
       );
     });
 
@@ -106,12 +106,12 @@ describe('DB-dictionaries', () => {
       const dict2 = await db.getDictionary('dict2', 'user1');
       await dict2.put('A1', [{ description: 'a2', interpretation: 'b2' }]);
 
-      expect(await DbUtils.getPage(dict1)).toStrictEqual(asPage([
-        [{ description: 'a1', interpretation: 'b1' }],
-      ]));
-      expect(await DbUtils.getPage(dict2)).toStrictEqual(asPage([
-        [{ description: 'a2', interpretation: 'b2' }],
-      ]));
+      expect(await DbUtils.getPage(dict1)).toStrictEqual(
+        asPage([[{ description: 'a1', interpretation: 'b1' }]]),
+      );
+      expect(await DbUtils.getPage(dict2)).toStrictEqual(
+        asPage([[{ description: 'a2', interpretation: 'b2' }]]),
+      );
     });
   });
 
@@ -119,7 +119,7 @@ describe('DB-dictionaries', () => {
     it('throws exception when table already exists ', async () => {
       await db.createDictionary({ name: 'dict1', language: 'en' });
       await expect(
-        db.createDictionary({ name: 'dict1', language: 'en' })
+        db.createDictionary({ name: 'dict1', language: 'en' }),
       ).rejects.toThrow('Dictionary already exists');
     });
 

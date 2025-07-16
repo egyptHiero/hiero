@@ -19,7 +19,7 @@ const args = arg(
   {
     argv: process.argv.slice(2),
     permissive: true,
-  }
+  },
 );
 
 export const params = {
@@ -29,14 +29,14 @@ export const params = {
   calculateBoundaries: args['--calculate-boundaries'],
   help: args['--help'],
   dictionaries: args._.filter((name: string) =>
-    ['ancient', 'vygus', 'hieroes'].includes(name)
+    ['ancient', 'vygus', 'hieroes'].includes(name),
   ) as Dictionary[],
 };
 
 const showHelp = () => {
   console.log('PDF Dictionary Parser');
   console.log(
-    'Extracts information from PDF files of following types - ancient, vygus, heroes'
+    'Extracts information from PDF files of following types - ancient, vygus, heroes',
   );
   console.log();
   console.log('Usage:');
@@ -47,9 +47,7 @@ const showHelp = () => {
   console.log('\t--from <number>               First page to process');
   console.log('\t--to <number>                 Last page to process');
   console.log('\t-d, --debug                   Enable debug mode');
-  console.log(
-    '\t-b, --calculate-boundaries    Only print columns boundaries'
-  );
+  console.log('\t-b, --calculate-boundaries    Only print columns boundaries');
   console.log();
   console.log('Examples:');
   console.log('\t# Process all the dictionaries');
@@ -61,7 +59,7 @@ const showHelp = () => {
   console.log();
   console.log("\t# Calculates the ancient's boundaries from page 2 to 5");
   console.log(
-    '\tnpm run parse-dictionary -- ancient --from=2 --to=5 --calculate-boundaries'
+    '\tnpm run parse-dictionary -- ancient --from=2 --to=5 --calculate-boundaries',
   );
   console.log('\tnpm run parse-dictionary -- ancient --from=2 --to=5 -b');
   console.log();
@@ -76,14 +74,18 @@ if (params.dictionaries.length > 1) {
   (['from', 'to', 'calculateBoundaries'] as (keyof typeof params)[]).forEach(
     (name) => {
       if (params[name]) {
-        console.warn(`warning: option '${name}' is ignored for multiply dictionaries`);
+        console.warn(
+          `warning: option '${name}' is ignored for multiply dictionaries`,
+        );
         (params[name] as unknown) = undefined;
       }
-    }
+    },
   );
 }
 
 if (params.calculateBoundaries && params.debug) {
-  console.warn(`warning: option 'debug' is ignored in calculateBoundaries mode`);
+  console.warn(
+    `warning: option 'debug' is ignored in calculateBoundaries mode`,
+  );
   params.debug = undefined;
 }

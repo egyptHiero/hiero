@@ -25,7 +25,7 @@ export const getVygusProcessorsWithOptions = ({
         firstPage: from,
         lastPage: to,
       },
-      options
+      options,
     ),
     processors,
   };

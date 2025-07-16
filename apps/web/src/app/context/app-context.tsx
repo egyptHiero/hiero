@@ -22,8 +22,8 @@ interface IAppContextProvider {
 }
 
 export const AppContextProvider: React.FC<IAppContextProvider> = ({
-                                                                    children,
-                                                                  }) => {
+  children,
+}) => {
   const [isSidebarVisible, setSidebarVisible] = React.useState(true);
 
   const value = React.useMemo(
@@ -31,7 +31,7 @@ export const AppContextProvider: React.FC<IAppContextProvider> = ({
       isSidebarVisible,
       setSidebarVisible,
     }),
-    [isSidebarVisible]
+    [isSidebarVisible],
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

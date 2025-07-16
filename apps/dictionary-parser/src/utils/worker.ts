@@ -1,5 +1,5 @@
-import {parentPort, workerData} from "node:worker_threads";
-import {PDFExtract} from "pdf.js-extract";
+import { parentPort, workerData } from 'node:worker_threads';
+import { PDFExtract } from 'pdf.js-extract';
 
 const [fileName, options] = workerData;
 

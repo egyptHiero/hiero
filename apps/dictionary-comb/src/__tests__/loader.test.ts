@@ -1,5 +1,5 @@
-import {PassThrough, Readable} from "node:stream";
-import {combFile} from "../loader";
+import { PassThrough, Readable } from 'node:stream';
+import { combFile } from '../loader';
 
 const readData = vi.fn<() => string[]>();
 const writeData: string[] = [];
@@ -12,22 +12,20 @@ vi.mock('node:fs', async () => {
     createReadStream: vi.fn(() => {
       return new Readable({
         read() {
-          readData().forEach(line => this.push(`${line}\n`));
+          readData().forEach((line) => this.push(`${line}\n`));
           this.push(null);
-        }
+        },
       });
     }),
     createWriteStream: vi.fn(() => {
       return new PassThrough({
-        write(chunk,
-              _encoding,
-              callback) {
+        write(chunk, _encoding, callback) {
           writeData.push(chunk.toString().replace(/\n/, ''));
           callback();
-        }
+        },
       });
-    })
-  }
+    }),
+  };
 });
 
 describe('combFile', () => {
@@ -44,13 +42,13 @@ describe('combFile', () => {
 
     await combFile('test');
 
-    console.log(writeData)
+    console.log(writeData);
 
-    expect(writeData).toStrictEqual(([
+    expect(writeData).toStrictEqual([
       '{"name":"hieroglyphs-description","type":"hieroglyphs","language":"en"}',
       '["A37","man in vessel"]',
       '["A39","man on two giraffes"]',
-    ]));
+    ]);
   });
 
   it('should append values for the same keys', async () => {
@@ -63,13 +61,13 @@ describe('combFile', () => {
 
     await combFile('test');
 
-    console.log(writeData)
+    console.log(writeData);
 
-    expect(writeData).toStrictEqual(([
+    expect(writeData).toStrictEqual([
       '{"name":"hieroglyphs-description","type":"hieroglyphs","language":"en"}',
       '["A37","man in vessel","two men in vessel"]',
       '["A39","man on two giraffes"]',
-    ]));
+    ]);
   });
 
   it('should remove duplicates', async () => {
@@ -88,12 +86,12 @@ describe('combFile', () => {
 
     await combFile('test');
 
-    console.log(writeData)
+    console.log(writeData);
 
-    expect(writeData).toStrictEqual(([
+    expect(writeData).toStrictEqual([
       '{"name":"hieroglyphs-description","type":"hieroglyphs","language":"en"}',
       '["A37","man in vessel","two men in vessel"]',
       '["A39","man on two giraffes"]',
-    ]));
+    ]);
   });
 });

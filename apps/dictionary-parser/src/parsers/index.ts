@@ -8,7 +8,7 @@ import { getResource } from '../resource-names';
 
 const getProcessorsWithOptions = (
   dictionary: Dictionary,
-  options: ParserOptions
+  options: ParserOptions,
 ) => {
   switch (dictionary) {
     case 'ancient':
@@ -22,11 +22,11 @@ const getProcessorsWithOptions = (
 
 export const parseDictionary = (
   dictionary: Dictionary,
-  parserOptions: ParserOptions
+  parserOptions: ParserOptions,
 ) => {
   const { processors, options } = getProcessorsWithOptions(
     dictionary,
-    parserOptions
+    parserOptions,
   );
   return extract(getResource(dictionary), options, ...processors);
 };

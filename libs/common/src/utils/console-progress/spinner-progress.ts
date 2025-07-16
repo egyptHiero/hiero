@@ -1,6 +1,6 @@
 import * as color from 'cli-color';
-import {Progress} from "./types";
-import {createLogUpdate} from 'log-update';
+import { Progress } from './types';
+import { createLogUpdate } from 'log-update';
 
 type Status = 'pending' | 'success' | 'error';
 
@@ -39,23 +39,25 @@ const getSpinner = () => {
   }
 
   return spinnerFrames[spinnerFrame++] || '';
-}
+};
 
 const printLines = createLogUpdate(process.stdout, {
   showCursor: false,
-})
+});
 
 const updateScreen = () => {
   printLines(
     Object.entries(lines)
-      .map(([, line]) => `${getIndicator(line.status, getSpinner())} ${getText(line)}`).join('\n')
+      .map(
+        ([, line]) =>
+          `${getIndicator(line.status, getSpinner())} ${getText(line)}`,
+      )
+      .join('\n'),
   );
-}
+};
 
 const isActive = () =>
-  Object.values(lines).some((line) =>
-    ['pending'].includes(line.status)
-  )
+  Object.values(lines).some((line) => ['pending'].includes(line.status));
 
 const checkInterval = () => {
   if (isActive() && !timer) {
@@ -67,21 +69,21 @@ const checkInterval = () => {
     timer = undefined;
     updateScreen();
   }
-}
+};
 
 export const spinnerProgress = (key: string): Progress => {
   return {
     error(message) {
-      lines[key] = {message, status: 'error'};
+      lines[key] = { message, status: 'error' };
       checkInterval();
     },
     success(message) {
-      lines[key] = {message, status: 'success'};
+      lines[key] = { message, status: 'success' };
       checkInterval();
     },
     progress(message) {
-      lines[key] = {message, status: 'pending'};
+      lines[key] = { message, status: 'pending' };
       checkInterval();
-    }
-  }
-}
+    },
+  };
+};

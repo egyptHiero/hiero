@@ -1,5 +1,5 @@
-import {consoleProgress, NDJSON_SORTED_DIR} from '@hiero/common';
-import {fillTableFromFile} from './loader';
+import { consoleProgress, NDJSON_SORTED_DIR } from '@hiero/common';
+import { fillTableFromFile } from './loader';
 import fs from 'node:fs';
 
 interface DbError extends Error {
@@ -29,9 +29,9 @@ fs.readdir(NDJSON_SORTED_DIR, (err, files) =>
           await fillTableFromFile(name);
         } catch (e) {
           consoleProgress[name].error(
-            `error processing ${name}: ${getErrorMessage(e)}`
+            `error processing ${name}: ${getErrorMessage(e)}`,
           );
         }
       }
-    })
+    }),
 );

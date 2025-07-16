@@ -8,7 +8,9 @@ type TColumn = [number, number];
  *
  * Columns could be calculated with PdfColumnBoundariesCalculator
  */
-export abstract class PdfParseTableProcessor<T> implements TPdfParseProcessor<T> {
+export abstract class PdfParseTableProcessor<T>
+  implements TPdfParseProcessor<T>
+{
   constructor(protected readonly columns: TColumn[]) {}
 
   _getItemsByColumn(buffer: PDFExtractText[], n: number) {
@@ -26,13 +28,12 @@ export abstract class PdfParseTableProcessor<T> implements TPdfParseProcessor<T>
     return this.columns.findIndex(([x1, x2]) => x + width >= x1 && x <= x2);
   }
 
-  isNewLine(
-    chunk: PDFExtractText,
-    buffer: PDFExtractText[],
-  ): boolean {
+  isNewLine(chunk: PDFExtractText, buffer: PDFExtractText[]): boolean {
     const prevChunk = buffer[buffer.length - 1];
     const chunkColumn = this._getColumnIndex(chunk);
-    const prevColumn = prevChunk ? this._getColumnIndex(prevChunk) : chunkColumn;
+    const prevColumn = prevChunk
+      ? this._getColumnIndex(prevChunk)
+      : chunkColumn;
     return chunkColumn < prevColumn;
   }
 

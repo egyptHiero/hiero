@@ -1,9 +1,19 @@
-import {DatabaseOptions as MemoryDatabaseOptions, MemoryLevel,} from 'memory-level';
-import {ClassicLevel, DatabaseOptions as ClassicDatabaseOptions,} from 'classic-level';
-import {DB, DbTable, TDbFormat} from './types';
-import {DictionaryInfoEntity, DictionaryItemEntity, SignEntity,} from './entities';
-import {DbUtils} from './db-utils';
-import {AbstractLevel} from 'abstract-level/types/abstract-level';
+import {
+  DatabaseOptions as MemoryDatabaseOptions,
+  MemoryLevel,
+} from 'memory-level';
+import {
+  ClassicLevel,
+  DatabaseOptions as ClassicDatabaseOptions,
+} from 'classic-level';
+import { DB, DbTable, TDbFormat } from './types';
+import {
+  DictionaryInfoEntity,
+  DictionaryItemEntity,
+  SignEntity,
+} from './entities';
+import { DbUtils } from './db-utils';
+import { AbstractLevel } from 'abstract-level/types/abstract-level';
 
 import * as process from 'node:process';
 
@@ -21,7 +31,7 @@ const createInMemoryDB = (
     createIfMissing: true,
     storeEncoding: 'utf8',
     valueEncoding: 'json',
-  }
+  },
 ): TDbLevel<object> => {
   return new MemoryLevel<string, object>(options);
 };
@@ -30,7 +40,7 @@ const createClassicDB = (
   options: ClassicDatabaseOptions<string, object> = {
     createIfMissing: true,
     valueEncoding: 'json',
-  }
+  },
 ): TDbLevel<object> => {
   return new ClassicLevel<string, object>('data/hiero-db', options);
 };
@@ -54,19 +64,19 @@ export const createDbInstance = async (): Promise<DB> => {
 
   const hieroglyphs = db.sublevel<string, string>(
     'hieroglyphs',
-    sublevelOptions
+    sublevelOptions,
   );
 
   const signs = db.sublevel<string, SignEntity>('signs', sublevelOptions);
 
   const dictionaries = db.sublevel<string, DictionaryItemEntity>(
     'dictionaries',
-    sublevelOptions
+    sublevelOptions,
   );
 
   const dictionaryInfo = db.sublevel<string, DictionaryInfoEntity>(
     'info',
-    sublevelOptions
+    sublevelOptions,
   );
 
   const getDictionaryInfo: DB['getDictionaryInfo'] = (user = PUBLIC) =>
@@ -93,7 +103,7 @@ export const createDbInstance = async (): Promise<DB> => {
       const defaultOptions: Required<typeof options> = {
         canOverride: false,
       };
-      const {canOverride} = Object.assign(defaultOptions, options);
+      const { canOverride } = Object.assign(defaultOptions, options);
 
       const userDictionaryInfo = getDictionaryInfo(user);
       const tableExists = await DbUtils.hasKey(userDictionaryInfo, info.name);

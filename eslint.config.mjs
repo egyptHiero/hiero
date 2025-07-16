@@ -1,4 +1,5 @@
 import nx from '@nx/eslint-plugin';
+import prettierPlugin from 'eslint-plugin-prettier';
 
 export default [
   {
@@ -48,7 +49,13 @@ export default [
       '**/*.cjs',
       '**/*.mjs',
     ],
+    plugins: {
+      prettier: prettierPlugin,
+    },
     // Override or add rules here
-    rules: {},
+    rules: {
+      ...prettierPlugin.configs.recommended.rules,
+      'prettier/prettier': 'error',
+    },
   },
 ];

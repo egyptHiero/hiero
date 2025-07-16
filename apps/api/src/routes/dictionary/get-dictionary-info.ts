@@ -1,7 +1,10 @@
-import {DictionaryInfoDto as DictionaryInfoSchema, ParamIdFilterDto as ParamIdFilterSchema,} from '../../typebox';
-import {toDictionaryInfoDto} from '../../dto';
-import {DB} from '@hiero/db';
-import {FastifyTypeBox} from "../../types";
+import {
+  DictionaryInfoDto as DictionaryInfoSchema,
+  ParamIdFilterDto as ParamIdFilterSchema,
+} from '../../typebox';
+import { toDictionaryInfoDto } from '../../dto';
+import { DB } from '@hiero/db';
+import { FastifyTypeBox } from '../../types';
 
 export const getDictionaryInfo = (fastify: FastifyTypeBox, db: DB) =>
   fastify.get(
@@ -18,8 +21,8 @@ export const getDictionaryInfo = (fastify: FastifyTypeBox, db: DB) =>
       },
     },
     async function (request) {
-      const {id} = request.params;
+      const { id } = request.params;
 
       return toDictionaryInfoDto(id, await db.getDictionaryInfo().get(id));
-    }
+    },
   );

@@ -29,7 +29,7 @@ const Box = styled.div<
     WidthProps
 >(
   { position: 'relative' },
-  compose(height, space, textAlign, top, width, maxWidth)
+  compose(height, space, textAlign, top, width, maxWidth),
 );
 
 const FullHeightContainer: React.FC<{ children?: React.ReactNode }> = ({
@@ -51,14 +51,14 @@ const FullHeightScroller = styled(FullHeightContainer)<SpaceProps>(
       overflowY: 'auto',
     },
   },
-  space
+  space,
 );
 
 const Flex = styled.div<FlexboxProps | GridGapProps>(
-  ({
+  {
     display: 'flex',
-  }),
-  compose(flexbox, gridGap)
+  },
+  compose(flexbox, gridGap),
 );
 
 export const Container = {

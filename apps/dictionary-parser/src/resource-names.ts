@@ -1,6 +1,6 @@
 import { Dictionary } from './types';
 import path from 'node:path';
-import {RESOURCES_DIR} from "@hiero/common";
+import { RESOURCES_DIR } from '@hiero/common';
 
 const getFileName = (dictionary: Dictionary) => {
   switch (dictionary) {

@@ -1,3 +1,3 @@
 export interface GenerateClientTypingsExecutorSchema {
-  "output": "string"
+  output: 'string';
 }

@@ -1,4 +1,4 @@
-import {Transform} from 'stream';
+import { Transform } from 'stream';
 
 const compare = (a: string[], b: string): number => {
   const result = a[0].localeCompare(b[0]);
@@ -8,7 +8,7 @@ const compare = (a: string[], b: string): number => {
   }
 
   return result;
-}
+};
 
 /**
  * Sort, remove duplicates and combine values for equal keys.
@@ -17,7 +17,7 @@ export class CombTransformer extends Transform {
   private lines: string[] = [];
 
   constructor() {
-    super({objectMode: true});
+    super({ objectMode: true });
   }
 
   _transform(chunk, encoding, callback) {
@@ -26,10 +26,13 @@ export class CombTransformer extends Transform {
   }
 
   _flush(callback) {
-    this.lines.sort((a, b) => (Array.isArray(a) && Array.isArray(b)) ? compare(a, b) : 1)
+    this.lines
+      .sort((a, b) =>
+        Array.isArray(a) && Array.isArray(b) ? compare(a, b) : 1,
+      )
       .reduce((acc, value, n, arr) => {
         const stringifiedValue = JSON.stringify(value);
-        if (JSON.stringify(arr[n-1]) !== stringifiedValue) {
+        if (JSON.stringify(arr[n - 1]) !== stringifiedValue) {
           const previous = acc[acc.length - 1];
           if (JSON.stringify(previous) !== stringifiedValue) {
             if (Array.isArray(value) && Array.isArray(previous)) {
@@ -46,7 +49,7 @@ export class CombTransformer extends Transform {
         }
         return acc;
       }, [])
-      .forEach(line => this.push(line));
+      .forEach((line) => this.push(line));
     callback();
   }
 }

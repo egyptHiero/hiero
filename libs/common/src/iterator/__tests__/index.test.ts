@@ -16,13 +16,13 @@ const createNdjsonStream = (data: unknown[]): Transform => {
 describe('iterateDictionaryReader', () => {
   it('should throw No data error with no data', async () => {
     await expect(
-      iterateDictionaryReader(createNdjsonStream([]))
+      iterateDictionaryReader(createNdjsonStream([])),
     ).rejects.toThrow('No data');
   });
 
   it('should throw Invalid metadata error with invalid metadata', async () => {
     await expect(
-      iterateDictionaryReader(createNdjsonStream([{}]))
+      iterateDictionaryReader(createNdjsonStream([{}])),
     ).rejects.toThrow('Invalid metadata');
   });
 
@@ -31,7 +31,7 @@ describe('iterateDictionaryReader', () => {
     const data = await iterateDictionaryReader(createNdjsonStream([info]));
     expect(data.info).toStrictEqual(info);
     expect(await data.iterator.next()).toStrictEqual(
-      expect.objectContaining({ done: true })
+      expect.objectContaining({ done: true }),
     );
   });
 
@@ -43,7 +43,7 @@ describe('iterateDictionaryReader', () => {
       [{ interpretation: 'a3' }],
     ];
     const data = await iterateDictionaryReader(
-      createNdjsonStream([info, ...records])
+      createNdjsonStream([info, ...records]),
     );
     expect(data.info).toStrictEqual(info);
 
@@ -52,7 +52,7 @@ describe('iterateDictionaryReader', () => {
       fn(item);
     }
 
-    expect(fn.mock.calls).toEqual(records.map(r => ([r])));
+    expect(fn.mock.calls).toEqual(records.map((r) => [r]));
   });
 });
 
@@ -65,6 +65,6 @@ describe('asyncIterator', () => {
       await fn(item);
     }
 
-//    expect(fn.mock.calls).toEqual([[1], [2], [3]]);
+    //    expect(fn.mock.calls).toEqual([[1], [2], [3]]);
   });
 });

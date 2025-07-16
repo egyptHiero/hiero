@@ -7,9 +7,7 @@ interface DictionaryInfo {
   user?: string;
 }
 
-const isDictionaryInfo = (
-  data: unknown
-): data is DictionaryInfo => {
+const isDictionaryInfo = (data: unknown): data is DictionaryInfo => {
   const dictionary = data as DictionaryInfo;
 
   return !!dictionary.name && !!dictionary.language && !!dictionary.type;
@@ -29,7 +27,7 @@ type TIterateDictionaryReader = <T>(readStream: Transform) => Promise<{
  * @returns record.iterator   - async iterator
  */
 export const iterateDictionaryReader: TIterateDictionaryReader = async (
-  readStream
+  readStream,
 ) => {
   const iterator = (async function* () {
     for await (const chunk of readStream) {

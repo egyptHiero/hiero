@@ -1,8 +1,7 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const StyledDescription = styled.span({
-  fontSize: "small",
-  fontStyle: "italic",
-  fontWeight: "bolder"
-})
-
+  fontSize: 'small',
+  fontStyle: 'italic',
+  fontWeight: 'bolder',
+});

@@ -30,7 +30,7 @@ describe('DB-signs', () => {
         key,
         value,
         type: 'put',
-      }))
+      })),
     );
 
     expect(await db.getSigns().get('a1')).toStrictEqual({
@@ -47,7 +47,7 @@ describe('DB-signs', () => {
         key,
         value,
         type: 'put',
-      }))
+      })),
     );
 
     expect(await db.getSigns('user1').get('a1')).toStrictEqual({

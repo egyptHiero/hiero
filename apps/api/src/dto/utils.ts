@@ -1,44 +1,48 @@
-import {DictionaryInfoDto, DictionaryItemDto, SignDto,} from './index';
-import {DictionaryInfoEntity, DictionaryItemEntity, SignEntity} from '@hiero/db';
+import { DictionaryInfoDto, DictionaryItemDto, SignDto } from './index';
+import {
+  DictionaryInfoEntity,
+  DictionaryItemEntity,
+  SignEntity,
+} from '@hiero/db';
 
-export const toPageDto = v => v;
+export const toPageDto = (v) => v;
 
 export const toDictionaryInfoDto = (
   id?: string,
-  entity?: DictionaryInfoEntity
+  entity?: DictionaryInfoEntity,
 ): DictionaryInfoDto | undefined =>
   id && entity
     ? {
-      id,
-      ...entity,
-    }
+        id,
+        ...entity,
+      }
     : undefined;
 
 export const toDictionaryItemDto = (
   id?: string,
-  entity: DictionaryItemEntity = []
+  entity: DictionaryItemEntity = [],
 ): DictionaryItemDto | undefined => {
   return id
     ? {
-      id,
-      i: entity.reduce<Record<string, string>[]>(
-        (acc, {interpretation, description}) => {
-          acc.push({[interpretation]: description ?? ''});
-          return acc;
-        },
-        []
-      ),
-    }
+        id,
+        i: entity.reduce<Record<string, string>[]>(
+          (acc, { interpretation, description }) => {
+            acc.push({ [interpretation]: description ?? '' });
+            return acc;
+          },
+          [],
+        ),
+      }
     : undefined;
 };
 
 export const toSignDto = (
   id?: string,
-  entity?: SignEntity
+  entity?: SignEntity,
 ): SignDto | undefined =>
   id && entity
     ? {
-      id,
-      ...entity,
-    }
+        id,
+        ...entity,
+      }
     : undefined;

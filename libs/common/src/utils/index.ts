@@ -8,10 +8,10 @@ export * from './console-progress';
  */
 export const combineWithDefaults = <T1 extends Partial<T2>, T2 extends object>(
   props: T1 = {} as T1,
-  defaultProps: T2 = {} as T2
+  defaultProps: T2 = {} as T2,
 ) => ({
   ...defaultProps,
   ...Object.fromEntries(
-    Object.entries(props).filter(([, v]) => v !== undefined && v !== null)
+    Object.entries(props).filter(([, v]) => v !== undefined && v !== null),
   ),
 });

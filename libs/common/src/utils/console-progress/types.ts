@@ -5,4 +5,3 @@ export interface Progress {
 
   error(message: string): void;
 }
-

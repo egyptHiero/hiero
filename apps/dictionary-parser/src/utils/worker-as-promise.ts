@@ -1,11 +1,11 @@
-import {Worker} from 'node:worker_threads';
+import { Worker } from 'node:worker_threads';
 
 export const runWorkerAsPromise = async <T extends Array<unknown>, R>(
   filename: string,
   ...params: T
 ) => {
   return new Promise<R>((resolve, reject) => {
-    const worker = new Worker(filename, {workerData: params});
+    const worker = new Worker(filename, { workerData: params });
 
     worker.on('message', resolve);
     worker.on('error', reject);

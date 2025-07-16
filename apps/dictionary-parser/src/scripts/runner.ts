@@ -7,5 +7,5 @@ const args = process.argv
 
 execSync(`nx serve dictionary-parser ${args}`, {
   stdio: 'inherit',
-  env: { ...process.env, 'NX_TUI': 'false' },
+  env: { ...process.env, NX_TUI: 'false' },
 });

@@ -20,7 +20,7 @@ describe('DB-hieroglyphs', () => {
 
   it('get() should find certain value by key', async () => {
     await db.hieroglyphs.batch(
-      Object.entries(SET1).map(([key, value]) => ({ key, value, type: 'put' }))
+      Object.entries(SET1).map(([key, value]) => ({ key, value, type: 'put' })),
     );
 
     expect(await db.hieroglyphs.get('A2')).toBe('man with hand to mouth');

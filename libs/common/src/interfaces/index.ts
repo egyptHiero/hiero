@@ -17,5 +17,5 @@ export interface DictionaryInfo {
  */
 export interface DictionaryMetadata extends DictionaryInfo {
   /** Hint to a loader. */
-  type: 'dictionary' | 'hieroglyphs'
+  type: 'dictionary' | 'hieroglyphs';
 }

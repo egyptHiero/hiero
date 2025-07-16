@@ -1,14 +1,14 @@
-import {DbTable} from './types';
+import { DbTable } from './types';
 import ShortUniqueId from 'short-unique-id';
-import {combineWithDefaults} from '@hiero/common';
+import { combineWithDefaults } from '@hiero/common';
 
 export const DEFAULT_PAGE_SIZE = 25;
 const MAX_ITERATIONS_FOR_UNIQUE_ID = 3;
-const uid = new ShortUniqueId({length: 6});
+const uid = new ShortUniqueId({ length: 6 });
 
 const hasKey = async <T>(table: DbTable<T>, key: string) => {
   // noinspection LoopStatementThatDoesntLoopJS
-  for await (const _ of table.iterator({gte: key, lte: key, limit: 1})) {
+  for await (const _ of table.iterator({ gte: key, lte: key, limit: 1 })) {
     return true;
   }
   return false;
@@ -24,8 +24,8 @@ export type GetPageProps<T, R = T> = {
 
 async function getPage<T, R = T>(
   table: DbTable<T>,
-  props: Partial<GetPageProps<T, R>> = {}
-): Promise<{ items: Array<R>, next: string }> {
+  props: Partial<GetPageProps<T, R>> = {},
+): Promise<{ items: Array<R>; next: string }> {
   const defaultProps: GetPageProps<T, T> = {
     pageSize: DEFAULT_PAGE_SIZE + 1,
     from: '',
@@ -34,7 +34,7 @@ async function getPage<T, R = T>(
     mapper: (_key, value) => value,
   };
 
-  const {pageSize, from, to, filter, mapper} = combineWithDefaults(
+  const { pageSize, from, to, filter, mapper } = combineWithDefaults(
     props,
     defaultProps as unknown as GetPageProps<T, R>,
   );
@@ -55,15 +55,15 @@ async function getPage<T, R = T>(
     }
   }
 
-  return lastKey ?
-    {items: result.slice(0, pageSize), next: lastKey} :
-    {items: result, next: lastKey};
+  return lastKey
+    ? { items: result.slice(0, pageSize), next: lastKey }
+    : { items: result, next: lastKey };
 }
 
 const getSize = async <T>(table: DbTable<T>): Promise<number> => {
   let count = 0;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  for await (const _ of table.iterator({keys: true, values: false})) {
+  for await (const _ of table.iterator({ keys: true, values: false })) {
     count++;
   }
   return count;
@@ -87,7 +87,7 @@ interface UpdateOptions<T> {
 
 async function* createBundles<T>(
   iterator: AsyncIterable<[string, T]> | Iterable<[string, T]>,
-  batchThreshold: number
+  batchThreshold: number,
 ): AsyncGenerator<Array<[string, T]>, void, void> {
   let bundle: Array<[string, T]> = [];
   for await (const item of iterator) {
@@ -102,16 +102,18 @@ async function* createBundles<T>(
 
 const update = async <T>(
   table: DbTable<T>,
-  iterator: AsyncIterable<[string, string | string[]]> | Iterable<[string, string | string[]]>,
-  options: Partial<UpdateOptions<T>> = {}
+  iterator:
+    | AsyncIterable<[string, string | string[]]>
+    | Iterable<[string, string | string[]]>,
+  options: Partial<UpdateOptions<T>> = {},
 ): Promise<void> => {
-  const defaultOptions: UpdateOptions<T> = {batchThreshold: 1000};
-  const {batchThreshold} = combineWithDefaults(options, defaultOptions);
+  const defaultOptions: UpdateOptions<T> = { batchThreshold: 1000 };
+  const { batchThreshold } = combineWithDefaults(options, defaultOptions);
 
   for await (const bundle of createBundles(iterator, batchThreshold)) {
     const batch = table.batch();
     bundle.forEach(([key, ...values]) => {
-      batch.put(key, options.mapper ? options.mapper(values) : values as T);
+      batch.put(key, options.mapper ? options.mapper(values) : (values as T));
     });
     await batch.write();
   }

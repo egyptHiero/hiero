@@ -1,7 +1,7 @@
 import { FastifyInstance } from 'fastify';
 import fp from 'fastify-plugin';
 import statics from '@fastify/static';
-import * as path from "node:path";
+import * as path from 'node:path';
 
 /**
  * This plugin serves static files.
@@ -14,5 +14,4 @@ export default fp(async function (fastify: FastifyInstance) {
     prefix: '/locales',
     decorateReply: false,
   });
-
 });

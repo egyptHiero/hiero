@@ -36,7 +36,7 @@ export const getAncientProcessorsWithOptions = ({
         firstPage: from,
         lastPage: to,
       },
-      options
+      options,
     ),
     processors,
   };

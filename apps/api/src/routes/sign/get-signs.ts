@@ -1,11 +1,11 @@
-import {DB, DbUtils} from '@hiero/db';
+import { DB, DbUtils } from '@hiero/db';
 import {
   DictionaryListFilterDto as DictionaryListFilterSchema,
   PageDto as PageDtoSchema,
   SignDto as SignDtoSchema,
 } from '../../typebox';
-import {toPageDto, toSignDto} from '../../dto';
-import {FastifyTypeBox} from "../../types";
+import { toPageDto, toSignDto } from '../../dto';
+import { FastifyTypeBox } from '../../types';
 
 export const getSigns = (fastify: FastifyTypeBox, db: DB) =>
   fastify.get(
@@ -26,7 +26,7 @@ export const getSigns = (fastify: FastifyTypeBox, db: DB) =>
         await DbUtils.getPage(db.getSigns(), {
           ...request.query,
           mapper: toSignDto,
-        })
+        }),
       );
-    }
+    },
   );

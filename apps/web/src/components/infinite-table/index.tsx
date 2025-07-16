@@ -1,1 +1,1 @@
-export {InfiniteTable} from './table';
+export { InfiniteTable } from './table';

@@ -1,7 +1,7 @@
 // Common ----------------------------------------------------------------------
 export interface PageDto<T> {
   items: T[];
-  next?: string
+  next?: string;
 }
 
 export type Identifiable = {
@@ -66,4 +66,3 @@ export type SignNewDto = {
 export type SignDto = SignNewDto & Identifiable;
 
 // Hieroglyphs -----------------------------------------------------------------
-

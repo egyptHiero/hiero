@@ -1,6 +1,6 @@
-import fs from "node:fs";
-import {consoleProgress, NDJSON_DIR} from "@hiero/common";
-import {combFile} from "./loader";
+import fs from 'node:fs';
+import { consoleProgress, NDJSON_DIR } from '@hiero/common';
+import { combFile } from './loader';
 
 const params = Array.from(process.argv).slice(6);
 
@@ -13,11 +13,8 @@ fs.readdir(NDJSON_DIR, (err, files) =>
           consoleProgress[name].progress(`reading file ${name}`);
           combFile(name);
         } catch (e) {
-          consoleProgress[name].error(
-            `error processing ${name}: ${e}`
-          );
+          consoleProgress[name].error(`error processing ${name}: ${e}`);
         }
       }
-    })
+    }),
 );
-

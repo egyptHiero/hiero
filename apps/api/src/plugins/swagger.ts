@@ -1,7 +1,7 @@
 import fp from 'fastify-plugin';
-import {FastifyInstance} from 'fastify';
-import {fastifySwagger} from '@fastify/swagger';
-import {fastifySwaggerUi} from '@fastify/swagger-ui';
+import { FastifyInstance } from 'fastify';
+import { fastifySwagger } from '@fastify/swagger';
+import { fastifySwaggerUi } from '@fastify/swagger-ui';
 
 export const isSwaggerEnabled = process.env['NODE_ENV'] === 'development';
 

@@ -4,7 +4,9 @@ import type { paths } from '../../@types/openapi-schema';
 
 interface IClientContext {
   client: ReturnType<typeof createClient<paths>>;
-  select: <T extends { data?: unknown; error?: unknown; response?: unknown }>(value: T) => T['data'];
+  select: <T extends { data?: unknown; error?: unknown; response?: unknown }>(
+    value: T,
+  ) => T['data'];
 }
 
 const ClientContext = React.createContext<IClientContext | null>(null);
@@ -30,7 +32,6 @@ export const ClientContextProvider: React.FC<IClientContextProvider> = ({
 
   const value = React.useMemo(() => {
     const select: IClientContext['select'] = ({ data, error }) => {
-
       if (error) {
         // todo
         //setError(new Error(error['message']));

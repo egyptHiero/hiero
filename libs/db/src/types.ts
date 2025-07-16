@@ -2,7 +2,7 @@ import { AbstractSublevel } from 'abstract-level/types/abstract-sublevel';
 import {
   DictionaryInfoEntity,
   DictionaryItemEntity,
-  SignEntity
+  SignEntity,
 } from './entities';
 
 export type TDbFormat = string | Buffer | Uint8Array;
@@ -11,7 +11,7 @@ export type DbTable<T> = AbstractSublevel<any, TDbFormat, string, T>;
 
 type CreateDictionaryOptions = {
   canOverride: boolean;
-}
+};
 
 /**
  * DB Layer
@@ -40,7 +40,10 @@ export type DB = {
    * @param name      - dictionary name
    * @param user      - private user's table
    */
-  getDictionary(name: string, user?: string): Promise<DbTable<DictionaryItemEntity>>;
+  getDictionary(
+    name: string,
+    user?: string,
+  ): Promise<DbTable<DictionaryItemEntity>>;
   /**
    * Creates new dictionary.
    *
@@ -49,7 +52,11 @@ export type DB = {
    * @param options             - options
    * @param options.canOverride - can override existing table
    */
-  createDictionary(info: DictionaryInfoEntity, user?: string, options?: Partial<CreateDictionaryOptions>): Promise<DbTable<DictionaryItemEntity>>;
+  createDictionary(
+    info: DictionaryInfoEntity,
+    user?: string,
+    options?: Partial<CreateDictionaryOptions>,
+  ): Promise<DbTable<DictionaryItemEntity>>;
   /**
    * Removes the dictionary.
    *

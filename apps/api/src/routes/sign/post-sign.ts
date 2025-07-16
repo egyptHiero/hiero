@@ -1,11 +1,11 @@
-import {DB, DbUtils} from '@hiero/db';
+import { DB, DbUtils } from '@hiero/db';
 import {
   DictionaryListFilterDto as DictionaryListFilterSchema,
   SignDto as SignDtoSchema,
   SignNewDto as SignNewDtoSchema,
 } from '../../typebox';
-import {toSignDto} from '../../dto';
-import {FastifyTypeBox} from "../../types";
+import { toSignDto } from '../../dto';
+import { FastifyTypeBox } from '../../types';
 
 export const postSign = (fastify: FastifyTypeBox, db: DB) =>
   fastify.post<{
@@ -32,5 +32,5 @@ export const postSign = (fastify: FastifyTypeBox, db: DB) =>
       return signs
         .put(id, sign)
         .then(async () => toSignDto(id, await signs.get(id)));
-    }
+    },
   );

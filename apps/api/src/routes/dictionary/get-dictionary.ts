@@ -4,9 +4,9 @@ import {
   PageDto as PageDtoSchema,
   ParamIdFilterDto as ParamIdFilterSchema,
 } from '../../typebox';
-import {toDictionaryItemDto, toPageDto} from '../../dto';
-import {DB, DbUtils} from '@hiero/db';
-import {FastifyTypeBox} from "../../types";
+import { toDictionaryItemDto, toPageDto } from '../../dto';
+import { DB, DbUtils } from '@hiero/db';
+import { FastifyTypeBox } from '../../types';
 
 export const getDictionary = (fastify: FastifyTypeBox, db: DB) =>
   fastify.get(
@@ -20,20 +20,20 @@ export const getDictionary = (fastify: FastifyTypeBox, db: DB) =>
         querystring: QueryListFilterSchema,
         response: {
           200: PageDtoSchema(DictionaryItemSchema),
-          404: {$ref: 'HttpError'},
+          404: { $ref: 'HttpError' },
         },
       },
     },
     async function (request) {
-      const {id} = request.params;
-      const {from, pageSize} = request.query;
+      const { id } = request.params;
+      const { from, pageSize } = request.query;
 
       return toPageDto(
         await DbUtils.getPage(await db.getDictionary(id), {
           from,
           pageSize,
           mapper: toDictionaryItemDto,
-        })
+        }),
       );
-    }
+    },
   );

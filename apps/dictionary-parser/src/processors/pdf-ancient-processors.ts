@@ -6,7 +6,7 @@ import { DictionaryMetadata } from '@hiero/common';
 
 class DebugProcessor extends PdfParseTableProcessor<string> {
   private converter = new DebugConverter((chunk) =>
-    this._getColumnIndex(chunk)
+    this._getColumnIndex(chunk),
   );
 
   override convert(_buffer: PDFExtractText[]): string {
@@ -24,7 +24,7 @@ class DebugProcessor extends PdfParseTableProcessor<string> {
 
 class DictionaryProcessor extends PdfParseTableProcessor<DictionaryItem> {
   override convert(
-    buffer: PDFExtractText[]
+    buffer: PDFExtractText[],
   ): [string, DictionaryItem] | undefined {
     if (buffer.every(({ fontName }) => fontName === 'TrebuchetMS')) {
       return undefined;
@@ -37,12 +37,12 @@ class DictionaryProcessor extends PdfParseTableProcessor<DictionaryItem> {
       return [
         hieroName,
         [
-            this._getItemsByColumn(buffer, 3)
-              .map(({ str }) => str)
-              .join(' '),
-            this._getItemsByColumn(buffer, 4)
-              .map(({ str }) => str)
-              .join(' '),
+          this._getItemsByColumn(buffer, 3)
+            .map(({ str }) => str)
+            .join(' '),
+          this._getItemsByColumn(buffer, 4)
+            .map(({ str }) => str)
+            .join(' '),
         ],
       ];
     }
@@ -61,7 +61,7 @@ class DictionaryProcessor extends PdfParseTableProcessor<DictionaryItem> {
       description: 'Dictionary of Ancient Egyptian Hieroglyphs',
       link: 'https://www.ancient-egypt.co.uk/transliteration/',
       language: 'en',
-    }
+    };
   }
 }
 

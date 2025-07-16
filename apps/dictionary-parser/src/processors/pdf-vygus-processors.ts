@@ -43,7 +43,7 @@ class DictionaryProcessor extends VygusProcessor<DictionaryItem> {
     /^(.*?)([A-Z]+[0-9]+[A-Z]*(\s?-\s?[A-Z]+[0-9]+[A-Z]*)*)$/;
 
   override convert(
-    buffer: PDFExtractText[]
+    buffer: PDFExtractText[],
   ): [string, DictionaryItem] | undefined {
     const map = buffer.reduce<Record<string, string[]>>((acc, value) => {
       if (acc[value.fontName]) {

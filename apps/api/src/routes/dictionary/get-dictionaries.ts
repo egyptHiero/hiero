@@ -3,9 +3,9 @@ import {
   DictionaryListFilterDto as DictionaryListFilterSchema,
   PageDto as PageSchema,
 } from '../../typebox';
-import {toDictionaryInfoDto, toPageDto} from '../../dto';
-import {DB, DbUtils} from '@hiero/db';
-import {FastifyTypeBox} from "../../types";
+import { toDictionaryInfoDto, toPageDto } from '../../dto';
+import { DB, DbUtils } from '@hiero/db';
+import { FastifyTypeBox } from '../../types';
 
 export const getDictionaries = (fastify: FastifyTypeBox, db: DB) =>
   fastify.get(
@@ -22,14 +22,14 @@ export const getDictionaries = (fastify: FastifyTypeBox, db: DB) =>
       },
     },
     async function (request) {
-      const {from, pageSize} = request.query;
+      const { from, pageSize } = request.query;
 
       return toPageDto(
         await DbUtils.getPage(db.getDictionaryInfo(), {
           from,
           pageSize,
           mapper: toDictionaryInfoDto,
-        })
+        }),
       );
-    }
+    },
   );

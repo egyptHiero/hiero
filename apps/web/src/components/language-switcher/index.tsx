@@ -1,18 +1,26 @@
 import React from 'react';
-import {CDropdown, CDropdownItem, CDropdownMenu, CDropdownToggle} from "@coreui/react";
-import {useTranslation} from "react-i18next";
+import {
+  CDropdown,
+  CDropdownItem,
+  CDropdownMenu,
+  CDropdownToggle,
+} from '@coreui/react';
+import { useTranslation } from 'react-i18next';
 
 export const LanguageSwitcher: React.FC = () => {
-  const {i18n} = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
     <CDropdown>
       <CDropdownToggle>{i18n.language}</CDropdownToggle>
       <CDropdownMenu>
-        {['en', 'ru'].map(lang => (
-          <CDropdownItem key={lang} onClick={() => {
-            i18n.changeLanguage(lang);
-          }}>
+        {['en', 'ru'].map((lang) => (
+          <CDropdownItem
+            key={lang}
+            onClick={() => {
+              i18n.changeLanguage(lang);
+            }}
+          >
             {lang}
           </CDropdownItem>
         ))}

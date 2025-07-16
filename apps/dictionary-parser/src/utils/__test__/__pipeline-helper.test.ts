@@ -1,11 +1,15 @@
-import {PassThrough} from "node:stream";
-import {TPdfParseProcessor} from "../../types";
-import {PDFExtractText} from "pdf.js-extract";
-import {DictionaryMetadata} from "@hiero/common";
-import {createPipeline} from "../pipeline-helper";
-import fs from "node:fs";
+import { PassThrough } from 'node:stream';
+import { TPdfParseProcessor } from '../../types';
+import { PDFExtractText } from 'pdf.js-extract';
+import { DictionaryMetadata } from '@hiero/common';
+import { createPipeline } from '../pipeline-helper';
+import fs from 'node:fs';
 
-const [firstChunk, secondChunk, essentialChunk] = ['first', 'second', 'essential'].map<PDFExtractText>(str => ({str} as PDFExtractText))
+const [firstChunk, secondChunk, essentialChunk] = [
+  'first',
+  'second',
+  'essential',
+].map<PDFExtractText>((str) => ({ str }) as PDFExtractText);
 
 describe('', () => {
   it('should ', async () => {
@@ -15,10 +19,10 @@ describe('', () => {
       return resultStream as unknown as fs.WriteStream;
     });
 
-    const writer = new PassThrough({objectMode: true});
+    const writer = new PassThrough({ objectMode: true });
     const processor: TPdfParseProcessor<string> = {
       convert(buffer) {
-        return buffer.map(({str}) => str).join('-');
+        return buffer.map(({ str }) => str).join('-');
       },
       getDictionaryMetadata() {
         return {} as DictionaryMetadata;
@@ -27,17 +31,25 @@ describe('', () => {
         return true;
       },
       getOutputFileName() {
-        return "test";
+        return 'test';
       },
       isEssential(chunk) {
         return chunk !== essentialChunk;
       },
       isNewLine(chunk): boolean {
         return chunk === firstChunk;
-      }
+      },
     };
 
-    [essentialChunk, firstChunk, essentialChunk, secondChunk, essentialChunk, essentialChunk, firstChunk].forEach(chunk => writer.push(chunk));
+    [
+      essentialChunk,
+      firstChunk,
+      essentialChunk,
+      secondChunk,
+      essentialChunk,
+      essentialChunk,
+      firstChunk,
+    ].forEach((chunk) => writer.push(chunk));
     createPipeline(writer, processor);
     writer.end();
 
@@ -46,6 +58,8 @@ describe('', () => {
       result += chunk.toString();
     }
 
-    expect(result).toStrictEqual(['{}', '"first-second"', '"first"', ''].join('\n'));
+    expect(result).toStrictEqual(
+      ['{}', '"first-second"', '"first"', ''].join('\n'),
+    );
   });
 });

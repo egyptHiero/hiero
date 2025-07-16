@@ -1,7 +1,6 @@
-import {Progress} from "./types";
+import { Progress } from './types';
 
 export const SimpleProgress: Progress = {
-
   error(message) {
     console.log(message);
   },
@@ -10,5 +9,5 @@ export const SimpleProgress: Progress = {
   },
   progress(message) {
     console.log(message);
-  }
-}
+  },
+};

@@ -10,14 +10,14 @@ export class PdfExtractorTransformer<T> extends Transform {
 
     const dictionaryInfo = processor.getDictionaryMetadata?.();
     if (dictionaryInfo) {
-      this.push(dictionaryInfo)
+      this.push(dictionaryInfo);
     }
   }
 
   override _transform(
     chunk: PDFExtractText,
     _encoding: BufferEncoding,
-    callback: TransformCallback
+    callback: TransformCallback,
   ): void {
     if (!this.processor.isEssential(chunk)) {
       callback();

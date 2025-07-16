@@ -17,7 +17,7 @@ export class DebugConverter {
   private isFirstConversion = true;
 
   constructor(
-    private readonly _getColumnIndex?: PdfParseTableProcessor<unknown>['_getColumnIndex']
+    private readonly _getColumnIndex?: PdfParseTableProcessor<unknown>['_getColumnIndex'],
   ) {}
 
   public convert(buffer: PDFExtractText[]): string {
@@ -32,7 +32,7 @@ export class DebugConverter {
         toFixedLength(chunk.width),
         toFixedLength(chunk.height),
         toFixedLength(chunk.fontName, 8),
-        chunk.str
+        chunk.str,
       );
       return arr.join(' ');
     });
@@ -50,7 +50,7 @@ export class DebugConverter {
         toFixedLength('width'),
         toFixedLength('height'),
         toFixedLength('font', 8),
-        'str'
+        'str',
       );
       result.unshift(arr.join(' '));
     }

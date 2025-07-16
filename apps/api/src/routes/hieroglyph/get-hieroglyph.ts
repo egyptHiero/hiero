@@ -1,7 +1,7 @@
-import {QueryFilterDto as QueryFilterSchema} from '../../typebox';
-import {DB, DbUtils} from '@hiero/db';
-import {Type} from '@sinclair/typebox';
-import {FastifyTypeBox} from "../../types";
+import { QueryFilterDto as QueryFilterSchema } from '../../typebox';
+import { DB, DbUtils } from '@hiero/db';
+import { Type } from '@sinclair/typebox';
+import { FastifyTypeBox } from '../../types';
 
 export const getHieroglyph = (fastify: FastifyTypeBox, db: DB) =>
   fastify.get(
@@ -14,12 +14,12 @@ export const getHieroglyph = (fastify: FastifyTypeBox, db: DB) =>
         querystring: QueryFilterSchema,
         response: {
           200: Type.Record(Type.String(), Type.String()),
-          404: {$ref: 'HttpError'},
+          404: { $ref: 'HttpError' },
         },
       },
     },
     async function (request) {
-      const {query, from, pageSize} = request.query;
+      const { query, from, pageSize } = request.query;
       const upperCaseQuery = query?.toUpperCase();
 
       return (
@@ -28,7 +28,7 @@ export const getHieroglyph = (fastify: FastifyTypeBox, db: DB) =>
           filter: (key, value) =>
             upperCaseQuery
               ? key.toUpperCase().includes(upperCaseQuery) ||
-              value?.toUpperCase().includes(upperCaseQuery)
+                value?.toUpperCase().includes(upperCaseQuery)
               : true,
           mapper: (key, value) => [key, value],
           pageSize,
@@ -39,5 +39,5 @@ export const getHieroglyph = (fastify: FastifyTypeBox, db: DB) =>
         }
         return acc;
       }, {});
-    }
+    },
   );
