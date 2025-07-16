@@ -39,7 +39,7 @@ export const useInfinityScroll = <T, R>(
   });
 
   const items = data?.pages?.flatMap((page) => {
-    return page?.data?.items?.map(item => params.mapper ? params.mapper(item) : item) || [];
+    return page?.data?.items?.map(item => (params.mapper ? params.mapper(item) : item) || []) || [];
   }) || [];
 
   return {

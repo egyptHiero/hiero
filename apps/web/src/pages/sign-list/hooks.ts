@@ -1,12 +1,12 @@
 import {useClientContext} from "../../app/context/client-context";
 import {useInfinityScroll} from "../../components/infinite-table/hook";
 
-export const useGetDictionaryList = () => {
+export const useGetSignList = () => {
   const {client} = useClientContext();
 
   return useInfinityScroll({
-    queryKey: ['dictionaries'],
+    queryKey: ['signs'],
     queryFn: () =>
-      client.GET('/api/dictionary'),
+      client.GET('/api/sign'),
   });
 };

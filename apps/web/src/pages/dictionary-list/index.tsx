@@ -1,15 +1,15 @@
 import React from 'react';
-import {CTable} from "@coreui/react";
 import {useGetDictionaryList} from "./hooks";
 import {useTranslation} from "react-i18next";
 import {columnNames} from "./columns";
 import {DictionaryInfoDto} from "../../types/types";
 import {generatePath, useNavigate} from "react-router-dom";
 import {ROUTES} from "../../app/routes";
+import {InfiniteTable} from "../../components/infinite-table";
 
 export const DictionaryListPage: React.FC = () => {
-  const {data} = useGetDictionaryList();
   const {t} = useTranslation();
+  const scrollData = useGetDictionaryList();
   const navigate = useNavigate();
 
   const getColumnLabel = React.useCallback((key: keyof DictionaryInfoDto) => {
@@ -31,11 +31,13 @@ export const DictionaryListPage: React.FC = () => {
     navigate(generatePath(ROUTES.DICTIONARY, {name: row.id}));
   }, [navigate]);
 
+/*
   const items =
     React.useMemo(() => data?.map((item) => ({
       ...item,
       _props: {onClick: () => handleRowClick(item), style: {cursor: 'pointer'},},
     })), [data, handleRowClick]);
+*/
 
   const columns = React.useMemo(() => (columnNames.map(key => ({
     key,
@@ -44,7 +46,7 @@ export const DictionaryListPage: React.FC = () => {
 
   return (
     <div>
-      <CTable hover columns={columns} items={items}/>
+      <InfiniteTable hover columns={columns} {...scrollData}/>
     </div>
   );
 };

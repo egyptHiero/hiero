@@ -17,7 +17,7 @@ export const DictionaryPage: React.FC = () => {
   const mapper = (item: DictionaryItemDto): DictionaryItemVO => ({
     id: item.id,
     text: item.i.map(item => (
-      <div>{Object.keys(item)} <StyledDescription>{Object.values(item)}</StyledDescription></div>))
+      <div key={item.id}>{Object.keys(item)} <StyledDescription>{Object.values(item)}</StyledDescription></div>))
   });
 
   const scrollData = useGetDictionary(dictionaryName, mapper);

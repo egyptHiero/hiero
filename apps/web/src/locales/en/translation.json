@@ -55,6 +55,10 @@
   },
   "sign": {
     "classification": "Classification",
+    "columns": {
+      "description": "Description",
+      "name": "Name"
+    },
     "description": "Description",
     "image": "Image link",
     "name": "Name"

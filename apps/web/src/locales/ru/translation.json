@@ -55,6 +55,10 @@
   },
   "sign": {
     "classification": "Транскрипция",
+    "columns": {
+      "description": "Описание",
+      "name": "Название"
+    },
     "description": "Описание",
     "image": "Ссылка на изображение",
     "name": "Название"
