@@ -1,4 +1,4 @@
-import { combineWithDefaults } from '../index';
+import { combineWithDefaults, searchIn } from '../index';
 
 describe('combineWithDefaults', () => {
   it('should proceed correctly with empty values', () => {
@@ -38,5 +38,15 @@ describe('combineWithDefaults', () => {
     expect(
       combineWithDefaults({ a: '', b: false, c: 0 }, { a: 's', c: 2 }),
     ).toStrictEqual({ a: '', b: false, c: 0 });
+  });
+});
+
+describe('searchIn', () => {
+  it('should find query substring in values', () => {
+    expect(searchIn()).toBeTruthy();
+    expect(searchIn('abc')).toBeFalsy();
+    expect(searchIn('abc', 'abd')).toBeFalsy();
+    expect(searchIn('abc', 'aaaABCa')).toBeTruthy();
+    expect(searchIn('abc', 'aaa', 'bbb', 'abc')).toBeTruthy();
   });
 });

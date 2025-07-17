@@ -1,6 +1,5 @@
 import { DB, DbUtils } from '@hiero/db';
 import {
-  DictionaryListFilterDto as DictionaryListFilterSchema,
   SignDto as SignDtoSchema,
   SignNewDto as SignNewDtoSchema,
 } from '../../typebox';
@@ -17,7 +16,6 @@ export const postSign = (fastify: FastifyTypeBox, db: DB) =>
         description: 'create new sign',
         tags: ['sign'],
         summary: 'create new sign',
-        querystring: DictionaryListFilterSchema,
         body: SignNewDtoSchema,
         response: {
           200: SignDtoSchema,

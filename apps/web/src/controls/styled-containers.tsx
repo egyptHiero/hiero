@@ -26,10 +26,11 @@ const Box = styled.div<
     SpaceProps &
     TextAlignProps &
     TopProps &
-    WidthProps
+    WidthProps &
+    GridGapProps
 >(
   { position: 'relative' },
-  compose(height, space, textAlign, top, width, maxWidth),
+  compose(height, space, textAlign, top, width, maxWidth, gridGap),
 );
 
 const FullHeightContainer: React.FC<{ children?: React.ReactNode }> = ({

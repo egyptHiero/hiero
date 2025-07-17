@@ -1,6 +1,6 @@
 import {
   DictionaryInfoDto as DictionaryInfoSchema,
-  DictionaryListFilterDto as DictionaryListFilterSchema,
+  QueryFilterDto as QueryFilterDtoSchema,
   PageDto as PageSchema,
 } from '../../typebox';
 import { toDictionaryInfoDto, toPageDto } from '../../dto';
@@ -15,7 +15,7 @@ export const getDictionaries = (fastify: FastifyTypeBox, db: DB) =>
         description: 'returns a list of all the available dictionaries',
         tags: ['dictionary'],
         summary: 'get available dictionaries',
-        querystring: DictionaryListFilterSchema,
+        querystring: QueryFilterDtoSchema,
         response: {
           200: PageSchema(DictionaryInfoSchema),
         },

@@ -30,21 +30,6 @@ export const DictionaryListPage: React.FC = () => {
     [t],
   );
 
-  const handleRowClick = React.useCallback(
-    (row: DictionaryInfoDto) => {
-      navigate(generatePath(ROUTES.DICTIONARY, { name: row.id }));
-    },
-    [navigate],
-  );
-
-  /*
-  const items =
-    React.useMemo(() => data?.map((item) => ({
-      ...item,
-      _props: {onClick: () => handleRowClick(item), style: {cursor: 'pointer'},},
-    })), [data, handleRowClick]);
-*/
-
   const columns = React.useMemo(
     () =>
       columnNames.map((key) => ({
@@ -54,9 +39,28 @@ export const DictionaryListPage: React.FC = () => {
     [getColumnLabel],
   );
 
+  const handleRowClick = React.useCallback(
+    (row: DictionaryInfoDto) => {
+      navigate(generatePath(ROUTES.DICTIONARY, { name: row.id }));
+    },
+    [navigate],
+  );
+
+  const items = React.useMemo(
+    () =>
+      scrollData.items.map((item) => ({
+        ...item,
+        _props: {
+          onClick: () => handleRowClick(item),
+          style: { cursor: 'pointer' },
+        },
+      })),
+    [scrollData.items, handleRowClick],
+  );
+
   return (
     <div>
-      <InfiniteTable hover columns={columns} {...scrollData} />
+      <InfiniteTable hover columns={columns} {...scrollData} items={items} />
     </div>
   );
 };

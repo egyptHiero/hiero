@@ -43,24 +43,6 @@ export const QueryFilterDto = Type.Composite([
   }),
 ]);
 
-export type DictionaryListFilterDto = Static<typeof DictionaryListFilterDto>;
-export const DictionaryListFilterDto = Type.Composite([
-  ListFilterDto,
-  Type.Object({
-    type: Type.Optional(Type.String()),
-  }),
-]);
-
-export type DictionaryChunkParamFilterDto = Static<
-  typeof DictionaryChunkParamFilterDto
->;
-export const DictionaryChunkParamFilterDto = Type.Composite([
-  ParamIdFilterDto,
-  Type.Object({
-    hieroes: Type.String(),
-  }),
-]);
-
 export type DictionaryInfoDto = Static<typeof DictionaryInfoDto>;
 export const DictionaryInfoDto = Type.Composite([
   Identifiable,

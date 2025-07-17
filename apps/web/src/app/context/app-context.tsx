@@ -3,6 +3,8 @@ import React from 'react';
 interface IAppContext {
   isSidebarVisible: boolean;
   setSidebarVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  query?: string;
+  setQuery: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
 const AppContext = React.createContext<IAppContext | null>(null);
@@ -25,13 +27,16 @@ export const AppContextProvider: React.FC<IAppContextProvider> = ({
   children,
 }) => {
   const [isSidebarVisible, setSidebarVisible] = React.useState(true);
+  const [query, setQuery] = React.useState<string>();
 
   const value = React.useMemo(
     () => ({
       isSidebarVisible,
       setSidebarVisible,
+      query,
+      setQuery,
     }),
-    [isSidebarVisible],
+    [isSidebarVisible, query],
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

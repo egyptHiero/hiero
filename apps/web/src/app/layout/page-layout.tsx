@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { Sidebar } from './sidebar';
 import { Navbar } from './navbar';
 import { Container } from '../../controls';
+import { useAppContext } from '../context/app-context';
 
 export const PageLayout: React.FC = () => {
   return (

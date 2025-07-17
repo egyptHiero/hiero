@@ -1,6 +1,6 @@
 import { DB, DbUtils } from '@hiero/db';
 import {
-  DictionaryListFilterDto as DictionaryListFilterSchema,
+  QueryFilterDto as QueryFilterDtoSchema,
   PageDto as PageDtoSchema,
   SignDto as SignDtoSchema,
 } from '../../typebox';
@@ -15,7 +15,7 @@ export const getSigns = (fastify: FastifyTypeBox, db: DB) =>
         description: 'returns a list of all the available signs',
         tags: ['sign'],
         summary: 'get available signs',
-        querystring: DictionaryListFilterSchema,
+        querystring: QueryFilterDtoSchema,
         response: {
           200: PageDtoSchema(SignDtoSchema),
         },

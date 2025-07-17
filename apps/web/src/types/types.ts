@@ -32,15 +32,6 @@ export interface QueryFilterDto extends ListFilterDto {
 
 // Dictionary ------------------------------------------------------------------
 
-export interface DictionaryListFilterDto extends ListFilterDto {
-  // todo: remove
-  type?: string;
-}
-
-export interface DictionaryChunkParamFilterDto extends ParamIdFilterDto {
-  hieroes: string;
-}
-
 export interface DictionaryInfoDto extends Identifiable {
   description?: string;
   language: string;
