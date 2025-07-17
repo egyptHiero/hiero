@@ -8,17 +8,18 @@
     }
   },
   "btn": {
-    "add": "add",
     "cancel": "Cancel",
     "save": "Save"
   },
   "dictionaries": {
     "columns": {
       "description": "Description",
+      "hieroes": "Иероглифы",
       "id": "Id",
       "language": "Language",
       "link": "Link",
-      "size": "Size"
+      "size": "Size",
+      "text": "Текст"
     }
   },
   "dynamic": {
@@ -52,6 +53,9 @@
       "Y": "Writings, games, music",
       "Z": "Strokes, signs derived from Hieratic, geometrical features"
     }
+  },
+  "parse": {
+    "error": "parsing error"
   },
   "sign": {
     "classification": "Classification",

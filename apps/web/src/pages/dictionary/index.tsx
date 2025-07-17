@@ -8,6 +8,7 @@ import { DictionaryItemVO } from './types';
 import { columnNames } from './columns';
 import { DictionaryItemDto } from '../../types/types';
 import { StyledDescription } from './styled';
+import { Hiero } from '../../components/hiero';
 
 export const DictionaryPage: React.FC = () => {
   const { name: dictionaryName } =
@@ -17,12 +18,13 @@ export const DictionaryPage: React.FC = () => {
 
   const mapper = (item: DictionaryItemDto): DictionaryItemVO => ({
     id: item.id,
-    text: item.i.map((item) => (
-      <div key={item.id}>
+    text: item.i.map((item, i) => (
+      <div key={`${item.id}-${i}`}>
         {Object.keys(item)}{' '}
         <StyledDescription>{Object.values(item)}</StyledDescription>
       </div>
     )),
+    hieroes: <Hiero text={item.id} fontSize={40} />,
   });
 
   const scrollData = useGetDictionary(dictionaryName, mapper);
@@ -32,6 +34,10 @@ export const DictionaryPage: React.FC = () => {
       switch (key) {
         case 'id':
           return t(`dictionaries.columns.id`);
+        case 'text':
+          return t(`dictionaries.columns.text`);
+        case 'hieroes':
+          return t(`dictionaries.columns.hieroes`);
       }
     },
     [t],
