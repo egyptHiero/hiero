@@ -6,6 +6,7 @@ import {
 } from '../../typebox';
 import { toPageDto, toSignDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
+import { searchIn } from '@hiero/common';
 
 export const getSigns = (fastify: FastifyTypeBox, db: DB) =>
   fastify.get(
@@ -22,10 +23,23 @@ export const getSigns = (fastify: FastifyTypeBox, db: DB) =>
       },
     },
     async function (request) {
+      const { from, pageSize, query } = request.query;
+
       return toPageDto(
         await DbUtils.getPage(db.getSigns(), {
-          ...request.query,
+          from,
+          pageSize,
           mapper: toSignDto,
+          filter: (key, value) => {
+            return searchIn(
+              query,
+              key,
+              value.name,
+              value.description,
+              value.classification,
+              value.image,
+            );
+          },
         }),
       );
     },

@@ -20,4 +20,7 @@ export default [
       'react/react-in-jsx-scope': 'off',
     },
   },
+  {
+    ignores: ['src/components/hiero/hierojax.js'],
+  },
 ];

@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from 'react';
+import React from 'react';
 import {
   CContainer,
   CFormInput,
@@ -12,10 +12,11 @@ import { cilMenu } from '@coreui/icons';
 import { LanguageSwitcher } from '../../components/language-switcher';
 
 export const Navbar: React.FC = () => {
-  const { setSidebarVisible, setQuery } = useAppContext();
+  const { setSidebarVisible, setQuery, customControls } = useAppContext();
 
-  const handleSearch: ChangeEventHandler<HTMLInputElement> = ({ target }) =>
-    setQuery(target.value);
+  const handleSearch: React.ChangeEventHandler<HTMLInputElement> = ({
+    target,
+  }) => setQuery(target.value);
 
   return (
     <CNavbar>
@@ -36,6 +37,7 @@ export const Navbar: React.FC = () => {
             placeholder="Search"
             onChange={handleSearch}
           />
+          {customControls}
           <LanguageSwitcher />
         </div>
       </CContainer>

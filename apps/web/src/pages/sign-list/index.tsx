@@ -4,10 +4,28 @@ import { useTranslation } from 'react-i18next';
 import { useGetSignList } from './hooks';
 import { columnNames } from './columns';
 import { SignDto } from '../../types/types';
+import { generatePath, useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../app/routes';
+import { CButton } from '@coreui/react';
+import { useAppContext } from '../../app/context/app-context';
 
 export const SignListPage: React.FC = () => {
   const { t } = useTranslation();
   const scrollData = useGetSignList();
+  const { setCustomControls } = useAppContext();
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    const handleCreate = () => {
+      navigate(generatePath(ROUTES.SIGN, { id: 'new' }));
+    };
+
+    setCustomControls(() => (
+      <CButton color="primary" onClick={handleCreate}>
+        {t('btn.create')}
+      </CButton>
+    ));
+  }, [navigate, setCustomControls, t]);
 
   const getColumnLabel = React.useCallback(
     (key: keyof SignDto) => {
@@ -30,9 +48,28 @@ export const SignListPage: React.FC = () => {
     [getColumnLabel],
   );
 
+  const handleRowClick = React.useCallback(
+    (row: SignDto) => {
+      navigate(generatePath(ROUTES.SIGN, { id: row.id }));
+    },
+    [navigate],
+  );
+
+  const items = React.useMemo(
+    () =>
+      scrollData.items.map((item) => ({
+        ...item,
+        _props: {
+          onClick: () => handleRowClick(item),
+          style: { cursor: 'pointer' },
+        },
+      })),
+    [scrollData.items, handleRowClick],
+  );
+
   return (
     <div>
-      <InfiniteTable hover columns={columns} {...scrollData} />
+      <InfiniteTable hover columns={columns} {...scrollData} items={items} />
     </div>
   );
 };

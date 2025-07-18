@@ -9,6 +9,8 @@
   },
   "btn": {
     "cancel": "Cancel",
+    "create": "Add new",
+    "delete": "Delete",
     "save": "Save"
   },
   "dictionaries": {
@@ -62,6 +64,9 @@
     "columns": {
       "description": "Description",
       "name": "Name"
+    },
+    "confirm": {
+      "delete": "Are you really going to delete the sign?"
     },
     "description": "Description",
     "image": "Image link",

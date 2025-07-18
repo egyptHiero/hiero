@@ -6,6 +6,7 @@ import {
 import { toDictionaryInfoDto, toPageDto } from '../../dto';
 import { DB, DbUtils } from '@hiero/db';
 import { FastifyTypeBox } from '../../types';
+import { searchIn } from '@hiero/common';
 
 export const getDictionaries = (fastify: FastifyTypeBox, db: DB) =>
   fastify.get(
@@ -22,13 +23,15 @@ export const getDictionaries = (fastify: FastifyTypeBox, db: DB) =>
       },
     },
     async function (request) {
-      const { from, pageSize } = request.query;
+      const { from, pageSize, query } = request.query;
 
       return toPageDto(
         await DbUtils.getPage(db.getDictionaryInfo(), {
           from,
           pageSize,
           mapper: toDictionaryInfoDto,
+          filter: (key, value) =>
+            searchIn(query, key, value.description, value.name, value.link),
         }),
       );
     },

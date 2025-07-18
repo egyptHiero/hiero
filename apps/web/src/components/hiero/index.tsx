@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-// @ts-ignore
 import syntax from './hierojax.js';
 import { toUnicode } from './hieroes';
 
 interface IHieroProps {
   text: string;
   fontSize?: number;
-  dir?: string;
+  dir?: 'hlr' | 'hrl' | 'vlr' | 'vrl';
   key?: string;
 }
 
@@ -27,7 +26,7 @@ export const Hiero: React.FC<IHieroProps> = ({ text, fontSize, dir, key }) => {
       });
 
       return parent.innerHTML;
-    } catch (e) {
+    } catch {
       return t('parse.error');
     }
   }, [text, fontSize, dir, t]);

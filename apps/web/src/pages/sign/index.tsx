@@ -1,59 +1,46 @@
-import React from 'react';
-import {
-  CButton,
-  CCol,
-  CContainer,
-  CForm,
-  CFormInput,
-  CFormTextarea,
-} from '@coreui/react';
-import { useTranslation } from 'react-i18next';
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react';
+import { CContainer, CImage } from '@coreui/react';
+import { useGetSign } from './hooks';
+import { PathParam, useParams } from 'react-router-dom';
+import { ROUTES } from '../../app/routes';
+import { Hiero } from '../../components/hiero';
+import { SignForm } from './form';
 import { SignDto } from '../../types/types';
 
 export const SignPage: React.FC = () => {
-  const { t } = useTranslation();
-  const { register, handleSubmit } = useForm();
+  const { id: signId } = useParams<PathParam<typeof ROUTES.SIGN>>();
+  const { data } = useGetSign(signId);
+  const [values, setValues] = useState<Partial<SignDto>>();
 
-  const onSubmit = (values: Partial<SignDto>) => {
-    console.log(values);
-  };
+  const classificationLines = React.useMemo(
+    () => values?.classification?.split('\n') ?? [],
+    [values?.classification],
+  );
+
+  if (!signId || !data?.data) {
+    return null;
+  }
 
   return (
     <CContainer fluid>
-      <CForm noValidate className="row g-3" onSubmit={handleSubmit(onSubmit)}>
-        <CCol md={6}>
-          <CFormInput
-            {...register('name', { required: true })}
-            label={t('sign.name')}
-          />
-        </CCol>
-        <CCol xs={6}>
-          <CFormTextarea
-            {...register('description')}
-            label={t('sign.description')}
-          />
-        </CCol>
-        <CCol xs={6}>
-          <CFormInput {...register('image')} label={t('sign.image')} required />
-        </CCol>
-        <CCol xs={6}>
-          <CFormTextarea
-            {...register('classification', { required: true })}
-            label={t('sign.classification')}
-          />
-        </CCol>
-        <CCol xs={12}>
-          <CContainer fluid className="gap-2 d-flex justify-content-lg-end p-0">
-            <CButton color="primary" type="submit">
-              {t('btn.save')}
-            </CButton>
-            <CButton type="button" className="btn-outline">
-              {t('btn.cancel')}
-            </CButton>
-          </CContainer>
-        </CCol>
-      </CForm>
+      <div className="d-flex">
+        <CImage src={data?.data?.image} />
+        <div className="d-flex flex-row-reverse">
+          {classificationLines.map((line) => (
+            <>
+              <Hiero key={line} text={line} dir="vrl" fontSize={65} />
+              <div
+                className="mx-1"
+                style={{
+                  borderRight: '3px solid #ccc', // Толщина 4px
+                  height: '100%',
+                }}
+              />
+            </>
+          ))}
+        </div>
+      </div>
+      <SignForm signId={signId} data={data.data} onValuesChanged={setValues} />
     </CContainer>
   );
 };
