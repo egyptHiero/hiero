@@ -1,11 +1,14 @@
 ---
 outline: deep
 ---
+
 # Глава 3. Создание проекта.
 
 Теперь, когда мы более-менее разобрались, как читать и печатать иероглифы, можно переходить к разработке.
 Понадобиться простое SPA web-приложение, серверная часть, еще разные скрипты для подготовки данных и база для
 их хранения.
+
+### Nx
 
 Не знаю, как вы создаете пет-проекты, мне нравится делать это вот так:
 
@@ -27,6 +30,7 @@ NX Creating your v21.2.1 workspace.
 ✔ Nx Cloud has been set up successfully
 ✔ CI workflow has been generated successfully
 ```
+
 :::
 
 Мне очень нравится фреймворк Nx - он гибок, удобен, способен выполнять массу черновой работы. Nx является
@@ -39,8 +43,36 @@ NX Creating your v21.2.1 workspace.
 
 ::: tip
 Кстати, практически все IDE добавляют `./bin` в $PATH и запускать зависимости из консоли IDE можно без `npx`.
+
 ```shell
 $ npx nx graph
 $ nx graph
 ```
+
+:::
+
+### ESLint
+
+Хоть `Nx` и подключил ESLint и теперь можно запустить его на всех проектах, (когда у нас будут проекты)
+
+```bash
+$ nx run-many -t lint --fix
+```
+
+в файле `eslint.config.mjs` прописаны только базовые настройки (фактически, только
+правило enforceBuildableLibDependency для проверки "собирательности" библиотек).
+
+Приятно, что `Nx` создает конфигурацию уже в новом, более удобном
+[flat format](https://eslint.org/blog/2022/08/new-config-system-part-2/). Добавим
+`prettierPlugin` и правила - `prettierPlugin.configs.recommended.rules`.
+
+::: tip
+А вы знаете, что в eslint есть очень удобный
+[Config Inspector](https://eslint.org/blog/2024/04/eslint-config-inspector/)?
+Он запускается в браузере и показывает итоговую конфигурацию, все плагины, правила и исключения, примененные к файлам.
+
+```shell
+$ npx eslint --inspect-config
+```
+
 :::

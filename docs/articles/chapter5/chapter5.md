@@ -4,19 +4,19 @@ outline: deep
 
 # Глава 5. Парсим словари
 
-Мне удалось найти только два словаря египетских иероглифов. Оба они в pdf-формате:
+Мне удалось найти только два словаря египетских иероглифов, оба в pdf-формате:
 
 - [Dictionary of Ancient Egyptian Hieroglyphs](https://www.ancient-egypt.co.uk/transliteration/dictionary.htm)
 - [Mark Vygus. Ancient Egyptian Hieroglyphic Dictionary, 2018](https://rhbarnhart.net/VYGUS_Dictionary_2018.pdf)
 
-и еще сохранил в pdf-формате страничку из
-википедии [List of Egyptian hieroglyphs](https://en.wikipedia.org/wiki/List_of_Egyptian_hieroglyphs).
-Эти файлы я положил в папку /resources в корне проекта.
+и еще я сохранил в pdf-формате страничку со списком иероглифов из википедии -
+[List of Egyptian hieroglyphs](https://en.wikipedia.org/wiki/List_of_Egyptian_hieroglyphs).
+Эти файлы я сложил в папку `/resources` в корне проекта.
 
-Вначале я думал, что из pdf будет легко получить информацию с помощью консольных утилит вроде pdftotext. Но
-все опять оказалось сложнее чем казалось...
+Вначале я думал, что из pdf будет легко получить информацию с помощью консольных утилит вроде `pdftotext`.
+Но все опять оказалось сложнее чем казалось...
 
-Пришлось написать приложение `dictionary-parser`.
+И пришлось создать приложение `dictionary-parser`.
 
 ### Добавление `Node.js` приложения
 
@@ -34,17 +34,21 @@ $ npx nx g @nx/node:application apps/dictionary-parser
 ✔ Which framework do you want to use? · none
 ```
 
-Я не стал создавать e2e-тесты, а для юнит-тестов я хочу использовать [vistest](https://vitest.dev). Он работает
-значительно
-быстрее, чем `jest`. Добавляем `vitest` в проект, с помощью
-плагина [vite](https://nx.dev/technologies/build-tools/vite/api/generators/vitest) -
+Я не стал создавать e2e-тесты, а для юнит-тестов я хочу использовать
+[vistest](https://vitest.dev).
+Он работает значительно быстрее, чем `jest` и использует тот же `Assertion API` .
+
+### Vitest
+
+Добавим `vitest` в проект, с помощью генератора
+[vite](https://nx.dev/technologies/build-tools/vite/api/generators/vitest) -
 
 ```bash
 $ npm i -D @nx/vite
 $ npx nx g vitest --project=dictionary-parser
 ```
 
-И добавим общую библиотеку common
+И добавим библиотеку `common`, для разделяемого с другими `nodejs`-проектами кода.
 
 ```bash
 $ npx nx g @nx/node:library libs/common
@@ -53,29 +57,31 @@ $ npx nx g vitest --project=common
 
 ### Парсинг Pdf
 
-Читать данные из pdf буду с помощью плагина [pdf.js-extract](https://github.com/ffalt/pdf.js-extract).
+Читать данные из pdf буду с помощью npm-библиотеки
+[pdf.js-extract](https://github.com/ffalt/pdf.js-extract).
+Может это не лучший выбор - она использует блокирующие вызовы и не испотзует потоки. Но словари не такие большие,
+чтобы это стало проблемой.
 
 ```bash
 $ npm i pdf.js-extract arg
 ```
 
 Получить данные просто, сложнее их интерпретировать - определить, где начало строки и где конец. Со словарем Вигуса
-все оказалось сравнительно легко, данные а нем расположены построчно. А вот с табличным видом пришлось
+все оказалось сравнительно легко, данные а нем были расположены построчно. А вот с табличным видом пришлось
 повозиться. В результате я написал утилиту calculateBoundaries, которая определяет примерные границы столбцов в таблице.
 Примерные, потому что тесктовый блок в pdf может быть размещен произвольным образом и позиционирование в нём тоже может
-быть любым. Получив приблизительные границы колонок, я распарсил, наконец, и два оставшихся файла.
+быть произвольным. Получив примерные границы колонок, я распарсил, наконец, и оба оставшихся файла.
 
 ## Потоки (Streams)
 
 Хотя библиотека `pdf.js-extract` не умеет работать с потоками, но их, однозначно, стоит использовать для дальнейшей
-обработки данных.
-Создаем PassThrough поток для чтения данных, далее используем
+обработки данных. Загружаем прочитанные из pdf данные в `PassThrough`-поток и, далее, подключаем его в
 [pipeline](https://nodejs.org/api/stream.html#streampipelinesource-transforms-destination-options)
 для конвейерной обработки.
 
-Формат `JSON` плохо подходит для потоковой обработки сериализованных объектов. К счастью, есть формат
-[`NDJSON`](https://github.com/ndjson/ndjson.js), в котором каждая строка это json. Такой формат удобно читать и
-записывать в него по частям.
+Формат `JSON` хорош, но совсем не годится для потоковой обработки сериализованных объектов. К счастью, есть формат
+[`NDJSON`](https://github.com/ndjson/ndjson.js),
+в котором каждая строка это json. Такой формат удобно читать и записывать в него по частям.
 
 ```bash
 $ npm i ndjson
@@ -83,9 +89,8 @@ $ npm i -D @types/ndjson
 ```
 
 ## Аргументы командной строки
-
-Далее, добавил передачу аргументы из командной строки. В `Nx` передать аргументы в `Node.js` приложение
-можно только в формате --args:
+Для приложения понадобился cli-интерфейс.
+В `Nx` передать аргументы в `Node.js` приложение можно только в формате --args:
 
 ```bash
 $ nx serve my-app --args="param1=value1".
@@ -102,6 +107,7 @@ $ npm run app -- --param1=yes --param2=no
 маппинга параметров в формат `Nx`. Для парсинга аргументов подключил минималистичную библиотеку
 [arg](https://github.com/vercel/arg).
 
+Вот так можно запустить парсинг словаря ancient с 2-ой по 5-ую страницы в режиме расчета границ колонок -
 ```bash
 $ npm run parse-dictionary -- ancient --from=2 --to=5 --calculate-boundaries
 ```
@@ -159,6 +165,7 @@ execSync(`nx serve dictionary-parser ${args}`, {
 npm i log-update cli-color
 npm i -D @types/cli-color
 ```
+
 Строки перезаписываются по ключу, для логирования файловых операций используем в качесве ключа имя файла.
 Для удобства вызова, обернул логирование в Proxy.
 
@@ -181,8 +188,9 @@ consoleProgress.fileName1.success('finished reading file1...');
 Нужно это исправить.
 
 Обычно, `Node.js` выполняет JavaScript-код в однопоточном режиме. Но, начиная с версии
-[v11.7.0](https://nodejs.org/en/blog/release/v11.7.0/) была добавлена
-официальная поддержка [worker_threads](https://nodejs.org/api/worker_threads.html).
+[v11.7.0](https://nodejs.org/en/blog/release/v11.7.0/)
+была добавлена официальная поддержка
+[worker_threads](https://nodejs.org/api/worker_threads.html).
 Это поволяет запускать потоки воркеров в изолированном контексте, с возможностью отправлять сообщения в главный
-процесс.
+процесс. Сделал запуск парсинга словаря в воркере.
 

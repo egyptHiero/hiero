@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { CContainer, CImage } from '@coreui/react';
 import { useGetSign } from './hooks';
 import { PathParam, useParams } from 'react-router-dom';
@@ -26,9 +26,9 @@ export const SignPage: React.FC = () => {
       <div className="d-flex">
         <CImage src={data?.data?.image} />
         <div className="d-flex flex-row-reverse">
-          {classificationLines.map((line) => (
-            <>
-              <Hiero key={line} text={line} dir="vrl" fontSize={65} />
+          {classificationLines.map((line, n) => (
+            <Fragment key={line}>
+              <Hiero text={line} dir="vrl" fontSize={65} />
               <div
                 className="mx-1"
                 style={{
@@ -36,7 +36,7 @@ export const SignPage: React.FC = () => {
                   height: '100%',
                 }}
               />
-            </>
+            </Fragment>
           ))}
         </div>
       </div>
