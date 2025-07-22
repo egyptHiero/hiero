@@ -28,19 +28,19 @@ export const Sidebar: React.FC = () => {
       <CSidebarNav>
         <CNavTitle>Nav Title</CNavTitle>
         <CNavItem href={ROUTES.SIGN_LIST}>
-          <CIcon customClassName="nav-icon" icon={cilBarcode} />
+          <CIcon icon={cilBarcode} />
           {t('app.sidebar.signs')}
         </CNavItem>
         <CNavItem href="#">
-          <CIcon customClassName="nav-icon" icon={cilText} />
+          <CIcon icon={cilText} />
           {t('app.sidebar.translations')}
         </CNavItem>
         <CNavItem href={ROUTES.DICTIONARY_LIST}>
-          <CIcon customClassName="nav-icon" icon={cilText} />
+          <CIcon icon={cilText} />
           {t('app.sidebar.dictionaries')}
         </CNavItem>
         <CNavItem href={ROUTES.ABOUT}>
-          <CIcon customClassName="nav-icon" icon={cilHome} />
+          <CIcon icon={cilHome} />
           {t('app.sidebar.about')}
         </CNavItem>
       </CSidebarNav>

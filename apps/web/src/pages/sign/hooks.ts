@@ -10,13 +10,7 @@ export const useGetSign = (id: string | undefined) => {
     queryKey: ['sign', id],
     queryFn: () =>
       id
-        ? client.GET('/api/sign/{id}', {
-            params: {
-              path: {
-                id,
-              },
-            },
-          })
+        ? client.path('/api/sign/{id}').method('get').create()({ id })
         : undefined,
   });
 };
@@ -27,14 +21,15 @@ export const useSaveMutation = () => {
   return useMutation({
     mutationFn: (values: SignDto) =>
       values.id
-        ? client.PUT('/api/sign/{id}', {
-            params: {
-              path: { id: values.id },
-            },
-            body: values,
+        ? client.path('/api/sign/{id}').method('put').create()({
+            ...values,
           })
-        : client.POST('/api/sign', { body: values }),
-    mutationKey: ['update', 'sign'],
+        : client.path('/api/sign').method('post').create()({
+            ...values,
+          }),
+    meta: {
+      invalidates: [['sign']],
+    },
   });
 };
 
@@ -43,11 +38,11 @@ export const useDeleteMutation = () => {
 
   return useMutation({
     mutationFn: (id: string) =>
-      client.DELETE('/api/sign/{id}', {
-        params: {
-          path: { id },
-        },
+      client.path('/api/sign/{id}').method('delete').create()({
+        id,
       }),
-    mutationKey: ['delete', 'sign'],
+    meta: {
+      invalidates: [['sign']],
+    },
   });
 };

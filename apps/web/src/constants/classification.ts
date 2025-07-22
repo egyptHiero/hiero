@@ -1,0 +1,33 @@
+/**
+ * from https://en.wikipedia.org/wiki/List_of_Egyptian_hieroglyphs
+ */
+export const GARDINER_CLASSIFICATION = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'K',
+  'L',
+  'M',
+  'N',
+  'NL',
+  'NU',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
+  'Aa',
+] as const;

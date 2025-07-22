@@ -7,11 +7,29 @@
       "translations": "Translations"
     }
   },
+  "aside": {
+    "hiero": {
+      "caption": "Insert hieroglyphs",
+      "tab": {
+        "search": {
+          "caption": "Search",
+          "placeholder": "Text to find"
+        },
+        "select": {
+          "caption": "Select"
+        }
+      }
+    }
+  },
   "btn": {
     "cancel": "Cancel",
     "create": "Add new",
     "delete": "Delete",
-    "save": "Save"
+    "insertLeft": "Insert left",
+    "insertRight": "Insert right",
+    "redo": "Redo",
+    "save": "Save",
+    "undo": "Undo"
   },
   "dictionaries": {
     "columns": {
@@ -54,6 +72,12 @@
       "X": "Loaves and cakes",
       "Y": "Writings, games, music",
       "Z": "Strokes, signs derived from Hieratic, geometrical features"
+    }
+  },
+  "error": {
+    "500": {
+      "header": "Server is temporary unavailable.",
+      "text": "Please, try later"
     }
   },
   "parse": {

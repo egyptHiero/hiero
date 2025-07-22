@@ -8,11 +8,6 @@ export const useGetSignList = () => {
 
   return useInfinityScroll({
     queryKey: ['signs', query ?? ''],
-    queryFn: () =>
-      client.GET('/api/sign', {
-        params: {
-          query: { query },
-        },
-      }),
+    queryFn: () => client.path('/api/sign').method('get').create()({ query }),
   });
 };

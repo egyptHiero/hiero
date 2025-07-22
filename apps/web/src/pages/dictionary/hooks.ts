@@ -15,11 +15,10 @@ export const useGetDictionary = (
     enabled: !!dictionaryName,
     queryKey: ['dictionary', dictionaryName ?? '', query ?? ''],
     queryFn: ({ pageParam = '' }) =>
-      client.GET('/api/dictionary/{id}', {
-        params: {
-          path: { id: dictionaryName ?? '' },
-          query: { from: pageParam, query },
-        },
+      client.path('/api/dictionary/{id}').method('get').create()({
+        id: dictionaryName ?? '',
+        from: pageParam,
+        query,
       }),
     mapper,
   });

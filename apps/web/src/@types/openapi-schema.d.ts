@@ -331,7 +331,7 @@ export interface paths {
         };
         cookie?: never;
       };
-      requestBody?: {
+      requestBody: {
         content: {
           'application/json': {
             name: string;
@@ -340,8 +340,6 @@ export interface paths {
             description?: string;
             fontSize?: number;
             dir?: string;
-          } & {
-            id: string;
           };
         };
       };

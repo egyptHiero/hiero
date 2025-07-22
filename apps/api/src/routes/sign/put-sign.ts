@@ -2,6 +2,7 @@ import { DB } from '@hiero/db';
 import {
   ParamIdFilterDto as ParamIdFilterSchema,
   SignDto as SignDtoSchema,
+  SignNewDto as SignNewDtoSchema,
 } from '../../typebox';
 import { toSignDto } from '../../dto';
 import { ParamIdFilterDto, SignDto } from '../../dto';
@@ -19,7 +20,7 @@ export const putSign = (fastify: FastifyTypeBox, db: DB) =>
         tags: ['sign'],
         summary: 'update sign',
         params: ParamIdFilterSchema,
-        body: SignDtoSchema,
+        body: SignNewDtoSchema,
         response: {
           200: SignDtoSchema,
         },

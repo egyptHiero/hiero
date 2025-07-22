@@ -20,7 +20,7 @@ export const deleteSign = (fastify: FastifyTypeBox, db: DB) =>
         },
       },
     },
-    async function (request, reply) {
+    async function (request) {
       const { id } = request.params;
       const signs = db.getSigns();
 

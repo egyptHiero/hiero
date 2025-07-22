@@ -10,10 +10,6 @@ export const useGetDictionaryList = () => {
   return useInfinityScroll<DictionaryInfoDto>({
     queryKey: ['dictionaries', query ?? ''],
     queryFn: () =>
-      client.GET('/api/dictionary', {
-        params: {
-          query: { query },
-        },
-      }),
+      client.path('/api/dictionary').method('get').create()({ query }),
   });
 };

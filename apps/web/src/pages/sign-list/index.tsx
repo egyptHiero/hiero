@@ -21,7 +21,7 @@ export const SignListPage: React.FC = () => {
     };
 
     setCustomControls(() => (
-      <CButton color="primary" onClick={handleCreate}>
+      <CButton color="primary" onClick={handleCreate} className="text-nowrap">
         {t('btn.create')}
       </CButton>
     ));

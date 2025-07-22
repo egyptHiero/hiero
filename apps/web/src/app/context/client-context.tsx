@@ -1,9 +1,9 @@
 import React from 'react';
-import createClient from 'openapi-fetch';
+import { Fetcher } from 'openapi-typescript-fetch';
 import type { paths } from '../../@types/openapi-schema';
 
 interface IClientContext {
-  client: ReturnType<typeof createClient<paths>>;
+  client: ReturnType<typeof Fetcher.for<paths>>;
   select: <T extends { data?: unknown; error?: unknown; response?: unknown }>(
     value: T,
   ) => T['data'];
@@ -39,9 +39,12 @@ export const ClientContextProvider: React.FC<IClientContextProvider> = ({
       return data;
     };
 
-    const client = createClient<paths>();
+    const fetcher = Fetcher.for<paths>();
+
+    fetcher.configure({});
+
     return {
-      client,
+      client: fetcher,
       select,
     };
   }, []);
