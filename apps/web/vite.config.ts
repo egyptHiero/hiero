@@ -44,7 +44,7 @@ export default defineConfig(() => ({
   //  plugins: [ nxViteTsPaths() ],
   // },
   build: {
-    outDir: '../../dist/web',
+    outDir: 'dist/apps/web',
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {

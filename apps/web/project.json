@@ -8,7 +8,7 @@
   "targets": {
     "build": {
       "options": {
-        "external": ["@coreui/react", "@coreui/coreui-pro"]
+        "external": ["@coreui/react"]
       }
     },
     "gen": {
@@ -16,6 +16,10 @@
       "options": {
         "output": "apps/web/src/@types/openapi-schema.d.ts"
       }
+    },
+    "docker-build": {
+      "dependsOn": ["build"],
+      "command": "docker build -f apps/web/Dockerfile . -t web"
     }
   }
 }
