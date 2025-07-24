@@ -8,7 +8,7 @@ const dirValues = ['hlr', 'hrl', 'vlr', 'vrl'] as const;
 export const Dir: React.FC = () => {
   const { setValue, watch } = useFormContext<SignDto>();
 
-  const currentValue = watch('dir');
+  const currentValue = watch('dir') || 'hlr';
 
   return (
     <CButtonGroup role="group">

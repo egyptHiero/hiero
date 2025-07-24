@@ -9,13 +9,13 @@ export const SignPage: React.FC = () => {
   const { id: signId } = useParams<PathParam<typeof ROUTES.SIGN>>();
   const { data, isFetching } = useGetSign(signId);
 
-  if (!signId || !data?.data || isFetching) {
+  if (!signId || isFetching) {
     return null;
   }
 
   return (
     <CContainer fluid>
-      <SignForm signId={signId} data={data.data} />
+      <SignForm signId={signId} data={data?.data} />
     </CContainer>
   );
 };

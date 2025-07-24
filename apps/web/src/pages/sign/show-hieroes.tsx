@@ -53,7 +53,14 @@ const StyledHieroContainer = styled.div<StyledHieroContainerProps>(
 );
 
 export const ShowHieroes: React.FC = () => {
-  const { lines, current, setCurrent, setAsideVisible } = useSignContext();
+  const {
+    lines,
+    current,
+    setCurrent,
+    setAsideVisible,
+    isImageLoaded,
+    setImageIsLoaded,
+  } = useSignContext();
   const { watch } = useFormContext<SignDto>();
   const dir = watch('dir') as TDir | undefined;
   const fontSize = watch('fontSize') || 40;
@@ -68,13 +75,20 @@ export const ShowHieroes: React.FC = () => {
     setAsideVisible(true);
   };
 
+  const noCodes = lines;
+
   return (
     <CContainer fluid className="d-flex">
       <div className="text-end">
-        <CImage src={image} />
+        <CImage
+          src={image}
+          className={classNames({ 'd-none': !isImageLoaded })}
+          onLoad={() => setImageIsLoaded(true)}
+          onError={() => setImageIsLoaded(false)}
+        />
       </div>
 
-      <div className="text-start">
+      <div className={classNames('text-start', { 'd-none': !lines })}>
         <StyledHieroContainer $dir={dir} $imageIndex={current?.[2]}>
           {lines.map((line, lineIndex) => (
             <div

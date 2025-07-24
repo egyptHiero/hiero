@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  CButton,
-  CCol,
-  CContainer,
-  CForm,
-  CFormInput,
-  CFormTextarea,
-} from '@coreui/react';
+import { CButton, CCol, CContainer, CForm } from '@coreui/react';
 import { useConfirmDelete } from './confirm-delete';
 import { SignDto } from '../../types/types';
 import { generatePath, useNavigate } from 'react-router-dom';
@@ -14,15 +7,13 @@ import { ROUTES } from '../../app/routes';
 import { useDeleteMutation, useSaveMutation } from './hooks';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { ShowHieroes } from './show-hieroes';
-import { Dir } from './dir';
-import { FontSize } from './font-size';
 import { Aside } from './aside';
 import { SignContextProvider } from './context';
+import { SignFormControls } from './form-controls';
 
 interface IFormProps {
   signId: string;
-  data: SignDto;
+  data?: SignDto;
 }
 
 export const SignForm: React.FC<IFormProps> = ({ signId, data }) => {
@@ -57,46 +48,13 @@ export const SignForm: React.FC<IFormProps> = ({ signId, data }) => {
 
   return (
     <FormProvider {...formMethods}>
-      <SignContextProvider watch={formMethods.watch}>
+      <SignContextProvider>
         <CForm
           noValidate
           className="row g-3"
           onSubmit={formMethods.handleSubmit(onSubmit)}
         >
-          <CCol md={6}>
-            <div className="d-flex gap-2 align-items-center">
-              <Dir />
-              <FontSize />
-            </div>
-          </CCol>
-          <CCol md={12}>
-            <ShowHieroes />
-          </CCol>
-          <CCol md={6}>
-            <CFormInput
-              {...formMethods.register('name', { required: true })}
-              label={t('sign.name')}
-            />
-          </CCol>
-          <CCol xs={6}>
-            <CFormTextarea
-              {...formMethods.register('description')}
-              label={t('sign.description')}
-            />
-          </CCol>
-          <CCol xs={6}>
-            <CFormInput
-              {...formMethods.register('image')}
-              label={t('sign.image')}
-              required
-            />
-          </CCol>
-          <CCol xs={6}>
-            <CFormTextarea
-              {...formMethods.register('classification', { required: true })}
-              label={t('sign.classification')}
-            />
-          </CCol>
+          <SignFormControls />
           <CCol xs={12}>
             <CContainer
               fluid

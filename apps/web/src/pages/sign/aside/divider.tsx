@@ -28,7 +28,7 @@ export const Divider: React.FC = () => {
 
   return (
     <CDropdown direction="center">
-      <StyledCDropdownToggle size="lg">{divider}</StyledCDropdownToggle>
+      <StyledCDropdownToggle>{divider}</StyledCDropdownToggle>
       <StyledCDropdownMenu className="text-center p-0">
         <CButton
           variant="outline"

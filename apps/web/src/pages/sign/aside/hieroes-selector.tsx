@@ -3,28 +3,40 @@ import { CButton, CButtonGroup } from '@coreui/react';
 import { Hiero } from '../../../components/hiero';
 import { Divider } from './divider';
 import { useTranslation } from 'react-i18next';
+import { useSignContext } from '../context';
 
 export const HieroesSelector: React.FC = () => {
   const { t } = useTranslation();
+  const { lines, current } = useSignContext();
+  const [currentLine, currentPos] = current ?? [-1, -1, -1];
 
   return (
     <div className="d-flex row text-center">
       <div className="d-flex justify-content-center">
         <div className="text-end flex-shrink-0">
           <CButton type="button" className="btn-outline">
-            <Hiero text={'A12'} fontSize={45} />
+            <Hiero
+              text={lines[currentLine]?.hieroes[currentPos - 1]}
+              fontSize={45}
+            />
           </CButton>
           <Divider />
         </div>
         <div style={{ width: 'min-content' }}>
           <CButton type="button" className="btn-outline">
-            <Hiero text={'A12'} fontSize={45} />
+            <Hiero
+              text={lines[currentLine]?.hieroes[currentPos]}
+              fontSize={45}
+            />
           </CButton>
         </div>
         <div className="text-start flex-shrink-0">
           <Divider />
           <CButton type="button" className="btn-outline">
-            <Hiero text={'A12'} fontSize={45} />
+            <Hiero
+              text={lines[currentLine]?.hieroes[currentPos + 1]}
+              fontSize={45}
+            />
           </CButton>
         </div>
       </div>
