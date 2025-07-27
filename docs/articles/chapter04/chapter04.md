@@ -56,8 +56,8 @@ $ npm i -D vitepress-sidebar
 
 ### Деплой на github pages
 
-[Процесс деплоя](https://vitepress.dev/guide/deploy#github-pages) детально описан на официальном сайте. Правда есть
-еще пара тонкостей:
+Процесс деплоя детально описан на [официальном сайте](https://vitepress.dev/guide/deploy#github-pages).
+Правда есть пара тонкостей:
 
 - во-первых, задать бранч в настройках приложения - `https://github.com/[name]/[project]/settings/pages`
-- во-вторых, прописать базовый путь
+- во-вторых, задать базовый путь (base) в настройках `vitePressOptions`
