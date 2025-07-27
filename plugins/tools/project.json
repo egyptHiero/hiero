@@ -36,6 +36,32 @@
           }
         ]
       }
+    },
+    "docker-compose:build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker compose build --no-cache",
+        "cwd": "{workspaceRoot}"
+      },
+      "dependsOn": [
+        "api:build",
+        "web:build"
+      ],
+      "inputs": ["production", "^production"]
+    },
+    "docker-compose:up": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker compose up -d",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "docker-compose:down": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker compose down",
+        "cwd": "{workspaceRoot}"
+      }
     }
   }
 }

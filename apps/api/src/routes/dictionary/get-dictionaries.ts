@@ -2,7 +2,7 @@ import {
   DictionaryInfoDto as DictionaryInfoSchema,
   QueryFilterDto as QueryFilterDtoSchema,
   PageDto as PageSchema,
-} from '../../typebox';
+} from '../../generated/typebox';
 import { toDictionaryInfoDto, toPageDto } from '../../dto';
 import { DB, DbUtils } from '@hiero/db';
 import { FastifyTypeBox } from '../../types';

@@ -1,23 +1,21 @@
-import Fastify from 'fastify';
-import { app } from './app';
+import * as process from 'node:process';
+import { generateSchema } from './generate-schema';
+import { startServer } from './start-server';
 
-const host = process.env.HOST ?? '0.0.0.0';
-const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+const args = process.argv.slice(2);
 
-// Instantiate Fastify with some config
-const server = Fastify({
-  logger: true,
-});
-
-// Register your application as a normal plugin.
-server.register(app);
-
-// Start listening.
-server.listen({ port, host }, (err) => {
-  if (err) {
-    server.log.error(err);
-    process.exit(1);
+/**
+ * Starter for fastify server. With `--generate-schema file` parameters saves OpenAPI json schema to given file.
+ */
+const main = async () => {
+  const generateIndex = args.indexOf('--generate-schema');
+  if (generateIndex >= 0 && args.length > generateIndex) {
+    void generateSchema(args[generateIndex + 1]);
+  } else if (args.length) {
+    console.log('Invalid parameters: ', args.join(','));
   } else {
-    console.log(`[ ready ] http://${host}:${port}`);
+    void startServer();
   }
-});
+};
+
+void main();

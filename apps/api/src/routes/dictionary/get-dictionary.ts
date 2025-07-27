@@ -3,7 +3,7 @@ import {
   QueryFilterDto as QueryFilterDtoSchema,
   PageDto as PageDtoSchema,
   ParamIdFilterDto as ParamIdFilterSchema,
-} from '../../typebox';
+} from '../../generated/typebox';
 import { toDictionaryItemDto, toPageDto } from '../../dto';
 import { DB, DbUtils } from '@hiero/db';
 import { FastifyTypeBox } from '../../types';

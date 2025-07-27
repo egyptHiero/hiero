@@ -3,6 +3,6 @@ import baseConfig from '../../eslint.config.mjs';
 export default [
   ...baseConfig,
   {
-    ignores: ['src/typebox/*.ts'],
+    ignores: ['src/generated/*.*'],
   },
 ];

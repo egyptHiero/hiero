@@ -1,4 +1,4 @@
-import { QueryFilterDto as QueryFilterSchema } from '../../typebox';
+import { QueryFilterDto as QueryFilterSchema } from '../../generated/typebox';
 import { DB, DbUtils } from '@hiero/db';
 import { Type } from '@sinclair/typebox';
 import { FastifyTypeBox } from '../../types';

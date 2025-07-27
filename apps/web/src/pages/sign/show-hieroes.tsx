@@ -75,7 +75,7 @@ export const ShowHieroes: React.FC = () => {
     setAsideVisible(true);
   };
 
-  const noCodes = lines;
+  //const noCodes = lines;
 
   return (
     <CContainer fluid className="d-flex">

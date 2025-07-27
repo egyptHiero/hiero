@@ -106,7 +106,7 @@ $ npm install -D ts2typebox
 ```bash
 $ nx generate @nx/workspace:run-commands \
   --name generate-schemas \
-  --command "npx ts2typebox -i apps/api/src/dto/types.ts -o apps/api/src/typebox/index.ts" \
+  --command "npx ts2typebox -i apps/api/src/dto/types.ts -o apps/api/src/generated/typebox.ts" \
   --cwd apps/api \
   --project api
 ```

@@ -1,24 +1,26 @@
-import {defineConfig} from 'vitepress'
+import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
-import {withSidebar} from 'vitepress-sidebar';
+import { withSidebar } from 'vitepress-sidebar';
 
 const vitePressOptions = {
-    // VitePress's options here...
-    title: 'VitePress Sidebar',
-    themeConfig: {
-        // https://vitepress.dev/reference/default-theme-config
-    },
-    base: '/hiero/'
+  // VitePress's options here...
+  title: 'VitePress Sidebar',
+  themeConfig: {
+    // https://vitepress.dev/reference/default-theme-config
+  },
+  base: '/hiero/',
 };
 
 const vitePressSidebarOptions = {
-    // VitePress Sidebar's options here...
-    documentRootPath: '/docs',
-    useTitleFromFileHeading: true,
-    useFolderLinkFromSameNameSubFile: true,
-    collapsed: true,
-    capitalizeFirst: true
+  // VitePress Sidebar's options here...
+  documentRootPath: '/docs',
+  useTitleFromFileHeading: true,
+  useFolderLinkFromSameNameSubFile: true,
+  collapsed: true,
+  capitalizeFirst: true,
 };
 
-export default defineConfig(withSidebar(vitePressOptions, vitePressSidebarOptions));
+export default defineConfig(
+  withSidebar(vitePressOptions, vitePressSidebarOptions),
+);

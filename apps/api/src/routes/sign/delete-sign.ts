@@ -1,5 +1,5 @@
 import { DB } from '@hiero/db';
-import { ParamIdFilterDto as ParamIdFilterSchema } from '../../typebox';
+import { ParamIdFilterDto as ParamIdFilterSchema } from '../../generated/typebox';
 import { ParamIdFilterDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 import { Type } from '@sinclair/typebox';

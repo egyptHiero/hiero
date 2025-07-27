@@ -1,7 +1,7 @@
 import {
   DictionaryInfoDto as DictionaryInfoSchema,
   ParamIdFilterDto as ParamIdFilterSchema,
-} from '../../typebox';
+} from '../../generated/typebox';
 import { toDictionaryInfoDto } from '../../dto';
 import { DB } from '@hiero/db';
 import { FastifyTypeBox } from '../../types';

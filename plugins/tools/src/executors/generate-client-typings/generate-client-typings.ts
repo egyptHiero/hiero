@@ -12,7 +12,7 @@ const runExecutor: PromiseExecutor<
 > = async (options) => {
   console.log('Executor ran for GenerateClientTypings', options);
 
-  console.log('Generating client api');
+  console.log('Generating client typings from OpenAPI schema');
 
   try {
     const ast = await openapiTS(`http://${host}:${port}/docs/json`);

@@ -3,7 +3,7 @@ import {
   QueryFilterDto as QueryFilterDtoSchema,
   PageDto as PageDtoSchema,
   SignDto as SignDtoSchema,
-} from '../../typebox';
+} from '../../generated/typebox';
 import { toPageDto, toSignDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 import { searchIn } from '@hiero/common';

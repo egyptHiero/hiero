@@ -2,7 +2,7 @@ import { DB, DbUtils } from '@hiero/db';
 import {
   SignDto as SignDtoSchema,
   SignNewDto as SignNewDtoSchema,
-} from '../../typebox';
+} from '../../generated/typebox';
 import { toSignDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 

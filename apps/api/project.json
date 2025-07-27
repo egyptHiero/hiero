@@ -9,7 +9,7 @@
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
-      "dependsOn": ["generate-schemas"],
+      "dependsOn": ["generate-typebox"],
       "options": {
         "platform": "node",
         "outputPath": "apps/api/dist/apps/api",
@@ -62,13 +62,30 @@
         }
       }
     },
-    "generate-schemas": {
+    "generate-typebox": {
       "executor": "nx:run-commands",
-      "outputs": [],
       "options": {
-        "command": "npx ts2typebox -i src/dto/types.ts -o src/typebox/index.ts",
-        "cwd": "apps/api"
+        "command": "npx ts2typebox -i src/dto/types.ts -o src/generated/typebox.ts",
+        "cwd": "apps/api",
+        "inputs": [
+          "{projectRoot}/src/dto/types.ts"
+        ],
+        "cache": true
       }
+    },
+    "generate-schema": {
+      "executor": "@nx/js:node",
+      "options": {
+        "buildTarget": "api:build",
+        "args": ["--generate-schema", "apps/api/src/generated/schema.json"],
+        "watch": false
+      },
+      "inputs": [
+        "{projectRoot}/src/dto/**/*.ts",
+        "{projectRoot}/src/routes/**/*.ts"
+      ],
+      "cache": true,
+      "dependsOn": ["^build"]
     },
     "docker-build": {
       "dependsOn": ["build"],

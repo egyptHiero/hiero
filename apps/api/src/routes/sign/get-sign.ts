@@ -2,7 +2,7 @@ import { DB } from '@hiero/db';
 import {
   ParamIdFilterDto as ParamIdFilterSchema,
   SignDto as SignDtoSchema,
-} from '../../typebox';
+} from '../../generated/typebox';
 import { toSignDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 

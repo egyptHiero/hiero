@@ -4,18 +4,22 @@
   "sourceRoot": "apps/web/src",
   "projectType": "application",
   "tags": [],
-  "// targets": "to see all targets run: nx show project web --web",
   "targets": {
     "build": {
       "options": {
         "external": ["@coreui/react"]
-      }
+      },
+      "dependsOn": ["api:generate-schema", "generate-client-typings"]
     },
-    "gen": {
-      "executor": "@hiero/tools:generate-client-typings",
+    "generate-client-typings": {
+      "executor": "nx:run-commands",
       "options": {
-        "output": "apps/web/src/@types/openapi-schema.d.ts"
-      }
+        "command": "npx openapi-typescript apps/api/src/generated/schema.json -o apps/web/src/@types/openapi-schema.d.ts",
+        "inputs": [
+          "apps/api/src/generated/schema.json"
+        ]
+      },
+      "cache": true
     },
     "docker-build": {
       "dependsOn": ["build"],

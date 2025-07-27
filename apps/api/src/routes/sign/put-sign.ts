@@ -3,7 +3,7 @@ import {
   ParamIdFilterDto as ParamIdFilterSchema,
   SignDto as SignDtoSchema,
   SignNewDto as SignNewDtoSchema,
-} from '../../typebox';
+} from '../../generated/typebox';
 import { toSignDto } from '../../dto';
 import { ParamIdFilterDto, SignDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
