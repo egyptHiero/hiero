@@ -55,7 +55,6 @@ $ npx nx g @nx/plugin:plugin plugins/tools
     }
   }
 }
-}
 ```
 
 Запускаем так -
