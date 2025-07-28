@@ -4,40 +4,61 @@ import { Hiero } from '../../../components/hiero';
 import { Divider } from './divider';
 import { useTranslation } from 'react-i18next';
 import { useSignContext } from '../context';
+import { useFormContext } from 'react-hook-form';
+import { SignDto } from '../../../types/types';
+import { TDir } from '../../../types';
+import styled from '@emotion/styled';
+
+const StyledButton = styled(CButton)({
+  minWidth: '70px',
+  minHeight: '70px',
+});
 
 export const HieroesSelector: React.FC = () => {
   const { t } = useTranslation();
-  const { lines, current } = useSignContext();
+  const { lines, current, changeHiero } = useSignContext();
   const [currentLine, currentPos] = current ?? [-1, -1, -1];
+  const { watch } = useFormContext<SignDto>();
+  const dir = watch('dir') as TDir | undefined;
 
   return (
     <div className="d-flex row text-center">
       <div className="d-flex justify-content-center">
         <div className="text-end flex-shrink-0">
-          <CButton type="button" className="btn-outline">
+          <StyledButton type="button" className="btn-outline">
             <Hiero
+              dir={dir}
               text={lines[currentLine]?.hieroes[currentPos - 1]}
               fontSize={45}
             />
-          </CButton>
-          <Divider />
+          </StyledButton>
+          <Divider
+            value={lines[currentLine]?.delimiters[currentPos - 1]}
+            setDivider={(value) => changeHiero(value, 'left')}
+          />
         </div>
         <div style={{ width: 'min-content' }}>
-          <CButton type="button" className="btn-outline">
+          <StyledButton type="button" color="success">
             <Hiero
+              dir={dir}
               text={lines[currentLine]?.hieroes[currentPos]}
               fontSize={45}
+              color="white"
             />
-          </CButton>
+          </StyledButton>
         </div>
         <div className="text-start flex-shrink-0">
-          <Divider />
-          <CButton type="button" className="btn-outline">
+          <Divider
+            value={lines[currentLine]?.delimiters[currentPos]}
+            setDivider={(value) => changeHiero(value, 'right')}
+          />
+          <StyledButton type="button" className="btn-outline">
             <Hiero
+              dir={dir}
               text={lines[currentLine]?.hieroes[currentPos + 1]}
               fontSize={45}
             />
-          </CButton>
+          </StyledButton>
         </div>
       </div>
       <CButtonGroup vertical>

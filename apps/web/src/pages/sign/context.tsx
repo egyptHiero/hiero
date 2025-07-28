@@ -1,13 +1,13 @@
 import React from 'react';
-import {
-  DELIMITER_NEW_LINE,
-  SUPPORTED_DELIMITERS,
-  SUPPORTED_DELIMITERS_REGEXP,
-} from '../../constants';
 import { useFormContext } from 'react-hook-form';
 import { SignDto } from '../../types/types';
+import { joinLines, splitIntoLines } from './logic';
 
 type TCurrent = [number, number, number];
+type TChangeHiero = (
+  value: string,
+  variant: 'left' | 'right' | 'hiero',
+) => void;
 
 interface ISignContext {
   current?: TCurrent;
@@ -17,6 +17,7 @@ interface ISignContext {
   setAsideVisible: React.Dispatch<React.SetStateAction<boolean>>;
   isImageLoaded: boolean;
   setImageIsLoaded: React.Dispatch<React.SetStateAction<boolean>>;
+  changeHiero: TChangeHiero;
 }
 
 const SignContext = React.createContext<ISignContext | null>(null);
@@ -39,24 +40,21 @@ export const SignContextProvider: React.FC<ISignContextProvider> = ({
   children,
 }) => {
   const [asideVisible, setAsideVisible] = React.useState(false);
-  const { watch } = useFormContext<SignDto>();
+  const { watch, setValue } = useFormContext<SignDto>();
   const classification = watch('classification') || '';
   const [current, setCurrent] = React.useState<TCurrent>();
   const [isImageLoaded, setImageIsLoaded] = React.useState(false);
 
   const lines = React.useMemo(
-    () =>
-      classification
-        ? classification.split(DELIMITER_NEW_LINE).map((line) => {
-            const all = line.split(SUPPORTED_DELIMITERS_REGEXP);
-            return {
-              codes: line,
-              hieroes: all.filter((v) => !SUPPORTED_DELIMITERS.includes(v)),
-              delimiters: all.filter((v) => SUPPORTED_DELIMITERS.includes(v)),
-            };
-          })
-        : [],
+    () => splitIntoLines(classification),
     [classification],
+  );
+
+  const changeHiero: TChangeHiero = React.useCallback(
+    (value, variant) => {
+      setValue('classification', joinLines(lines, current, { value, variant }));
+    },
+    [current, lines, setValue],
   );
 
   const value = React.useMemo(() => {
@@ -68,8 +66,9 @@ export const SignContextProvider: React.FC<ISignContextProvider> = ({
       setAsideVisible,
       isImageLoaded,
       setImageIsLoaded,
+      changeHiero,
     };
-  }, [asideVisible, current, isImageLoaded, lines]);
+  }, [asideVisible, changeHiero, current, isImageLoaded, lines]);
 
   return <SignContext.Provider value={value}>{children}</SignContext.Provider>;
 };

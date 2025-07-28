@@ -152,12 +152,12 @@ export const DbUtils = {
    */
   getUniqueId,
   /**
-   * Fill table with .
+   * Fill table from iterator.
    *
    * @param table
    * @param iterator                    async or plain iterator
    * @param options                     options:
-   *  @param options.batchThreshold     batch threshold, by default 1000
+   * @param options.batchThreshold     batch threshold, by default 1000
    */
   update,
 } as const;

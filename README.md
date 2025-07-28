@@ -1,3 +1,3 @@
 # Hiero
 
-Начало истории - [здесь](https://egypthiero.github.io/hiero/articles/chapter1/chapter01.html)
+Начало истории - [здесь](https://egypthiero.github.io/hiero/articles/chapter01/chapter01.html)

@@ -26,7 +26,7 @@ function getFlowDirection(dir?: TDir): Property.FlexDirection {
 
 interface StyledHieroContainerProps {
   $dir?: TDir;
-  $imageIndex?: number;
+  $selectedIndex?: number;
 }
 
 const StyledHieroContainer = styled.div<StyledHieroContainerProps>(
@@ -40,11 +40,11 @@ const StyledHieroContainer = styled.div<StyledHieroContainerProps>(
       },
     },
   },
-  ({ $dir, $imageIndex = -1 }) => ({
+  ({ $dir, $selectedIndex = -1 }) => ({
     flexDirection: getFlowDirection($dir),
     width: $dir?.startsWith('v') ? 'fit-content' : '100%',
     '.selected svg >': {
-      [`text:nth-of-type(${$imageIndex + 1})`]: {
+      [`text:nth-of-type(${$selectedIndex + 1})`]: {
         fill: 'green',
         outline: '1px dashed green',
       },
@@ -89,7 +89,7 @@ export const ShowHieroes: React.FC = () => {
       </div>
 
       <div className={classNames('text-start', { 'd-none': !lines })}>
-        <StyledHieroContainer $dir={dir} $imageIndex={current?.[2]}>
+        <StyledHieroContainer $dir={dir} $selectedIndex={current?.[2]}>
           {lines.map((line, lineIndex) => (
             <div
               key={line.codes}

@@ -6,6 +6,13 @@ import {
   CDropdownToggle,
 } from '@coreui/react';
 import styled from '@emotion/styled';
+import {
+  DELIMITER_HORIZONTAL,
+  DELIMITER_NEAR,
+  DELIMITER_NEW_LINE,
+  DELIMITER_VERTICAL,
+} from '../../../constants';
+import { useSignContext } from '../context';
 
 const StyledCDropdownToggle = styled(CDropdownToggle)({
   ':after ': {
@@ -18,45 +25,63 @@ const StyledCDropdownMenu = styled(CDropdownMenu)({
   transform: 'translate(-1px, 140px)',
 });
 
-const DIVIDER = <span>&#xFF0B;</span>;
-const HORIZONTAL_DIVIDER = <span>&#x23E4;</span>;
-const VERTICAL_DIVIDER = <span>&#x23D0;</span>;
-const NEW_LINE = <span>&#x23CE;</span>;
+const ICON_DIVIDER_NEAR = <span>&#xFF0B;</span>;
+const ICON_HORIZONTAL_DIVIDER = <span>&#x23E4;</span>;
+const ICON_VERTICAL_DIVIDER = <span>&#x23D0;</span>;
+const ICON_NEW_LINE = <span>&#x23CE;</span>;
 
-export const Divider: React.FC = () => {
-  const [divider, setDivider] = React.useState(DIVIDER);
+const getDividerIcon = (value?: string) => {
+  switch (value) {
+    case DELIMITER_HORIZONTAL:
+      return ICON_HORIZONTAL_DIVIDER;
+    case DELIMITER_VERTICAL:
+      return ICON_VERTICAL_DIVIDER;
+    case DELIMITER_NEW_LINE:
+      return ICON_NEW_LINE;
+    default:
+      return ICON_DIVIDER_NEAR;
+  }
+};
+
+interface DividerProps {
+  value?: string;
+  setDivider: (value: string) => void;
+}
+
+export const Divider: React.FC<DividerProps> = ({ value, setDivider }) => {
+  const divider = getDividerIcon(value);
 
   return (
     <CDropdown direction="center">
-      <StyledCDropdownToggle>{divider}</StyledCDropdownToggle>
+      <StyledCDropdownToggle variant="outline">{divider}</StyledCDropdownToggle>
       <StyledCDropdownMenu className="text-center p-0">
         <CButton
           variant="outline"
           className="w-100"
-          onClick={() => setDivider(DIVIDER)}
+          onClick={() => setDivider(DELIMITER_NEAR)}
         >
-          {DIVIDER}
+          {ICON_DIVIDER_NEAR}
         </CButton>
         <CButton
           variant="outline"
           className="w-100"
-          onClick={() => setDivider(HORIZONTAL_DIVIDER)}
+          onClick={() => setDivider(DELIMITER_HORIZONTAL)}
         >
-          {HORIZONTAL_DIVIDER}
+          {ICON_HORIZONTAL_DIVIDER}
         </CButton>
         <CButton
           variant="outline"
           className="w-100"
-          onClick={() => setDivider(VERTICAL_DIVIDER)}
+          onClick={() => setDivider(DELIMITER_VERTICAL)}
         >
-          {VERTICAL_DIVIDER}
+          {ICON_VERTICAL_DIVIDER}
         </CButton>
         <CButton
           variant="outline"
           className="w-100 h-100"
-          onClick={() => setDivider(NEW_LINE)}
+          onClick={() => setDivider(DELIMITER_NEW_LINE)}
         >
-          {NEW_LINE}
+          {ICON_NEW_LINE}
         </CButton>
       </StyledCDropdownMenu>
     </CDropdown>

@@ -4,7 +4,8 @@ import syntax from './hierojax.js';
 import { toUnicode } from './hieroes';
 
 interface IHieroProps {
-  text: string;
+  text?: string;
+  color?: string;
   fontSize?: number;
   dir?: 'hlr' | 'hrl' | 'vlr' | 'vrl';
   key?: string;
@@ -12,7 +13,8 @@ interface IHieroProps {
 }
 
 export const Hiero: React.FC<IHieroProps> = ({
-  text,
+  text = '',
+  color,
   fontSize,
   dir,
   key,
@@ -27,14 +29,15 @@ export const Hiero: React.FC<IHieroProps> = ({
       fragment.print(parent, {
         fontsize: fontSize,
         sep: 0.25,
-        dir: dir,
+        dir,
+        signcolor: color,
       });
 
       return parent.innerHTML;
     } catch {
       return t('parse.error');
     }
-  }, [text, fontSize, dir, t]);
+  }, [text, fontSize, dir, color, t]);
 
   const handleClick: MouseEventHandler<HTMLDivElement> = ({ target }) => {
     if (!(target instanceof SVGTextElement)) return;
