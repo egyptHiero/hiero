@@ -52,3 +52,6 @@ npx nx g @nx/plugin:executor
 ###
 vite-plugin-static-copy
 npm i react-hook-form
+
+### Vite Bundle Analyzer
+https://www.npmjs.com/package/vite-bundle-analyzer
