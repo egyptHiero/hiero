@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
-import { TActiveTab } from './types';
+import {
+  TActiveTab,
+  TChangeHiero,
+  TSignHistory,
+  TSignHistoryItem,
+  TSignHistoryItems,
+} from './types';
 import { GARDINER_CLASSIFICATION } from '../../../constants';
+import { useSignContext } from '../context';
+import { useFormContext } from 'react-hook-form';
+import { SignDto } from '../../../types/types';
+import { joinLines } from '../logic';
 
 interface IAsideContext {
   activeTab: TActiveTab;
@@ -9,6 +19,8 @@ interface IAsideContext {
   setClassification: React.Dispatch<React.SetStateAction<string>>;
   query?: string;
   setQuery: React.Dispatch<React.SetStateAction<string | undefined>>;
+  history: TSignHistory;
+  changeHiero: TChangeHiero;
 }
 
 const AsideContext = React.createContext<IAsideContext | null>(null);
@@ -35,6 +47,77 @@ export const AsideContextProvider: React.FC<IAsideContextProvider> = ({
   const [classification, setClassification] = React.useState<string>(
     GARDINER_CLASSIFICATION[0],
   );
+  const { lines, current, setCurrent } = useSignContext();
+  const { setValue } = useFormContext<SignDto>();
+
+  const [historyItems, setHistoryItems] = React.useState<TSignHistoryItems>({
+    undo: [],
+    redo: [],
+  });
+  const history = React.useMemo<TSignHistory>(
+    () => ({
+      canUndo: !!historyItems.undo.length,
+      canRedo: !!historyItems.redo.length,
+      save: (item) => {
+        setHistoryItems((oldValue) => {
+          const undo = [...oldValue.undo];
+          undo.push(item);
+
+          return { undo, redo: [] };
+        });
+      },
+      undo: () => {
+        setHistoryItems((oldValue) => {
+          const undo = [...oldValue.undo];
+          const redo = [...oldValue.redo];
+          const item = undo.pop();
+          redo.push({ current, hieroes: joinLines(lines) });
+
+          if (item) {
+            queueMicrotask(() => {
+              setValue('classification', item.hieroes);
+              setCurrent(item.current);
+            });
+          }
+
+          return { undo, redo };
+        });
+      },
+      redo: () => {
+        setHistoryItems((oldValue) => {
+          const undo = [...oldValue.undo];
+          const redo = [...oldValue.redo];
+          const item = redo.pop();
+          undo.push({ current, hieroes: joinLines(lines) });
+
+          if (item) {
+            queueMicrotask(() => {
+              setValue('classification', item.hieroes);
+              setCurrent(item.current);
+            });
+          }
+
+          return { undo, redo };
+        });
+      },
+    }),
+    [
+      current,
+      historyItems.redo,
+      historyItems.undo,
+      lines,
+      setCurrent,
+      setValue,
+    ],
+  );
+
+  const changeHiero = React.useCallback<TChangeHiero>(
+    (value, variant) => {
+      history.save({ current, hieroes: joinLines(lines) });
+      setValue('classification', joinLines(lines, current, { value, variant }));
+    },
+    [current, history, lines, setValue],
+  );
 
   const value = React.useMemo(() => {
     return {
@@ -44,8 +127,10 @@ export const AsideContextProvider: React.FC<IAsideContextProvider> = ({
       setQuery,
       classification,
       setClassification,
+      history,
+      changeHiero,
     };
-  }, [activeTab, classification, query]);
+  }, [activeTab, changeHiero, classification, history, query]);
 
   return (
     <AsideContext.Provider value={value}>{children}</AsideContext.Provider>

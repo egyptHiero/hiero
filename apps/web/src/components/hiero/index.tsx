@@ -8,13 +8,15 @@ interface StyledDivProps {
   selectedPos?: number;
 }
 
-const StyledDiv = styled.div<StyledDivProps>(({ selectedPos }) => ({
-  [`& > svg > .hierojax-svg-sign:nth-of-type(${selectedPos ? selectedPos + 1 : undefined})`]:
-    {
-      fill: 'green',
-      outline: '1px dashed green',
-    },
-}));
+const StyledDiv = styled.div<StyledDivProps>(
+  ({ selectedPos = Number.NEGATIVE_INFINITY }) => ({
+    [`& > svg > .hierojax-svg-sign:nth-of-type(${selectedPos >= 0 ? selectedPos + 1 : undefined})`]:
+      {
+        fill: 'green',
+        outline: '1px dashed green',
+      },
+  }),
+);
 
 interface IHieroProps {
   text?: string;

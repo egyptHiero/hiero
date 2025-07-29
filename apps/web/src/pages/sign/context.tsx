@@ -1,8 +1,8 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import { SignDto } from '../../types/types';
-import { joinLines, splitIntoLines } from './logic';
-import { TChangeHiero, TCurrent } from './types';
+import { splitIntoLines } from './logic';
+import { TCurrent } from './types';
 import { shiftCurrentIndex } from './logic';
 
 interface ISignContext {
@@ -14,7 +14,6 @@ interface ISignContext {
   setAsideVisible: React.Dispatch<React.SetStateAction<boolean>>;
   isImageLoaded: boolean;
   setImageIsLoaded: React.Dispatch<React.SetStateAction<boolean>>;
-  changeHiero: TChangeHiero;
 }
 
 const SignContext = React.createContext<ISignContext | null>(null);
@@ -37,7 +36,7 @@ export const SignContextProvider: React.FC<ISignContextProvider> = ({
   children,
 }) => {
   const [asideVisible, setAsideVisible] = React.useState(false);
-  const { watch, setValue } = useFormContext<SignDto>();
+  const { watch } = useFormContext<SignDto>();
   const classification = watch('classification') || '';
   const [current, setCurrent] = React.useState<TCurrent>();
   const [isImageLoaded, setImageIsLoaded] = React.useState(false);
@@ -45,13 +44,6 @@ export const SignContextProvider: React.FC<ISignContextProvider> = ({
   const lines = React.useMemo(
     () => splitIntoLines(classification),
     [classification],
-  );
-
-  const changeHiero = React.useCallback<TChangeHiero>(
-    (value, variant) => {
-      setValue('classification', joinLines(lines, current, { value, variant }));
-    },
-    [current, lines, setValue],
   );
 
   const shiftCurrent = React.useCallback(
@@ -70,10 +62,9 @@ export const SignContextProvider: React.FC<ISignContextProvider> = ({
       setAsideVisible,
       isImageLoaded,
       setImageIsLoaded,
-      changeHiero,
       shiftCurrent,
     };
-  }, [asideVisible, changeHiero, current, isImageLoaded, lines, shiftCurrent]);
+  }, [asideVisible, current, isImageLoaded, lines, shiftCurrent]);
 
   return <SignContext.Provider value={value}>{children}</SignContext.Provider>;
 };

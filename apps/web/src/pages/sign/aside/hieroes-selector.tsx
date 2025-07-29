@@ -8,6 +8,7 @@ import { useFormContext } from 'react-hook-form';
 import { SignDto } from '../../../types/types';
 import { TDir } from '../../../types';
 import styled from '@emotion/styled';
+import { useAsideContext } from './context';
 
 const StyledButton = styled(CButton)({
   minWidth: '70px',
@@ -16,7 +17,8 @@ const StyledButton = styled(CButton)({
 
 export const HieroesSelector: React.FC = () => {
   const { t } = useTranslation();
-  const { lines, current, changeHiero, shiftCurrent } = useSignContext();
+  const { lines, current, shiftCurrent } = useSignContext();
+  const { history, changeHiero } = useAsideContext();
   const [currentLine, currentPos] = current ?? [-1, -1, -1];
   const { watch } = useFormContext<SignDto>();
   const dir = watch('dir') as TDir | undefined;
@@ -79,9 +81,21 @@ export const HieroesSelector: React.FC = () => {
           <CButton className="btn-outline">{t('btn.delete')}</CButton>
           <CButton className="btn-outline">{t('btn.insertRight')}</CButton>
         </CButtonGroup>
-        <CButtonGroup className="">
-          <CButton className="btn-outline">{t('btn.redo')}</CButton>
-          <CButton className="btn-outline">{t('btn.undo')}</CButton>
+        <CButtonGroup>
+          <CButton
+            className="btn-outline"
+            disabled={!history.canRedo}
+            onClick={() => history.redo()}
+          >
+            {t('btn.redo')}
+          </CButton>
+          <CButton
+            className="btn-outline"
+            disabled={!history.canUndo}
+            onClick={() => history.undo()}
+          >
+            {t('btn.undo')}
+          </CButton>
         </CButtonGroup>
       </CButtonGroup>
     </div>

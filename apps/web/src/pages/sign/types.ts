@@ -7,8 +7,3 @@ export type TLines = Array<{
   hieroes: string[];
   delimiters: string[];
 }>;
-
-export type TChangeHiero = (
-  value: string,
-  variant: 'left' | 'right' | 'hiero',
-) => void;

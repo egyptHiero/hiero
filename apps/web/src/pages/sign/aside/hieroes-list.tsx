@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 import { CButton } from '@coreui/react';
 import { Hiero } from '../../../components/hiero';
 import { useHieroContext } from '../../../app/context/hiero-context';
@@ -6,14 +6,12 @@ import { useAsideContext } from './context';
 import { TDir } from '../../../types';
 import { useFormContext } from 'react-hook-form';
 import { SignDto } from '../../../types/types';
-import { useSignContext } from '../context';
 
 export const HieroesList: React.FC = () => {
   const { hieroglyphs } = useHieroContext();
-  const { activeTab, classification, query } = useAsideContext();
+  const { activeTab, classification, query, changeHiero } = useAsideContext();
   const { watch } = useFormContext<SignDto>();
   const dir = watch('dir') as TDir | undefined;
-  const { changeHiero } = useSignContext();
 
   const hieroList = React.useMemo(() => {
     if (activeTab === 'select') {

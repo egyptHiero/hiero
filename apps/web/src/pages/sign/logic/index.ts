@@ -87,9 +87,15 @@ export const shiftCurrentIndex = (
     while (index > 0 && pos < 0) {
       pos += lines[--index]?.hieroes.length ?? 0;
     }
+    pos = Math.max(pos, 0);
   } else if (value > 0) {
     while (pos >= (lines[index]?.hieroes.length ?? Infinity)) {
       pos -= lines[index++]?.hieroes.length ?? 0;
+    }
+
+    if (index >= lines.length) {
+      index = lines.length - 1;
+      pos = Math.min(pos, lines[index]?.hieroes.length ?? 0);
     }
   }
 
