@@ -5,9 +5,7 @@ import {
   SUPPORTED_DELIMITERS_REGEXP,
 } from '../../../constants';
 
-type TCurrent = [number, number, number];
-type THiero = { value: string; variant: 'left' | 'right' | 'hiero' };
-type TLines = Array<{ codes: string; hieroes: string[]; delimiters: string[] }>;
+import { TCurrent, THiero, TLines } from '../types';
 
 export const splitIntoLines = (gardinerCodes = ''): TLines =>
   gardinerCodes
@@ -76,3 +74,24 @@ export const joinLines = (
     )
     .join('')
     .trimEnd();
+
+export const shiftCurrentIndex = (
+  value: number,
+  lines: TLines,
+  current: TCurrent,
+): TCurrent => {
+  let index = current[0];
+  let pos = current[1] + value;
+
+  if (value < 0) {
+    while (index > 0 && pos < 0) {
+      pos += lines[--index]?.hieroes.length ?? 0;
+    }
+  } else if (value > 0) {
+    while (pos >= (lines[index]?.hieroes.length ?? Infinity)) {
+      pos -= lines[index++]?.hieroes.length ?? 0;
+    }
+  }
+
+  return [index, pos];
+};

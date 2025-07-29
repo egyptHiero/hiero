@@ -12,7 +12,6 @@ import {
   DELIMITER_NEW_LINE,
   DELIMITER_VERTICAL,
 } from '../../../constants';
-import { useSignContext } from '../context';
 
 const StyledCDropdownToggle = styled(CDropdownToggle)({
   ':after ': {
@@ -43,6 +42,17 @@ const getDividerIcon = (value?: string) => {
   }
 };
 
+interface DividerButtonProps {
+  value: string;
+  setValue: (value: string) => void;
+}
+
+const DividerButton: React.FC<DividerButtonProps> = ({ value, setValue }) => (
+  <CButton variant="outline" className="w-100" onClick={() => setValue(value)}>
+    {getDividerIcon(value)}
+  </CButton>
+);
+
 interface DividerProps {
   value?: string;
   setDivider: (value: string) => void;
@@ -55,42 +65,17 @@ export const Divider: React.FC<DividerProps> = ({ value, setDivider }) => {
     <CDropdown direction="center">
       <StyledCDropdownToggle variant="outline">{divider}</StyledCDropdownToggle>
       <StyledCDropdownMenu className="text-center p-0">
-        <CButton
-          variant="outline"
-          className="w-100"
-          onClick={() => setDivider(DELIMITER_NEAR)}
-        >
-          {ICON_DIVIDER_NEAR}
-        </CButton>
-        <CButton
-          variant="outline"
-          className="w-100"
-          onClick={() => setDivider(DELIMITER_HORIZONTAL)}
-        >
-          {ICON_HORIZONTAL_DIVIDER}
-        </CButton>
-        <CButton
-          variant="outline"
-          className="w-100"
-          onClick={() => setDivider(DELIMITER_VERTICAL)}
-        >
-          {ICON_VERTICAL_DIVIDER}
-        </CButton>
-        <CButton
-          variant="outline"
-          className="w-100 h-100"
-          onClick={() => setDivider(DELIMITER_NEW_LINE)}
-        >
-          {ICON_NEW_LINE}
-        </CButton>
+        {[
+          DELIMITER_NEAR,
+          DELIMITER_HORIZONTAL,
+          DELIMITER_VERTICAL,
+          DELIMITER_NEW_LINE,
+        ].map((value) => (
+          <DividerButton key={value} value={value} setValue={setDivider} />
+        ))}
       </StyledCDropdownMenu>
     </CDropdown>
   );
-  /*
-    <CButton className="btn-outline">
-      <span style={{ fontSize: 38 }}>&#x23D0;&#x23E4; &crarr; +</span>
-    </CButton>
-*/
 };
 
 Divider.displayName = 'Divider';

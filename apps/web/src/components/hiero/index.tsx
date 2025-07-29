@@ -2,6 +2,19 @@ import React, { MouseEventHandler } from 'react';
 import { useTranslation } from 'react-i18next';
 import syntax from './hierojax.js';
 import { toUnicode } from './hieroes';
+import styled from '@emotion/styled';
+
+interface StyledDivProps {
+  selectedPos?: number;
+}
+
+const StyledDiv = styled.div<StyledDivProps>(({ selectedPos }) => ({
+  [`& > svg > .hierojax-svg-sign:nth-of-type(${selectedPos ? selectedPos + 1 : undefined})`]:
+    {
+      fill: 'green',
+      outline: '1px dashed green',
+    },
+}));
 
 interface IHieroProps {
   text?: string;
@@ -9,7 +22,8 @@ interface IHieroProps {
   fontSize?: number;
   dir?: 'hlr' | 'hrl' | 'vlr' | 'vrl';
   key?: string;
-  onClick?: (hieroIndex: number, imageIndex: number) => void;
+  onClick?: (hieroIndex: number) => void;
+  selectedPos?: number;
 }
 
 export const Hiero: React.FC<IHieroProps> = ({
@@ -19,6 +33,7 @@ export const Hiero: React.FC<IHieroProps> = ({
   dir,
   key,
   onClick,
+  selectedPos,
 }) => {
   const { t } = useTranslation();
 
@@ -31,7 +46,19 @@ export const Hiero: React.FC<IHieroProps> = ({
         sep: 0.25,
         dir,
         signcolor: color,
+        log: 'false',
       });
+
+      const svg = parent.firstChild as HTMLElement;
+
+      // Clean up everything but .hierojax-svg-sign elements for exact numeration. That's true - it smells.
+      if (svg) {
+        const elementsToKeep = svg.querySelectorAll('.hierojax-svg-sign');
+
+        svg.innerHTML = Array.from(elementsToKeep)
+          .map((el) => el.outerHTML)
+          .join('');
+      }
 
       return parent.innerHTML;
     } catch {
@@ -40,23 +67,24 @@ export const Hiero: React.FC<IHieroProps> = ({
   }, [text, fontSize, dir, color, t]);
 
   const handleClick: MouseEventHandler<HTMLDivElement> = ({ target }) => {
-    if (!(target instanceof SVGTextElement)) return;
-    const svg = target.closest('svg');
-    if (svg) {
-      onClick?.(
-        Array.from(svg.querySelectorAll('text.hierojax-svg-sign')).indexOf(
-          target,
-        ),
-        Array.from(svg.querySelectorAll('text')).indexOf(target),
-      );
+    if (target instanceof SVGTextElement) {
+      const svg = target.closest('svg');
+      if (svg) {
+        onClick?.(
+          Array.from(svg.querySelectorAll('text.hierojax-svg-sign')).indexOf(
+            target,
+          ),
+        );
+      }
     }
   };
 
   return (
-    <div
+    <StyledDiv
       key={key}
       dangerouslySetInnerHTML={{ __html: hieroHTML }}
       onClick={handleClick}
+      selectedPos={selectedPos}
     />
   );
 };

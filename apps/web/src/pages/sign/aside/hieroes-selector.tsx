@@ -16,7 +16,7 @@ const StyledButton = styled(CButton)({
 
 export const HieroesSelector: React.FC = () => {
   const { t } = useTranslation();
-  const { lines, current, changeHiero } = useSignContext();
+  const { lines, current, changeHiero, shiftCurrent } = useSignContext();
   const [currentLine, currentPos] = current ?? [-1, -1, -1];
   const { watch } = useFormContext<SignDto>();
   const dir = watch('dir') as TDir | undefined;
@@ -25,7 +25,13 @@ export const HieroesSelector: React.FC = () => {
     <div className="d-flex row text-center">
       <div className="d-flex justify-content-center">
         <div className="text-end flex-shrink-0">
-          <StyledButton type="button" className="btn-outline">
+          <StyledButton
+            type="button"
+            className="btn-outline"
+            onClick={() => {
+              shiftCurrent(-1);
+            }}
+          >
             <Hiero
               dir={dir}
               text={lines[currentLine]?.hieroes[currentPos - 1]}
@@ -52,7 +58,13 @@ export const HieroesSelector: React.FC = () => {
             value={lines[currentLine]?.delimiters[currentPos]}
             setDivider={(value) => changeHiero(value, 'right')}
           />
-          <StyledButton type="button" className="btn-outline">
+          <StyledButton
+            type="button"
+            className="btn-outline"
+            onClick={() => {
+              shiftCurrent(1);
+            }}
+          >
             <Hiero
               dir={dir}
               text={lines[currentLine]?.hieroes[currentPos + 1]}

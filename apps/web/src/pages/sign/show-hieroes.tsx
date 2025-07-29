@@ -26,7 +26,6 @@ function getFlowDirection(dir?: TDir): Property.FlexDirection {
 
 interface StyledHieroContainerProps {
   $dir?: TDir;
-  $selectedIndex?: number;
 }
 
 const StyledHieroContainer = styled.div<StyledHieroContainerProps>(
@@ -40,15 +39,9 @@ const StyledHieroContainer = styled.div<StyledHieroContainerProps>(
       },
     },
   },
-  ({ $dir, $selectedIndex = -1 }) => ({
+  ({ $dir }) => ({
     flexDirection: getFlowDirection($dir),
     width: $dir?.startsWith('v') ? 'fit-content' : '100%',
-    '.selected svg >': {
-      [`text:nth-of-type(${$selectedIndex + 1})`]: {
-        fill: 'green',
-        outline: '1px dashed green',
-      },
-    },
   }),
 );
 
@@ -66,16 +59,10 @@ export const ShowHieroes: React.FC = () => {
   const fontSize = watch('fontSize') || 40;
   const image = watch('image');
 
-  const handleClick = (
-    lineIndex: number,
-    hieroIndex: number,
-    imageIndex: number,
-  ) => {
-    setCurrent([lineIndex, hieroIndex, imageIndex]);
+  const handleClick = (lineIndex: number, hieroIndex: number) => {
+    setCurrent([lineIndex, hieroIndex]);
     setAsideVisible(true);
   };
-
-  //const noCodes = lines;
 
   return (
     <CContainer fluid className="d-flex">
@@ -89,7 +76,7 @@ export const ShowHieroes: React.FC = () => {
       </div>
 
       <div className={classNames('text-start', { 'd-none': !lines })}>
-        <StyledHieroContainer $dir={dir} $selectedIndex={current?.[2]}>
+        <StyledHieroContainer $dir={dir}>
           {lines.map((line, lineIndex) => (
             <div
               key={line.codes}
@@ -105,8 +92,11 @@ export const ShowHieroes: React.FC = () => {
                 text={line.codes}
                 dir={dir}
                 fontSize={fontSize}
-                onClick={(hieroIndex: number, imageIndex) =>
-                  handleClick(lineIndex, hieroIndex, imageIndex)
+                onClick={(hieroIndex: number) =>
+                  handleClick(lineIndex, hieroIndex)
+                }
+                selectedPos={
+                  current?.[0] === lineIndex ? current[1] : undefined
                 }
               />
             </div>

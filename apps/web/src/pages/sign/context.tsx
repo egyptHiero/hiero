@@ -2,16 +2,13 @@ import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import { SignDto } from '../../types/types';
 import { joinLines, splitIntoLines } from './logic';
-
-type TCurrent = [number, number, number];
-type TChangeHiero = (
-  value: string,
-  variant: 'left' | 'right' | 'hiero',
-) => void;
+import { TChangeHiero, TCurrent } from './types';
+import { shiftCurrentIndex } from './logic';
 
 interface ISignContext {
   current?: TCurrent;
   setCurrent: React.Dispatch<React.SetStateAction<TCurrent | undefined>>;
+  shiftCurrent: (value: number) => void;
   lines: Array<{ codes: string; hieroes: string[]; delimiters: string[] }>;
   asideVisible: boolean;
   setAsideVisible: React.Dispatch<React.SetStateAction<boolean>>;
@@ -50,11 +47,18 @@ export const SignContextProvider: React.FC<ISignContextProvider> = ({
     [classification],
   );
 
-  const changeHiero: TChangeHiero = React.useCallback(
+  const changeHiero = React.useCallback<TChangeHiero>(
     (value, variant) => {
       setValue('classification', joinLines(lines, current, { value, variant }));
     },
     [current, lines, setValue],
+  );
+
+  const shiftCurrent = React.useCallback(
+    (value: number) => {
+      setCurrent(shiftCurrentIndex(value, lines, current ?? [-1, -1]));
+    },
+    [current, lines],
   );
 
   const value = React.useMemo(() => {
@@ -67,8 +71,9 @@ export const SignContextProvider: React.FC<ISignContextProvider> = ({
       isImageLoaded,
       setImageIsLoaded,
       changeHiero,
+      shiftCurrent,
     };
-  }, [asideVisible, changeHiero, current, isImageLoaded, lines]);
+  }, [asideVisible, changeHiero, current, isImageLoaded, lines, shiftCurrent]);
 
   return <SignContext.Provider value={value}>{children}</SignContext.Provider>;
 };
