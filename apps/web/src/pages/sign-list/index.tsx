@@ -20,11 +20,14 @@ export const SignListPage: React.FC = () => {
       navigate(generatePath(ROUTES.SIGN, { id: 'new' }));
     };
 
-    setCustomControls(() => (
+    setCustomControls(
       <CButton color="primary" onClick={handleCreate} className="text-nowrap">
         {t('btn.create')}
-      </CButton>
-    ));
+      </CButton>,
+      'search',
+    );
+
+    return () => setCustomControls(undefined);
   }, [navigate, setCustomControls, t]);
 
   const getColumnLabel = React.useCallback(

@@ -1,6 +1,14 @@
 export type TCurrent = [number, number];
 
-export type THiero = { value: string; variant: 'left' | 'right' | 'hiero' };
+export type THieroChange = {
+  hiero: string;
+  variant:
+    | 'hiero'
+    | 'hiero-left'
+    | 'hiero-right'
+    | 'left-divider'
+    | 'right-divider';
+};
 
 export type TLines = Array<{
   codes: string;

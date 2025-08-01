@@ -6,11 +6,19 @@ import { DictionaryInfoDto } from '../../types/types';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
 import { InfiniteTable } from '../../components/infinite-table';
+import { useAppContext } from '../../app/context/app-context';
 
 export const DictionaryListPage: React.FC = () => {
   const { t } = useTranslation();
   const scrollData = useGetDictionaryList();
   const navigate = useNavigate();
+  const { setCustomControls } = useAppContext();
+
+  React.useEffect(() => {
+    setCustomControls(undefined, 'search');
+
+    return () => setCustomControls(undefined);
+  }, [setCustomControls]);
 
   const getColumnLabel = React.useCallback(
     (key: keyof DictionaryInfoDto) => {

@@ -1,7 +1,6 @@
 import CIcon from '@coreui/icons-react';
 import {
   CNavItem,
-  CNavTitle,
   CSidebar,
   CSidebarBrand,
   CSidebarHeader,
@@ -11,6 +10,13 @@ import { cilBarcode, cilHome, cilText } from '@coreui/icons';
 import { useAppContext } from '../context/app-context';
 import { ROUTES } from '../routes';
 import { useTranslation } from 'react-i18next';
+import styled from '@emotion/styled';
+
+const StyledNavItem = styled(CNavItem)({
+  '.nav-link': {
+    gap: 8,
+  },
+});
 
 export const Sidebar: React.FC = () => {
   const { isSidebarVisible, setSidebarVisible } = useAppContext();
@@ -26,23 +32,22 @@ export const Sidebar: React.FC = () => {
         <CSidebarBrand>Egypt Hieroes</CSidebarBrand>
       </CSidebarHeader>
       <CSidebarNav>
-        <CNavTitle>Nav Title</CNavTitle>
-        <CNavItem href={ROUTES.SIGN_LIST}>
-          <CIcon icon={cilBarcode} />
+        <StyledNavItem href={ROUTES.SIGN_LIST}>
+          <CIcon icon={cilBarcode} size="xl" />
           {t('app.sidebar.signs')}
-        </CNavItem>
-        <CNavItem href="#">
-          <CIcon icon={cilText} />
+        </StyledNavItem>
+        <StyledNavItem href="#">
+          <CIcon icon={cilText} size="xl" />
           {t('app.sidebar.translations')}
-        </CNavItem>
-        <CNavItem href={ROUTES.DICTIONARY_LIST}>
-          <CIcon icon={cilText} />
+        </StyledNavItem>
+        <StyledNavItem href={ROUTES.DICTIONARY_LIST}>
+          <CIcon icon={cilText} size="xl" />
           {t('app.sidebar.dictionaries')}
-        </CNavItem>
-        <CNavItem href={ROUTES.ABOUT}>
-          <CIcon icon={cilHome} />
+        </StyledNavItem>
+        <StyledNavItem href={ROUTES.ABOUT}>
+          <CIcon icon={cilHome} size="xl" />
           {t('app.sidebar.about')}
-        </CNavItem>
+        </StyledNavItem>
       </CSidebarNav>
     </CSidebar>
   );

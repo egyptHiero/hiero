@@ -8,7 +8,7 @@ import {
   CTabPanel,
   CTabs,
 } from '@coreui/react';
-import { useAsideContext } from './context';
+import { useSignAsideContext } from './context';
 import { GARDINER_CLASSIFICATION } from '../../../constants';
 import { useTranslation } from 'react-i18next';
 import { TActiveTab } from './types';
@@ -22,7 +22,7 @@ export const QuerySelector: React.FC = () => {
     setClassification,
     query,
     setQuery,
-  } = useAsideContext();
+  } = useSignAsideContext();
 
   const hieroGroupOptions = React.useMemo(
     () =>

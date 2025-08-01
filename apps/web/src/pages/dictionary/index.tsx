@@ -9,12 +9,19 @@ import { columnNames } from './columns';
 import { DictionaryItemDto } from '../../types/types';
 import { StyledDescription } from './styled';
 import { Hiero } from '../../components/hiero';
+import { useAppContext } from '../../app/context/app-context';
 
 export const DictionaryPage: React.FC = () => {
   const { name: dictionaryName } =
     useParams<PathParam<typeof ROUTES.DICTIONARY>>();
-
+  const { setCustomControls } = useAppContext();
   const { t } = useTranslation();
+
+  React.useEffect(() => {
+    setCustomControls(undefined, 'search');
+
+    return () => setCustomControls(undefined);
+  }, [setCustomControls]);
 
   const mapper = (item: DictionaryItemDto): DictionaryItemVO => ({
     id: item.id,

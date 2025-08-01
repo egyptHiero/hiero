@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import {
   TActiveTab,
   TChangeHiero,
+  TInsertMode,
   TSignHistory,
-  TSignHistoryItem,
   TSignHistoryItems,
 } from './types';
 import { GARDINER_CLASSIFICATION } from '../../../constants';
@@ -20,12 +20,14 @@ interface IAsideContext {
   query?: string;
   setQuery: React.Dispatch<React.SetStateAction<string | undefined>>;
   history: TSignHistory;
+  insertMode?: TInsertMode;
+  setInsertMode: React.Dispatch<React.SetStateAction<TInsertMode | undefined>>;
   changeHiero: TChangeHiero;
 }
 
 const AsideContext = React.createContext<IAsideContext | null>(null);
 
-export const useAsideContext = (): IAsideContext => {
+export const useSignAsideContext = (): IAsideContext => {
   const context = React.useContext(AsideContext);
 
   if (context) {
@@ -54,6 +56,7 @@ export const AsideContextProvider: React.FC<IAsideContextProvider> = ({
     undo: [],
     redo: [],
   });
+
   const history = React.useMemo<TSignHistory>(
     () => ({
       canUndo: !!historyItems.undo.length,
@@ -114,9 +117,16 @@ export const AsideContextProvider: React.FC<IAsideContextProvider> = ({
   const changeHiero = React.useCallback<TChangeHiero>(
     (value, variant) => {
       history.save({ current, hieroes: joinLines(lines) });
-      setValue('classification', joinLines(lines, current, { value, variant }));
+      setValue(
+        'classification',
+        joinLines(lines, current, { hiero: value, variant }),
+      );
     },
     [current, history, lines, setValue],
+  );
+
+  const [insertMode, setInsertMode] = React.useState<TInsertMode | undefined>(
+    'right',
   );
 
   const value = React.useMemo(() => {
@@ -129,8 +139,10 @@ export const AsideContextProvider: React.FC<IAsideContextProvider> = ({
       setClassification,
       history,
       changeHiero,
+      insertMode,
+      setInsertMode,
     };
-  }, [activeTab, changeHiero, classification, history, query]);
+  }, [activeTab, changeHiero, classification, history, insertMode, query]);
 
   return (
     <AsideContext.Provider value={value}>{children}</AsideContext.Provider>

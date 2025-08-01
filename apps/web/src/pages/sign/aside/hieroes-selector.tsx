@@ -8,7 +8,7 @@ import { useFormContext } from 'react-hook-form';
 import { SignDto } from '../../../types/types';
 import { TDir } from '../../../types';
 import styled from '@emotion/styled';
-import { useAsideContext } from './context';
+import { useSignAsideContext } from './context';
 
 const StyledButton = styled(CButton)({
   minWidth: '70px',
@@ -18,7 +18,8 @@ const StyledButton = styled(CButton)({
 export const HieroesSelector: React.FC = () => {
   const { t } = useTranslation();
   const { lines, current, shiftCurrent } = useSignContext();
-  const { history, changeHiero } = useAsideContext();
+  const { history, changeHiero, insertMode, setInsertMode } =
+    useSignAsideContext();
   const [currentLine, currentPos] = current ?? [-1, -1, -1];
   const { watch } = useFormContext<SignDto>();
   const dir = watch('dir') as TDir | undefined;
@@ -42,11 +43,11 @@ export const HieroesSelector: React.FC = () => {
           </StyledButton>
           <Divider
             value={lines[currentLine]?.delimiters[currentPos - 1]}
-            setDivider={(value) => changeHiero(value, 'left')}
+            setDivider={(value) => changeHiero(value, 'left-divider')}
           />
         </div>
         <div style={{ width: 'min-content' }}>
-          <StyledButton type="button" color="success">
+          <StyledButton type="button" color="primary">
             <Hiero
               dir={dir}
               text={lines[currentLine]?.hieroes[currentPos]}
@@ -58,7 +59,7 @@ export const HieroesSelector: React.FC = () => {
         <div className="text-start flex-shrink-0">
           <Divider
             value={lines[currentLine]?.delimiters[currentPos]}
-            setDivider={(value) => changeHiero(value, 'right')}
+            setDivider={(value) => changeHiero(value, 'right-divider')}
           />
           <StyledButton
             type="button"
@@ -77,9 +78,25 @@ export const HieroesSelector: React.FC = () => {
       </div>
       <CButtonGroup vertical>
         <CButtonGroup className="pt-2">
-          <CButton className="btn-outline">{t('btn.insertLeft')}</CButton>
+          <CButton
+            className="btn-outline"
+            color={insertMode === 'left' ? 'light' : undefined}
+            onClick={() =>
+              setInsertMode((v) => (v !== 'left' ? 'left' : undefined))
+            }
+          >
+            {t('btn.insertLeft')}
+          </CButton>
           <CButton className="btn-outline">{t('btn.delete')}</CButton>
-          <CButton className="btn-outline">{t('btn.insertRight')}</CButton>
+          <CButton
+            className="btn-outline"
+            color={insertMode === 'right' ? 'light' : undefined}
+            onClick={() =>
+              setInsertMode((v) => (v !== 'right' ? 'right' : undefined))
+            }
+          >
+            {t('btn.insertRight')}
+          </CButton>
         </CButtonGroup>
         <CButtonGroup>
           <CButton

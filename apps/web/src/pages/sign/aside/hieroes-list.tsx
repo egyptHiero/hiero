@@ -2,14 +2,17 @@ import React from 'react';
 import { CButton } from '@coreui/react';
 import { Hiero } from '../../../components/hiero';
 import { useHieroContext } from '../../../app/context/hiero-context';
-import { useAsideContext } from './context';
+import { useSignAsideContext } from './context';
 import { TDir } from '../../../types';
 import { useFormContext } from 'react-hook-form';
 import { SignDto } from '../../../types/types';
+import { useSignContext } from '../context';
 
 export const HieroesList: React.FC = () => {
   const { hieroglyphs } = useHieroContext();
-  const { activeTab, classification, query, changeHiero } = useAsideContext();
+  const { shiftCurrent } = useSignContext();
+  const { activeTab, classification, query, changeHiero, insertMode } =
+    useSignAsideContext();
   const { watch } = useFormContext<SignDto>();
   const dir = watch('dir') as TDir | undefined;
 
@@ -28,7 +31,14 @@ export const HieroesList: React.FC = () => {
   }, [activeTab, classification, hieroglyphs, query]);
 
   const handleClick = (value: string) => {
-    changeHiero(value, 'hiero');
+    if (insertMode === 'left') {
+      changeHiero(value, 'hiero-left');
+    } else if (insertMode === 'right') {
+      changeHiero(value, 'hiero-right');
+      shiftCurrent(1, true);
+    } else {
+      changeHiero(value, 'hiero');
+    }
   };
 
   return (

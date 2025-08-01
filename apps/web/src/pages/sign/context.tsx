@@ -8,7 +8,7 @@ import { shiftCurrentIndex } from './logic';
 interface ISignContext {
   current?: TCurrent;
   setCurrent: React.Dispatch<React.SetStateAction<TCurrent | undefined>>;
-  shiftCurrent: (value: number) => void;
+  shiftCurrent: (value: number, force: boolean) => void;
   lines: Array<{ codes: string; hieroes: string[]; delimiters: string[] }>;
   asideVisible: boolean;
   setAsideVisible: React.Dispatch<React.SetStateAction<boolean>>;
@@ -47,8 +47,8 @@ export const SignContextProvider: React.FC<ISignContextProvider> = ({
   );
 
   const shiftCurrent = React.useCallback(
-    (value: number) => {
-      setCurrent(shiftCurrentIndex(value, lines, current ?? [-1, -1]));
+    (value: number, force = false) => {
+      setCurrent(shiftCurrentIndex(value, lines, current ?? [-1, -1], force));
     },
     [current, lines],
   );

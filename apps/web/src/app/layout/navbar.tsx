@@ -12,11 +12,14 @@ import { cilMenu } from '@coreui/icons';
 import { LanguageSwitcher } from '../../components/language-switcher';
 
 export const Navbar: React.FC = () => {
-  const { setSidebarVisible, setQuery, customControls } = useAppContext();
+  const { setSidebarVisible, setQuery, customControls, customControlNames } =
+    useAppContext();
 
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = ({
     target,
   }) => setQuery(target.value);
+
+  const showSearch = customControlNames?.has('search');
 
   return (
     <CNavbar>
@@ -31,12 +34,14 @@ export const Navbar: React.FC = () => {
           <CNavbarBrand>Egypt Hieroes</CNavbarBrand>
         </div>
         <div className="d-flex">
-          <CFormInput
-            type="search"
-            className="me-2"
-            placeholder="Search"
-            onChange={handleSearch}
-          />
+          {showSearch && (
+            <CFormInput
+              type="search"
+              className="me-2"
+              placeholder="Search"
+              onChange={handleSearch}
+            />
+          )}
           {customControls}
           <LanguageSwitcher />
         </div>

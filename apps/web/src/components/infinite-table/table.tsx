@@ -3,8 +3,16 @@ import { InView } from 'react-intersection-observer';
 import { CTable } from '@coreui/react';
 import { CTableProps } from '@coreui/react/src/components/table/CTable';
 import { useInfinityScroll } from './hook';
+import styled from '@emotion/styled';
 
 type InfiniteTableProps = ReturnType<typeof useInfinityScroll> & CTableProps;
+
+const StyledCTable = styled(CTable)({
+  thead: {
+    position: 'sticky',
+    top: 0,
+  },
+});
 
 export const InfiniteTable: React.FC<InfiniteTableProps> = ({
   data,
@@ -30,7 +38,7 @@ export const InfiniteTable: React.FC<InfiniteTableProps> = ({
 
   return (
     <div>
-      <CTable {...tableProps} />
+      <StyledCTable {...tableProps} tableHeadProps={{ color: 'light' }} />
       {!!data?.pages?.length && (
         <InView
           as="div"

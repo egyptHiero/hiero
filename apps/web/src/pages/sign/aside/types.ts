@@ -1,4 +1,4 @@
-import { TCurrent } from '../types';
+import { TCurrent, THieroChange } from '../types';
 
 export type TActiveTab = 'select' | 'search';
 
@@ -21,6 +21,8 @@ export interface TSignHistoryItems {
 }
 
 export type TChangeHiero = (
-  value: string,
-  variant: 'left' | 'right' | 'hiero',
+  value: THieroChange['hiero'],
+  variant: THieroChange['variant'],
 ) => void;
+
+export type TInsertMode = 'left' | 'right';

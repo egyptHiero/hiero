@@ -58,7 +58,7 @@ describe('joinLines', () => {
       ])('with $current', ({ current, expected }) => {
         expect(
           joinLines(codes, current, {
-            value: 'C3',
+            hiero: 'C3',
             variant: 'hiero',
           }),
         ).toBe(expected);
@@ -82,8 +82,8 @@ describe('joinLines', () => {
       ])('with $current', ({ current, expected }) => {
         expect(
           joinLines(codes, current, {
-            value: DELIMITER_VERTICAL,
-            variant: 'left',
+            hiero: DELIMITER_VERTICAL,
+            variant: 'left-divider',
           }),
         ).toBe(expected);
       });
@@ -106,8 +106,8 @@ describe('joinLines', () => {
       ])('with $current', ({ current, expected }) => {
         expect(
           joinLines(codes, current, {
-            value: DELIMITER_VERTICAL,
-            variant: 'right',
+            hiero: DELIMITER_VERTICAL,
+            variant: 'right-divider',
           }),
         ).toBe(expected);
       });
