@@ -84,6 +84,9 @@
     "error": "Ошибка парсинга"
   },
   "sign": {
+    "btn": {
+      "create-translation": "Добавить перевод"
+    },
     "classification": "Транскрипция",
     "columns": {
       "description": "Описание",
@@ -95,5 +98,14 @@
     "description": "Описание",
     "image": "Ссылка на изображение",
     "name": "Название"
+  },
+  "translation": {
+    "columns": {
+      "description": "Описание",
+      "name": "Название"
+    },
+    "description": "Описание",
+    "name": "Название",
+    "sign": "Табличка"
   }
 }

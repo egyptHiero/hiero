@@ -36,7 +36,7 @@ export const Sidebar: React.FC = () => {
           <CIcon icon={cilBarcode} size="xl" />
           {t('app.sidebar.signs')}
         </StyledNavItem>
-        <StyledNavItem href="#">
+        <StyledNavItem href={ROUTES.TRANSLATION_LIST}>
           <CIcon icon={cilText} size="xl" />
           {t('app.sidebar.translations')}
         </StyledNavItem>

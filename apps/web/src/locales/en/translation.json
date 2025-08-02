@@ -84,6 +84,9 @@
     "error": "parsing error"
   },
   "sign": {
+    "btn": {
+      "create-translation": "Add translation"
+    },
     "classification": "Classification",
     "columns": {
       "description": "Description",
@@ -95,5 +98,14 @@
     "description": "Description",
     "image": "Image link",
     "name": "Name"
+  },
+  "translation": {
+    "columns": {
+      "description": "Description",
+      "name": "Name"
+    },
+    "description": "Description",
+    "name": "Name",
+    "sign": "Sign"
   }
 }

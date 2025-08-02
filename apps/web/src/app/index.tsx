@@ -20,6 +20,7 @@ export function App() {
     defaultOptions: {
       queries: {
         retry: false,
+        refetchOnWindowFocus: false,
       },
     },
     queryCache: new QueryCache({

@@ -74,3 +74,14 @@ export const SignNewDto = Type.Object({
 
 export type SignDto = Static<typeof SignDto>;
 export const SignDto = Type.Intersect([SignNewDto, Identifiable]);
+
+export type TranslationNewDto = Static<typeof TranslationNewDto>;
+export const TranslationNewDto = Type.Object({
+  sign: Type.String(),
+  name: Type.String(),
+  description: Type.Optional(Type.String()),
+  text: Type.Optional(Type.String()),
+});
+
+export type TranslationDto = Static<typeof TranslationDto>;
+export const TranslationDto = Type.Intersect([TranslationNewDto, Identifiable]);

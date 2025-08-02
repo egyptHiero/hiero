@@ -56,4 +56,12 @@ export type SignNewDto = {
 
 export type SignDto = SignNewDto & Identifiable;
 
-// Hieroglyphs -----------------------------------------------------------------
+// Translations -----------------------------------------------------------------
+export type TranslationNewDto = {
+  sign: string;
+  name: string;
+  description?: string;
+  text?: string;
+};
+
+export type TranslationDto = TranslationNewDto & Identifiable;

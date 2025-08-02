@@ -399,6 +399,222 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/translation": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * get available translations
+         * @description returns a list of all the available translations
+         */
+        get: {
+            parameters: {
+                query?: {
+                    /** @description starts list after this element */
+                    from?: string;
+                    /** @description starts list after this element */
+                    pageSize?: number;
+                    /** @description query string */
+                    query?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            items: ({
+                                sign: string;
+                                name: string;
+                                description?: string;
+                                text?: string;
+                            } & {
+                                id: string;
+                            })[];
+                            next?: string;
+                        };
+                    };
+                };
+            };
+        };
+        put?: never;
+        /**
+         * create new translation
+         * @description create new translation
+         */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": {
+                        sign: string;
+                        name: string;
+                        description?: string;
+                        text?: string;
+                    };
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            sign: string;
+                            name: string;
+                            description?: string;
+                            text?: string;
+                        } & {
+                            id: string;
+                        };
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/translation/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * get particular translation
+         * @description get particular translation
+         */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            sign: string;
+                            name: string;
+                            description?: string;
+                            text?: string;
+                        } & {
+                            id: string;
+                        };
+                    };
+                };
+                /** @description Default Response */
+                404: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["def-0"];
+                    };
+                };
+            };
+        };
+        /**
+         * update translation
+         * @description update translation
+         */
+        put: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": {
+                        sign: string;
+                        name: string;
+                        description?: string;
+                        text?: string;
+                    };
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            sign: string;
+                            name: string;
+                            description?: string;
+                            text?: string;
+                        } & {
+                            id: string;
+                        };
+                    };
+                };
+            };
+        };
+        post?: never;
+        /**
+         * delete translation
+         * @description delete translation
+         */
+        delete: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+            };
+        };
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/hieroglyph": {
         parameters: {
             query?: never;

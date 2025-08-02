@@ -21,7 +21,9 @@ export interface SignEntity {
   dir?: string;
 }
 
-export interface InterpretationEntity {
-  hieroes: string[];
+export interface TranslationEntity {
+  sign: string;
+  name: string;
   description?: string;
+  text?: string;
 }

@@ -46,6 +46,12 @@ export const SignForm: React.FC<IFormProps> = ({ signId, data }) => {
       );
   };
 
+  const onAddTranslation = () => {
+    navigate(
+      generatePath(ROUTES.TRANSLATION, { id: 'new', sign: data?.id || null }),
+    );
+  };
+
   return (
     <FormProvider {...formMethods}>
       <SignContextProvider>
@@ -60,14 +66,24 @@ export const SignForm: React.FC<IFormProps> = ({ signId, data }) => {
               fluid
               className="d-flex justify-content-between w-100 p-0"
             >
-              <CButton
-                type="button"
-                color="secondary"
-                className="btn-outline"
-                onClick={onDelete}
-              >
-                {t('btn.delete')}
-              </CButton>
+              <div className="gap-2 d-flex justify-content-end">
+                <CButton
+                  type="button"
+                  color="secondary"
+                  className="btn-outline"
+                  onClick={onDelete}
+                >
+                  {t('btn.delete')}
+                </CButton>
+                <CButton
+                  type="button"
+                  color="light"
+                  className="btn-outline"
+                  onClick={onAddTranslation}
+                >
+                  {t('sign.btn.create-translation')}
+                </CButton>
+              </div>
               <div className="gap-2 d-flex justify-content-end">
                 <CButton color="primary" type="submit">
                   {t('btn.save')}

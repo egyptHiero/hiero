@@ -8,6 +8,8 @@ import { DictionaryListPage } from '../pages/dictionary-list';
 import { SignPage } from '../pages/sign';
 import { SignListPage } from '../pages/sign-list';
 import { AboutPage } from '../pages/about';
+import { TranslationListPage } from '../pages/translation-list';
+import { TranslationPage } from '../pages/translation';
 
 export const ApplicationRoutes: React.FC = () => (
   <BrowserRouter
@@ -15,10 +17,15 @@ export const ApplicationRoutes: React.FC = () => (
   >
     <Routes>
       <Route element={<PageLayout />}>
-        <Route path={ROUTES.DICTIONARY_LIST} element={<DictionaryListPage />} />
-        <Route path={ROUTES.DICTIONARY} element={<DictionaryPage />} />
         <Route path={ROUTES.SIGN_LIST} element={<SignListPage />} />
         <Route path={ROUTES.SIGN} element={<SignPage />} />
+        <Route
+          path={ROUTES.TRANSLATION_LIST}
+          element={<TranslationListPage />}
+        />
+        <Route path={ROUTES.TRANSLATION} element={<TranslationPage />} />
+        <Route path={ROUTES.DICTIONARY_LIST} element={<DictionaryListPage />} />
+        <Route path={ROUTES.DICTIONARY} element={<DictionaryPage />} />
         <Route path={ROUTES.ABOUT} element={<AboutPage />} />
       </Route>
       <Route path="*" element={<Error404Page />} />

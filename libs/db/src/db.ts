@@ -69,6 +69,11 @@ export const createDbInstance = async (): Promise<DB> => {
 
   const signs = db.sublevel<string, SignEntity>('signs', sublevelOptions);
 
+  const translations = db.sublevel<string, SignEntity>(
+    'translations',
+    sublevelOptions,
+  );
+
   const dictionaries = db.sublevel<string, DictionaryItemEntity>(
     'dictionaries',
     sublevelOptions,
@@ -97,6 +102,8 @@ export const createDbInstance = async (): Promise<DB> => {
     hieroglyphs,
 
     getSigns: (user = PUBLIC) => signs.sublevel(user, sublevelOptions),
+    getTranslations: (user = PUBLIC) =>
+      translations.sublevel(user, sublevelOptions),
     getDictionaryInfo,
     getDictionary,
     createDictionary: async (info, user, options = {}) => {

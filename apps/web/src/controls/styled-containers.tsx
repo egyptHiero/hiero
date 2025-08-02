@@ -41,7 +41,9 @@ const FullHeightContainer: React.FC<{ children?: React.ReactNode }> = ({
     <div>{children}</div>
   </div>
 );
-const FullHeightScroller = styled(FullHeightContainer)<SpaceProps>(
+const FullHeightScroller = styled(FullHeightContainer)<
+  SpaceProps & HeightProps
+>(
   {
     position: 'relative',
     height: '100%',
@@ -52,7 +54,7 @@ const FullHeightScroller = styled(FullHeightContainer)<SpaceProps>(
       overflowY: 'auto',
     },
   },
-  space,
+  compose(space, height),
 );
 
 const Flex = styled.div<FlexboxProps | GridGapProps>(

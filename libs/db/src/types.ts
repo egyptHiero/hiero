@@ -3,6 +3,7 @@ import {
   DictionaryInfoEntity,
   DictionaryItemEntity,
   SignEntity,
+  TranslationEntity,
 } from './entities';
 
 export type TDbFormat = string | Buffer | Uint8Array;
@@ -28,12 +29,21 @@ export type DB = {
    * @param user      - private user's table
    */
   getSigns(user?: string): DbTable<SignEntity>;
+
+  /**
+   * Returns table of translations.
+   *
+   * @param user      - private user's table
+   */
+  getTranslations(user?: string): DbTable<TranslationEntity>;
+
   /**
    * Returns table of dictionaries information.
    *
    * @param user      - private user's table
    */
   getDictionaryInfo(user?: string): DbTable<DictionaryInfoEntity>;
+
   /**
    * Returns table of a dictionary.
    *
@@ -44,6 +54,7 @@ export type DB = {
     name: string,
     user?: string,
   ): Promise<DbTable<DictionaryItemEntity>>;
+
   /**
    * Creates new dictionary.
    *
@@ -57,6 +68,7 @@ export type DB = {
     user?: string,
     options?: Partial<CreateDictionaryOptions>,
   ): Promise<DbTable<DictionaryItemEntity>>;
+
   /**
    * Removes the dictionary.
    *
