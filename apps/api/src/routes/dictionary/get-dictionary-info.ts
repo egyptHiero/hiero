@@ -3,16 +3,15 @@ import {
   ParamIdFilterDto as ParamIdFilterSchema,
 } from '../../generated/typebox';
 import { toDictionaryInfoDto } from '../../dto';
-import { DB } from '@hiero/db';
 import { FastifyTypeBox } from '../../types';
 
-export const getDictionaryInfo = (fastify: FastifyTypeBox, db: DB) =>
+export const getDictionaryInfo = (fastify: FastifyTypeBox) =>
   fastify.get(
     '/api/dictionary-info/:id',
     {
       schema: {
         description: 'returns particular dictionary information',
-        tags: ['dictionary'],
+        tags: ['dictionary', 'info'],
         summary: 'get dictionary info',
         params: ParamIdFilterSchema,
         response: {
@@ -23,6 +22,9 @@ export const getDictionaryInfo = (fastify: FastifyTypeBox, db: DB) =>
     async function (request) {
       const { id } = request.params;
 
-      return toDictionaryInfoDto(id, await db.getDictionaryInfo().get(id));
+      return toDictionaryInfoDto(
+        id,
+        await fastify.db.getDictionaryInfo().get(id),
+      );
     },
   );

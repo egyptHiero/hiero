@@ -23,6 +23,7 @@ interface IHieroProps {
   color?: string;
   fontSize?: number;
   dir?: 'hlr' | 'hrl' | 'vlr' | 'vrl';
+  sep?: number;
   key?: string;
   onClick?: (hieroIndex: number) => void;
   selectedPos?: number;
@@ -36,6 +37,7 @@ export const Hiero: React.FC<IHieroProps> = ({
   key,
   onClick,
   selectedPos,
+  sep = 0.25,
 }) => {
   const { t } = useTranslation();
 
@@ -45,7 +47,7 @@ export const Hiero: React.FC<IHieroProps> = ({
       const parent = document.createElement('span');
       fragment.print(parent, {
         fontsize: fontSize,
-        sep: 0.25,
+        sep,
         dir,
         signcolor: color,
         log: 'false',
@@ -66,7 +68,7 @@ export const Hiero: React.FC<IHieroProps> = ({
     } catch {
       return t('parse.error');
     }
-  }, [text, fontSize, dir, color, t]);
+  }, [text, fontSize, sep, dir, color, t]);
 
   const handleClick: MouseEventHandler<HTMLDivElement> = ({ target }) => {
     if (target instanceof SVGTextElement) {

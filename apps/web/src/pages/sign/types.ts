@@ -13,5 +13,6 @@ export type THieroChange = {
 export type TLines = Array<{
   codes: string;
   hieroes: string[];
+  hieroKeys: string[];
   delimiters: string[];
 }>;

@@ -10,6 +10,7 @@ describe('splitIntoLines', () => {
       {
         codes: 'A1-A2',
         hieroes: ['A1', 'A2'],
+        hieroKeys: ['A1_1', 'A2_1'],
         delimiters: ['-'],
       },
     ]);
@@ -20,11 +21,13 @@ describe('splitIntoLines', () => {
       {
         codes: 'A1-A2',
         hieroes: ['A1', 'A2'],
+        hieroKeys: ['A1_1', 'A2_1'],
         delimiters: ['-'],
       },
       {
         codes: 'B1:B2*B3',
         hieroes: ['B1', 'B2', 'B3'],
+        hieroKeys: ['B1_1', 'B2_1', 'B3_1'],
         delimiters: [':', '*'],
       },
     ]);

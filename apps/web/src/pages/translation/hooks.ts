@@ -15,6 +15,21 @@ export const useGetTranslation = (id: string | undefined) => {
   });
 };
 
+export const useGetChains = (dictionaries: string[], hieroes?: string[][]) => {
+  const { client } = useClientContext();
+
+  return useQuery({
+    queryKey: ['dictionary', 'chain'],
+    queryFn: () =>
+      hieroes
+        ? client.path('/api/dictionary/chain').method('post').create()({
+            dictionaries,
+            hieroes,
+          })
+        : undefined,
+  });
+};
+
 export const useSaveMutation = () => {
   const { client } = useClientContext();
 

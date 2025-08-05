@@ -1,9 +1,9 @@
 import { QueryFilterDto as QueryFilterSchema } from '../../generated/typebox';
-import { DB, DbUtils } from '@hiero/db';
+import { DbUtils } from '@hiero/db';
 import { Type } from '@sinclair/typebox';
 import { FastifyTypeBox } from '../../types';
 
-export const getHieroglyph = (fastify: FastifyTypeBox, db: DB) =>
+export const getHieroglyph = (fastify: FastifyTypeBox) =>
   fastify.get(
     '/api/hieroglyph',
     {
@@ -23,7 +23,7 @@ export const getHieroglyph = (fastify: FastifyTypeBox, db: DB) =>
       const upperCaseQuery = query?.toUpperCase();
 
       return (
-        await DbUtils.getPage(db.hieroglyphs, {
+        await DbUtils.getPage(fastify.db.hieroglyphs, {
           from,
           filter: (key, value) =>
             upperCaseQuery

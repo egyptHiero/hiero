@@ -1,4 +1,4 @@
-import { DB, DbUtils } from '@hiero/db';
+import { DbUtils } from '@hiero/db';
 import {
   TranslationDto as TranslationDtoSchema,
   TranslationNewDto as TranslationNewDtoSchema,
@@ -6,10 +6,8 @@ import {
 import { toTranslationDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
-export const postTranslation = (fastify: FastifyTypeBox, db: DB) =>
-  fastify.post<{
-    Body: TranslationNewDtoSchema;
-  }>(
+export const postTranslation = (fastify: FastifyTypeBox) =>
+  fastify.post(
     '/api/translation',
     {
       schema: {
@@ -23,7 +21,7 @@ export const postTranslation = (fastify: FastifyTypeBox, db: DB) =>
       },
     },
     async function (request) {
-      const translations = db.getTranslations();
+      const translations = fastify.db.getTranslations();
       const id = await DbUtils.getUniqueId(translations);
       const translation = request.body;
 

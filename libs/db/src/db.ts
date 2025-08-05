@@ -19,7 +19,7 @@ import * as process from 'node:process';
 
 type TDbLevel<T> = AbstractLevel<TDbFormat, string, T>;
 
-const Exceptions = {
+export const Exceptions = {
   DICTIONARY_EXISTS: new Error('Dictionary already exists'),
   DICTIONARY_NOT_EXISTS: new Error('Dictionary not exists'),
 } as const;

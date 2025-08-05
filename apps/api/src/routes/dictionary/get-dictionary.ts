@@ -1,15 +1,15 @@
 import {
   DictionaryItemDto as DictionaryItemSchema,
-  QueryFilterDto as QueryFilterDtoSchema,
   PageDto as PageDtoSchema,
   ParamIdFilterDto as ParamIdFilterSchema,
+  QueryFilterDto as QueryFilterDtoSchema,
 } from '../../generated/typebox';
 import { toDictionaryItemDto, toPageDto } from '../../dto';
-import { DB, DbUtils } from '@hiero/db';
+import { DbUtils } from '@hiero/db';
 import { FastifyTypeBox } from '../../types';
 import { searchIn } from '@hiero/common';
 
-export const getDictionary = (fastify: FastifyTypeBox, db: DB) =>
+export const getDictionary = (fastify: FastifyTypeBox) =>
   fastify.get(
     '/api/dictionary/:id',
     {
@@ -30,7 +30,7 @@ export const getDictionary = (fastify: FastifyTypeBox, db: DB) =>
       const { from, pageSize, query } = request.query;
 
       return toPageDto(
-        await DbUtils.getPage(await db.getDictionary(id), {
+        await DbUtils.getPage(await fastify.db.getDictionary(id), {
           from,
           pageSize,
           mapper: toDictionaryItemDto,

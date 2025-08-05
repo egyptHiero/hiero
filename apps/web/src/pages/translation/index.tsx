@@ -4,13 +4,17 @@ import { ROUTES } from '../../app/routes';
 import { useGetTranslation } from './hooks';
 import { CContainer } from '@coreui/react';
 import { TranslationForm } from './form';
+import { useGetSign } from '../sign/hooks';
 
 export const TranslationPage: React.FC = () => {
-  const { id: translationId, sign } =
+  const { id: translationId, sign: signId } =
     useParams<PathParam<typeof ROUTES.TRANSLATION>>();
   const { data, isFetching } = useGetTranslation(translationId);
+  const { data: signData, isFetching: isSignFetching } = useGetSign(
+    signId || data?.data.sign,
+  );
 
-  if (!translationId || isFetching) {
+  if (!translationId || isFetching || isSignFetching) {
     return null;
   }
 
@@ -19,7 +23,7 @@ export const TranslationPage: React.FC = () => {
       <TranslationForm
         translationId={translationId}
         data={data?.data}
-        sign={sign}
+        signData={signData?.data}
       />
     </CContainer>
   );

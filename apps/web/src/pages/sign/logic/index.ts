@@ -7,13 +7,25 @@ import {
 
 import { TCurrent, THieroChange, TLines } from '../types';
 
+const calculateKeys = (values: string[]) => {
+  const keys: Record<string, number> = {};
+
+  return values.map((v) => {
+    keys[v] = keys[v] ? keys[v] + 1 : 1;
+    return `${v}_${keys[v]}`;
+  });
+};
+
 export const splitIntoLines = (gardinerCodes = ''): TLines =>
   gardinerCodes
     ? gardinerCodes.split(DELIMITER_NEW_LINE).map((line) => {
         const all = line.split(SUPPORTED_DELIMITERS_REGEXP);
+        const hieroes = all.filter((v) => !SUPPORTED_DELIMITERS.includes(v));
+
         return {
           codes: line,
-          hieroes: all.filter((v) => !SUPPORTED_DELIMITERS.includes(v)),
+          hieroes,
+          hieroKeys: calculateKeys(hieroes),
           delimiters: all.filter((v) => SUPPORTED_DELIMITERS.includes(v)),
         };
       })

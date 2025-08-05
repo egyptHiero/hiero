@@ -1,14 +1,14 @@
-import { DB, DbUtils } from '@hiero/db';
+import { DbUtils } from '@hiero/db';
 import {
-  QueryFilterDto as QueryFilterDtoSchema,
   PageDto as PageDtoSchema,
+  QueryFilterDto as QueryFilterDtoSchema,
   TranslationDto as TranslationDtoSchema,
 } from '../../generated/typebox';
 import { toPageDto, toTranslationDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 import { searchIn } from '@hiero/common';
 
-export const getTranslations = (fastify: FastifyTypeBox, db: DB) =>
+export const getTranslations = (fastify: FastifyTypeBox) =>
   fastify.get(
     '/api/translation',
     {
@@ -26,7 +26,7 @@ export const getTranslations = (fastify: FastifyTypeBox, db: DB) =>
       const { from, pageSize, query } = request.query;
 
       return toPageDto(
-        await DbUtils.getPage(db.getTranslations(), {
+        await DbUtils.getPage(fastify.db.getTranslations(), {
           from,
           pageSize,
           mapper: toTranslationDto,

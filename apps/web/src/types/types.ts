@@ -1,4 +1,5 @@
 // Common ----------------------------------------------------------------------
+
 export interface PageDto<T> {
   items: T[];
   next?: string;
@@ -40,7 +41,17 @@ export interface DictionaryInfoDto extends Identifiable {
 }
 
 export interface DictionaryItemDto extends Identifiable {
-  i: Record<string, string>[];
+  i: Array<[string, string]>;
+}
+
+export interface DictionaryChainsParams {
+  dictionaries: string[];
+  hieroes: string[][];
+}
+
+export interface DictionaryChainsDto {
+  chains: Record<string, Record<string, DictionaryItemDto['i']>>;
+  warnings?: Record<string, string>;
 }
 
 // Sign ------------------------------------------------------------------------

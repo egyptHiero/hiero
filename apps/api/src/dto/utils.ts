@@ -11,7 +11,7 @@ import {
   TranslationEntity,
 } from '@hiero/db';
 
-export const toPageDto = (v) => v;
+export const toPageDto = <T>(v: T) => v;
 
 export const toDictionaryInfoDto = (
   id?: string,
@@ -31,9 +31,9 @@ export const toDictionaryItemDto = (
   return id
     ? {
         id,
-        i: entity.reduce<Record<string, string>[]>(
+        i: entity.reduce<Array<[string, string]>>(
           (acc, { interpretation, description }) => {
-            acc.push({ [interpretation]: description ?? '' });
+            acc.push([interpretation, description]);
             return acc;
           },
           [],

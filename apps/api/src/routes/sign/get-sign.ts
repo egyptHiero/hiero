@@ -1,4 +1,3 @@
-import { DB } from '@hiero/db';
 import {
   ParamIdFilterDto as ParamIdFilterSchema,
   SignDto as SignDtoSchema,
@@ -6,7 +5,7 @@ import {
 import { toSignDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
-export const getSign = (fastify: FastifyTypeBox, db: DB) =>
+export const getSign = (fastify: FastifyTypeBox) =>
   fastify.get(
     '/api/sign/:id',
     {
@@ -24,7 +23,7 @@ export const getSign = (fastify: FastifyTypeBox, db: DB) =>
     async function (request, reply) {
       const { id } = request.params;
 
-      const table = db.getSigns();
+      const table = fastify.db.getSigns();
       const entity = await table.get(id);
       if (!entity) {
         return reply.notFound();

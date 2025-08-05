@@ -1,18 +1,13 @@
-import { DB } from '@hiero/db';
 import {
   ParamIdFilterDto as ParamIdFilterSchema,
   SignDto as SignDtoSchema,
   SignNewDto as SignNewDtoSchema,
 } from '../../generated/typebox';
 import { toSignDto } from '../../dto';
-import { ParamIdFilterDto, SignDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
-export const putSign = (fastify: FastifyTypeBox, db: DB) =>
-  fastify.put<{
-    Params: ParamIdFilterDto;
-    Body: SignDto;
-  }>(
+export const putSign = (fastify: FastifyTypeBox) =>
+  fastify.put(
     '/api/sign/:id',
     {
       schema: {
@@ -29,7 +24,7 @@ export const putSign = (fastify: FastifyTypeBox, db: DB) =>
     async function (request) {
       const { id } = request.params;
       const sign = request.body;
-      const signs = db.getSigns();
+      const signs = fastify.db.getSigns();
 
       return signs
         .put(id, sign)

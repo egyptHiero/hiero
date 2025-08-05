@@ -1,4 +1,3 @@
-import { DB } from '@hiero/db';
 import {
   ParamIdFilterDto as ParamIdFilterSchema,
   TranslationDto as TranslationDtoSchema,
@@ -6,7 +5,7 @@ import {
 import { toTranslationDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
-export const getTranslation = (fastify: FastifyTypeBox, db: DB) =>
+export const getTranslation = (fastify: FastifyTypeBox) =>
   fastify.get(
     '/api/translation/:id',
     {
@@ -24,7 +23,7 @@ export const getTranslation = (fastify: FastifyTypeBox, db: DB) =>
     async function (request, reply) {
       const { id } = request.params;
 
-      const table = db.getTranslations();
+      const table = fastify.db.getTranslations();
       const entity = await table.get(id);
       if (!entity) {
         return reply.notFound();

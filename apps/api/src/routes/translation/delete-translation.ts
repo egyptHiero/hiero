@@ -1,13 +1,9 @@
-import { DB } from '@hiero/db';
 import { ParamIdFilterDto as ParamIdFilterSchema } from '../../generated/typebox';
-import { ParamIdFilterDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 import { Type } from '@sinclair/typebox';
 
-export const deleteTranslation = (fastify: FastifyTypeBox, db: DB) =>
-  fastify.delete<{
-    Params: ParamIdFilterDto;
-  }>(
+export const deleteTranslation = (fastify: FastifyTypeBox) =>
+  fastify.delete(
     '/api/translation/:id',
     {
       schema: {
@@ -22,7 +18,7 @@ export const deleteTranslation = (fastify: FastifyTypeBox, db: DB) =>
     },
     async function (request) {
       const { id } = request.params;
-      const translations = db.getTranslations();
+      const translations = fastify.db.getTranslations();
 
       return translations.del(id);
     },

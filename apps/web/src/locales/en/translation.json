@@ -106,6 +106,12 @@
     },
     "description": "Description",
     "name": "Name",
-    "sign": "Sign"
+    "sign": "Sign",
+    "tab": {
+      "data": "Data",
+      "hieroes": "Translation",
+      "sign": "Sign"
+    },
+    "translation": "Translation"
   }
 }

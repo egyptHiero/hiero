@@ -1,18 +1,13 @@
-import { DB } from '@hiero/db';
 import {
   ParamIdFilterDto as ParamIdFilterSchema,
   TranslationDto as TranslationDtoSchema,
   TranslationNewDto as TranslationNewDtoSchema,
 } from '../../generated/typebox';
 import { toTranslationDto } from '../../dto';
-import { ParamIdFilterDto, TranslationDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
-export const putTranslation = (fastify: FastifyTypeBox, db: DB) =>
-  fastify.put<{
-    Params: ParamIdFilterDto;
-    Body: TranslationDto;
-  }>(
+export const putTranslation = (fastify: FastifyTypeBox) =>
+  fastify.put(
     '/api/translation/:id',
     {
       schema: {
@@ -29,7 +24,7 @@ export const putTranslation = (fastify: FastifyTypeBox, db: DB) =>
     async function (request) {
       const { id } = request.params;
       const translation = request.body;
-      const translations = db.getTranslations();
+      const translations = fastify.db.getTranslations();
 
       return translations
         .put(id, translation)

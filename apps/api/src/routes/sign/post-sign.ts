@@ -1,4 +1,4 @@
-import { DB, DbUtils } from '@hiero/db';
+import { DbUtils } from '@hiero/db';
 import {
   SignDto as SignDtoSchema,
   SignNewDto as SignNewDtoSchema,
@@ -6,10 +6,8 @@ import {
 import { toSignDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
-export const postSign = (fastify: FastifyTypeBox, db: DB) =>
-  fastify.post<{
-    Body: SignNewDtoSchema;
-  }>(
+export const postSign = (fastify: FastifyTypeBox) =>
+  fastify.post(
     '/api/sign',
     {
       schema: {
@@ -23,7 +21,7 @@ export const postSign = (fastify: FastifyTypeBox, db: DB) =>
       },
     },
     async function (request) {
-      const signs = db.getSigns();
+      const signs = fastify.db.getSigns();
       const id = await DbUtils.getUniqueId(signs);
       const sign = request.body;
 

@@ -1,15 +1,14 @@
 import React from 'react';
-import { CButton, CCol, CContainer, CForm } from '@coreui/react';
-import { useConfirmDelete } from './confirm-delete';
+import { CCol, CForm } from '@coreui/react';
 import { SignDto } from '../../types/types';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
-import { useDeleteMutation, useSaveMutation } from './hooks';
+import { useSaveMutation } from './hooks';
 import { FormProvider, useForm } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
 import { Aside } from './aside';
 import { SignContextProvider } from './context';
 import { SignFormControls } from './form-controls';
+import { SignButtons } from './buttons';
 
 interface IFormProps {
   signId: string;
@@ -17,11 +16,8 @@ interface IFormProps {
 }
 
 export const SignForm: React.FC<IFormProps> = ({ signId, data }) => {
-  const { t } = useTranslation();
   const navigate = useNavigate();
-  const { ConfirmDelete, showConfirmation } = useConfirmDelete();
   const saveSign = useSaveMutation();
-  const deleteSign = useDeleteMutation();
 
   const formMethods = useForm<SignDto>({
     values: data,
@@ -31,25 +27,6 @@ export const SignForm: React.FC<IFormProps> = ({ signId, data }) => {
     saveSign.mutateAsync(values, {
       onSuccess: () => navigate(generatePath(ROUTES.SIGN_LIST)),
     });
-  };
-
-  const onCancel = () => {
-    navigate(generatePath(ROUTES.SIGN_LIST));
-  };
-
-  const onDelete = () => {
-    signId &&
-      showConfirmation().then(() =>
-        deleteSign.mutateAsync(signId, {
-          onSuccess: () => navigate(generatePath(ROUTES.SIGN_LIST)),
-        }),
-      );
-  };
-
-  const onAddTranslation = () => {
-    navigate(
-      generatePath(ROUTES.TRANSLATION, { id: 'new', sign: data?.id || null }),
-    );
   };
 
   return (
@@ -62,43 +39,8 @@ export const SignForm: React.FC<IFormProps> = ({ signId, data }) => {
         >
           <SignFormControls />
           <CCol xs={12}>
-            <CContainer
-              fluid
-              className="d-flex justify-content-between w-100 p-0"
-            >
-              <div className="gap-2 d-flex justify-content-end">
-                <CButton
-                  type="button"
-                  color="secondary"
-                  className="btn-outline"
-                  onClick={onDelete}
-                >
-                  {t('btn.delete')}
-                </CButton>
-                <CButton
-                  type="button"
-                  color="light"
-                  className="btn-outline"
-                  onClick={onAddTranslation}
-                >
-                  {t('sign.btn.create-translation')}
-                </CButton>
-              </div>
-              <div className="gap-2 d-flex justify-content-end">
-                <CButton color="primary" type="submit">
-                  {t('btn.save')}
-                </CButton>
-                <CButton
-                  type="button"
-                  className="btn-outline"
-                  onClick={onCancel}
-                >
-                  {t('btn.cancel')}
-                </CButton>
-              </div>
-            </CContainer>
+            <SignButtons />
           </CCol>
-          <ConfirmDelete />
         </CForm>
         <Aside />
       </SignContextProvider>
