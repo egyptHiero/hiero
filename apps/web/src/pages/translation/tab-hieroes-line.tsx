@@ -1,20 +1,29 @@
 import * as React from 'react';
+import { ChangeEventHandler } from 'react';
 import { getChainTable, getMaxChainColumnsCount } from './logic/chain-table';
 import { ChainButton } from './chain-button';
 import { StyledTranslationsGrid } from './styled';
 import { InterpretationBlock } from './interpretation-block';
 import { DictionaryChainsDto } from '../../types/types';
-import { TLines } from '../sign/types';
 import { CFormTextarea } from '@coreui/react';
+import { TLine } from '../sign/types';
+import { useFormContext } from 'react-hook-form';
+import { TranslationJsonLine, TranslationVO } from './types';
+import { getFromArray, parseJson, updateArray } from './logic/array';
+
+type UpdateSelectedFn = (
+  value: TranslationJsonLine['selected'],
+) => TranslationJsonLine['selected'];
 
 interface TranslationTabHieroesLineProps {
   chains: DictionaryChainsDto['chains'];
-  line: TLines[number];
+  line: TLine;
+  lineIndex: number;
 }
 
 export const TranslationTabHieroesLine: React.FC<
   TranslationTabHieroesLineProps
-> = ({ chains, line }: TranslationTabHieroesLineProps) => {
+> = ({ chains, line, lineIndex }: TranslationTabHieroesLineProps) => {
   const chainTable = React.useMemo(
     () => getChainTable(line, chains),
     [chains, line],
@@ -26,12 +35,33 @@ export const TranslationTabHieroesLine: React.FC<
   );
 
   const height = line?.hieroes.length ?? 0;
-  const [selected, setSelected] = React.useState<boolean[][]>(
-    Array.from({ length: height }).map(() => []),
+  const { watch, setValue } = useFormContext<TranslationVO>();
+
+  const text = watch('text');
+  const textLine = React.useMemo(
+    () => getFromArray(text?.split('\n'), lineIndex),
+    [lineIndex, text],
   );
 
+  const json = parseJson<TranslationJsonLine[]>(watch('json'), []);
+  const selected = React.useMemo<TranslationJsonLine['selected']>(() => {
+    const result = getFromArray(json, lineIndex)?.selected;
+    if (!result) {
+      return Array.from({ length: height }).map(() => []);
+    }
+    result.length = height;
+    return result.map((v) => (Array.isArray(v) ? v : []));
+  }, [height, json, lineIndex]);
+
   const isSelected = (row: number, col: number) => {
-    return !!selected[row]?.[col];
+    return !!selected?.[row]?.[col];
+  };
+
+  const setSelected = (fn: UpdateSelectedFn) => {
+    setValue(
+      'json',
+      JSON.stringify(updateArray(json, lineIndex, { selected: fn(selected) })),
+    );
   };
 
   const handleClick = (row: number, col: number) => {
@@ -62,6 +92,15 @@ export const TranslationTabHieroesLine: React.FC<
 
       return [...value];
     });
+  };
+
+  const updateCurrentTextLine: ChangeEventHandler<HTMLTextAreaElement> = ({
+    target,
+  }) => {
+    setValue(
+      'text',
+      updateArray(text?.split('\n'), lineIndex, target.value).join('\n'),
+    );
   };
 
   if (!chains) {
@@ -106,6 +145,8 @@ export const TranslationTabHieroesLine: React.FC<
           alignSelf: 'center',
           minWidth: '150px',
         }}
+        value={textLine}
+        onChange={updateCurrentTextLine}
       />
     </StyledTranslationsGrid>
   );

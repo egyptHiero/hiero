@@ -1,4 +1,4 @@
-import { TLines } from '../../sign/types';
+import { TLine } from '../../sign/types';
 import { DictionaryChainsDto } from '../../../types/types';
 
 const areArraysEqual = (arr1: string[], arr2: string[]) => {
@@ -18,7 +18,7 @@ type THieroes = string[];
  * @param chains      - hiero chain from dictionary
  */
 export const getChainTable = (
-  line: TLines[number],
+  line: TLine[][number],
   chains: DictionaryChainsDto['chains'],
 ): THieroes[][] => {
   // group chains keys by the first letter
@@ -48,14 +48,14 @@ export const getChainTable = (
             );
           })
           .sort((a, b) => {
-            if (a.length === 0) {
-              return b.length === 0 ? 0 : -1;
+            if (a.length === 1) {
+              return -1;
             }
-            if (b.length === 0) {
-              return a.length === 0 ? 0 : 1;
+            if (b.length === 1) {
+              return 1;
             }
 
-            return a.length - b.length;
+            return b.length - a.length;
           })
       : [[firstHiero]];
   });

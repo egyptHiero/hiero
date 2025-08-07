@@ -5,7 +5,7 @@ import {
   SUPPORTED_DELIMITERS_REGEXP,
 } from '../../../constants';
 
-import { TCurrent, THieroChange, TLines } from '../types';
+import { TCurrent, THieroChange, TLine } from '../types';
 
 const calculateKeys = (values: string[]) => {
   const keys: Record<string, number> = {};
@@ -16,7 +16,7 @@ const calculateKeys = (values: string[]) => {
   });
 };
 
-export const splitIntoLines = (gardinerCodes = ''): TLines =>
+export const splitIntoLines = (gardinerCodes = ''): TLine[] =>
   gardinerCodes
     ? gardinerCodes.split(DELIMITER_NEW_LINE).map((line) => {
         const all = line.split(SUPPORTED_DELIMITERS_REGEXP);
@@ -31,7 +31,7 @@ export const splitIntoLines = (gardinerCodes = ''): TLines =>
       })
     : [];
 
-export const joinLine = (line: TLines[number]): string =>
+export const joinLine = (line: TLine): string =>
   line.hieroes
     .map((value, position, array) => {
       const defaultDelimiter =
@@ -41,11 +41,11 @@ export const joinLine = (line: TLines[number]): string =>
     .join('');
 
 const updateLine = (
-  line: TLines[number],
+  line: TLine,
   lineIndex: number,
   current?: TCurrent,
   value?: THieroChange,
-): TLines[number] => {
+): TLine => {
   if (current && value) {
     const [currentLineIndex, hieroIndex] = current;
 
@@ -84,7 +84,7 @@ const updateLine = (
 };
 
 export const joinLines = (
-  lines: TLines,
+  lines: TLine[],
   current?: TCurrent,
   hiero?: THieroChange,
 ): string =>
@@ -97,7 +97,7 @@ export const joinLines = (
 
 export const shiftCurrentIndex = (
   value: number,
-  lines: TLines,
+  lines: TLine[],
   current: TCurrent,
   force = false,
 ): TCurrent => {

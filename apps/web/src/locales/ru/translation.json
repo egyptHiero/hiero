@@ -100,6 +100,7 @@
     "name": "Название"
   },
   "translation": {
+    "classification": "Классификация Гардинера",
     "columns": {
       "description": "Описание",
       "name": "Название"
@@ -112,6 +113,6 @@
       "hieroes": "Перевод",
       "sign": "Табличка"
     },
-    "translation": "Перевод"
+    "text": "Перевод"
   }
 }

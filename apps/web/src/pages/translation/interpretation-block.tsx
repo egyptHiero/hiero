@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { DictionaryChainsDto } from '../../types/types';
 
-const wrapWithBrackets = (value?: string) => (value ? `($value)` : '');
-
 interface IInterpretationBlockProps {
   column: number;
   row: number;
@@ -26,11 +24,14 @@ export const InterpretationBlock: React.FC<IInterpretationBlockProps> = ({
         height: `${size * 4}rem`,
       }}
     >
-      {translations?.vygus?.map(([interpretation, description], n) => (
-        <div
-          key={n}
-        >{`${interpretation} ${wrapWithBrackets(description)}`}</div>
-      ))}
+      {Object.keys(translations ?? {}).flatMap((key) =>
+        translations?.[key]?.map(([interpretation, description], n) => (
+          <div key={n}>
+            {interpretation}
+            <i>{description}</i>
+          </div>
+        )),
+      )}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { shiftCurrentIndex, splitIntoLines } from '../index';
-import { TLines } from '../../types';
+import { TLine } from '../../types';
 
-const lines: TLines = splitIntoLines('A1-A2-A3\nB1\nC1-C2');
+const lines: TLine[] = splitIntoLines('A1-A2-A3\nB1\nC1-C2');
 
 describe('shiftCurrentIndex', () => {
   it('should return expected values for negative shifts', () => {

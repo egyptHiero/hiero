@@ -3,7 +3,7 @@ import { Hiero } from '../../components/hiero';
 import { StyledCButton } from './styled';
 import { DictionaryChainsDto } from '../../types/types';
 
-const wrapWithBrackets = (value?: string) => (value ? `($value)` : '');
+const wrapWithBrackets = (value?: string) => (value ? `(${value})` : '');
 
 interface IChainButtonProps {
   chain: string[];
@@ -22,10 +22,12 @@ export const ChainButton: React.FC<IChainButtonProps> = ({
   translations,
   onClick,
 }) => {
-  const title = translations?.vygus
-    ?.map(
-      ([interpretation, description]) =>
-        `${interpretation} ${wrapWithBrackets(description)}`,
+  const title = Object.keys(translations ?? {})
+    .flatMap((key) =>
+      translations?.[key]?.map(
+        ([interpretation, description]) =>
+          `${interpretation} ${wrapWithBrackets(description)}`,
+      ),
     )
     .join('\n');
 

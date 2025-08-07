@@ -22,6 +22,11 @@
             "input": "apps/web/src/locales",
             "output": "./locales",
             "glob": "**/translation.json"
+          },
+          {
+            "input": "apps/api/src/dto",
+            "output": "../../../../web/src/types",
+            "glob": "**/types.ts"
           }
         ],
         "generatePackageJson": true,
@@ -68,10 +73,13 @@
         "command": "npx ts2typebox -i src/dto/types.ts -o src/generated/typebox.ts",
         "cwd": "apps/api",
         "inputs": [
-          "{projectRoot}/src/dto/types.ts"
+          "src/dto/types.ts"
         ],
-        "cache": true
-      }
+        "outputs": [
+          "{projectRoot}/src/generated/typebox.ts"
+        ]
+      },
+      "cache": true
     },
     "generate-schema": {
       "executor": "@nx/js:node",

@@ -10,9 +10,9 @@ export type THieroChange = {
     | 'right-divider';
 };
 
-export type TLines = Array<{
+export type TLine = {
   codes: string;
   hieroes: string[];
   hieroKeys: string[];
   delimiters: string[];
-}>;
+};

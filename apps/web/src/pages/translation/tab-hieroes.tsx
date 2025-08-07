@@ -5,7 +5,6 @@ import { splitIntoLines } from '../sign/logic';
 import { useGetChains } from './hooks';
 import { TranslationTabHieroesLine } from './tab-hieroes-line';
 import { CNav, CNavItem, CNavLink, CTabContent, CTabPane } from '@coreui/react';
-import { useState } from 'react';
 
 export const TranslationTabHieroes: React.FC = () => {
   const { watch } = useFormContext<TranslationVO>();
@@ -24,7 +23,7 @@ export const TranslationTabHieroes: React.FC = () => {
     [chainsResponse?.data?.data],
   );
 
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = React.useState(0);
 
   return (
     <div className="d-flex">
@@ -44,7 +43,11 @@ export const TranslationTabHieroes: React.FC = () => {
       <CTabContent className="flex-fill">
         {lines.map((line, index) => (
           <CTabPane key={index} role="tabpanel" visible={activeTab === index}>
-            <TranslationTabHieroesLine chains={chains} line={line} />
+            <TranslationTabHieroesLine
+              chains={chains}
+              line={line}
+              lineIndex={index}
+            />
           </CTabPane>
         ))}
       </CTabContent>

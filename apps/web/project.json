@@ -7,14 +7,7 @@
   "targets": {
     "build": {
       "options": {
-        "external": ["@coreui/react"],
-        "assets": [
-          {
-            "input": "apps/api/src/dto",
-            "output": "./types",
-            "glob": "**/types.ts"
-          }
-        ]
+        "external": ["@coreui/react"]
       },
       "dependsOn": ["api:generate-schema", "generate-client-typings"]
     },

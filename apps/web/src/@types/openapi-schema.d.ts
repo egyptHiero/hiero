@@ -497,6 +497,7 @@ export interface paths {
                                 name: string;
                                 description?: string;
                                 text?: string;
+                                json?: string;
                             } & {
                                 id: string;
                             })[];
@@ -525,6 +526,7 @@ export interface paths {
                         name: string;
                         description?: string;
                         text?: string;
+                        json?: string;
                     };
                 };
             };
@@ -540,6 +542,7 @@ export interface paths {
                             name: string;
                             description?: string;
                             text?: string;
+                            json?: string;
                         } & {
                             id: string;
                         };
@@ -586,6 +589,7 @@ export interface paths {
                             name: string;
                             description?: string;
                             text?: string;
+                            json?: string;
                         } & {
                             id: string;
                         };
@@ -622,6 +626,7 @@ export interface paths {
                         name: string;
                         description?: string;
                         text?: string;
+                        json?: string;
                     };
                 };
             };
@@ -637,6 +642,7 @@ export interface paths {
                             name: string;
                             description?: string;
                             text?: string;
+                            json?: string;
                         } & {
                             id: string;
                         };

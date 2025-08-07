@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import {
   CButton,
   CModal,
@@ -51,7 +50,7 @@ const ConfirmDelete: React.FC<ConfirmDeleteProps> = ({
 
 export const useConfirmDelete = () => {
   const confirmDeleteVisibility = React.useState(false);
-  const [future, setFuture] = useState<TFuture>();
+  const [future, setFuture] = React.useState<TFuture>();
   const onConfirm = React.useCallback(() => future?.resolve(), [future]);
 
   return {

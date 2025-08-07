@@ -1,5 +1,5 @@
 import { getChainTable, getMaxChainColumnsCount } from './chain-table';
-import { TLines } from '../../sign/types';
+import { TLine } from '../../sign/types';
 
 describe('getChainTable', () => {
   it('should build table with hiero chains ', () => {
@@ -7,16 +7,16 @@ describe('getChainTable', () => {
       getChainTable(
         {
           hieroes: ['A1', 'A2', 'A3', 'A4'],
-        } as TLines[number],
+        } as TLine[][number],
         {
-          A2: [],
-          'A2-A3': [],
-          'A2-A3-A4': [],
+          A2: { test: [] },
+          'A2-A3': { test: [] },
+          'A2-A3-A4': { test: [] },
         },
       ),
     ).toStrictEqual([
       [['A1']],
-      [['A2'], ['A2', 'A3'], ['A2', 'A3', 'A4']],
+      [['A2'], ['A2', 'A3', 'A4'], ['A2', 'A3']],
       [['A3']],
       [['A4']],
     ]);

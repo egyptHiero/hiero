@@ -60,6 +60,19 @@ export const postDictionaryChains = (fastify: FastifyTypeBox) =>
         }),
       );
 
+      const uniqHieroes = Array.from(new Set(hieroes.flatMap((h) => h)));
+
+      const uniqHieroesValues =
+        await fastify.db.hieroglyphs.getMany(uniqHieroes);
+
+      const hieroglyphs = {};
+      uniqHieroes.forEach((hiero, n) => {
+        hieroglyphs[hiero] = {
+          hieroglyphs: [[uniqHieroesValues[n] || '', '']],
+        };
+      });
+      allChains.unshift(hieroglyphs);
+
       return {
         chains: allChains.reduce((acc, chains) => {
           if (chains) {

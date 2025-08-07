@@ -7,8 +7,6 @@
   "types": "./src/index.d.ts",
   "executors": "./executors.json",
   "dependencies": {
-    "@nx/devkit": "^21.3.5",
-    "openapi-typescript": "^7.8.0",
     "tslib": "^2.3.0"
   }
 }

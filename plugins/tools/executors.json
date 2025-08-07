@@ -1,9 +1,4 @@
 {
   "executors": {
-    "generate-client-typings": {
-      "implementation": "./src/executors/generate-client-typings/generate-client-typings",
-      "schema": "./src/executors/generate-client-typings/schema.json",
-      "description": "generate-client-typings executor"
-    }
   }
 }

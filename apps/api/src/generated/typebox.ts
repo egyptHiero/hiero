@@ -96,6 +96,7 @@ export const TranslationNewDto = Type.Object({
   name: Type.String(),
   description: Type.Optional(Type.String()),
   text: Type.Optional(Type.String()),
+  json: Type.Optional(Type.String()),
 });
 
 export type TranslationDto = Static<typeof TranslationDto>;

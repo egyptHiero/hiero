@@ -73,6 +73,7 @@ export type TranslationNewDto = {
   name: string;
   description?: string;
   text?: string;
+  json?: string;
 };
 
 export type TranslationDto = TranslationNewDto & Identifiable;

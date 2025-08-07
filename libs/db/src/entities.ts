@@ -26,4 +26,5 @@ export interface TranslationEntity {
   name: string;
   description?: string;
   text?: string;
+  json?: string;
 }
