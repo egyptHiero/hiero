@@ -1,5 +1,6 @@
-import { shiftCurrentIndex, splitIntoLines } from '../index';
+import { shiftCurrentIndex } from '../index';
 import { TLine } from '../../types';
+import { splitIntoLines } from '../../../../utils';
 
 const lines: TLine[] = splitIntoLines('A1-A2-A3\nB1\nC1-C2');
 

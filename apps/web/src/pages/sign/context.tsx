@@ -1,9 +1,9 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import { SignDto } from '../../types/types';
-import { splitIntoLines } from './logic';
 import { TCurrent } from './types';
 import { shiftCurrentIndex } from './logic';
+import { splitIntoLines } from '../../utils';
 
 interface ISignContext {
   current?: TCurrent;

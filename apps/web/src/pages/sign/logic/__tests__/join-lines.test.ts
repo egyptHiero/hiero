@@ -1,5 +1,6 @@
 import { joinLines } from '../index';
 import { DELIMITER_VERTICAL } from '../../../../constants';
+import { expect } from 'vitest';
 
 type TUpdateHiero = {
   current: Parameters<typeof joinLines>[1];
@@ -17,7 +18,8 @@ describe('joinLines', () => {
         {
           codes: 'A1-A2',
           hieroes: ['A1', 'A2'],
-          delimiters: ['-'],
+          delimiters: ['', '-', ''],
+          hieroKeys: [],
         },
       ]),
     ).toBe('A1-A2');
@@ -28,12 +30,14 @@ describe('joinLines', () => {
       {
         codes: 'A1-A2',
         hieroes: ['A1', 'A2'],
-        delimiters: ['-'],
+        delimiters: ['', '-', ''],
+        hieroKeys: [],
       },
       {
         codes: 'B1:B2*B3',
         hieroes: ['B1', 'B2', 'B3'],
-        delimiters: [':', '*'],
+        delimiters: ['', ':', '*', ''],
+        hieroKeys: [],
       },
     ];
 

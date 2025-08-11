@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { DictionaryChainsDto } from '../../types/types';
+import styled from '@emotion/styled';
 
 interface IInterpretationBlockProps {
   column: number;
@@ -7,6 +8,12 @@ interface IInterpretationBlockProps {
   size?: number;
   translations?: DictionaryChainsDto['chains']['string'];
 }
+
+const StyledDescription = styled.span({
+  fontStyle: 'italic',
+  paddingLeft: 4,
+  fontSize: 'smaller',
+});
 
 export const InterpretationBlock: React.FC<IInterpretationBlockProps> = ({
   column,
@@ -28,7 +35,9 @@ export const InterpretationBlock: React.FC<IInterpretationBlockProps> = ({
         translations?.[key]?.map(([interpretation, description], n) => (
           <div key={n}>
             {interpretation}
-            <i>{description}</i>
+            <StyledDescription>
+              {description?.replace(/([[{}\]])/g, '')}
+            </StyledDescription>
           </div>
         )),
       )}

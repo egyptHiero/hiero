@@ -11,7 +11,7 @@ export const FontSize: React.FC = () => {
   return (
     <CFormRange
       min={20}
-      max={75}
+      max={100}
       value={currentValue}
       onChange={({ target }) =>
         setValue('fontSize', Number.parseInt(target.value))

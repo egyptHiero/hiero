@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useFormContext } from 'react-hook-form';
 import { TranslationVO } from './types';
-import { splitIntoLines } from '../sign/logic';
 import { useGetChains } from './hooks';
 import { TranslationTabHieroesLine } from './tab-hieroes-line';
 import { CNav, CNavItem, CNavLink, CTabContent, CTabPane } from '@coreui/react';
+import { splitIntoLines } from '../../utils';
 
 export const TranslationTabHieroes: React.FC = () => {
   const { watch } = useFormContext<TranslationVO>();

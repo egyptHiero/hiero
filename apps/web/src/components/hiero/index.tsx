@@ -10,6 +10,9 @@ interface StyledDivProps {
 
 const StyledDiv = styled.div<StyledDivProps>(
   ({ selectedPos = Number.NEGATIVE_INFINITY }) => ({
+    '&': {
+      fontFamily: 'Hieroglyphic',
+    },
     [`& > svg > .hierojax-svg-sign:nth-of-type(${selectedPos >= 0 ? selectedPos + 1 : undefined})`]:
       {
         fill: 'green',
