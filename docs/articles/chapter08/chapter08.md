@@ -18,9 +18,10 @@ $ npx nx g vitest --project api
 ```
 
 [Fastify](https://fastify.dev/) - отличный фреймворк для серверного приложения. Он современный, быстрый и расширяемый -
-так как использует модульную архитектуру.
+так как использует модульную архитектуру
+([плагины](https://fastify.dev/docs/latest/Reference/Plugins/)).
 
-Сразу из коробки устаналивается плагин [`fastify-sensible`](https://github.com/fastify/fastify-sensible) — он добавляет
+Плагин [`fastify-sensible`](https://github.com/fastify/fastify-sensible) уже устаналивлен сразу из коробки — он добавляет
 набор полезных утилит и стандартных обработчиков для удобства разработки API. Он включает часто используемые
 HTTP-ответы, хелперы для ошибок, редиректов, кеширования и другие "sensible" (разумные/практичные) решения.
 
@@ -138,7 +139,7 @@ $ nx generate @nx/workspace:run-commands \
 $ npm i @fastify/type-provider-typebox
 ```
 
-Дженерики больше не нужны, если использовать в роутах тип FastifyTypeBox вместо FastifyInstance.
+Теперь, если использовать в роутах тип FastifyTypeBox вместо FastifyInstance, то дженерики больше не нужны.
 
 ```typescript
 export type FastifyTypeBox = FastifyInstance<

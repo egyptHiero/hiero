@@ -37,7 +37,8 @@ $ npm i classic-level memory-level short-unique-id
 `signs` и `dictionaries` работают как на публичном уровне, так и на пользовательском, а `translations`
 только на пользовательском.
 
-`dictionaries` - это таблица таблиц - есть добавлять и удалять словари и есть описание словаря - `DictionaryInfo`
+`dictionaries` - это таблица из таблиц, она дает возможность добавлять и удалять словари и добавить к каждому
+его описание - `DictionaryInfo`
 
 ## Тесты
 
