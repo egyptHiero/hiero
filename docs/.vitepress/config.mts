@@ -4,10 +4,15 @@ import { defineConfig } from 'vitepress';
 import { withSidebar } from 'vitepress-sidebar';
 
 const vitePressOptions = {
-  // VitePress's options here...
-  title: 'VitePress Sidebar',
+  title: 'Создание приложения',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    siteTitle: 'Egypt Hiero',
+    outline: {
+      label: 'На странице',
+    },
+    prev: 'Раньше',
+    next: 'Дальше',
   },
   base: '/hiero/',
 };
