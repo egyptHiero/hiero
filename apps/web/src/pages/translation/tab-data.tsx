@@ -47,9 +47,9 @@ export const TranslationTabData: React.FC = () => {
         <StyledCCol md={6}>
           <CFormTextarea
             rows={4}
-            {...register('signData.classification')}
-            id="classification"
-            label={t('translation.classification')}
+            {...register('signData.gardinerCodes')}
+            id="gardinerCodes"
+            label={t('translation.gardinerCodes')}
             readOnly
           />
         </StyledCCol>

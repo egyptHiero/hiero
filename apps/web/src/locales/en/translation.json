@@ -43,7 +43,7 @@
     }
   },
   "dynamic": {
-    "classification": {
+    "gardinerCodes": {
       "A": "Man and his occupations",
       "Aa": "Unclassified signs",
       "B": "Woman and her occupations",
@@ -87,7 +87,7 @@
     "btn": {
       "create-translation": "Add translation"
     },
-    "classification": "Classification",
+    "gardinerCodes": "Gardiner codes",
     "columns": {
       "description": "Description",
       "name": "Name"
@@ -100,7 +100,7 @@
     "name": "Name"
   },
   "translation": {
-    "classification": "Gardiner codes",
+    "gardinerCodes": "Gardiner codes",
     "columns": {
       "description": "Description",
       "name": "Name"

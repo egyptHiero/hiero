@@ -36,7 +36,7 @@ export const getSigns = (fastify: FastifyTypeBox) =>
               key,
               value.name,
               value.description,
-              value.classification,
+              value.gardinerCodes,
               value.image,
             );
           },

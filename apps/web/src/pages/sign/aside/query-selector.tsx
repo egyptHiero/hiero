@@ -18,8 +18,8 @@ export const QuerySelector: React.FC = () => {
   const {
     activeTab,
     setActiveTab,
-    classification,
-    setClassification,
+    gardinerCodes,
+    setGardinerCodes,
     query,
     setQuery,
   } = useSignAsideContext();
@@ -28,7 +28,7 @@ export const QuerySelector: React.FC = () => {
     () =>
       GARDINER_CLASSIFICATION.map((value) => ({
         value,
-        label: t(`dynamic.classification.${value}`),
+        label: t(`dynamic.gardinerCodes.${value}`),
       })),
     [t],
   );
@@ -50,8 +50,8 @@ export const QuerySelector: React.FC = () => {
         <CTabPanel itemKey="select">
           <CFormSelect
             options={hieroGroupOptions}
-            value={classification}
-            onChange={({ target }) => setClassification(target.value)}
+            value={gardinerCodes}
+            onChange={({ target }) => setGardinerCodes(target.value)}
           />
         </CTabPanel>
         <CTabPanel itemKey="search">

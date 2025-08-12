@@ -4,11 +4,11 @@ import { SignEntity } from '../entities';
 
 const SET1: Record<string, SignEntity> = {
   a1: {
-    classification: 'b1',
+    gardinerCodes: 'b1',
     name: 'c1',
   },
   a2: {
-    classification: 'b2',
+    gardinerCodes: 'b2',
     name: 'c2',
   },
 };
@@ -34,7 +34,7 @@ describe('DB-signs', () => {
     );
 
     expect(await db.getSigns().get('a1')).toStrictEqual({
-      classification: 'b1',
+      gardinerCodes: 'b1',
       name: 'c1',
     });
 
@@ -51,7 +51,7 @@ describe('DB-signs', () => {
     );
 
     expect(await db.getSigns('user1').get('a1')).toStrictEqual({
-      classification: 'b1',
+      gardinerCodes: 'b1',
       name: 'c1',
     });
 

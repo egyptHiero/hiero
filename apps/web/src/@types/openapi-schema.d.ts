@@ -267,7 +267,7 @@ export interface paths {
                             items: ({
                                 name: string;
                                 image?: string;
-                                classification: string;
+                                gardinerCodes: string;
                                 description?: string;
                                 fontSize?: number;
                                 dir?: string;
@@ -297,7 +297,7 @@ export interface paths {
                     "application/json": {
                         name: string;
                         image?: string;
-                        classification: string;
+                        gardinerCodes: string;
                         description?: string;
                         fontSize?: number;
                         dir?: string;
@@ -314,7 +314,7 @@ export interface paths {
                         "application/json": {
                             name: string;
                             image?: string;
-                            classification: string;
+                            gardinerCodes: string;
                             description?: string;
                             fontSize?: number;
                             dir?: string;
@@ -362,7 +362,7 @@ export interface paths {
                         "application/json": {
                             name: string;
                             image?: string;
-                            classification: string;
+                            gardinerCodes: string;
                             description?: string;
                             fontSize?: number;
                             dir?: string;
@@ -400,7 +400,7 @@ export interface paths {
                     "application/json": {
                         name: string;
                         image?: string;
-                        classification: string;
+                        gardinerCodes: string;
                         description?: string;
                         fontSize?: number;
                         dir?: string;
@@ -417,7 +417,7 @@ export interface paths {
                         "application/json": {
                             name: string;
                             image?: string;
-                            classification: string;
+                            gardinerCodes: string;
                             description?: string;
                             fontSize?: number;
                             dir?: string;

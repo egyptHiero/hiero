@@ -34,8 +34,8 @@ export const SignFormControls: React.FC = () => {
       <CCol xs={6}>
         <CFormTextarea
           rows={4}
-          {...register('classification', { required: true })}
-          label={t('sign.classification')}
+          {...register('gardinerCodes', { required: true })}
+          label={t('sign.gardinerCodes')}
         />
       </CCol>
       {!!lines.length && (

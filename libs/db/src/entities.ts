@@ -15,7 +15,7 @@ export interface SignEntity {
   name: string;
   image?: string;
   imageSize?: string;
-  classification: string;
+  gardinerCodes: string;
   description?: string;
   fontSize?: number;
   dir?: string;

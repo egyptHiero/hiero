@@ -18,7 +18,7 @@ abstract class PdfHieroglyphsTableProcessor<
       chunk.fontName === 'g_d0_f2' &&
       this._getColumnIndex(chunk) === 1
     ) {
-      // letter classification
+      // letter gardinerCodes
       return true;
     }
 

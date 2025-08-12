@@ -81,7 +81,7 @@ export type SignNewDto = Static<typeof SignNewDto>;
 export const SignNewDto = Type.Object({
   name: Type.String(),
   image: Type.Optional(Type.String()),
-  classification: Type.String(),
+  gardinerCodes: Type.String(),
   description: Type.Optional(Type.String()),
   fontSize: Type.Optional(Type.Number()),
   dir: Type.Optional(Type.String()),

@@ -11,14 +11,14 @@ import { useSignContext } from '../context';
 export const HieroesList: React.FC = () => {
   const { hieroglyphs } = useHieroContext();
   const { shiftCurrent } = useSignContext();
-  const { activeTab, classification, query, changeHiero, insertMode } =
+  const { activeTab, gardinerCodes, query, changeHiero, insertMode } =
     useSignAsideContext();
   const { watch } = useFormContext<SignDto>();
   const dir = watch('dir') as TDir | undefined;
 
   const hieroList = React.useMemo(() => {
     if (activeTab === 'select') {
-      const pattern = new RegExp(`${classification}\\d`);
+      const pattern = new RegExp(`${gardinerCodes}\\d`);
       return Object.entries(hieroglyphs).filter(([key]) => key.match(pattern));
     } else if (activeTab === 'search' && query) {
       const pattern = new RegExp(query, 'i');
@@ -28,7 +28,7 @@ export const HieroesList: React.FC = () => {
     } else {
       return [];
     }
-  }, [activeTab, classification, hieroglyphs, query]);
+  }, [activeTab, gardinerCodes, hieroglyphs, query]);
 
   const handleClick = (value: string) => {
     if (insertMode === 'left') {

@@ -43,7 +43,7 @@
     }
   },
   "dynamic": {
-    "classification": {
+    "gardinerCodes": {
       "A": "Мужчина и его занятия",
       "Aa": "Неклассифицированные",
       "B": "Женщина и её занятия",
@@ -87,7 +87,7 @@
     "btn": {
       "create-translation": "Добавить перевод"
     },
-    "classification": "Транскрипция",
+    "gardinerCodes": "Классификация Гардинера",
     "columns": {
       "description": "Описание",
       "name": "Название"
@@ -100,7 +100,7 @@
     "name": "Название"
   },
   "translation": {
-    "classification": "Классификация Гардинера",
+    "gardinerCodes": "Классификация Гардинера",
     "columns": {
       "description": "Описание",
       "name": "Название"

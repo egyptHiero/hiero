@@ -25,10 +25,9 @@ export const DictionaryPage: React.FC = () => {
 
   const mapper = (item: DictionaryItemDto): DictionaryItemVO => ({
     id: item.id,
-    text: item.i.map((item, i) => (
+    text: item.i.map((v, i) => (
       <div key={`${item.id}-${i}`}>
-        {Object.keys(item)}{' '}
-        <StyledDescription>{Object.values(item)}</StyledDescription>
+        <StyledDescription>{Object.values(v)}</StyledDescription>
       </div>
     )),
     hieroes: <Hiero text={item.id} fontSize={40} />,

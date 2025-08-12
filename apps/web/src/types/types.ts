@@ -59,7 +59,7 @@ export interface DictionaryChainsDto {
 export type SignNewDto = {
   name: string;
   image?: string;
-  classification: string;
+  gardinerCodes: string;
   description?: string;
   fontSize?: number;
   dir?: string;

@@ -15,8 +15,8 @@ import { joinLines } from '../logic';
 interface IAsideContext {
   activeTab: TActiveTab;
   setActiveTab: React.Dispatch<React.SetStateAction<TActiveTab>>;
-  classification: string;
-  setClassification: React.Dispatch<React.SetStateAction<string>>;
+  gardinerCodes: string;
+  setGardinerCodes: React.Dispatch<React.SetStateAction<string>>;
   query?: string;
   setQuery: React.Dispatch<React.SetStateAction<string | undefined>>;
   history: TSignHistory;
@@ -46,7 +46,7 @@ export const AsideContextProvider: React.FC<IAsideContextProvider> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<TActiveTab>('select');
   const [query, setQuery] = useState<string>();
-  const [classification, setClassification] = React.useState<string>(
+  const [gardinerCodes, setGardinerCodes] = React.useState<string>(
     GARDINER_CLASSIFICATION[0],
   );
   const { lines, current, setCurrent } = useSignContext();
@@ -78,7 +78,7 @@ export const AsideContextProvider: React.FC<IAsideContextProvider> = ({
 
           if (item) {
             queueMicrotask(() => {
-              setValue('classification', item.hieroes);
+              setValue('gardinerCodes', item.hieroes);
               setCurrent(item.current);
             });
           }
@@ -95,7 +95,7 @@ export const AsideContextProvider: React.FC<IAsideContextProvider> = ({
 
           if (item) {
             queueMicrotask(() => {
-              setValue('classification', item.hieroes);
+              setValue('gardinerCodes', item.hieroes);
               setCurrent(item.current);
             });
           }
@@ -118,7 +118,7 @@ export const AsideContextProvider: React.FC<IAsideContextProvider> = ({
     (value, variant) => {
       history.save({ current, hieroes: joinLines(lines) });
       setValue(
-        'classification',
+        'gardinerCodes',
         joinLines(lines, current, { hiero: value, variant }),
       );
     },
@@ -135,14 +135,14 @@ export const AsideContextProvider: React.FC<IAsideContextProvider> = ({
       setActiveTab,
       query,
       setQuery,
-      classification,
-      setClassification,
+      gardinerCodes,
+      setGardinerCodes,
       history,
       changeHiero,
       insertMode,
       setInsertMode,
     };
-  }, [activeTab, changeHiero, classification, history, insertMode, query]);
+  }, [activeTab, changeHiero, gardinerCodes, history, insertMode, query]);
 
   return (
     <AsideContext.Provider value={value}>{children}</AsideContext.Provider>

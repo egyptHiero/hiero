@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import { SignDto } from '../../types/types';
-import { TCurrent } from './types';
+import { TCurrent, TLine } from './types';
 import { shiftCurrentIndex } from './logic';
 import { splitIntoLines } from '../../utils';
 
@@ -9,7 +9,7 @@ interface ISignContext {
   current?: TCurrent;
   setCurrent: React.Dispatch<React.SetStateAction<TCurrent | undefined>>;
   shiftCurrent: (value: number, force: boolean) => void;
-  lines: Array<{ codes: string; hieroes: string[]; delimiters: string[] }>;
+  lines: TLine[];
   asideVisible: boolean;
   setAsideVisible: React.Dispatch<React.SetStateAction<boolean>>;
   isImageLoaded: boolean;
@@ -37,13 +37,13 @@ export const SignContextProvider: React.FC<ISignContextProvider> = ({
 }) => {
   const [asideVisible, setAsideVisible] = React.useState(false);
   const { watch } = useFormContext<SignDto>();
-  const classification = watch('classification') || '';
+  const gardinerCodes = watch('gardinerCodes') || '';
   const [current, setCurrent] = React.useState<TCurrent>();
   const [isImageLoaded, setImageIsLoaded] = React.useState(false);
 
   const lines = React.useMemo(
-    () => splitIntoLines(classification),
-    [classification],
+    () => splitIntoLines(gardinerCodes),
+    [gardinerCodes],
   );
 
   const shiftCurrent = React.useCallback(

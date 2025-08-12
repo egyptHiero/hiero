@@ -8,7 +8,7 @@ import { splitIntoLines } from '../../utils';
 
 export const TranslationTabHieroes: React.FC = () => {
   const { watch } = useFormContext<TranslationVO>();
-  const gardinerCodes = watch('signData.classification');
+  const gardinerCodes = watch('signData.gardinerCodes');
   const lines = React.useMemo(
     () => splitIntoLines(gardinerCodes),
     [gardinerCodes],
