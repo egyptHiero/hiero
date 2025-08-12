@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { DictionaryChainsDto } from '../../types/types';
 import styled from '@emotion/styled';
+import { CPopover } from '@coreui/react';
 
 interface IInterpretationBlockProps {
   column: number;
@@ -9,9 +10,14 @@ interface IInterpretationBlockProps {
   translations?: DictionaryChainsDto['chains']['string'];
 }
 
+const StyledInterpretation = styled.span({
+  fontWeight: 'bolder',
+  paddingLeft: 4,
+});
+
 const StyledDescription = styled.span({
   fontStyle: 'italic',
-  paddingLeft: 4,
+  paddingX: 4,
   fontSize: 'smaller',
 });
 
@@ -21,27 +27,36 @@ export const InterpretationBlock: React.FC<IInterpretationBlockProps> = ({
   size = 1,
   translations = {},
 }) => {
-  return (
-    <div
-      className="form-control overflow-auto"
-      style={{
-        gridColumn: column,
-        gridRow: `${row} / ${size} span`,
-        alignSelf: 'center',
-        height: `${size * 4}rem`,
-      }}
-    >
-      {Object.keys(translations ?? {}).flatMap((key) =>
-        translations?.[key]?.map(([interpretation, description], n) => (
-          <div key={n}>
-            {interpretation}
+  const content = React.useMemo(
+    () =>
+      Object.keys(translations ?? {}).flatMap((key, i) =>
+        translations?.[key]?.map(([interpretation, description], j) => (
+          <span key={`${row}_${column}_${i}_${j}`}>
+            <StyledInterpretation>{interpretation}</StyledInterpretation>
             <StyledDescription>
               {description?.replace(/([[{}\]])/g, '')}
             </StyledDescription>
-          </div>
+            |
+          </span>
         )),
-      )}
-    </div>
+      ),
+    [column, row, translations],
+  );
+
+  return (
+    <CPopover content={content} placement="left" trigger={['focus', 'hover']}>
+      <div
+        className="form-control overflow-auto"
+        style={{
+          gridColumn: column,
+          gridRow: `${row} / ${size} span`,
+          alignSelf: 'center',
+          height: `${size * 4}rem`,
+        }}
+      >
+        {content}
+      </div>
+    </CPopover>
   );
 };
 

@@ -1,5 +1,5 @@
-import { getChainTable, getMaxChainColumnsCount } from './chain-table';
-import { TLine } from '../../sign/types';
+import { getChainTable, getMaxChainColumnsCount } from '../chain-table';
+import { TLine } from '../../../sign/types';
 
 describe('getChainTable', () => {
   it('should build table with hiero chains ', () => {

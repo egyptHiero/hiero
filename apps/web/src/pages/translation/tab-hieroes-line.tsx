@@ -129,6 +129,7 @@ export const TranslationTabHieroesLine: React.FC<
 
         return hiero && n >= 0 ? (
           <InterpretationBlock
+            key={line?.hieroKeys[index] + '_' + n}
             column={chainColumnsCount + 2}
             row={index + 1}
             size={hiero?.length}

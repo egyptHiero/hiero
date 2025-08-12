@@ -27,7 +27,6 @@ interface IHieroProps {
   fontSize?: number;
   dir?: 'hlr' | 'hrl' | 'vlr' | 'vrl';
   sep?: number;
-  key?: string;
   onClick?: (hieroIndex: number) => void;
   selectedPos?: number;
 }
@@ -37,7 +36,6 @@ export const Hiero: React.FC<IHieroProps> = ({
   color,
   fontSize,
   dir,
-  key,
   onClick,
   selectedPos,
   sep = 0.25,
@@ -88,7 +86,6 @@ export const Hiero: React.FC<IHieroProps> = ({
 
   return (
     <StyledDiv
-      key={key}
       dangerouslySetInnerHTML={{ __html: hieroHTML }}
       onClick={handleClick}
       selectedPos={selectedPos}
