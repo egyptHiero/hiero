@@ -43,6 +43,9 @@ class DictionaryProcessor extends PdfParseTableProcessor<DictionaryItem> {
           this._getItemsByColumn(buffer, 4)
             .map(({ str }) => str)
             .join(' '),
+          this._getItemsByColumn(buffer, 2)
+            .map(({ str }) => str)
+            .join(' '),
         ],
       ];
     }

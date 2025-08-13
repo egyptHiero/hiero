@@ -1,3 +1,3 @@
-export const countHieroes = (hieroes = '') => {
-  return (hieroes.match(/-/g) || []).length + 1;
+export const wrapWithBrackets = (text = '') => {
+  return text?.trim() ? `[${text.replace(/[[\]]/g, '')}]` : '';
 };

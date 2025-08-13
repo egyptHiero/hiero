@@ -7,9 +7,10 @@ import { useGetDictionary } from './hooks';
 import { DictionaryItemVO } from './types';
 import { columnNames } from './columns';
 import { DictionaryItemDto } from '../../types/types';
-import { StyledDescription } from './styled';
+import { StyledDescription, StyledTranslation } from './styled';
 import { Hiero } from '../../components/hiero';
 import { useAppContext } from '../../app/context/app-context';
+import { wrapWithBrackets } from '../../utils';
 
 export const DictionaryPage: React.FC = () => {
   const { name: dictionaryName } =
@@ -27,7 +28,8 @@ export const DictionaryPage: React.FC = () => {
     id: item.id,
     text: item.i.map((v, i) => (
       <div key={`${item.id}-${i}`}>
-        <StyledDescription>{Object.values(v)}</StyledDescription>
+        <StyledTranslation>{v[0]}</StyledTranslation>
+        <StyledDescription>{wrapWithBrackets(v[1])}</StyledDescription>
       </div>
     )),
     hieroes: <Hiero text={item.id} fontSize={40} />,

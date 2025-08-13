@@ -17,8 +17,9 @@ abstract class VygusProcessor<T> implements TPdfParseProcessor<T> {
 
   abstract getOutputFileName(): string;
 
-  isEssential(): boolean {
-    return true;
+  isEssential(chunk: PDFExtractText): boolean {
+    // exclude page numbers
+    return chunk.y < 590;
   }
 }
 
