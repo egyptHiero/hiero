@@ -29,8 +29,8 @@ $ npm i classic-level memory-level short-unique-id
 
 ## Устройство базы
 Заведем `sublevels` для сущностей
-- `hieroglyphs` - иероглифовы
-- `signs` -  таблички с иероглифами
+- `hieroglyphs` - иероглифы
+- `signs` - таблички с иероглифами
 - `dictionaries` - словари (сейчас только ancient и vygus)
 - `translations` - пользовательские переводы
 
