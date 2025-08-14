@@ -31,9 +31,9 @@ export const toDictionaryItemDto = (
   return id
     ? {
         id,
-        i: entity.reduce<Array<[string, string]>>(
-          (acc, { interpretation, description }) => {
-            acc.push([interpretation, description]);
+        i: entity.reduce<Array<[string, string, string]>>(
+          (acc, { interpretation, description, transcription }) => {
+            acc.push([interpretation, description ?? '', transcription ?? '']);
             return acc;
           },
           [],

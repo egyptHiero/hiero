@@ -9,3 +9,7 @@ export const StyledDescription = styled.span({
   fontSize: 'small',
   fontStyle: 'italic',
 });
+
+export const StyledTranscription = styled.span({
+  fontStyle: 'italic',
+});

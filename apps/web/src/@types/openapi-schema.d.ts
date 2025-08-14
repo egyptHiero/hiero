@@ -42,10 +42,16 @@ export interface paths {
                         "application/json": {
                             items: {
                                 id: string;
-                                i: [
+                                i: ([
+                                    string,
                                     string,
                                     string
-                                ][];
+                                ] | [
+                                    string,
+                                    string
+                                ] | [
+                                    string
+                                ])[];
                             }[];
                             next?: string;
                         };
@@ -210,10 +216,16 @@ export interface paths {
                         "application/json": {
                             chains: {
                                 [key: string]: {
-                                    [key: string]: [
+                                    [key: string]: ([
+                                        string,
                                         string,
                                         string
-                                    ][];
+                                    ] | [
+                                        string,
+                                        string
+                                    ] | [
+                                        string
+                                    ])[];
                                 };
                             };
                             warnings?: {

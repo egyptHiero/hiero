@@ -34,12 +34,13 @@
   "dictionaries": {
     "columns": {
       "description": "Description",
-      "hieroes": "Иероглифы",
+      "hieroes": "Hieroglyphs",
       "id": "Id",
       "language": "Language",
       "link": "Link",
       "size": "Size",
-      "text": "Текст"
+      "text": "Text",
+      "transcription": "Transcription"
     }
   },
   "dynamic": {
@@ -87,7 +88,6 @@
     "btn": {
       "create-translation": "Add translation"
     },
-    "gardinerCodes": "Gardiner codes",
     "columns": {
       "description": "Description",
       "name": "Name"
@@ -96,16 +96,17 @@
       "delete": "Are you really going to delete the sign?"
     },
     "description": "Description",
+    "gardinerCodes": "Gardiner codes",
     "image": "Image link",
     "name": "Name"
   },
   "translation": {
-    "gardinerCodes": "Gardiner codes",
     "columns": {
       "description": "Description",
       "name": "Name"
     },
     "description": "Description",
+    "gardinerCodes": "Gardiner codes",
     "name": "Name",
     "sign": "Sign",
     "tab": {

@@ -21,7 +21,7 @@ export const searchIn = (query?: string, ...values: string[]) => {
 
   const queryLowerCase = query.toLowerCase();
   for (const value of values ?? []) {
-    if (value.toLowerCase().includes(queryLowerCase)) {
+    if (value?.toLowerCase().includes(queryLowerCase)) {
       return true;
     }
   }

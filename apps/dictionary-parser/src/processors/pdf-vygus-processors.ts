@@ -62,10 +62,11 @@ class DictionaryProcessor extends VygusProcessor<DictionaryItem> {
       ?.replace(/([-[])\s+/g, '$1')
       .replace(/\s+([-\]])+/g, '$1')
       .trim();
-    const interpretation = map['g_d0_f2']?.join('');
+    const interpretation = map['g_d0_f2']?.join('').trim();
+    const transcription = map['g_d0_f1']?.join(' ').trim();
 
     return hiero && interpretation
-      ? [hiero, [interpretation, description]]
+      ? [hiero, [interpretation, description, transcription]]
       : undefined;
   }
 

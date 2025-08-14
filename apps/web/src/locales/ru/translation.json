@@ -39,7 +39,8 @@
       "language": "Язык",
       "link": "Ссылка",
       "size": "Кол-во",
-      "text": "Текст"
+      "text": "Текст",
+      "transcription": "Транскрипция"
     }
   },
   "dynamic": {
@@ -87,7 +88,6 @@
     "btn": {
       "create-translation": "Добавить перевод"
     },
-    "gardinerCodes": "Классификация Гардинера",
     "columns": {
       "description": "Описание",
       "name": "Название"
@@ -96,16 +96,17 @@
       "delete": "Вы действительно хотите удалить данныю табличку?"
     },
     "description": "Описание",
+    "gardinerCodes": "Классификация Гардинера",
     "image": "Ссылка на изображение",
     "name": "Название"
   },
   "translation": {
-    "gardinerCodes": "Классификация Гардинера",
     "columns": {
       "description": "Описание",
       "name": "Название"
     },
     "description": "Описание",
+    "gardinerCodes": "Классификация Гардинера",
     "name": "Название",
     "sign": "Табличка",
     "tab": {

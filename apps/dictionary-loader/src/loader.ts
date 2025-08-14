@@ -45,9 +45,10 @@ const getMapper = (type: string): ((values: string[]) => TEntity) => {
   switch (type) {
     case 'dictionary':
       return (values) =>
-        values.map(([interpretation, description]) => ({
+        values.map(([interpretation, description, transcription]) => ({
           interpretation,
           description,
+          transcription,
         }));
     case 'signs':
       return (values): SignEntity =>

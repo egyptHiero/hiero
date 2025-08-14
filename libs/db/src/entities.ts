@@ -9,6 +9,7 @@ export interface DictionaryInfoEntity {
 export type DictionaryItemEntity = Array<{
   interpretation: string;
   description?: string;
+  transcription?: string;
 }>;
 
 export interface SignEntity {

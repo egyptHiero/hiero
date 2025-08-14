@@ -7,10 +7,40 @@ import { useGetDictionary } from './hooks';
 import { DictionaryItemVO } from './types';
 import { columnNames } from './columns';
 import { DictionaryItemDto } from '../../types/types';
-import { StyledDescription, StyledTranslation } from './styled';
+import {
+  StyledDescription,
+  StyledTranscription,
+  StyledTranslation,
+} from './styled';
 import { Hiero } from '../../components/hiero';
 import { useAppContext } from '../../app/context/app-context';
 import { wrapWithBrackets } from '../../utils';
+
+const transliterate = (text?: string) => {
+  const translitMap = {
+    A: 'ꜣ',
+    a: 'ꜥ',
+    T: 'ṯ',
+    t: 'ṯ',
+    D: 'ḏ',
+    d: 'ḏ',
+    H: 'ḥ',
+    h: 'ḥ',
+    X: 'ẖ',
+    x: 'ẖ',
+    S: 'š',
+    s: 'š',
+    K: 'ḳ',
+    k: 'ḳ',
+    I: 'ỉ',
+    i: 'ỉ',
+  };
+
+  return text?.replace(
+    new RegExp(`[${Object.keys(translitMap).join()}]`, 'g'),
+    (char) => translitMap[char] || char,
+  );
+};
 
 export const DictionaryPage: React.FC = () => {
   const { name: dictionaryName } =
@@ -33,6 +63,11 @@ export const DictionaryPage: React.FC = () => {
       </div>
     )),
     hieroes: <Hiero text={item.id} fontSize={40} />,
+    transcription: item.i.map((v, i) => (
+      <div key={`${item.id}-${i}`}>
+        <StyledTranscription>{transliterate(v[2])}</StyledTranscription>
+      </div>
+    )),
   });
 
   const scrollData = useGetDictionary(dictionaryName, mapper);
@@ -46,6 +81,8 @@ export const DictionaryPage: React.FC = () => {
           return t(`dictionaries.columns.text`);
         case 'hieroes':
           return t(`dictionaries.columns.hieroes`);
+        case 'transcription':
+          return t(`dictionaries.columns.transcription`);
       }
     },
     [t],

@@ -4,7 +4,7 @@ import {
 } from '../../generated/typebox';
 import { FastifyTypeBox } from '../../types';
 import { findChains } from '../../logics/chains';
-import { DictionaryItemEntity, Exceptions } from '@hiero/db';
+import { Exceptions } from '@hiero/db';
 import { DictionaryChainsDto } from '../../dto';
 
 export const postDictionaryChains = (fastify: FastifyTypeBox) =>
@@ -45,9 +45,10 @@ export const postDictionaryChains = (fastify: FastifyTypeBox) =>
                     (acc, [key, value]) => {
                       acc[key] = {
                         [dictionary]: value.map(
-                          ({ interpretation, description }) => [
+                          ({ interpretation, description, transcription }) => [
                             interpretation,
                             description,
+                            transcription,
                           ],
                         ),
                       };

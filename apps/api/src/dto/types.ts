@@ -41,7 +41,7 @@ export interface DictionaryInfoDto extends Identifiable {
 }
 
 export interface DictionaryItemDto extends Identifiable {
-  i: Array<[string, string]>;
+  i: Array<[string, string, string] | [string, string] | [string]>;
 }
 
 export interface DictionaryChainsParams {

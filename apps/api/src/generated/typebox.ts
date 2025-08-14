@@ -58,7 +58,13 @@ export type DictionaryItemDto = Static<typeof DictionaryItemDto>;
 export const DictionaryItemDto = Type.Composite([
   Identifiable,
   Type.Object({
-    i: Type.Array(Type.Tuple([Type.String(), Type.String()])),
+    i: Type.Array(
+      Type.Union([
+        Type.Tuple([Type.String(), Type.String(), Type.String()]),
+        Type.Tuple([Type.String(), Type.String()]),
+        Type.Tuple([Type.String()]),
+      ])
+    ),
   }),
 ]);
 
