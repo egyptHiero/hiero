@@ -2,6 +2,11 @@ import * as React from 'react';
 import { DictionaryChainsDto } from '../../types/types';
 import styled from '@emotion/styled';
 import { CPopover } from '@coreui/react';
+import {
+  StyledDescription,
+  StyledInterpretation,
+} from '../../components/styled';
+import { wrapWithBrackets } from '../../utils';
 
 interface IInterpretationBlockProps {
   column: number;
@@ -9,17 +14,6 @@ interface IInterpretationBlockProps {
   size?: number;
   translations?: DictionaryChainsDto['chains']['string'];
 }
-
-const StyledInterpretation = styled.span({
-  fontWeight: 'bolder',
-  paddingLeft: 4,
-});
-
-const StyledDescription = styled.span({
-  fontStyle: 'italic',
-  paddingX: 4,
-  fontSize: 'smaller',
-});
 
 export const InterpretationBlock: React.FC<IInterpretationBlockProps> = ({
   column,
@@ -34,7 +28,7 @@ export const InterpretationBlock: React.FC<IInterpretationBlockProps> = ({
           <span key={`${row}_${column}_${i}_${j}`}>
             <StyledInterpretation>{interpretation}</StyledInterpretation>
             <StyledDescription>
-              {description?.replace(/([[{}\]])/g, '')}
+              {wrapWithBrackets(description)}
             </StyledDescription>
             |
           </span>

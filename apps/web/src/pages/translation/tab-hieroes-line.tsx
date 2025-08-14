@@ -47,7 +47,7 @@ export const TranslationTabHieroesLine: React.FC<
   const selected = React.useMemo<TranslationJsonLine['selected']>(() => {
     const result = getFromArray(json, lineIndex)?.selected;
     if (!result) {
-      return Array.from({ length: height }).map(() => []);
+      return Array.from({ length: height }).map(() => [true]);
     }
     result.length = height;
     return result.map((v) => (Array.isArray(v) ? v : []));

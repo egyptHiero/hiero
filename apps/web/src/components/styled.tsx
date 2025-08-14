@@ -13,3 +13,8 @@ export const StyledDescription = styled.span({
 export const StyledTranscription = styled.span({
   fontStyle: 'italic',
 });
+
+export const StyledInterpretation = styled.span({
+  fontWeight: 'bolder',
+  paddingLeft: 4,
+});

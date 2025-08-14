@@ -11,36 +11,10 @@ import {
   StyledDescription,
   StyledTranscription,
   StyledTranslation,
-} from './styled';
+} from '../../components/styled';
 import { Hiero } from '../../components/hiero';
 import { useAppContext } from '../../app/context/app-context';
-import { wrapWithBrackets } from '../../utils';
-
-const transliterate = (text?: string) => {
-  const translitMap = {
-    A: 'ꜣ',
-    a: 'ꜥ',
-    T: 'ṯ',
-    t: 'ṯ',
-    D: 'ḏ',
-    d: 'ḏ',
-    H: 'ḥ',
-    h: 'ḥ',
-    X: 'ẖ',
-    x: 'ẖ',
-    S: 'š',
-    s: 'š',
-    K: 'ḳ',
-    k: 'ḳ',
-    I: 'ỉ',
-    i: 'ỉ',
-  };
-
-  return text?.replace(
-    new RegExp(`[${Object.keys(translitMap).join()}]`, 'g'),
-    (char) => translitMap[char] || char,
-  );
-};
+import { transliterate, wrapWithBrackets } from '../../utils';
 
 export const DictionaryPage: React.FC = () => {
   const { name: dictionaryName } =
