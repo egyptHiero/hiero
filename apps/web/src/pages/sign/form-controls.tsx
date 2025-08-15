@@ -11,7 +11,33 @@ import { useSignContext } from './context';
 export const SignFormControls: React.FC = () => {
   const { t } = useTranslation();
   const { register } = useFormContext<SignDto>();
-  const { lines } = useSignContext();
+  const { lines, current } = useSignContext();
+  const textareaRef = React.useRef<HTMLTextAreaElement | null>(null);
+  const gardinerCodesRegistration = register('gardinerCodes', {
+    required: true,
+  });
+
+  React.useEffect(() => {
+    if (current) {
+      const [x, y] = current;
+      const pos = lines.reduce((acc, line, i) => {
+        if (i < x) {
+          acc += line.hieroes.join('').length;
+          acc += line.delimiters.join('').length + 1;
+        } else if (i === x) {
+          acc += line.hieroes.slice(0, y).join('').length;
+          acc += line.delimiters.slice(0, y + 1).join('').length;
+        }
+
+        return acc;
+      }, 0);
+
+      const length = lines[x]?.hieroes[y]?.length ?? 2;
+
+      textareaRef.current?.focus();
+      textareaRef.current?.setSelectionRange(pos, pos + length);
+    }
+  }, [current, lines]);
 
   return (
     <>
@@ -34,8 +60,12 @@ export const SignFormControls: React.FC = () => {
       <CCol xs={6}>
         <CFormTextarea
           rows={4}
-          {...register('gardinerCodes', { required: true })}
+          {...gardinerCodesRegistration}
           label={t('sign.gardinerCodes')}
+          ref={(el) => {
+            gardinerCodesRegistration.ref(el);
+            textareaRef.current = el;
+          }}
         />
       </CCol>
       {!!lines.length && (
