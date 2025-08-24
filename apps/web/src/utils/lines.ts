@@ -34,6 +34,9 @@ export const splitIntoLines = (gardinerCodes = ''): TLine[] =>
             }
           }
 
+          if (!delimiters.length) {
+            delimiters.push('');
+          }
           return {
             codes,
             hieroes,
@@ -41,14 +44,22 @@ export const splitIntoLines = (gardinerCodes = ''): TLine[] =>
             delimiters,
           };
         })
-    : [];
+    : [
+        {
+          codes: '',
+          hieroes: [],
+          hieroKeys: [],
+          delimiters: [''],
+        },
+      ];
 /**
  * Restores string with Gardiner's codes from arrays of hieroglyphs and delimiters
+ *
  * @param line
  */
 export const joinLine = (line: TLine): string =>
   line.delimiters
-    .map((value, position, array) => {
+    .map((value, position) => {
       return `${value ?? DELIMITER_NEAR}${line.hieroes[position] ?? ''}`;
     })
     .join('');

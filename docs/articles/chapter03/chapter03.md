@@ -59,7 +59,7 @@ $ nx graph
 $ nx run-many -t lint --fix
 ```
 
-в файле `eslint.config.mjs` были прописаны только базовые настройки (а фактически, только
+в файле `eslint.config.mjs` прописаны только базовые настройки (фактически, только
 одно правило enforceBuildableLibDependency для проверки "собирательности" библиотек).
 
 Кстати, приятно, что `Nx` создает конфигурацию в новом, более удобном
@@ -67,7 +67,7 @@ $ nx run-many -t lint --fix
 `prettierPlugin` и правила - `prettierPlugin.configs.recommended.rules`.
 
 ::: tip
-А вы знаете, что в eslint есть очень удобный
+А вы знали, что в eslint есть очень удобный
 [Config Inspector](https://eslint.org/blog/2024/04/eslint-config-inspector/)?
 Он запускается в браузере и показывает итоговую конфигурацию, все плагины, правила и исключения, примененные к файлам.
 

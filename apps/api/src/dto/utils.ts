@@ -1,12 +1,14 @@
 import {
   DictionaryInfoDto,
   DictionaryItemDto,
+  RosettaPartDto,
   SignDto,
   TranslationDto,
 } from './index';
 import {
   DictionaryInfoEntity,
   DictionaryItemEntity,
+  RosettaPartEntity,
   SignEntity,
   TranslationEntity,
 } from '@hiero/db';
@@ -63,3 +65,15 @@ export const toTranslationDto = (
         ...entity,
       }
     : undefined;
+
+export const toRosettaPartDto = (
+  id?: string,
+  entity?: RosettaPartEntity,
+): RosettaPartDto | undefined => {
+  return id && entity
+    ? {
+        id,
+        ...entity,
+      }
+    : undefined;
+};

@@ -42,7 +42,7 @@ async function getPage<T, R = T>(
   let lastKey: string = undefined;
   const result: Array<R> = [];
   for await (const [key, value] of table.iterator({
-    gt: from,
+    gte: from,
     lte: to,
   })) {
     if (filter(key, value)) {

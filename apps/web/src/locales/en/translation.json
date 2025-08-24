@@ -3,6 +3,7 @@
     "sidebar": {
       "about": "About",
       "dictionaries": "Dictionaries",
+      "rosetta": "Rosetta stone",
       "signs": "Signs",
       "translations": "Translations"
     }
@@ -83,6 +84,19 @@
   },
   "parse": {
     "error": "parsing error"
+  },
+  "rosetta": {
+    "columns": {
+      "codes": "Codes",
+      "hieroes": "Hieroes",
+      "id": "Part No.",
+      "image": "Image",
+      "transliteration": "Transliteration",
+      "word": "Translation"
+    },
+    "topbar": {
+      "blankOnly": "Blank only"
+    }
   },
   "sign": {
     "btn": {

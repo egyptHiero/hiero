@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { DictionaryChainsDto } from '../../types/types';
-import styled from '@emotion/styled';
 import { CPopover } from '@coreui/react';
 import {
   StyledDescription,

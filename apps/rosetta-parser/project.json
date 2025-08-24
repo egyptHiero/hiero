@@ -1,0 +1,59 @@
+{
+  "name": "rosetta-parser",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/rosetta-parser/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/rosetta-parser",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/rosetta-parser/src/main.ts",
+        "tsConfig": "apps/rosetta-parser/tsconfig.app.json",
+        "assets": ["apps/rosetta-parser/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "rosetta-parser:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "rosetta-parser:build:development"
+        },
+        "production": {
+          "buildTarget": "rosetta-parser:build:production"
+        }
+      }
+    }
+  }
+}

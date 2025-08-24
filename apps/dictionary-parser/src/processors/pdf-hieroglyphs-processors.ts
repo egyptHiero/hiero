@@ -95,8 +95,8 @@ class HieroglyphsProcessor extends PdfHieroglyphsTableProcessor<string> {
     const description = this._getItemsByColumn(buffer, 2)
       .map(({ str }) => str)
       .join(' ');
-    if (hieroName && description && buffer[0]?.fontName === 'g_d0_f3') {
-      return [hieroName, description];
+    if (hieroName && buffer[0]?.fontName === 'g_d0_f3') {
+      return [hieroName, description || '-'];
     }
 
     return undefined;

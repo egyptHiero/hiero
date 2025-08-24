@@ -44,6 +44,10 @@ export const Sidebar: React.FC = () => {
           <CIcon icon={cilText} size="xl" />
           {t('app.sidebar.dictionaries')}
         </StyledNavItem>
+        <StyledNavItem href={ROUTES.ROSETTA_LIST}>
+          <CIcon icon={cilHome} size="xl" />
+          {t('app.sidebar.rosetta')}
+        </StyledNavItem>
         <StyledNavItem href={ROUTES.ABOUT}>
           <CIcon icon={cilHome} size="xl" />
           {t('app.sidebar.about')}

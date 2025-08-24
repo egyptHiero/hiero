@@ -3,6 +3,7 @@
     "sidebar": {
       "about": "О программе",
       "dictionaries": "Словари",
+      "rosetta": "Розеттский камень",
       "signs": "Таблички",
       "translations": "Переводы"
     }
@@ -83,6 +84,19 @@
   },
   "parse": {
     "error": "Ошибка парсинга"
+  },
+  "rosetta": {
+    "columns": {
+      "codes": "Коды",
+      "hieroes": "Иероглифы",
+      "id": "Часть",
+      "image": "Рисунок",
+      "transliteration": "Транслитерация",
+      "word": "Перевод"
+    },
+    "topbar": {
+      "blankOnly": "Без перевода"
+    }
   },
   "sign": {
     "btn": {

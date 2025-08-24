@@ -10,25 +10,35 @@ import { SignListPage } from '../pages/sign-list';
 import { AboutPage } from '../pages/about';
 import { TranslationListPage } from '../pages/translation-list';
 import { TranslationPage } from '../pages/translation';
+import { RosettaPage } from '../pages/rosetta-list';
+import { RosettaPartPage } from '../pages/rosetta';
+import { AppContextProvider } from './context/app-context';
 
 export const ApplicationRoutes: React.FC = () => (
   <BrowserRouter
     future={{ v7_relativeSplatPath: false, v7_startTransition: false }}
   >
-    <Routes>
-      <Route element={<PageLayout />}>
-        <Route path={ROUTES.SIGN_LIST} element={<SignListPage />} />
-        <Route path={ROUTES.SIGN} element={<SignPage />} />
-        <Route
-          path={ROUTES.TRANSLATION_LIST}
-          element={<TranslationListPage />}
-        />
-        <Route path={ROUTES.TRANSLATION} element={<TranslationPage />} />
-        <Route path={ROUTES.DICTIONARY_LIST} element={<DictionaryListPage />} />
-        <Route path={ROUTES.DICTIONARY} element={<DictionaryPage />} />
-        <Route path={ROUTES.ABOUT} element={<AboutPage />} />
-      </Route>
-      <Route path="*" element={<Error404Page />} />
-    </Routes>
+    <AppContextProvider>
+      <Routes>
+        <Route element={<PageLayout />}>
+          <Route path={ROUTES.SIGN_LIST} element={<SignListPage />} />
+          <Route path={ROUTES.SIGN} element={<SignPage />} />
+          <Route
+            path={ROUTES.TRANSLATION_LIST}
+            element={<TranslationListPage />}
+          />
+          <Route path={ROUTES.TRANSLATION} element={<TranslationPage />} />
+          <Route
+            path={ROUTES.DICTIONARY_LIST}
+            element={<DictionaryListPage />}
+          />
+          <Route path={ROUTES.DICTIONARY} element={<DictionaryPage />} />
+          <Route path={ROUTES.ROSETTA_LIST} element={<RosettaPage />} />
+          <Route path={ROUTES.ROSETTA_PART} element={<RosettaPartPage />} />
+          <Route path={ROUTES.ABOUT} element={<AboutPage />} />
+        </Route>
+        <Route path="*" element={<Error404Page />} />
+      </Routes>
+    </AppContextProvider>
   </BrowserRouter>
 );

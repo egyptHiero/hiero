@@ -10,14 +10,29 @@ import { useAppContext } from '../context/app-context';
 import CIcon from '@coreui/icons-react';
 import { cilMenu } from '@coreui/icons';
 import { LanguageSwitcher } from '../../components/language-switcher';
+import { useSearchParams } from 'react-router-dom';
+import { useDebounce } from 'use-debounce';
 
 export const Navbar: React.FC = () => {
-  const { setSidebarVisible, setQuery, customControls, customControlNames } =
-    useAppContext();
+  const {
+    setSidebarVisible,
+    setCustomControlsData,
+    customControls,
+    customControlNames,
+  } = useAppContext();
+
+  const [searchParams] = useSearchParams();
+  const search = searchParams.get('search') || undefined;
+
+  const [searchValue, setSearchValue] = React.useState(search);
+  const [debouncedSearch] = useDebounce(searchValue, 300);
+  React.useEffect(() => {
+    setCustomControlsData('search', debouncedSearch);
+  }, [debouncedSearch, searchParams, setCustomControlsData]);
 
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = ({
     target,
-  }) => setQuery(target.value);
+  }) => setSearchValue(target.value);
 
   const showSearch = customControlNames?.has('search');
 
@@ -39,6 +54,7 @@ export const Navbar: React.FC = () => {
               type="search"
               className="me-2"
               placeholder="Search"
+              defaultValue={search}
               onChange={handleSearch}
             />
           )}

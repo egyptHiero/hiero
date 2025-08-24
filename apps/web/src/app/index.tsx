@@ -5,7 +5,6 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query';
-import { AppContextProvider } from './context/app-context';
 import { ClientContextProvider } from './context/client-context';
 import { ServerUnavailableErrorPage } from '../pages/errors/500';
 import { HieroContextProvider } from './context/hiero-context';
@@ -33,19 +32,17 @@ export function App() {
   });
 
   return (
-    <AppContextProvider>
-      <QueryClientProvider client={queryClient}>
-        <ClientContextProvider>
-          {serverIsUnavailable ? (
-            <ServerUnavailableErrorPage />
-          ) : (
-            <HieroContextProvider>
-              <ApplicationRoutes />
-            </HieroContextProvider>
-          )}
-        </ClientContextProvider>
-      </QueryClientProvider>
-    </AppContextProvider>
+    <QueryClientProvider client={queryClient}>
+      <ClientContextProvider>
+        {serverIsUnavailable ? (
+          <ServerUnavailableErrorPage />
+        ) : (
+          <HieroContextProvider>
+            <ApplicationRoutes />
+          </HieroContextProvider>
+        )}
+      </ClientContextProvider>
+    </QueryClientProvider>
   );
 }
 

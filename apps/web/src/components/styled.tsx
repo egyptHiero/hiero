@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { CCol } from '@coreui/react';
 
 export const StyledTranslation = styled.span({
   fontWeight: 'bolder',
@@ -17,4 +18,11 @@ export const StyledTranscription = styled.span({
 export const StyledInterpretation = styled.span({
   fontWeight: 'bolder',
   paddingLeft: 4,
+});
+
+export const StyledCCol = styled(CCol)({
+  '& >.form-label': {
+    marginBottom: 0,
+  },
+  marginBottom: '1rem',
 });

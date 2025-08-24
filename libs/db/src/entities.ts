@@ -29,3 +29,16 @@ export interface TranslationEntity {
   text?: string;
   json?: string;
 }
+
+export interface RosettaPartEntity {
+  concordance?: string;
+  image: string;
+  analysis: string;
+  transliteration: string;
+  gloss: string;
+  lGloss?: string;
+  lGlossWn?: string;
+  word: string;
+  translation?: string;
+  gardinerCodes?: string;
+}

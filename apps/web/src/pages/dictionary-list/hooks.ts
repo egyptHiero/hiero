@@ -1,11 +1,13 @@
 import { useClientContext } from '../../app/context/client-context';
 import { useInfinityScroll } from '../../components/infinite-table/hook';
 import { DictionaryInfoDto } from '../../types/types';
-import { useAppContext } from '../../app/context/app-context';
+import { useSearchParams } from 'react-router-dom';
 
 export const useGetDictionaryList = () => {
   const { client } = useClientContext();
-  const { query } = useAppContext();
+
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('search') || undefined;
 
   return useInfinityScroll<DictionaryInfoDto>({
     queryKey: ['dictionaries', query ?? ''],

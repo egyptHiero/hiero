@@ -1,8 +1,15 @@
-import { splitIntoLines } from '../../utils';
+import { splitIntoLines } from '../lines';
 
 describe('splitIntoLines', () => {
   it('should return empty array for empty string', () => {
-    expect(splitIntoLines('')).toStrictEqual([]);
+    expect(splitIntoLines('')).toStrictEqual([
+      {
+        codes: '',
+        hieroes: [],
+        hieroKeys: [],
+        delimiters: [''],
+      },
+    ]);
   });
 
   it('should return empty lines object for string with spaces', () => {
@@ -11,7 +18,7 @@ describe('splitIntoLines', () => {
         codes: '',
         hieroes: [],
         hieroKeys: [],
-        delimiters: [],
+        delimiters: [''],
       },
     ]);
   });

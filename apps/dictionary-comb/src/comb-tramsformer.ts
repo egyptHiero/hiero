@@ -1,6 +1,9 @@
 import { Transform } from 'stream';
 
 const compare = (a: string[], b: string): number => {
+  if (!a[0]) {
+    return !b[0] ? 0 : 1;
+  }
   const result = a[0].localeCompare(b[0]);
 
   if (result === 0) {

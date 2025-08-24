@@ -9,6 +9,7 @@ import {
   DbTable,
   DbUtils,
   DictionaryItemEntity,
+  RosettaPartEntity,
   SignEntity,
 } from '@hiero/db';
 import { parse } from 'ndjson';
@@ -17,24 +18,44 @@ import path from 'node:path';
 
 export const dbPromise = createDbInstance();
 type TInfo = Awaited<ReturnType<typeof iterateDictionaryReader>>['info'];
-type TEntity = DictionaryItemEntity | SignEntity | string;
+type TEntity = DictionaryItemEntity | SignEntity | RosettaPartEntity | string;
 
-const openTable: (db: DB, props: TInfo) => Promise<DbTable<TEntity>> = async (
+const parseLGross = (value) => {
+  return Array.isArray(value) ? value : [];
+};
+
+const openTable: (
+  db: DB,
+  force: boolean,
+  props: TInfo,
+) => Promise<DbTable<TEntity>> = async (
   db,
+  force,
   { type, name, user, ...restInfo },
 ) => {
   switch (type) {
     case 'dictionary':
       return await db.createDictionary({ name, ...restInfo }, user, {
-        canOverride: true,
+        canOverride: force,
       });
     case 'hieroglyphs':
-      await db.hieroglyphs.clear();
+      if (force) {
+        await db.hieroglyphs.clear();
+      }
       return db.hieroglyphs;
     case 'signs': {
       const signs = db.getSigns(user);
-      await signs.clear();
+      if (force) {
+        await signs.clear();
+      }
       return signs;
+    }
+    case 'rosetta': {
+      const rosetta = db.getRosetta(user);
+      if (force) {
+        await rosetta.clear();
+      }
+      return rosetta;
     }
     default:
       throw new Error(`Unexpected type: ${type}`);
@@ -59,6 +80,30 @@ const getMapper = (type: string): ((values: string[]) => TEntity) => {
           fontSize: isNaN(Number(fontSize)) ? undefined : Number(fontSize),
           dir,
         }))[0];
+    case 'rosetta':
+      return (values): RosettaPartEntity =>
+        values.map(
+          ([
+            concordance,
+            image,
+            analysis,
+            transliteration,
+            gloss,
+            lGloss,
+            word,
+            translation,
+          ]) => ({
+            concordance,
+            image,
+            analysis,
+            transliteration,
+            gloss,
+            lGlossWn: parseLGross(lGloss)[0],
+            lGloss: parseLGross(lGloss)[1],
+            word,
+            translation,
+          }),
+        )[0];
     default:
       return (values) => {
         if (values.length > 1) {
@@ -78,7 +123,9 @@ export const fillTableFromFile = async (
   const reader = await iterateDictionaryReader<[string, string | string[]]>(
     fs.createReadStream(fullFileName, { autoClose: true }).pipe(parse()),
   );
-  const table = await openTable(db, reader.info);
+
+  // todo: add force parameter
+  const table = await openTable(db, true, reader.info);
   await DbUtils.update(table, reader.iterator, {
     mapper: getMapper(reader.info.type),
     batchThreshold,

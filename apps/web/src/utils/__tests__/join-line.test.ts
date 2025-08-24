@@ -5,7 +5,7 @@ describe('joinLine', () => {
     expect(
       joinLine({
         codes: '',
-        delimiters: [],
+        delimiters: [''],
         hieroKeys: [],
         hieroes: [],
       }),

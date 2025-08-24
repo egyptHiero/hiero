@@ -77,3 +77,25 @@ export type TranslationNewDto = {
 };
 
 export type TranslationDto = TranslationNewDto & Identifiable;
+
+// Rosetta -----------------------------------------------------------------
+export interface RosettaPartQuery extends QueryFilterDto {
+  blankOnly?: boolean;
+}
+
+export interface RosettaPartDto extends Identifiable {
+  concordance?: string;
+  image: string;
+  analysis: string;
+  transliteration: string;
+  gloss: string;
+  lGloss?: string;
+  lGlossWn?: string;
+  word: string;
+  translation?: string;
+  gardinerCodes?: string;
+}
+
+export interface RosettaPartCodesDto {
+  codes?: string;
+}

@@ -1,13 +1,12 @@
 import React from 'react';
-import { useDebounce } from 'use-debounce';
+import { useSearchParams } from 'react-router-dom';
 
 type CustomControlNames = 'search';
 
 interface IAppContext {
   isSidebarVisible: boolean;
   setSidebarVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  query?: string;
-  setQuery: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setCustomControlsData: (key: string, value: string | undefined) => void;
   customControls?: React.ReactNode;
   customControlNames?: Set<CustomControlNames>;
   setCustomControls: (
@@ -36,11 +35,17 @@ export const AppContextProvider: React.FC<IAppContextProvider> = ({
   children,
 }) => {
   const [isSidebarVisible, setSidebarVisible] = React.useState(true);
-  const [query, setQuery] = React.useState<string>();
-  const [debouncedQuery] = useDebounce(query, 300);
   const [customControls, setCustomControls] = React.useState<React.ReactNode>();
   const [customControlNames, setCustomControlNames] =
     React.useState<Set<CustomControlNames>>();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const setCustomControlsData = React.useCallback(
+    (key: string, value?: string) => {
+      value ? searchParams.set(key, value) : searchParams.delete(key);
+      setSearchParams(searchParams);
+    },
+    [searchParams, setSearchParams],
+  );
 
   const setCustomControlsWithNames = React.useCallback<
     IAppContext['setCustomControls']
@@ -53,17 +58,16 @@ export const AppContextProvider: React.FC<IAppContextProvider> = ({
     () => ({
       isSidebarVisible,
       setSidebarVisible,
-      query: debouncedQuery,
-      setQuery,
+      setCustomControlsData,
       customControls,
       customControlNames,
       setCustomControls: setCustomControlsWithNames,
     }),
     [
+      isSidebarVisible,
+      setCustomControlsData,
       customControls,
       customControlNames,
-      debouncedQuery,
-      isSidebarVisible,
       setCustomControlsWithNames,
     ],
   );

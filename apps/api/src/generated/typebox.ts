@@ -107,3 +107,33 @@ export const TranslationNewDto = Type.Object({
 
 export type TranslationDto = Static<typeof TranslationDto>;
 export const TranslationDto = Type.Intersect([TranslationNewDto, Identifiable]);
+
+export type RosettaPartQuery = Static<typeof RosettaPartQuery>;
+export const RosettaPartQuery = Type.Composite([
+  QueryFilterDto,
+  Type.Object({
+    blankOnly: Type.Optional(Type.Boolean()),
+  }),
+]);
+
+export type RosettaPartDto = Static<typeof RosettaPartDto>;
+export const RosettaPartDto = Type.Composite([
+  Identifiable,
+  Type.Object({
+    concordance: Type.Optional(Type.String()),
+    image: Type.String(),
+    analysis: Type.String(),
+    transliteration: Type.String(),
+    gloss: Type.String(),
+    lGloss: Type.Optional(Type.String()),
+    lGlossWn: Type.Optional(Type.String()),
+    word: Type.String(),
+    translation: Type.Optional(Type.String()),
+    gardinerCodes: Type.Optional(Type.String()),
+  }),
+]);
+
+export type RosettaPartCodesDto = Static<typeof RosettaPartCodesDto>;
+export const RosettaPartCodesDto = Type.Object({
+  codes: Type.Optional(Type.String()),
+});

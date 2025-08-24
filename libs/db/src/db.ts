@@ -10,6 +10,7 @@ import { DB, DbTable, TDbFormat } from './types';
 import {
   DictionaryInfoEntity,
   DictionaryItemEntity,
+  RosettaPartEntity,
   SignEntity,
 } from './entities';
 import { DbUtils } from './db-utils';
@@ -69,6 +70,11 @@ export const createDbInstance = async (): Promise<DB> => {
 
   const signs = db.sublevel<string, SignEntity>('signs', sublevelOptions);
 
+  const rosetta = db.sublevel<string, RosettaPartEntity>(
+    'rosetta',
+    sublevelOptions,
+  );
+
   const translations = db.sublevel<string, SignEntity>(
     'translations',
     sublevelOptions,
@@ -104,6 +110,7 @@ export const createDbInstance = async (): Promise<DB> => {
     getSigns: (user = PUBLIC) => signs.sublevel(user, sublevelOptions),
     getTranslations: (user = PUBLIC) =>
       translations.sublevel(user, sublevelOptions),
+    getRosetta: (user = PUBLIC) => rosetta.sublevel(user, sublevelOptions),
     getDictionaryInfo,
     getDictionary,
     createDictionary: async (info, user, options = {}) => {

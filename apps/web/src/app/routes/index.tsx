@@ -5,5 +5,7 @@ export const ROUTES = {
   TRANSLATION_LIST: '/translation',
   DICTIONARY: '/dictionary/:name',
   DICTIONARY_LIST: '/dictionary',
+  ROSETTA_LIST: '/rosetta',
+  ROSETTA_PART: '/rosetta/:id',
   ABOUT: '/about',
 } as const;
