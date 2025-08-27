@@ -1,5 +1,6 @@
 import { WritableStream } from 'htmlparser2/WritableStream';
 import { PassThrough } from 'stream';
+import codes from './codes';
 
 type TStep = 'done' | 'parsing' | 'start';
 
@@ -75,8 +76,10 @@ export const createHtmlParserStream = (passThrough: PassThrough) => {
         }, []);
 
         if (line[0]) {
+          const id = line[0].join('');
+          line?.push(codes[id] ? [codes[id]] : undefined);
           passThrough.push([
-            line[0].join(''),
+            id,
             line.slice(1).map((items, index) => {
               if (index == 4) {
                 return items;

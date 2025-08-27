@@ -133,7 +133,7 @@ export const RosettaPartDto = Type.Composite([
   }),
 ]);
 
-export type RosettaPartCodesDto = Static<typeof RosettaPartCodesDto>;
-export const RosettaPartCodesDto = Type.Object({
+export type RosettaPartCodesBody = Static<typeof RosettaPartCodesBody>;
+export const RosettaPartCodesBody = Type.Object({
   codes: Type.Optional(Type.String()),
 });

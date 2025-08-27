@@ -1,6 +1,6 @@
 import {
   ParamIdFilterDto as ParamIdFilterSchema,
-  RosettaPartCodesDto as RosettaPartCodesDtoSchema,
+  RosettaPartCodesBody as RosettaPartCodesDtoSchema,
   RosettaPartDto as RosettaPartDtoSchema,
 } from '../../generated/typebox';
 import { toRosettaPartDto } from '../../dto';

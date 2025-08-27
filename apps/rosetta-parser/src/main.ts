@@ -1,9 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { NDJSON_DIR, RESOURCES_DIR } from '@hiero/common';
-import { pipeline, PassThrough } from 'stream';
+import { PassThrough, pipeline } from 'stream';
 import { stringify } from 'ndjson';
 import { createHtmlParserStream } from './html-parser';
+
+// todo: enhance logging
 
 const parseRosetta = () => {
   const inputFileName = path.join(

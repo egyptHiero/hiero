@@ -48,7 +48,7 @@ export const Navbar: React.FC = () => {
           </CHeaderToggler>
           <CNavbarBrand>Egypt Hieroes</CNavbarBrand>
         </div>
-        <div className="d-flex">
+        <div className="d-flex align-items-center">
           {showSearch && (
             <CFormInput
               type="search"

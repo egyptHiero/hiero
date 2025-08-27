@@ -92,6 +92,8 @@ const getMapper = (type: string): ((values: string[]) => TEntity) => {
             lGloss,
             word,
             translation,
+            ,
+            gardinerCodes,
           ]) => ({
             concordance,
             image,
@@ -102,6 +104,7 @@ const getMapper = (type: string): ((values: string[]) => TEntity) => {
             lGloss: parseLGross(lGloss)[1],
             word,
             translation,
+            gardinerCodes,
           }),
         )[0];
     default:

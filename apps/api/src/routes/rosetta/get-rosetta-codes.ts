@@ -1,6 +1,4 @@
-import { toPageDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
-import { PageDto as PageDtoSchema } from '../../generated/typebox';
 import { DbUtils } from '@hiero/db';
 import { Type } from '@sinclair/typebox';
 
@@ -13,19 +11,22 @@ export const getRosettaCodes = (fastify: FastifyTypeBox) =>
         tags: ['rosetta'],
         summary: 'get rosetta codes',
         response: {
-          200: PageDtoSchema(Type.Array(Type.String())),
+          200: Type.Record(Type.String(), Type.String()),
         },
       },
     },
     async function () {
-      return toPageDto(
-        await DbUtils.getPage(fastify.db.getRosetta(), {
-          pageSize: -1,
-          mapper: (key, value) => [key, value.gardinerCodes || ''],
-          filter: (_key, value) => {
-            return !!value.gardinerCodes;
-          },
-        }),
-      );
+      const page = await DbUtils.getPage(fastify.db.getRosetta(), {
+        pageSize: -1,
+        mapper: (key, value) => [key, value.gardinerCodes || ''],
+        filter: (_key, value) => {
+          return !!value.gardinerCodes;
+        },
+      });
+
+      return page.items.reduce((acc, [key, value]) => {
+        acc[key] = value;
+        return acc;
+      }, {});
     },
   );
