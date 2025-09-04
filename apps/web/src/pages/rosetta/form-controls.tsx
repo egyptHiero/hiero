@@ -16,14 +16,29 @@ export const RosettaPartFormControls: React.FC = () => {
       <StyledCCol md={6}>
         <CFormInput
           {...register('id', { required: true })}
-          label={t('sign.name')}
+          label={t('rosetta.parts.name')}
+          readOnly
         />
       </StyledCCol>
       <StyledCCol xs={6}>
         <CFormTextarea
           rows={4}
-          {...register('gardinerCodes', { required: true })}
-          label={t('sign.gardinerCodes')}
+          {...register('gardinerCodes')}
+          label={t('rosetta.parts.gardinerCodes')}
+        />
+      </StyledCCol>
+      <StyledCCol xs={2}>
+        <CFormInput
+          readOnly
+          {...register('transliteration')}
+          label={t('rosetta.parts.transliteration')}
+        />
+      </StyledCCol>
+      <StyledCCol xs={2}>
+        <CFormInput
+          readOnly
+          {...register('translation')}
+          label={t('rosetta.parts.translation')}
         />
       </StyledCCol>
       <CRow>

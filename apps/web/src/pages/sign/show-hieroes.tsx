@@ -8,6 +8,7 @@ import { TDir } from '../../types';
 import { Property } from 'csstype';
 import { useSignContext } from './context';
 import classNames from 'classnames';
+import JSON5 from 'json5';
 
 function getFlowDirection(dir?: TDir): Property.FlexDirection {
   switch (dir) {
@@ -58,6 +59,18 @@ export const ShowHieroes: React.FC = () => {
   const dir = watch('dir') as TDir | undefined;
   const fontSize = watch('fontSize') || 40;
   const image = watch('image');
+  const cssText = watch('imageCss');
+  const DynamicStyledDiv = React.useMemo(() => {
+    if (cssText) {
+      try {
+        return styled.div(JSON5.parse(cssText));
+      } catch (e) {
+        console.log('error', e);
+      }
+    }
+
+    return styled.div();
+  }, [cssText]);
 
   const handleClick = (lineIndex: number, hieroIndex: number) => {
     setCurrent([lineIndex, hieroIndex]);
@@ -65,15 +78,19 @@ export const ShowHieroes: React.FC = () => {
   };
 
   return (
-    <CContainer fluid className="d-flex">
-      <div className="text-end">
-        <CImage
-          src={image}
-          className={classNames({ 'd-none': !isImageLoaded })}
-          onLoad={() => setImageIsLoaded(true)}
-          onError={() => setImageIsLoaded(false)}
-        />
-      </div>
+    <CContainer fluid className="d-flex flex-column">
+      <DynamicStyledDiv>
+        {image?.split('\n').map((img, index) => (
+          <div key={`${img}_${index}`}>
+            <CImage
+              src={img}
+              className={classNames({ 'd-none': !isImageLoaded })}
+              onLoad={() => setImageIsLoaded(true)}
+              onError={() => setImageIsLoaded(false)}
+            />
+          </div>
+        ))}
+      </DynamicStyledDiv>
 
       <div className={classNames('text-start', { 'd-none': !lines })}>
         <StyledHieroContainer $dir={dir}>

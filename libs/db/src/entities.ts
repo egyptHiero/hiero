@@ -15,7 +15,7 @@ export type DictionaryItemEntity = Array<{
 export interface SignEntity {
   name: string;
   image?: string;
-  imageSize?: string;
+  imageCss?: string;
   gardinerCodes: string;
   description?: string;
   fontSize?: number;
@@ -31,14 +31,10 @@ export interface TranslationEntity {
 }
 
 export interface RosettaPartEntity {
-  concordance?: string;
+  part?: string;
   image: string;
-  analysis: string;
   transliteration: string;
-  gloss: string;
-  lGloss?: string;
-  lGlossWn?: string;
-  word: string;
   translation?: string;
+  partTranslation?: string;
   gardinerCodes?: string;
 }

@@ -20,10 +20,6 @@ export const dbPromise = createDbInstance();
 type TInfo = Awaited<ReturnType<typeof iterateDictionaryReader>>['info'];
 type TEntity = DictionaryItemEntity | SignEntity | RosettaPartEntity | string;
 
-const parseLGross = (value) => {
-  return Array.isArray(value) ? value : [];
-};
-
 const openTable: (
   db: DB,
   force: boolean,
@@ -84,26 +80,18 @@ const getMapper = (type: string): ((values: string[]) => TEntity) => {
       return (values): RosettaPartEntity =>
         values.map(
           ([
-            concordance,
+            part,
             image,
-            analysis,
             transliteration,
-            gloss,
-            lGloss,
-            word,
             translation,
-            ,
+            partTranslation,
             gardinerCodes,
           ]) => ({
-            concordance,
+            part,
             image,
-            analysis,
             transliteration,
-            gloss,
-            lGlossWn: parseLGross(lGloss)[0],
-            lGloss: parseLGross(lGloss)[1],
-            word,
             translation,
+            partTranslation,
             gardinerCodes,
           }),
         )[0];

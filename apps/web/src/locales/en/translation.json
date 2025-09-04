@@ -91,8 +91,14 @@
       "hieroes": "Hieroes",
       "id": "Part No.",
       "image": "Image",
-      "transliteration": "Transliteration",
-      "word": "Translation"
+      "translation": "Translation",
+      "transliteration": "Transliteration"
+    },
+    "parts": {
+      "gardinerCodes": "",
+      "name": "",
+      "translation": "Translation",
+      "transliteration": "Transliteration"
     },
     "topbar": {
       "blankOnly": "Blank only"
@@ -109,9 +115,10 @@
     "confirm": {
       "delete": "Are you really going to delete the sign?"
     },
+    "css": "CSS",
     "description": "Description",
     "gardinerCodes": "Gardiner codes",
-    "image": "Image link",
+    "image": "Image links",
     "name": "Name"
   },
   "translation": {

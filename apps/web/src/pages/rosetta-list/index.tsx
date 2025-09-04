@@ -36,8 +36,8 @@ export const RosettaPage: React.FC = () => {
           return t(`rosetta.columns.hieroes`);
         case 'gardinerCodes':
           return t(`rosetta.columns.codes`);
-        case 'word':
-          return t(`rosetta.columns.word`);
+        case 'translation':
+          return t(`rosetta.columns.translation`);
         case 'transliteration':
           return t(`rosetta.columns.transliteration`);
       }

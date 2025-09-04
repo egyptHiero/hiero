@@ -1,46 +1,55 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { NDJSON_DIR, RESOURCES_DIR } from '@hiero/common';
-import { PassThrough, pipeline } from 'stream';
+import { consoleProgress, RESOURCES_DIR } from '@hiero/common';
+import { pipeline } from 'node:stream/promises';
+import { PassThrough } from 'stream';
+import { createPartsWriter } from './transformers/parts-writer';
 import { stringify } from 'ndjson';
-import { createHtmlParserStream } from './html-parser';
+import { createDictionaryWriter } from './transformers/dictionary-writer';
+import { HtmlParser } from './transformers/html-parser';
+import { EntityTransformer } from './transformers/entity-transformer';
+import { PartsTransformer } from './transformers/parts-transformer';
+import { DictionaryTransformer } from './transformers/dictionary-transformer';
 
-// todo: enhance logging
-
-const parseRosetta = () => {
+const parseRosetta = async () => {
   const inputFileName = path.join(
     RESOURCES_DIR,
     'rosetta',
     'Whole text with IDs _ The Rosetta Stone online.html',
   );
 
-  const outputFileName = path.join(NDJSON_DIR, 'rosetta.ndjson');
+  const passthroughStream = new PassThrough({ objectMode: true });
 
-  const passThrough = new PassThrough({ objectMode: true });
-  passThrough.push({
-    name: 'rosetta',
-    type: 'rosetta',
-    language: 'en',
-  });
+  consoleProgress[inputFileName].progress(`reading file "${inputFileName}"`);
 
   pipeline(
     fs.createReadStream(inputFileName),
-    createHtmlParserStream(passThrough),
-    (err) => {
-      if (err) console.error('Parsing error:', err);
-    },
+    new HtmlParser(),
+    new EntityTransformer(),
+    passthroughStream,
   );
 
-  pipeline(
-    passThrough,
-    stringify(),
-    fs.createWriteStream(outputFileName, {
-      autoClose: true,
-    }),
-    (err) => {
-      if (err) console.error(`Error saving ${outputFileName}:`, err);
-    },
-  );
+  try {
+    await Promise.all([
+      pipeline(
+        passthroughStream,
+        new PartsTransformer(),
+        stringify(),
+        createPartsWriter(),
+      ),
+      pipeline(
+        passthroughStream,
+        new DictionaryTransformer(),
+        stringify(),
+        createDictionaryWriter(),
+      ),
+    ]);
+    consoleProgress[inputFileName].success(
+      `file "${inputFileName}" was successfully parsed`,
+    );
+  } catch (e) {
+    consoleProgress[inputFileName].error(`pipeline error ${e}`);
+  }
 };
 
 void parseRosetta();

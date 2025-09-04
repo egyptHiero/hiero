@@ -1,6 +1,6 @@
 import {
-  DictionaryChainsParams as DictionaryChainsParamsSchema,
   DictionaryChainsDto as DictionaryChainsDtoSchema,
+  DictionaryChainsParams as DictionaryChainsParamsSchema,
 } from '../../generated/typebox';
 import { FastifyTypeBox } from '../../types';
 import { findChains } from '../../logics/chains';

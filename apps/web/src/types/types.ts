@@ -59,6 +59,7 @@ export interface DictionaryChainsDto {
 export type SignNewDto = {
   name: string;
   image?: string;
+  imageCss?: string;
   gardinerCodes: string;
   description?: string;
   fontSize?: number;
@@ -84,15 +85,11 @@ export interface RosettaPartQuery extends QueryFilterDto {
 }
 
 export interface RosettaPartDto extends Identifiable {
-  concordance?: string;
+  part?: string;
   image: string;
-  analysis: string;
   transliteration: string;
-  gloss: string;
-  lGloss?: string;
-  lGlossWn?: string;
-  word: string;
   translation?: string;
+  partTranslation?: string;
   gardinerCodes?: string;
 }
 

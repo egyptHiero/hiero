@@ -1,5 +1,14 @@
 import * as React from 'react';
-import { CCol, CFormInput, CFormTextarea } from '@coreui/react';
+import {
+  CCol,
+  CFormInput,
+  CFormTextarea,
+  CTab,
+  CTabContent,
+  CTabList,
+  CTabPanel,
+  CTabs,
+} from '@coreui/react';
 import { Dir } from './dir';
 import { FontSize } from './font-size';
 import { ShowHieroes } from './show-hieroes';
@@ -7,6 +16,8 @@ import { useTranslation } from 'react-i18next';
 import { useFormContext } from 'react-hook-form';
 import { SignDto } from '../../types/types';
 import { useSignContext } from './context';
+
+type TImagesTab = 'image' | 'css';
 
 export const SignFormControls: React.FC = () => {
   const { t } = useTranslation();
@@ -16,6 +27,8 @@ export const SignFormControls: React.FC = () => {
   const gardinerCodesRegistration = register('gardinerCodes', {
     required: true,
   });
+  const [activeImagesTab, setActiveImagesTab] =
+    React.useState<TImagesTab>('image');
 
   React.useEffect(() => {
     if (current) {
@@ -48,7 +61,27 @@ export const SignFormControls: React.FC = () => {
         />
       </CCol>
       <CCol xs={6}>
-        <CFormInput {...register('image')} label={t('sign.image')} required />
+        <CTabs
+          className="w-100"
+          defaultActiveItemKey={activeImagesTab}
+          onChange={(tab) => setActiveImagesTab(tab as TImagesTab)}
+        >
+          <CTabList
+            variant="enclosed-pills"
+            className="d-flex justify-content-between"
+          >
+            <CTab itemKey="image">{t('sign.image')}</CTab>
+            <CTab itemKey="css">{t('sign.css')}</CTab>
+          </CTabList>
+          <CTabContent className="my-2">
+            <CTabPanel itemKey="image">
+              <CFormTextarea {...register('image')} required />
+            </CTabPanel>
+            <CTabPanel itemKey="css">
+              <CFormTextarea {...register('imageCss')} required />
+            </CTabPanel>
+          </CTabContent>
+        </CTabs>
       </CCol>
       <CCol xs={6}>
         <CFormTextarea

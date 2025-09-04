@@ -87,6 +87,7 @@ export type SignNewDto = Static<typeof SignNewDto>;
 export const SignNewDto = Type.Object({
   name: Type.String(),
   image: Type.Optional(Type.String()),
+  imageCss: Type.Optional(Type.String()),
   gardinerCodes: Type.String(),
   description: Type.Optional(Type.String()),
   fontSize: Type.Optional(Type.Number()),
@@ -120,15 +121,11 @@ export type RosettaPartDto = Static<typeof RosettaPartDto>;
 export const RosettaPartDto = Type.Composite([
   Identifiable,
   Type.Object({
-    concordance: Type.Optional(Type.String()),
+    part: Type.Optional(Type.String()),
     image: Type.String(),
-    analysis: Type.String(),
     transliteration: Type.String(),
-    gloss: Type.String(),
-    lGloss: Type.Optional(Type.String()),
-    lGlossWn: Type.Optional(Type.String()),
-    word: Type.String(),
     translation: Type.Optional(Type.String()),
+    partTranslation: Type.Optional(Type.String()),
     gardinerCodes: Type.Optional(Type.String()),
   }),
 ]);

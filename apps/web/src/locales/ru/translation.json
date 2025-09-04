@@ -91,8 +91,14 @@
       "hieroes": "Иероглифы",
       "id": "Часть",
       "image": "Рисунок",
-      "transliteration": "Транслитерация",
-      "word": "Перевод"
+      "translation": "Перевод",
+      "transliteration": "Транслитерация"
+    },
+    "parts": {
+      "gardinerCodes": "",
+      "name": "",
+      "translation": "Перевод",
+      "transliteration": "Транслитерация"
     },
     "topbar": {
       "blankOnly": "Без перевода"
@@ -107,11 +113,12 @@
       "name": "Название"
     },
     "confirm": {
-      "delete": "Вы действительно хотите удалить данныю табличку?"
+      "delete": "Вы действительно хотите удалить данную табличку?"
     },
+    "css": "CSS",
     "description": "Описание",
     "gardinerCodes": "Классификация Гардинера",
-    "image": "Ссылка на изображение",
+    "image": "Ссылки на изображения",
     "name": "Название"
   },
   "translation": {

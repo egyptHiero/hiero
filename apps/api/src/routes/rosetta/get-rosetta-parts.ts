@@ -36,7 +36,13 @@ export const getRosettaParts = (fastify: FastifyTypeBox) =>
             } else if (blankOnly === false && !value.gardinerCodes) {
               return false;
             }
-            return searchIn(query, key, value.word, value.transliteration);
+            return searchIn(
+              query,
+              key,
+              value.translation,
+              value.transliteration,
+              value.gardinerCodes,
+            );
           },
         }),
       );

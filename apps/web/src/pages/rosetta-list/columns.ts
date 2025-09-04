@@ -4,7 +4,7 @@ export const columnNames: Partial<ColumnNames>[] = [
   'id',
   'image',
   'hieroes',
-  'word',
+  'translation',
   'gardinerCodes',
   'transliteration',
 ];
