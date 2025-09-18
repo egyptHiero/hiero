@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useFormContext } from 'react-hook-form';
-import { TranslationVO } from './types';
-import { useGetChains } from './hooks';
-import { TranslationTabHieroesLine } from './tab-hieroes-line';
+import { TranslationVO } from '../types';
+import { useGetChains } from '../hooks';
+import { TranslationTabHieroesLine } from '../ui/tab-hieroes-line';
 import { CNav, CNavItem, CNavLink, CTabContent, CTabPane } from '@coreui/react';
-import { splitIntoLines } from '../../utils';
+import { splitIntoLines } from '../../../utils';
 
 export const TranslationTabHieroes: React.FC = () => {
   const { watch } = useFormContext<TranslationVO>();
@@ -14,8 +14,15 @@ export const TranslationTabHieroes: React.FC = () => {
     [gardinerCodes],
   );
 
+  const [dictionaries] = React.useState([
+    'hieroglyphs',
+    'ancient',
+    'rosetta',
+    'vygus',
+  ]);
+
   const chainsResponse = useGetChains(
-    ['ancient', 'vygus'],
+    dictionaries,
     lines?.map(({ hieroes }) => hieroes),
   );
   const chains = React.useMemo(
@@ -45,8 +52,9 @@ export const TranslationTabHieroes: React.FC = () => {
           <CTabPane key={index} role="tabpanel" visible={activeTab === index}>
             <TranslationTabHieroesLine
               chains={chains}
+              dictionaries={dictionaries}
               line={line}
-              lineIndex={index}
+              lineIndex={index + 1}
             />
           </CTabPane>
         ))}

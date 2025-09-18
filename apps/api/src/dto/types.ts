@@ -41,7 +41,8 @@ export interface DictionaryInfoDto extends Identifiable {
 }
 
 export interface DictionaryItemDto extends Identifiable {
-  i: Array<[string, string, string] | [string, string] | [string]>;
+  text: string[];
+  transcription?: string[];
 }
 
 export interface DictionaryChainsParams {
@@ -50,7 +51,7 @@ export interface DictionaryChainsParams {
 }
 
 export interface DictionaryChainsDto {
-  chains: Record<string, Record<string, DictionaryItemDto['i']>>;
+  chains: Record<string, Record<string, Omit<DictionaryItemDto, 'id'>>>;
   warnings?: Record<string, string>;
 }
 

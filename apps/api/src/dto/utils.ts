@@ -28,18 +28,13 @@ export const toDictionaryInfoDto = (
 
 export const toDictionaryItemDto = (
   id?: string,
-  entity: DictionaryItemEntity = [],
+  entity?: DictionaryItemEntity,
 ): DictionaryItemDto | undefined => {
-  return id
+  return id && entity
     ? {
         id,
-        i: entity.reduce<Array<[string, string, string]>>(
-          (acc, { interpretation, description, transcription }) => {
-            acc.push([interpretation, description ?? '', transcription ?? '']);
-            return acc;
-          },
-          [],
-        ),
+        text: entity.text ?? [],
+        transcription: entity.transcription ?? [],
       }
     : undefined;
 };

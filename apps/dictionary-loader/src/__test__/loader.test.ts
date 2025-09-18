@@ -40,7 +40,7 @@ describe('loader', () => {
       getData.mockReturnValue([
         '{"name":"test1", "type": "dictionary", "language":"en" }',
         '["A1",["a1-interpretation"]]',
-        '["A2",["a2-interpretation-1", "a2-description-1"],["a2-interpretation-2", "a2-description-2"]]',
+        '["A2",["a2-interpretation-1", "a2-description-1", "a2-transcription-1"],["a2-interpretation-2", "a2-description-2"]]',
       ]);
       await fillTableFromFile('dummy');
       const db = await dbPromise;
@@ -55,23 +55,19 @@ describe('loader', () => {
       ).toStrictEqual(
         asPage([
           {
-            A1: [
-              {
-                interpretation: 'a1-interpretation',
-              },
-            ],
+            A1: {
+              text: ['a1-interpretation|'],
+              transcription: [],
+            },
           },
           {
-            A2: [
-              {
-                interpretation: 'a2-interpretation-1',
-                description: 'a2-description-1',
-              },
-              {
-                interpretation: 'a2-interpretation-2',
-                description: 'a2-description-2',
-              },
-            ],
+            A2: {
+              text: [
+                'a2-interpretation-1|a2-description-1',
+                'a2-interpretation-2|a2-description-2',
+              ],
+              transcription: ['a2-transcription-1'],
+            },
           },
         ]),
       );

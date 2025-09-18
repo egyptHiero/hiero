@@ -2,8 +2,8 @@ import * as React from 'react';
 import { CFormInput, CFormTextarea, CRow } from '@coreui/react';
 import { useTranslation } from 'react-i18next';
 import { useFormContext } from 'react-hook-form';
-import { TranslationVO } from './types';
-import { StyledCCol } from '../../components/styled';
+import { TranslationVO } from '../types';
+import { StyledCCol } from '../../../components/styled';
 
 export const TranslationTabData: React.FC = () => {
   const { t } = useTranslation();

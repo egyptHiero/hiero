@@ -3,6 +3,7 @@ import { PDFExtractText } from 'pdf.js-extract';
 import { PdfParseTableProcessor } from './pdf-table-processor';
 import { DictionaryItem } from '../types';
 import { DictionaryMetadata } from '@hiero/common';
+import { normalizeHieroes } from '@hiero/db';
 
 const transliterationMap: Record<string, string> = {
   A: 'ꜣ',
@@ -66,7 +67,7 @@ class DictionaryProcessor extends PdfParseTableProcessor<DictionaryItem> {
       .join('');
     if (hieroName) {
       return [
-        hieroName,
+        normalizeHieroes(hieroName),
         [
           this._getItemsByColumn(buffer, 3)
             .map(({ str }) => str)

@@ -1,6 +1,6 @@
 import { asyncIterator, iterateDictionaryReader } from '../index';
 import { parse } from 'ndjson';
-import type { Transform } from 'stream';
+import type { Transform } from 'node:stream';
 
 const createNdjsonStream = (data: unknown[]): Transform => {
   const parser = parse();

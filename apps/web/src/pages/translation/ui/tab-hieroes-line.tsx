@@ -1,15 +1,18 @@
 import * as React from 'react';
 import { ChangeEventHandler } from 'react';
-import { getChainTable, getMaxChainColumnsCount } from './logic/chain-table';
+import { getChainTable, getMaxChainColumnsCount } from '../logic/chain-table';
 import { ChainButton } from './chain-button';
-import { StyledTranslationsGrid } from './styled';
+import {
+  StyledTranslationsGrid,
+  StyledTranslationsGridHeader,
+} from '../styled';
 import { InterpretationBlock } from './interpretation-block';
-import { DictionaryChainsDto } from '../../types/types';
+import { DictionaryChainsDto } from '../../../types/types';
 import { CFormTextarea } from '@coreui/react';
-import { TLine } from '../sign/types';
+import { TLine } from '../../sign/types';
 import { useFormContext } from 'react-hook-form';
-import { TranslationJsonLine, TranslationVO } from './types';
-import { getFromArray, parseJson, updateArray } from './logic/array';
+import { TranslationJsonLine, TranslationVO } from '../types';
+import { getFromArray, parseJson, updateArray } from '../logic/array';
 
 type UpdateSelectedFn = (
   value: TranslationJsonLine['selected'],
@@ -17,13 +20,19 @@ type UpdateSelectedFn = (
 
 interface TranslationTabHieroesLineProps {
   chains: DictionaryChainsDto['chains'];
+  dictionaries: string[];
   line: TLine;
   lineIndex: number;
 }
 
 export const TranslationTabHieroesLine: React.FC<
   TranslationTabHieroesLineProps
-> = ({ chains, line, lineIndex }: TranslationTabHieroesLineProps) => {
+> = ({
+  chains,
+  dictionaries,
+  line,
+  lineIndex,
+}: TranslationTabHieroesLineProps) => {
   const chainTable = React.useMemo(
     () => getChainTable(line, chains),
     [chains, line],
@@ -107,42 +116,60 @@ export const TranslationTabHieroesLine: React.FC<
     return null;
   }
 
+  const rowShift = 1;
+
   return (
-    <StyledTranslationsGrid $size={chainColumnsCount}>
+    <StyledTranslationsGrid
+      $hieroesCount={chainColumnsCount}
+      $dictionariesCount={dictionaries.length}
+    >
+      {dictionaries.map((dictionary, dictionaryIndex) => (
+        <StyledTranslationsGridHeader
+          key={dictionary}
+          $position={chainColumnsCount + 2 + dictionaryIndex}
+        >
+          {dictionary}
+        </StyledTranslationsGridHeader>
+      ))}
       {line?.hieroes?.flatMap((hiero, index) =>
         chainTable[index]?.map((chain, chainIndex) => (
           <ChainButton
             chain={chain}
-            index={index}
+            index={index + rowShift}
             chainIndex={chainIndex}
             key={line?.hieroKeys[index] + '_' + chain}
             selected={isSelected(index, chainIndex)}
             translations={chains[chain.join('-')]}
+            rowShift={rowShift}
             onClick={handleClick}
           />
         )),
       )}
 
-      {selected.map((selectedLine, index) => {
+      {selected.map((selectedLine, selectedIndex) => {
         const n = selectedLine.indexOf(true);
-        const hiero = chainTable[index]?.[n];
+        const hiero = chainTable[selectedIndex]?.[n];
 
         return hiero && n >= 0 ? (
-          <InterpretationBlock
-            key={line?.hieroKeys[index] + '_' + n}
-            column={chainColumnsCount + 2}
-            row={index + 1}
-            size={hiero?.length}
-            translations={chains[hiero.join('-')]}
-          />
+          <>
+            {dictionaries.map((dictionary, dictionaryIndex) => (
+              <InterpretationBlock
+                key={line?.hieroKeys[selectedIndex] + '_' + dictionaryIndex}
+                column={chainColumnsCount + dictionaryIndex + 2}
+                row={selectedIndex + rowShift + 1}
+                size={hiero?.length}
+                item={chains[hiero.join('-')]?.[dictionary]}
+              />
+            ))}
+          </>
         ) : undefined;
       })}
 
       <CFormTextarea
         className="w-100 h-100"
         style={{
-          gridColumn: chainColumnsCount + 3,
-          gridRow: `1 / ${height} span`,
+          gridColumn: chainColumnsCount + dictionaries.length + 3,
+          gridRow: `${rowShift + 1} / ${height} span`,
           alignSelf: 'center',
           minWidth: '150px',
         }}

@@ -2,6 +2,7 @@ import { DebugConverter } from './debug-converter';
 import { PDFExtractText } from 'pdf.js-extract';
 import type { DictionaryItem, TPdfParseProcessor } from '../types';
 import { DictionaryMetadata } from '@hiero/common';
+import { normalizeHieroes } from '@hiero/db';
 
 abstract class VygusProcessor<T> implements TPdfParseProcessor<T> {
   isNewLine(chunk: PDFExtractText, buffer: PDFExtractText[]): boolean {
@@ -66,7 +67,7 @@ class DictionaryProcessor extends VygusProcessor<DictionaryItem> {
     const transcription = map['g_d0_f1']?.join(' ').trim();
 
     return hiero && interpretation
-      ? [hiero, [interpretation, description, transcription]]
+      ? [normalizeHieroes(hiero), [interpretation, description, transcription]]
       : undefined;
   }
 

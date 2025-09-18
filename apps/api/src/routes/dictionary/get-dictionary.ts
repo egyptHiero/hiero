@@ -38,11 +38,8 @@ export const getDictionary = (fastify: FastifyTypeBox) =>
             return searchIn(
               query,
               key,
-              ...value.flatMap((v) => [
-                v.description,
-                v.interpretation,
-                v.transcription,
-              ]),
+              value.text?.join(' '),
+              value.transcription?.join(' '),
             );
           },
         }),

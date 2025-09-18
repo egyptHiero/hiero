@@ -12,10 +12,10 @@ import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
 import { useSaveMutation } from './hooks';
 import { FormProvider, useForm } from 'react-hook-form';
-import { TranslationTabData } from './tab-data';
+import { TranslationTabData } from './tabs/tab-data';
 import { TranslationVO } from './types';
-import { TranslationButtons } from './buttons';
-import { TranslationTabHieroes } from './tab-hieroes';
+import { TranslationButtons } from './ui/buttons';
+import { TranslationTabHieroes } from './tabs/tab-hieroes';
 import { useTranslation } from 'react-i18next';
 
 interface IFormProps {
@@ -27,11 +27,7 @@ interface IFormProps {
 type Tabs = 'data' | 'sign' | 'hieroes';
 const tabs: Tabs[] = ['data', 'sign', 'hieroes'];
 
-export const TranslationForm: React.FC<IFormProps> = ({
-  translationId,
-  data,
-  signData,
-}) => {
+export const TranslationForm: React.FC<IFormProps> = ({ data, signData }) => {
   const navigate = useNavigate();
   const saveTranslation = useSaveMutation();
   const [activeTab, setActiveTab] = React.useState<Tabs>('data');
@@ -57,7 +53,7 @@ export const TranslationForm: React.FC<IFormProps> = ({
   });
 
   const onSubmit = (values: TranslationDto) => {
-    saveTranslation.mutateAsync(values, {
+    void saveTranslation.mutateAsync(values, {
       onSuccess: () => navigate(generatePath(ROUTES.TRANSLATION_LIST)),
     });
   };

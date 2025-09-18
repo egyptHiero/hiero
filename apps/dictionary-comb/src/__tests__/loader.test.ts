@@ -42,8 +42,6 @@ describe('combFile', () => {
 
     await combFile('test');
 
-    console.log(writeData);
-
     expect(writeData).toStrictEqual([
       '{"name":"hieroglyphs-description","type":"hieroglyphs","language":"en"}',
       '["A37","man in vessel"]',
@@ -60,8 +58,6 @@ describe('combFile', () => {
     ]);
 
     await combFile('test');
-
-    console.log(writeData);
 
     expect(writeData).toStrictEqual([
       '{"name":"hieroglyphs-description","type":"hieroglyphs","language":"en"}',
@@ -85,8 +81,6 @@ describe('combFile', () => {
     ]);
 
     await combFile('test');
-
-    console.log(writeData);
 
     expect(writeData).toStrictEqual([
       '{"name":"hieroglyphs-description","type":"hieroglyphs","language":"en"}',

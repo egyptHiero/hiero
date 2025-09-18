@@ -30,16 +30,16 @@ export const DictionaryPage: React.FC = () => {
 
   const mapper = (item: DictionaryItemDto): DictionaryItemVO => ({
     id: item.id,
-    text: item.i.map((v, i) => (
+    text: item.text.map((v, i) => (
       <div key={`${item.id}-${i}`}>
-        <StyledTranslation>{v[0]}</StyledTranslation>
-        <StyledDescription>{wrapWithBrackets(v[1])}</StyledDescription>
+        <StyledTranslation>{v}</StyledTranslation>
+        <StyledDescription>{wrapWithBrackets(v)}</StyledDescription>
       </div>
     )),
     hieroes: <Hiero text={item.id} fontSize={40} />,
-    transcription: item.i.map((v, i) => (
+    transcription: item.transcription?.map((v, i) => (
       <div key={`${item.id}-${i}`}>
-        <StyledTranscription>{transliterate(v[2])}</StyledTranscription>
+        <StyledTranscription>{transliterate(v)}</StyledTranscription>
       </div>
     )),
   });

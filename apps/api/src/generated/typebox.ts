@@ -58,13 +58,8 @@ export type DictionaryItemDto = Static<typeof DictionaryItemDto>;
 export const DictionaryItemDto = Type.Composite([
   Identifiable,
   Type.Object({
-    i: Type.Array(
-      Type.Union([
-        Type.Tuple([Type.String(), Type.String(), Type.String()]),
-        Type.Tuple([Type.String(), Type.String()]),
-        Type.Tuple([Type.String()]),
-      ])
-    ),
+    text: Type.Array(Type.String()),
+    transcription: Type.Optional(Type.Array(Type.String())),
   }),
 ]);
 
@@ -78,7 +73,7 @@ export type DictionaryChainsDto = Static<typeof DictionaryChainsDto>;
 export const DictionaryChainsDto = Type.Object({
   chains: Type.Record(
     Type.String(),
-    Type.Record(Type.String(), Type.Index(DictionaryItemDto, Type.Literal('i')))
+    Type.Record(Type.String(), Type.Omit(DictionaryItemDto, Type.Literal('id')))
   ),
   warnings: Type.Optional(Type.Record(Type.String(), Type.String())),
 });

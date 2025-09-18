@@ -51,6 +51,36 @@ class LetterClassificationProcessor extends PdfHieroglyphsTableProcessor<string>
   }
 }
 
+const exceptionsRegexp = new RegExp(
+  [
+    ' or ',
+    ' speaker ',
+    'also ',
+    'as above',
+    'bil.',
+    'bird',
+    'both',
+    'come',
+    'e.g.',
+    'esp. of ',
+    'goat',
+    'goddess',
+    'ian',
+    'life spirit',
+    'lit. ',
+    'location',
+    'masculine',
+    'of the',
+    'parenthetic',
+    'rarely used',
+    'see above',
+    'to be',
+    'unil.',
+  ]
+    .map((v) => v.replace(/\s/g, '\\s').replace('.', '\\.'))
+    .join('|'),
+);
+
 class DictionaryProcessor extends PdfHieroglyphsTableProcessor<DictionaryItem> {
   override convert(
     buffer: PDFExtractText[],
@@ -58,15 +88,25 @@ class DictionaryProcessor extends PdfHieroglyphsTableProcessor<DictionaryItem> {
     const hieroName = buffer[1]?.str;
 
     if (hieroName && buffer[0]?.fontName === 'g_d0_f3') {
+      const text = this._getItemsByColumn(buffer, 3)
+        .map(({ str }) => str)
+        .join(' ');
+
+      const match = text.match(/\([\\.\s\p{Ll},/]+\)/gu);
+      const transliteration = match
+        ?.flatMap((v) => v.split(/[,/]/))
+        .map((v) => v.replace(/[()\s]/g, '').trim())
+        .filter((v) => !v.match(exceptionsRegexp))
+        .join(', ');
+
       return [
         hieroName,
         [
-          this._getItemsByColumn(buffer, 3)
-            .map(({ str }) => str)
-            .join(' '),
+          text,
           this._getItemsByColumn(buffer, 5)
             .map(({ str }) => str)
             .join(' '),
+          transliteration,
         ],
       ];
     }
@@ -92,10 +132,11 @@ class DictionaryProcessor extends PdfHieroglyphsTableProcessor<DictionaryItem> {
 class HieroglyphsProcessor extends PdfHieroglyphsTableProcessor<string> {
   override convert(buffer: PDFExtractText[]): [string, string] | undefined {
     const hieroName = buffer[1]?.str;
-    const description = this._getItemsByColumn(buffer, 2)
-      .map(({ str }) => str)
-      .join(' ');
     if (hieroName && buffer[0]?.fontName === 'g_d0_f3') {
+      const description = this._getItemsByColumn(buffer, 2)
+        .map(({ str }) => str)
+        .join(' ');
+
       return [hieroName, description || '-'];
     }
 

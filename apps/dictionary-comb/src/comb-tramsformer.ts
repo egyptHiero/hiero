@@ -1,4 +1,4 @@
-import { Transform } from 'stream';
+import { Transform } from 'node:stream';
 
 const compare = (a: string[], b: string): number => {
   if (!a[0]) {
@@ -35,20 +35,18 @@ export class CombTransformer extends Transform {
       )
       .reduce((acc, value, n, arr) => {
         const stringifiedValue = JSON.stringify(value);
+        const previous = acc[acc.length - 1];
         if (JSON.stringify(arr[n - 1]) !== stringifiedValue) {
-          const previous = acc[acc.length - 1];
-          if (JSON.stringify(previous) !== stringifiedValue) {
-            if (Array.isArray(value) && Array.isArray(previous)) {
-              const [key, ...values] = value;
-              const [previousKey] = previous;
+          if (Array.isArray(value) && Array.isArray(previous)) {
+            const [key, ...values] = value;
+            const [previousKey] = previous;
 
-              if (key === previousKey) {
-                previous.push(...values);
-                return acc;
-              }
+            if (key === previousKey) {
+              previous.push(...values);
+              return acc;
             }
-            acc.push(value);
           }
+          acc.push(value);
         }
         return acc;
       }, [])

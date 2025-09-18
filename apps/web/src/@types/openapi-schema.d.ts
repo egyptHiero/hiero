@@ -42,16 +42,8 @@ export interface paths {
                         "application/json": {
                             items: {
                                 id: string;
-                                i: ([
-                                    string,
-                                    string,
-                                    string
-                                ] | [
-                                    string,
-                                    string
-                                ] | [
-                                    string
-                                ])[];
+                                text: string[];
+                                transcription?: string[];
                             }[];
                             next?: string;
                         };
@@ -216,16 +208,10 @@ export interface paths {
                         "application/json": {
                             chains: {
                                 [key: string]: {
-                                    [key: string]: ([
-                                        string,
-                                        string,
-                                        string
-                                    ] | [
-                                        string,
-                                        string
-                                    ] | [
-                                        string
-                                    ])[];
+                                    [key: string]: {
+                                        text: string[];
+                                        transcription?: string[];
+                                    };
                                 };
                             };
                             warnings?: {
@@ -279,6 +265,7 @@ export interface paths {
                             items: ({
                                 name: string;
                                 image?: string;
+                                imageCss?: string;
                                 gardinerCodes: string;
                                 description?: string;
                                 fontSize?: number;
@@ -309,6 +296,7 @@ export interface paths {
                     "application/json": {
                         name: string;
                         image?: string;
+                        imageCss?: string;
                         gardinerCodes: string;
                         description?: string;
                         fontSize?: number;
@@ -326,6 +314,7 @@ export interface paths {
                         "application/json": {
                             name: string;
                             image?: string;
+                            imageCss?: string;
                             gardinerCodes: string;
                             description?: string;
                             fontSize?: number;
@@ -374,6 +363,7 @@ export interface paths {
                         "application/json": {
                             name: string;
                             image?: string;
+                            imageCss?: string;
                             gardinerCodes: string;
                             description?: string;
                             fontSize?: number;
@@ -412,6 +402,7 @@ export interface paths {
                     "application/json": {
                         name: string;
                         image?: string;
+                        imageCss?: string;
                         gardinerCodes: string;
                         description?: string;
                         fontSize?: number;
@@ -429,6 +420,7 @@ export interface paths {
                         "application/json": {
                             name: string;
                             image?: string;
+                            imageCss?: string;
                             gardinerCodes: string;
                             description?: string;
                             fontSize?: number;
@@ -786,15 +778,11 @@ export interface paths {
                         "application/json": {
                             items: {
                                 id: string;
-                                concordance?: string;
+                                part?: string;
                                 image: string;
-                                analysis: string;
                                 transliteration: string;
-                                gloss: string;
-                                lGloss?: string;
-                                lGlossWn?: string;
-                                word: string;
                                 translation?: string;
+                                partTranslation?: string;
                                 gardinerCodes?: string;
                             }[];
                             next?: string;
@@ -841,15 +829,11 @@ export interface paths {
                     content: {
                         "application/json": {
                             id: string;
-                            concordance?: string;
+                            part?: string;
                             image: string;
-                            analysis: string;
                             transliteration: string;
-                            gloss: string;
-                            lGloss?: string;
-                            lGlossWn?: string;
-                            word: string;
                             translation?: string;
+                            partTranslation?: string;
                             gardinerCodes?: string;
                         };
                     };
@@ -900,8 +884,7 @@ export interface paths {
                     };
                     content: {
                         "application/json": {
-                            items: string[][];
-                            next?: string;
+                            [key: string]: string;
                         };
                     };
                 };
@@ -952,15 +935,11 @@ export interface paths {
                     content: {
                         "application/json": {
                             id: string;
-                            concordance?: string;
+                            part?: string;
                             image: string;
-                            analysis: string;
                             transliteration: string;
-                            gloss: string;
-                            lGloss?: string;
-                            lGlossWn?: string;
-                            word: string;
                             translation?: string;
+                            partTranslation?: string;
                             gardinerCodes?: string;
                         };
                     };

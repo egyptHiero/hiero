@@ -4,11 +4,13 @@ import {
   NDJSON_SORTED_DIR,
 } from '@hiero/common';
 import {
+  combineText,
   createDbInstance,
   DB,
   DbTable,
   DbUtils,
   DictionaryItemEntity,
+  joinDictionaryItems,
   RosettaPartEntity,
   SignEntity,
 } from '@hiero/db';
@@ -58,49 +60,70 @@ const openTable: (
   }
 };
 
-const getMapper = (type: string): ((values: string[]) => TEntity) => {
+const createMapper = (
+  type: string,
+): ((values: Array<string[] | string>) => TEntity) => {
   switch (type) {
     case 'dictionary':
-      return (values) =>
-        values.map(([interpretation, description, transcription]) => ({
-          interpretation,
-          description,
-          transcription,
-        }));
+      return (values: Array<string[]>) =>
+        values
+          .map(
+            ([interpretation, description, transcription]) =>
+              ({
+                text: [combineText(interpretation, description)],
+                transcription: transcription ? [transcription] : [],
+              }) as DictionaryItemEntity,
+          )
+          .reduce<DictionaryItemEntity>((acc, value) => {
+            if (!acc) {
+              return value;
+            }
+            return joinDictionaryItems(acc, value);
+          }, undefined);
     case 'signs':
-      return (values): SignEntity =>
-        values.map(([image, gardinerCodes, name, fontSize, dir]) => ({
+      return (values) => {
+        if (values.length > 1) {
+          throw 'Plural values are prohibited for signs';
+        }
+        const [image, gardinerCodes, name, fontSize, dir] = values[0];
+
+        return {
           image,
           gardinerCodes,
           name,
           fontSize: isNaN(Number(fontSize)) ? undefined : Number(fontSize),
           dir,
-        }))[0];
+        } as SignEntity;
+      };
     case 'rosetta':
-      return (values): RosettaPartEntity =>
-        values.map(
-          ([
-            part,
-            image,
-            transliteration,
-            translation,
-            partTranslation,
-            gardinerCodes,
-          ]) => ({
-            part,
-            image,
-            transliteration,
-            translation,
-            partTranslation,
-            gardinerCodes,
-          }),
-        )[0];
-    default:
       return (values) => {
         if (values.length > 1) {
-          throw new Error(`Incorrect values ${values} for type ${type}`);
+          throw 'Plural values are prohibited for signs';
         }
-        return values[0];
+        const [
+          part,
+          image,
+          transliteration,
+          translation,
+          partTranslation,
+          gardinerCodes,
+        ] = values[0];
+
+        return {
+          part,
+          image,
+          transliteration,
+          translation,
+          partTranslation,
+          gardinerCodes,
+        } as RosettaPartEntity;
+      };
+    default:
+      return ([value]) => {
+        if (typeof value !== 'string') {
+          throw `Value should be single for ${type}`;
+        }
+        return value as string;
       };
   }
 };
@@ -118,7 +141,7 @@ export const fillTableFromFile = async (
   // todo: add force parameter
   const table = await openTable(db, true, reader.info);
   await DbUtils.update(table, reader.iterator, {
-    mapper: getMapper(reader.info.type),
+    mapper: createMapper(reader.info.type),
     batchThreshold,
   });
   consoleProgress[fileName].success(

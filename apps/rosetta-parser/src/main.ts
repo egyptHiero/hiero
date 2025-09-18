@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { consoleProgress, RESOURCES_DIR } from '@hiero/common';
 import { pipeline } from 'node:stream/promises';
-import { PassThrough } from 'stream';
+import { PassThrough } from 'node:stream';
 import { createPartsWriter } from './transformers/parts-writer';
 import { stringify } from 'ndjson';
 import { createDictionaryWriter } from './transformers/dictionary-writer';

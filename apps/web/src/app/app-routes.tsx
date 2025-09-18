@@ -16,7 +16,7 @@ import { AppContextProvider } from './context/app-context';
 
 export const ApplicationRoutes: React.FC = () => (
   <BrowserRouter
-    future={{ v7_relativeSplatPath: false, v7_startTransition: false }}
+    future={{ v7_relativeSplatPath: true, v7_startTransition: false }}
   >
     <AppContextProvider>
       <Routes>

@@ -44,13 +44,7 @@ export const postDictionaryChains = (fastify: FastifyTypeBox) =>
                   Object.entries(chains).reduce<DictionaryChainsDto['chains']>(
                     (acc, [key, value]) => {
                       acc[key] = {
-                        [dictionary]: value.map(
-                          ({ interpretation, description, transcription }) => [
-                            interpretation,
-                            description,
-                            transcription,
-                          ],
-                        ),
+                        [dictionary]: value,
                       };
                       return acc;
                     },
@@ -69,7 +63,11 @@ export const postDictionaryChains = (fastify: FastifyTypeBox) =>
       const hieroglyphs = {};
       uniqHieroes.forEach((hiero, n) => {
         hieroglyphs[hiero] = {
-          hieroglyphs: [[uniqHieroesValues[n] || '', '']],
+          hieroglyphs: {
+            id: hiero,
+            text: [`${uniqHieroesValues[n]}|`],
+            transcription: [],
+          },
         };
       });
       allChains.unshift(hieroglyphs);

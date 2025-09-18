@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactEventHandler } from 'react';
 import { Hiero } from '../../components/hiero';
 import { CContainer, CImage } from '@coreui/react';
 import { useFormContext } from 'react-hook-form';
@@ -9,6 +9,8 @@ import { Property } from 'csstype';
 import { useSignContext } from './context';
 import classNames from 'classnames';
 import JSON5 from 'json5';
+
+type ImageDirection = 'row' | 'column';
 
 function getFlowDirection(dir?: TDir): Property.FlexDirection {
   switch (dir) {
@@ -77,15 +79,37 @@ export const ShowHieroes: React.FC = () => {
     setAsideVisible(true);
   };
 
+  const [imageDirection, setImageDirection] =
+    React.useState<ImageDirection>('row');
+  const imageLoadHandler = React.useCallback<
+    ReactEventHandler<HTMLOrSVGImageElement>
+  >(
+    ({ target }) => {
+      const img = target as HTMLOrSVGImageElement;
+      setImageDirection(img.width > img.height ? 'column' : 'row');
+      setImageIsLoaded(true);
+    },
+    [setImageIsLoaded],
+  );
+
+  const images = React.useMemo(() => image?.split('\n') || [], [image]);
+
   return (
-    <CContainer fluid className="d-flex flex-column">
+    <CContainer
+      fluid
+      className={classNames(
+        'd-flex',
+        imageDirection !== 'row' ? 'flex-column' : 'flex-row',
+      )}
+    >
       <DynamicStyledDiv>
-        {image?.split('\n').map((img, index) => (
+        {images.map((img, index) => (
           <div key={`${img}_${index}`}>
             <CImage
               src={img}
               className={classNames({ 'd-none': !isImageLoaded })}
-              onLoad={() => setImageIsLoaded(true)}
+              // todo: support multiply images
+              onLoad={imageLoadHandler}
               onError={() => setImageIsLoaded(false)}
             />
           </div>

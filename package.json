@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "parse-dictionary": "node ./dist/apps/dictionary-parser/apps/dictionary-parser/src/scripts/runner.js",
+    "parse-dictionary-all": "node ./dist/apps/dictionary-parser/apps/dictionary-parser/src/scripts/runner.js ancient vygus hieroes",
     "lint": "nx run-many -t lint --fix",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",

@@ -1,12 +1,12 @@
 import React from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useCustomControls } from './custom-controls';
 
 type CustomControlNames = 'search';
 
 interface IAppContext {
   isSidebarVisible: boolean;
   setSidebarVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  setCustomControlsData: (key: string, value: string | undefined) => void;
+  setCustomControlsParam: (key: string, value: string | undefined) => void;
   customControls?: React.ReactNode;
   customControlNames?: Set<CustomControlNames>;
   setCustomControls: (
@@ -38,15 +38,6 @@ export const AppContextProvider: React.FC<IAppContextProvider> = ({
   const [customControls, setCustomControls] = React.useState<React.ReactNode>();
   const [customControlNames, setCustomControlNames] =
     React.useState<Set<CustomControlNames>>();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const setCustomControlsData = React.useCallback(
-    (key: string, value?: string) => {
-      value ? searchParams.set(key, value) : searchParams.delete(key);
-      setSearchParams(searchParams);
-    },
-    [searchParams, setSearchParams],
-  );
-
   const setCustomControlsWithNames = React.useCallback<
     IAppContext['setCustomControls']
   >((children, ...controlNames) => {
@@ -54,18 +45,37 @@ export const AppContextProvider: React.FC<IAppContextProvider> = ({
     setCustomControlNames(new Set(controlNames));
   }, []);
 
+  const { setCustomControlsParams } = useCustomControls();
+
+  const setCustomControlsParam = React.useCallback<
+    IAppContext['setCustomControlsParam']
+  >(
+    (key, value) => {
+      setCustomControlsParams((values) => {
+        if (value) {
+          values[key] = value;
+        } else {
+          delete values[key];
+        }
+
+        return { ...values };
+      });
+    },
+    [setCustomControlsParams],
+  );
+
   const value = React.useMemo(
     () => ({
       isSidebarVisible,
       setSidebarVisible,
-      setCustomControlsData,
+      setCustomControlsParam,
       customControls,
       customControlNames,
       setCustomControls: setCustomControlsWithNames,
     }),
     [
       isSidebarVisible,
-      setCustomControlsData,
+      setCustomControlsParams,
       customControls,
       customControlNames,
       setCustomControlsWithNames,
