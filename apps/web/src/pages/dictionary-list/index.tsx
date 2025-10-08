@@ -5,7 +5,7 @@ import { columnNames } from './columns';
 import { DictionaryInfoDto } from '../../types';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
-import { InfiniteTable } from '../../components/infinite-table';
+import { InfiniteTable } from '../../controls/infinite-table';
 import { useAppContext } from '../../app/context/app-context';
 
 export const DictionaryListPage: React.FC = () => {

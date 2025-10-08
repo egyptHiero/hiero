@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { PathParam, useParams } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
-import { InfiniteTable } from '../../components/infinite-table';
+import { InfiniteTable } from '../../controls/infinite-table';
 import { useGetDictionary } from './hooks';
 import { DictionaryItemVO } from './types';
 import { columnNames } from './columns';
@@ -11,8 +11,8 @@ import {
   StyledDescription,
   StyledTranscription,
   StyledTranslation,
-} from '../../components/styled';
-import { Hiero } from '../../components/hiero';
+} from '../../controls/dictionary';
+import { Hiero } from '../../controls/hiero';
 import { useAppContext } from '../../app/context/app-context';
 import { transliterate, wrapWithBrackets } from '../../utils';
 

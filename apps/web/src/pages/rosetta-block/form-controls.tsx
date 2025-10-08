@@ -6,15 +6,15 @@ import {
   CCol,
   CContainer,
   CFormInput,
-  CFormRange,
   CFormTextarea,
   CImage,
   CRow,
 } from '@coreui/react';
-import { Hiero } from '../../components/hiero';
+import { Hiero } from '../../controls/hiero';
 import styled from '@emotion/styled';
 import { StyledGrid } from './styled';
 import { ImageTabs } from './image-tabs';
+import { ScaledRangeWithValue } from '../../controls/form/range/scaled-range-with-value';
 
 const RotatedCImage = styled(CImage)({
   transform: 'scale(-1, 1)',
@@ -44,7 +44,8 @@ export const RosettaBlockFormControls: React.FC = () => {
 
       <CRow>
         <CCol md={6}>
-          <CFormRange
+          <ScaledRangeWithValue
+            label={'fontSize'}
             min={20}
             max={100}
             value={fontSize}
@@ -54,7 +55,8 @@ export const RosettaBlockFormControls: React.FC = () => {
           />
         </CCol>
         <CCol md={6}>
-          <CFormRange
+          <ScaledRangeWithValue
+            label={'image size'}
             min={20}
             max={100}
             value={imageSize}

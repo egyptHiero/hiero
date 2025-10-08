@@ -1,14 +1,8 @@
 import * as React from 'react';
 import { ChangeEventHandler } from 'react';
 import { ImageClip, ImageSize } from './types';
-import {
-  CCol,
-  CFormInput,
-  CFormSwitch,
-  CInputGroup,
-  CInputGroupText,
-} from '@coreui/react';
-import { ScaledFormRange } from './scaled-form-range';
+import { CCol, CFormSwitch } from '@coreui/react';
+import { ScaledRangeWithValue } from '../../controls/form/range/scaled-range-with-value';
 
 interface IClipRangeProps {
   imageSize: ImageSize;
@@ -111,24 +105,13 @@ export const ClipRange: React.FC<IClipRangeProps> = ({
           onChange={setChecked}
         />
       ) : (
-        <CInputGroup className="d-flex flex-nowrap">
-          <CInputGroupText style={{ width: '110px' }}>{name}</CInputGroupText>
-          <CFormInput
-            value={imageClip[name]}
-            onChange={setInputValue}
-            style={{ width: '90px' }}
-          />
-          {
-            <div className="mx-2 w-100">
-              <ScaledFormRange
-                min={min}
-                max={max}
-                value={imageClip[name] as number}
-                onChange={setRangeValue}
-              />
-            </div>
-          }
-        </CInputGroup>
+        <ScaledRangeWithValue
+          label={name}
+          min={min}
+          max={max}
+          value={imageClip[name] as number}
+          onChange={setRangeValue}
+        />
       )}
     </CCol>
   );

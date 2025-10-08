@@ -1,6 +1,6 @@
 import React from 'react';
 import { CButton, CButtonGroup } from '@coreui/react';
-import { Hiero } from '../../hiero';
+import { Hiero } from '../../../controls/hiero';
 import { Divider } from './divider';
 import { useTranslation } from 'react-i18next';
 import { useHieroSelectorContext } from '../context';

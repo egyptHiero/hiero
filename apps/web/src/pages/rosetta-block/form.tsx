@@ -30,7 +30,7 @@ export const RosettaBlockForm: React.FC<IRosettaBlockFormProps> = ({
     <FormProvider {...formMethods}>
       <CForm
         noValidate
-        className="row g-3"
+        className="row g-3 my-2"
         onSubmit={formMethods.handleSubmit(onSubmit)}
       >
         <RosettaBlockFormControls />

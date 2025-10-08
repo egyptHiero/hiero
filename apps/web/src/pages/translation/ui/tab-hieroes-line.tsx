@@ -1,5 +1,4 @@
-import React from 'react';
-import { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler } from 'react';
 import { getChainTable, getMaxChainColumnsCount } from '../logic/chain-table';
 import { ChainButton } from './chain-button';
 import {
@@ -7,7 +6,7 @@ import {
   StyledTranslationsGridHeader,
 } from '../styled';
 import { InterpretationBlock } from './interpretation-block';
-import { DictionaryChainsDto } from '../../../types/types';
+import { DictionaryChainsDto } from '../../../types';
 import { CFormTextarea } from '@coreui/react';
 import { TLine } from '../../sign/types';
 import { useFormContext } from 'react-hook-form';

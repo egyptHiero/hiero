@@ -1,6 +1,6 @@
 import React from 'react';
 import { CForm, CFormInput } from '@coreui/react';
-import { LanguageSwitcher } from '../../components/language-switcher';
+import { LanguageSwitcher } from '../../controls/language-switcher';
 import { useFormContext } from 'react-hook-form';
 import { useDebounce } from 'use-debounce';
 import { useAppContext } from '../context/app-context';

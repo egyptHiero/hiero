@@ -1,5 +1,5 @@
 import { TLine } from '../../sign/types';
-import { DictionaryChainsDto } from '../../../types/types';
+import { DictionaryChainsDto } from '../../../types';
 
 const areArraysEqual = (arr1: string[], arr2: string[]) => {
   if (arr1.length !== arr2.length) {

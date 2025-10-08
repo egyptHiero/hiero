@@ -1,6 +1,6 @@
 import React from 'react';
 import { CButton } from '@coreui/react';
-import { Hiero } from '../../hiero';
+import { Hiero } from '../../../controls/hiero';
 import { useHieroContext } from '../../../app/context/hiero-context';
 import { useSelectorAsideContext } from './context';
 import { useHieroSelectorContext } from '../context';

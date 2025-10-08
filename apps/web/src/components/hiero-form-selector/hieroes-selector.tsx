@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Hiero } from '../hiero';
+import { Hiero } from '../../controls/hiero';
 import styled from '@emotion/styled';
 import { TDir } from '../../types';
 import { Property } from 'csstype';

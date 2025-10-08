@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { InfiniteTable } from '../../components/infinite-table';
+import { InfiniteTable } from '../../controls/infinite-table';
 import { useAppContext } from '../../app/context/app-context';
 import { useGetRosettaPartsList } from './hooks';
 import { generatePath, useNavigate } from 'react-router-dom';
@@ -9,7 +9,7 @@ import { columnNames } from './columns';
 import { CImage } from '@coreui/react';
 import { useDoubleClick } from '../../hooks/double-click';
 import { ROUTES } from '../../app/routes';
-import { Hiero } from '../../components/hiero';
+import { Hiero } from '../../controls/hiero';
 import { ColumnNames } from './types';
 import { CustomControls } from './custom-controls';
 

@@ -1,5 +1,5 @@
 import React, { ReactEventHandler } from 'react';
-import { Hiero } from '../../components/hiero';
+import { Hiero } from '../../controls/hiero';
 import { CContainer, CImage } from '@coreui/react';
 import { useFormContext } from 'react-hook-form';
 import { SignDto } from '../../types';

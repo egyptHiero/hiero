@@ -1,5 +1,5 @@
 import React from 'react';
-import { InfiniteTable } from '../../components/infinite-table';
+import { InfiniteTable } from '../../controls/infinite-table';
 import { useTranslation } from 'react-i18next';
 import { useGetSignList } from './hooks';
 import { columnNames } from './columns';

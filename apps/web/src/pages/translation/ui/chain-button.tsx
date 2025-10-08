@@ -1,9 +1,9 @@
 import React from 'react';
-import { Hiero } from '../../../components/hiero';
+import { Hiero } from '../../../controls/hiero';
 import { StyledCButton } from '../styled';
-import { DictionaryChainsDto } from '../../../types/types';
+import { DictionaryChainsDto } from '../../../types';
 import { CPopover } from '@coreui/react';
-import { Dictionary } from '../../../components/dictionary';
+import { Dictionary } from '../../../controls/dictionary';
 
 interface IChainButtonProps {
   rowShift: number;

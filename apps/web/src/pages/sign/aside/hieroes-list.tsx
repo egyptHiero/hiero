@@ -1,11 +1,10 @@
 import React from 'react';
 import { CButton } from '@coreui/react';
-import { Hiero } from '../../../components/hiero';
+import { Hiero } from '../../../controls/hiero';
 import { useHieroContext } from '../../../app/context/hiero-context';
 import { useSignAsideContext } from './context';
-import { TDir } from '../../../types';
+import { SignDto, TDir } from '../../../types';
 import { useFormContext } from 'react-hook-form';
-import { SignDto } from '../../../types/types';
 import { useSignContext } from '../context';
 
 export const HieroesList: React.FC = () => {

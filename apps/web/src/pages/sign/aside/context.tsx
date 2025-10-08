@@ -9,7 +9,7 @@ import {
 import { GARDINER_CLASSIFICATION } from '../../../constants';
 import { useSignContext } from '../context';
 import { useFormContext } from 'react-hook-form';
-import { SignDto } from '../../../types/types';
+import { SignDto } from '../../../types';
 import { joinLines } from '../logic';
 
 interface IAsideContext {

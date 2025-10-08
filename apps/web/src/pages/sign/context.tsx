@@ -8,7 +8,7 @@ import { splitIntoLines } from '../../utils';
 interface ISignContext {
   current?: TCurrent;
   setCurrent: React.Dispatch<React.SetStateAction<TCurrent | undefined>>;
-  shiftCurrent: (value: number, force: boolean) => void;
+  shiftCurrent: (value: number, force?: boolean) => void;
   lines: TLine[];
   asideVisible: boolean;
   setAsideVisible: React.Dispatch<React.SetStateAction<boolean>>;

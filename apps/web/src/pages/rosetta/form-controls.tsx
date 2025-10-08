@@ -3,8 +3,8 @@ import { CFormInput, CFormTextarea, CRow } from '@coreui/react';
 import { useTranslation } from 'react-i18next';
 import { useFormContext } from 'react-hook-form';
 import { RosettaPartDto } from '../../types';
-import { StyledCCol } from '../../components/styled';
-import { HieroFormSelector } from '../../components/hiero-form-selector';
+import { StyledCCol } from '../../controls/dictionary';
+import { HieroFormSelector } from '../../components';
 
 export const RosettaPartFormControls: React.FC = () => {
   const { t } = useTranslation();

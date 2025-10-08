@@ -1,5 +1,5 @@
 import { useClientContext } from '../../app/context/client-context';
-import { useInfinityScroll } from '../../components/infinite-table/hook';
+import { useInfinityScroll } from '../../controls/infinite-table/hook';
 import { useSearchParams } from 'react-router-dom';
 
 export const useGetSignList = () => {

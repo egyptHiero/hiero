@@ -22,7 +22,7 @@ export default [
   },
   {
     ignores: [
-      'src/components/hiero/hierojax.js',
+      'src/controls/hiero/hierojax.js',
       'src/@types/openapi-schema.d.ts',
     ],
   },

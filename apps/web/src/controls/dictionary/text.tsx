@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledDescription, StyledInterpretation } from '../styled';
+import { StyledDescription, StyledInterpretation } from './styled';
 
 interface ITextProps {
   value: string;

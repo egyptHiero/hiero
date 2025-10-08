@@ -998,7 +998,7 @@ export interface paths {
                         "application/json": {
                             items: {
                                 id: string;
-                                blocks: {
+                                parts: {
                                     id: string;
                                     part?: string;
                                     image: string;
@@ -1008,6 +1008,7 @@ export interface paths {
                                     gardinerCodes?: string;
                                 }[];
                                 translation: string;
+                                json?: string;
                             }[];
                             next?: string;
                         };
@@ -1053,7 +1054,7 @@ export interface paths {
                     content: {
                         "application/json": {
                             id: string;
-                            blocks: {
+                            parts: {
                                 id: string;
                                 part?: string;
                                 image: string;
@@ -1063,6 +1064,7 @@ export interface paths {
                                 gardinerCodes?: string;
                             }[];
                             translation: string;
+                            json?: string;
                         };
                     };
                 };

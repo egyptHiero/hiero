@@ -101,16 +101,16 @@ describe('DB-dictionaries', () => {
 
     it('and getDictionary() allows to work with exact dictionaries', async () => {
       const dict1 = await db.getDictionary('dict1');
-      await dict1.put('A1', [{ description: 'a1', interpretation: 'b1' }]);
+      await dict1.put('A1', { text: ['a1'], transcription: ['b1'] });
 
       const dict2 = await db.getDictionary('dict2', 'user1');
-      await dict2.put('A1', [{ description: 'a2', interpretation: 'b2' }]);
+      await dict2.put('A1', { text: ['a2'], transcription: ['b2'] });
 
       expect(await DbUtils.getPage(dict1)).toStrictEqual(
-        asPage([[{ description: 'a1', interpretation: 'b1' }]]),
+        asPage([{ text: ['a1'], transcription: ['b1'] }]),
       );
       expect(await DbUtils.getPage(dict2)).toStrictEqual(
-        asPage([[{ description: 'a2', interpretation: 'b2' }]]),
+        asPage([{ text: ['a2'], transcription: ['b2'] }]),
       );
     });
   });
@@ -128,7 +128,7 @@ describe('DB-dictionaries', () => {
         name: 'dict1',
         language: 'en',
       });
-      await dict1.put('A1', []);
+      await dict1.put('A1', { text: ['a1'], transcription: ['b1'] });
 
       await db.createDictionary({ name: 'dict1', language: 'ru' }, undefined, {
         canOverride: true,

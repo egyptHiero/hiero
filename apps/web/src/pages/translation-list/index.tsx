@@ -6,7 +6,7 @@ import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
 import { TranslationDto } from '../../types';
 import { columnNames } from './columns';
-import { InfiniteTable } from '../../components/infinite-table';
+import { InfiniteTable } from '../../controls/infinite-table';
 
 export const TranslationListPage: React.FC = () => {
   const { t } = useTranslation();

@@ -1,5 +1,5 @@
 import { useClientContext } from '../../app/context/client-context';
-import { useInfinityScroll } from '../../components/infinite-table/hook';
+import { useInfinityScroll } from '../../controls/infinite-table/hook';
 import { DictionaryItemDto } from '../../types';
 import { DictionaryItemVO } from './types';
 import { useAppContext } from '../../app/context/app-context';
