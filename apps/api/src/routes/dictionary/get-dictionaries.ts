@@ -3,7 +3,7 @@ import {
   PageDto as PageSchema,
   QueryFilterDto as QueryFilterDtoSchema,
 } from '../../generated/typebox';
-import { toDictionaryInfoDto, toPageDto } from '../../dto';
+import { toIdentifiableDto, toPageDto } from '../../dto';
 import { DbUtils } from '@hiero/db';
 import { FastifyTypeBox } from '../../types';
 import { searchIn } from '@hiero/common';
@@ -29,7 +29,7 @@ export const getDictionaries = (fastify: FastifyTypeBox) =>
         await DbUtils.getPage(fastify.db.getDictionaryInfo(), {
           from,
           pageSize,
-          mapper: toDictionaryInfoDto,
+          mapper: toIdentifiableDto,
           filter: (key, value) =>
             searchIn(query, key, value.description, value.name, value.link),
         }),

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { CFormInput, CFormTextarea, CRow } from '@coreui/react';
 import { useTranslation } from 'react-i18next';
 import { useFormContext } from 'react-hook-form';

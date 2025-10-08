@@ -7,5 +7,7 @@ export const ROUTES = {
   DICTIONARY_LIST: '/dictionary',
   ROSETTA_LIST: '/rosetta',
   ROSETTA_PART: '/rosetta/:id',
+  ROSETTA_BLOCK: '/rosetta-block/:id',
+  ROSETTA_BLOCK_LIST: '/rosetta-block',
   ABOUT: '/about',
 } as const;

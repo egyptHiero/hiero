@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ROUTES } from '../../app/routes';
 import { PathParam, useParams } from 'react-router-dom';
 import { CContainer } from '@coreui/react';

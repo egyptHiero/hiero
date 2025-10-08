@@ -2,7 +2,7 @@ import React, { ReactEventHandler } from 'react';
 import { Hiero } from '../../components/hiero';
 import { CContainer, CImage } from '@coreui/react';
 import { useFormContext } from 'react-hook-form';
-import { SignDto } from '../../types/types';
+import { SignDto } from '../../types';
 import styled from '@emotion/styled';
 import { TDir } from '../../types';
 import { Property } from 'csstype';

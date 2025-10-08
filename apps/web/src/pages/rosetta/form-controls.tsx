@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { CFormInput, CFormTextarea, CRow } from '@coreui/react';
 import { useTranslation } from 'react-i18next';
 import { useFormContext } from 'react-hook-form';
-import { RosettaPartDto } from '../../types/types';
+import { RosettaPartDto } from '../../types';
 import { StyledCCol } from '../../components/styled';
 import { HieroFormSelector } from '../../components/hiero-form-selector';
 

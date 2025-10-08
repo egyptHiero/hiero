@@ -6,7 +6,7 @@ import { InfiniteTable } from '../../components/infinite-table';
 import { useGetDictionary } from './hooks';
 import { DictionaryItemVO } from './types';
 import { columnNames } from './columns';
-import { DictionaryItemDto } from '../../types/types';
+import { DictionaryItemDto } from '../../types';
 import {
   StyledDescription,
   StyledTranscription,

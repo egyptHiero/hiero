@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { CButton, CContainer } from '@coreui/react';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
@@ -6,7 +6,7 @@ import { useConfirmDelete } from './confirm-delete';
 import { useTranslation } from 'react-i18next';
 import { useDeleteMutation } from './hooks';
 import { useFormContext } from 'react-hook-form';
-import { SignDto } from '../../types/types';
+import { SignDto } from '../../types';
 
 export const SignButtons: React.FC = () => {
   const { t } = useTranslation();

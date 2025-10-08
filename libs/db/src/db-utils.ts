@@ -19,7 +19,7 @@ export type GetPageProps<T, R = T> = {
   from: string;
   to: string;
   filter: (key: string, value: T) => boolean;
-  mapper: (key: string, value: T) => R;
+  mapper: (key: string, value: T) => R | Promise<R>;
 };
 
 async function getPage<T, R = T>(
@@ -46,7 +46,7 @@ async function getPage<T, R = T>(
     lte: to,
   })) {
     if (filter(key, value)) {
-      result.push(mapper(key, value));
+      result.push(await mapper(key, value));
     }
 
     if (pageSize > 0 && result.length > pageSize) {

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { CButton, CContainer } from '@coreui/react';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../../app/routes';

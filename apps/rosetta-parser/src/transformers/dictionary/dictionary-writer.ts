@@ -1,6 +1,6 @@
 import { NDJSON_DIR } from '@hiero/common';
 import path from 'node:path';
-import { createFileWriter } from './file-writer';
+import { createFileWriter } from '../file-writer';
 
 export const createDictionaryWriter = () => {
   const outputFileName = path.join(NDJSON_DIR, 'rosetta.ndjson');

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Hiero } from '../../../components/hiero';
 import { StyledCButton } from '../styled';
 import { DictionaryChainsDto } from '../../../types/types';

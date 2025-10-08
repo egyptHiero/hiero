@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { CForm, CFormInput } from '@coreui/react';
 import { LanguageSwitcher } from '../../components/language-switcher';
 import { useFormContext } from 'react-hook-form';

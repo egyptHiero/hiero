@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useGetTranslationList } from './hooks';
 import { useAppContext } from '../../app/context/app-context';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
-import { TranslationDto } from '../../types/types';
+import { TranslationDto } from '../../types';
 import { columnNames } from './columns';
 import { InfiniteTable } from '../../components/infinite-table';
 

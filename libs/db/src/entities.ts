@@ -37,3 +37,9 @@ export interface RosettaPartEntity {
   partTranslation?: string;
   gardinerCodes?: string;
 }
+
+export interface RosettaBlockEntity {
+  parts: string[];
+  translation: string;
+  json?: string;
+}

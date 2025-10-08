@@ -14,9 +14,4 @@ export default fp(async function (fastify: FastifyInstance) {
     prefix: '/locales',
     decorateReply: false,
   });
-  fastify.register(statics, {
-    root: path.join(__dirname, '../../../../images'),
-    prefix: '/images',
-    decorateReply: false,
-  });
 });

@@ -3,7 +3,7 @@ import {
   TranslationDto as TranslationDtoSchema,
   TranslationNewDto as TranslationNewDtoSchema,
 } from '../../generated/typebox';
-import { toTranslationDto } from '../../dto';
+import { toIdentifiableDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
 export const postTranslation = (fastify: FastifyTypeBox) =>
@@ -27,6 +27,6 @@ export const postTranslation = (fastify: FastifyTypeBox) =>
 
       return translations
         .put(id, translation)
-        .then(async () => toTranslationDto(id, await translations.get(id)));
+        .then(async () => toIdentifiableDto(id, await translations.get(id)));
     },
   );

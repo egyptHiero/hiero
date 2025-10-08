@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { TDir } from '../../types';
 import { TCurrent, TLine } from '../../pages/sign/types';
 import { CContainer } from '@coreui/react';

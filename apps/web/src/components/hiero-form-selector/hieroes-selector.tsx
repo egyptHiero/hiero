@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { Hiero } from '../hiero';
 import styled from '@emotion/styled';

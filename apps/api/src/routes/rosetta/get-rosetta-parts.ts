@@ -4,7 +4,7 @@ import {
   RosettaPartDto as RosettaDtoSchema,
   RosettaPartQuery as RosettaPartQuerySchema,
 } from '../../generated/typebox';
-import { toPageDto, toRosettaPartDto } from '../../dto';
+import { toIdentifiableDto, toPageDto } from '../../dto';
 import { DbUtils } from '@hiero/db';
 import { searchIn } from '@hiero/common';
 
@@ -29,7 +29,7 @@ export const getRosettaParts = (fastify: FastifyTypeBox) =>
         await DbUtils.getPage(fastify.db.getRosetta(), {
           from,
           pageSize,
-          mapper: toRosettaPartDto,
+          mapper: toIdentifiableDto,
           filter: (key, value) => {
             if (blankOnly === true && value.gardinerCodes) {
               return false;

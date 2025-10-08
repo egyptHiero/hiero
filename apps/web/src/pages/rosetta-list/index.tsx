@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { InfiniteTable } from '../../components/infinite-table';
 import { useAppContext } from '../../app/context/app-context';
 import { useGetRosettaPartsList } from './hooks';
 import { generatePath, useNavigate } from 'react-router-dom';
-import { RosettaPartDto } from '../../types/types';
+import { RosettaPartDto } from '../../types';
 import { columnNames } from './columns';
 import { CImage } from '@coreui/react';
 import { useDoubleClick } from '../../hooks/double-click';
@@ -13,7 +13,7 @@ import { Hiero } from '../../components/hiero';
 import { ColumnNames } from './types';
 import { CustomControls } from './custom-controls';
 
-export const RosettaPage: React.FC = () => {
+export const RosettaListPage: React.FC = () => {
   const { t } = useTranslation();
   const scrollData = useGetRosettaPartsList();
   const navigate = useNavigate();
@@ -88,4 +88,4 @@ export const RosettaPage: React.FC = () => {
   );
 };
 
-RosettaPage.displayName = 'RosettaPage';
+RosettaListPage.displayName = 'RosettaListPage';

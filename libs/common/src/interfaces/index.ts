@@ -17,5 +17,6 @@ export interface DictionaryInfo {
  */
 export interface DictionaryMetadata extends DictionaryInfo {
   /** Hint to a loader. */
-  type: 'dictionary' | 'hieroglyphs' | 'rosetta';
+  type: 'dictionary' | 'hieroglyphs' | 'rosetta' | 'signs';
+  user?: string;
 }

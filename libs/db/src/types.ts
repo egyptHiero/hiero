@@ -2,6 +2,7 @@ import { AbstractSublevel } from 'abstract-level/types/abstract-sublevel';
 import {
   DictionaryInfoEntity,
   DictionaryItemEntity,
+  RosettaBlockEntity,
   RosettaPartEntity,
   SignEntity,
   TranslationEntity,
@@ -44,6 +45,14 @@ export type DB = {
    * @param user      - private user's table
    */
   getRosetta(user?: string): DbTable<RosettaPartEntity>;
+
+  /**
+   * Returns table of rosetta blocks.
+   *
+   * @param user      - private user's table
+   */
+  getRosettaBlocks(user?: string): DbTable<RosettaBlockEntity>;
+
   /**
    * Returns table of dictionaries information.
    *

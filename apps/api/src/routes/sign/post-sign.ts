@@ -3,7 +3,7 @@ import {
   SignDto as SignDtoSchema,
   SignNewDto as SignNewDtoSchema,
 } from '../../generated/typebox';
-import { toSignDto } from '../../dto';
+import { toIdentifiableDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
 export const postSign = (fastify: FastifyTypeBox) =>
@@ -27,6 +27,6 @@ export const postSign = (fastify: FastifyTypeBox) =>
 
       return signs
         .put(id, sign)
-        .then(async () => toSignDto(id, await signs.get(id)));
+        .then(async () => toIdentifiableDto(id, await signs.get(id)));
     },
   );

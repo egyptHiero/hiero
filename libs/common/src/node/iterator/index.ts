@@ -1,20 +1,14 @@
 import { Transform } from 'node:stream';
+import { DictionaryMetadata } from '../../interfaces';
 
-interface DictionaryInfo {
-  name: string;
-  language: string;
-  type: string;
-  user?: string;
-}
-
-const isDictionaryInfo = (data: unknown): data is DictionaryInfo => {
-  const dictionary = data as DictionaryInfo;
+const isDictionaryMetadata = (data: unknown): data is DictionaryMetadata => {
+  const dictionary = data as DictionaryMetadata;
 
   return !!dictionary.name && !!dictionary.language && !!dictionary.type;
 };
 
 type TIterateDictionaryReader = <T>(readStream: Transform) => Promise<{
-  info: DictionaryInfo;
+  info: DictionaryMetadata;
   iterator: AsyncGenerator<T>;
 }>;
 
@@ -39,11 +33,11 @@ export const iterateDictionaryReader: TIterateDictionaryReader = async (
     throw new Error('No data');
   }
 
-  if (!isDictionaryInfo(firstChunk.value)) {
+  if (!isDictionaryMetadata(firstChunk.value)) {
     throw new Error('Invalid metadata');
   }
 
-  return { info: firstChunk.value as DictionaryInfo, iterator };
+  return { info: firstChunk.value as DictionaryMetadata, iterator };
 };
 
 /**

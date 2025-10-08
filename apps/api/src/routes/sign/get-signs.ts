@@ -4,7 +4,7 @@ import {
   QueryFilterDto as QueryFilterDtoSchema,
   SignDto as SignDtoSchema,
 } from '../../generated/typebox';
-import { toPageDto, toSignDto } from '../../dto';
+import { toIdentifiableDto, toPageDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 import { searchIn } from '@hiero/common';
 
@@ -29,7 +29,7 @@ export const getSigns = (fastify: FastifyTypeBox) =>
         await DbUtils.getPage(fastify.db.getSigns(), {
           from,
           pageSize,
-          mapper: toSignDto,
+          mapper: toIdentifiableDto,
           filter: (key, value) => {
             return searchIn(
               query,

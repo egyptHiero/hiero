@@ -2,7 +2,7 @@ import {
   ParamIdFilterDto as ParamIdFilterSchema,
   SignDto as SignDtoSchema,
 } from '../../generated/typebox';
-import { toSignDto } from '../../dto';
+import { toIdentifiableDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
 export const getSign = (fastify: FastifyTypeBox) =>
@@ -28,6 +28,6 @@ export const getSign = (fastify: FastifyTypeBox) =>
       if (!entity) {
         return reply.notFound();
       }
-      return toSignDto(id, entity);
+      return toIdentifiableDto(id, entity);
     },
   );

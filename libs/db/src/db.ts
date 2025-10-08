@@ -75,6 +75,11 @@ export const createDbInstance = async (): Promise<DB> => {
     sublevelOptions,
   );
 
+  const rosettaBlocks = db.sublevel<string, RosettaPartEntity>(
+    'rosetta-blocks',
+    sublevelOptions,
+  );
+
   const translations = db.sublevel<string, SignEntity>(
     'translations',
     sublevelOptions,
@@ -111,6 +116,8 @@ export const createDbInstance = async (): Promise<DB> => {
     getTranslations: (user = PUBLIC) =>
       translations.sublevel(user, sublevelOptions),
     getRosetta: (user = PUBLIC) => rosetta.sublevel(user, sublevelOptions),
+    getRosettaBlocks: (user = PUBLIC) =>
+      rosettaBlocks.sublevel(user, sublevelOptions),
     getDictionaryInfo,
     getDictionary,
     createDictionary: async (info, user, options = {}) => {

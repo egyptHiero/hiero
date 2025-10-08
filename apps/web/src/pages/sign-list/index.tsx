@@ -3,7 +3,7 @@ import { InfiniteTable } from '../../components/infinite-table';
 import { useTranslation } from 'react-i18next';
 import { useGetSignList } from './hooks';
 import { columnNames } from './columns';
-import { SignDto } from '../../types/types';
+import { SignDto } from '../../types';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
 import { CButton } from '@coreui/react';

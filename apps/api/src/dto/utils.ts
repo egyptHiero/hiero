@@ -1,24 +1,12 @@
-import {
-  DictionaryInfoDto,
-  DictionaryItemDto,
-  RosettaPartDto,
-  SignDto,
-  TranslationDto,
-} from './index';
-import {
-  DictionaryInfoEntity,
-  DictionaryItemEntity,
-  RosettaPartEntity,
-  SignEntity,
-  TranslationEntity,
-} from '@hiero/db';
+import { DictionaryItemDto, Identifiable, RosettaPartDto } from './index';
+import { DictionaryItemEntity, RosettaPartEntity } from '@hiero/db';
 
 export const toPageDto = <T>(v: T) => v;
 
-export const toDictionaryInfoDto = (
+export const toIdentifiableDto = <T>(
   id?: string,
-  entity?: DictionaryInfoEntity,
-): DictionaryInfoDto | undefined =>
+  entity?: T,
+): (Identifiable & T) | undefined =>
   id && entity
     ? {
         id,
@@ -38,28 +26,6 @@ export const toDictionaryItemDto = (
       }
     : undefined;
 };
-
-export const toSignDto = (
-  id?: string,
-  entity?: SignEntity,
-): SignDto | undefined =>
-  id && entity
-    ? {
-        id,
-        ...entity,
-      }
-    : undefined;
-
-export const toTranslationDto = (
-  id?: string,
-  entity?: TranslationEntity,
-): TranslationDto | undefined =>
-  id && entity
-    ? {
-        id,
-        ...entity,
-      }
-    : undefined;
 
 export const toRosettaPartDto = (
   id?: string,

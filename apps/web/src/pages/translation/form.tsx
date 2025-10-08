@@ -7,7 +7,7 @@ import {
   CTabContent,
   CTabPane,
 } from '@coreui/react';
-import { SignDto, TranslationDto } from '../../types/types';
+import { SignDto, TranslationDto } from '../../types';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
 import { useSaveMutation } from './hooks';

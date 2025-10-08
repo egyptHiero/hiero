@@ -1,5 +1,6 @@
 import {
   consoleProgress,
+  DictionaryMetadata,
   iterateDictionaryReader,
   NDJSON_SORTED_DIR,
 } from '@hiero/common';
@@ -11,6 +12,7 @@ import {
   DbUtils,
   DictionaryItemEntity,
   joinDictionaryItems,
+  RosettaBlockEntity,
   RosettaPartEntity,
   SignEntity,
 } from '@hiero/db';
@@ -20,7 +22,12 @@ import path from 'node:path';
 
 export const dbPromise = createDbInstance();
 type TInfo = Awaited<ReturnType<typeof iterateDictionaryReader>>['info'];
-type TEntity = DictionaryItemEntity | SignEntity | RosettaPartEntity | string;
+type TEntity =
+  | DictionaryItemEntity
+  | SignEntity
+  | RosettaPartEntity
+  | RosettaBlockEntity
+  | string;
 
 const openTable: (
   db: DB,
@@ -49,7 +56,10 @@ const openTable: (
       return signs;
     }
     case 'rosetta': {
-      const rosetta = db.getRosetta(user);
+      const rosetta =
+        name === 'rosetta-blocks'
+          ? db.getRosettaBlocks(user)
+          : db.getRosetta(user);
       if (force) {
         await rosetta.clear();
       }
@@ -60,9 +70,10 @@ const openTable: (
   }
 };
 
-const createMapper = (
-  type: string,
-): ((values: Array<string[] | string>) => TEntity) => {
+const createMapper = ({
+  type,
+  name,
+}: DictionaryMetadata): ((values: Array<string[] | string>) => TEntity) => {
   switch (type) {
     case 'dictionary':
       return (values: Array<string[]>) =>
@@ -100,23 +111,32 @@ const createMapper = (
         if (values.length > 1) {
           throw 'Plural values are prohibited for signs';
         }
-        const [
-          part,
-          image,
-          transliteration,
-          translation,
-          partTranslation,
-          gardinerCodes,
-        ] = values[0];
 
-        return {
-          part,
-          image,
-          transliteration,
-          translation,
-          partTranslation,
-          gardinerCodes,
-        } as RosettaPartEntity;
+        if (name === 'rosetta-blocks') {
+          const [translation, parts] = values[0];
+          return {
+            translation,
+            parts: parts as unknown as string[],
+          } as RosettaBlockEntity;
+        } else {
+          const [
+            part,
+            image,
+            transliteration,
+            translation,
+            partTranslation,
+            gardinerCodes,
+          ] = values[0];
+
+          return {
+            part,
+            image,
+            transliteration,
+            translation,
+            partTranslation,
+            gardinerCodes,
+          } as RosettaPartEntity;
+        }
       };
     default:
       return ([value]) => {
@@ -141,7 +161,7 @@ export const fillTableFromFile = async (
   // todo: add force parameter
   const table = await openTable(db, true, reader.info);
   await DbUtils.update(table, reader.iterator, {
-    mapper: createMapper(reader.info.type),
+    mapper: createMapper(reader.info),
     batchThreshold,
   });
   consoleProgress[fileName].success(

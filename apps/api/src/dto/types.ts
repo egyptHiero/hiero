@@ -94,6 +94,12 @@ export interface RosettaPartDto extends Identifiable {
   gardinerCodes?: string;
 }
 
+export interface RosettaBlocksDto extends Identifiable {
+  parts: RosettaPartDto[];
+  translation: string;
+  json?: string;
+}
+
 export interface RosettaPartCodesBody {
   codes?: string;
 }

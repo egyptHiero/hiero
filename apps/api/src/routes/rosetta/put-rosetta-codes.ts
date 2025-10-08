@@ -3,7 +3,7 @@ import {
   RosettaPartCodesBody as RosettaPartCodesDtoSchema,
   RosettaPartDto as RosettaPartDtoSchema,
 } from '../../generated/typebox';
-import { toRosettaPartDto } from '../../dto';
+import { toIdentifiableDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
 export const putRosettaCodes = (fastify: FastifyTypeBox) =>
@@ -35,6 +35,6 @@ export const putRosettaCodes = (fastify: FastifyTypeBox) =>
       return fastify.db
         .getRosetta()
         .put(id, part)
-        .then(async () => toRosettaPartDto(id, part));
+        .then(async () => toIdentifiableDto(id, part));
     },
   );

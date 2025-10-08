@@ -125,6 +125,16 @@ export const RosettaPartDto = Type.Composite([
   }),
 ]);
 
+export type RosettaBlocksDto = Static<typeof RosettaBlocksDto>;
+export const RosettaBlocksDto = Type.Composite([
+  Identifiable,
+  Type.Object({
+    parts: Type.Array(RosettaPartDto),
+    translation: Type.String(),
+    json: Type.Optional(Type.String()),
+  }),
+]);
+
 export type RosettaPartCodesBody = Static<typeof RosettaPartCodesBody>;
 export const RosettaPartCodesBody = Type.Object({
   codes: Type.Optional(Type.String()),

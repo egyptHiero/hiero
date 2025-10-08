@@ -2,7 +2,7 @@ import {
   ParamIdFilterDto as ParamIdFilterSchema,
   TranslationDto as TranslationDtoSchema,
 } from '../../generated/typebox';
-import { toTranslationDto } from '../../dto';
+import { toIdentifiableDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
 export const getTranslation = (fastify: FastifyTypeBox) =>
@@ -28,6 +28,6 @@ export const getTranslation = (fastify: FastifyTypeBox) =>
       if (!entity) {
         return reply.notFound();
       }
-      return toTranslationDto(id, entity);
+      return toIdentifiableDto(id, entity);
     },
   );

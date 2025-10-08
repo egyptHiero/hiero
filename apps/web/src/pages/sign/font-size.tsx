@@ -1,7 +1,7 @@
 import React from 'react';
 import { CFormRange } from '@coreui/react';
 import { useFormContext } from 'react-hook-form';
-import { SignDto } from '../../types/types';
+import { SignDto } from '../../types';
 
 export const FontSize: React.FC = () => {
   const { setValue, watch } = useFormContext<SignDto>();

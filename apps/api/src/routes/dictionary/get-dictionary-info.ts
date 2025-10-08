@@ -2,7 +2,7 @@ import {
   DictionaryInfoDto as DictionaryInfoSchema,
   ParamIdFilterDto as ParamIdFilterSchema,
 } from '../../generated/typebox';
-import { toDictionaryInfoDto } from '../../dto';
+import { toIdentifiableDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
 export const getDictionaryInfo = (fastify: FastifyTypeBox) =>
@@ -22,7 +22,7 @@ export const getDictionaryInfo = (fastify: FastifyTypeBox) =>
     async function (request) {
       const { id } = request.params;
 
-      return toDictionaryInfoDto(
+      return toIdentifiableDto(
         id,
         await fastify.db.getDictionaryInfo().get(id),
       );

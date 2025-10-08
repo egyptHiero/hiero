@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { useClientContext } from '../../app/context/client-context';
-import { SignDto } from '../../types/types';
+import { SignDto } from '../../types';
 
 export const useGetSign = (id: string | undefined) => {
   const { client } = useClientContext();

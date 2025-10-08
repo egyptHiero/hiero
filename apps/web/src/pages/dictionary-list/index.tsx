@@ -2,7 +2,7 @@ import React from 'react';
 import { useGetDictionaryList } from './hooks';
 import { useTranslation } from 'react-i18next';
 import { columnNames } from './columns';
-import { DictionaryInfoDto } from '../../types/types';
+import { DictionaryInfoDto } from '../../types';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
 import { InfiniteTable } from '../../components/infinite-table';

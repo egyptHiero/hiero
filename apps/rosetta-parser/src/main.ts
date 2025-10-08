@@ -3,13 +3,15 @@ import path from 'node:path';
 import { consoleProgress, RESOURCES_DIR } from '@hiero/common';
 import { pipeline } from 'node:stream/promises';
 import { PassThrough } from 'node:stream';
-import { createPartsWriter } from './transformers/parts-writer';
+import { createPartsWriter } from './transformers/parts/parts-writer';
 import { stringify } from 'ndjson';
-import { createDictionaryWriter } from './transformers/dictionary-writer';
+import { createDictionaryWriter } from './transformers/dictionary/dictionary-writer';
 import { HtmlParser } from './transformers/html-parser';
 import { EntityTransformer } from './transformers/entity-transformer';
-import { PartsTransformer } from './transformers/parts-transformer';
-import { DictionaryTransformer } from './transformers/dictionary-transformer';
+import { PartsTransformer } from './transformers/parts/parts-transformer';
+import { DictionaryTransformer } from './transformers/dictionary/dictionary-transformer';
+import { BlocksTransformer } from './transformers/blocks/blocks-transformer';
+import { createBlocksWriter } from './transformers/blocks/blocks-writer';
 
 const parseRosetta = async () => {
   const inputFileName = path.join(
@@ -22,7 +24,7 @@ const parseRosetta = async () => {
 
   consoleProgress[inputFileName].progress(`reading file "${inputFileName}"`);
 
-  pipeline(
+  void pipeline(
     fs.createReadStream(inputFileName),
     new HtmlParser(),
     new EntityTransformer(),
@@ -42,6 +44,12 @@ const parseRosetta = async () => {
         new DictionaryTransformer(),
         stringify(),
         createDictionaryWriter(),
+      ),
+      pipeline(
+        passthroughStream,
+        new BlocksTransformer(),
+        stringify(),
+        createBlocksWriter(),
       ),
     ]);
     consoleProgress[inputFileName].success(

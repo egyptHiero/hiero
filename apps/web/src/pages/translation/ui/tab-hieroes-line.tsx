@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ChangeEventHandler } from 'react';
 import { getChainTable, getMaxChainColumnsCount } from '../logic/chain-table';
 import { ChainButton } from './chain-button';

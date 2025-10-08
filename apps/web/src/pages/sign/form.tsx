@@ -1,6 +1,6 @@
 import React from 'react';
 import { CCol, CForm } from '@coreui/react';
-import { SignDto } from '../../types/types';
+import { SignDto } from '../../types';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
 import { useSaveMutation } from './hooks';

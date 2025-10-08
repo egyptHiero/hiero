@@ -27,11 +27,6 @@
             "input": "apps/api/src/dto",
             "output": "../../../../web/src/types",
             "glob": "**/types.ts"
-          },
-          {
-            "input": "apps/api/src/assets",
-            "output": "./images",
-            "glob": "**/*.png"
           }
         ],
         "generatePackageJson": true,

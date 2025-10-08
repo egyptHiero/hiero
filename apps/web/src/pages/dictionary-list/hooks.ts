@@ -1,6 +1,6 @@
 import { useClientContext } from '../../app/context/client-context';
 import { useInfinityScroll } from '../../components/infinite-table/hook';
-import { DictionaryInfoDto } from '../../types/types';
+import { DictionaryInfoDto } from '../../types';
 import { useSearchParams } from 'react-router-dom';
 
 export const useGetDictionaryList = () => {

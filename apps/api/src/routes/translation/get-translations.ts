@@ -4,7 +4,7 @@ import {
   QueryFilterDto as QueryFilterDtoSchema,
   TranslationDto as TranslationDtoSchema,
 } from '../../generated/typebox';
-import { toPageDto, toTranslationDto } from '../../dto';
+import { toIdentifiableDto, toPageDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 import { searchIn } from '@hiero/common';
 
@@ -29,7 +29,7 @@ export const getTranslations = (fastify: FastifyTypeBox) =>
         await DbUtils.getPage(fastify.db.getTranslations(), {
           from,
           pageSize,
-          mapper: toTranslationDto,
+          mapper: toIdentifiableDto,
           filter: (key, value) => {
             return searchIn(query, key, value.name, value.description);
           },

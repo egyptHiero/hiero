@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { DictionaryChainsDto } from '../../../types/types';
 import { CPopover } from '@coreui/react';
 import { Dictionary } from '../../../components/dictionary';

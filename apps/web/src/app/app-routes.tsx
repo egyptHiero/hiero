@@ -10,9 +10,11 @@ import { SignListPage } from '../pages/sign-list';
 import { AboutPage } from '../pages/about';
 import { TranslationListPage } from '../pages/translation-list';
 import { TranslationPage } from '../pages/translation';
-import { RosettaPage } from '../pages/rosetta-list';
+import { RosettaListPage } from '../pages/rosetta-list';
 import { RosettaPartPage } from '../pages/rosetta';
 import { AppContextProvider } from './context/app-context';
+import { RosettaBlockListPage } from '../pages/rosetta-block-list';
+import { RosettaBlockPage } from '../pages/rosetta-block';
 
 export const ApplicationRoutes: React.FC = () => (
   <BrowserRouter
@@ -33,9 +35,14 @@ export const ApplicationRoutes: React.FC = () => (
             element={<DictionaryListPage />}
           />
           <Route path={ROUTES.DICTIONARY} element={<DictionaryPage />} />
-          <Route path={ROUTES.ROSETTA_LIST} element={<RosettaPage />} />
+          <Route path={ROUTES.ROSETTA_LIST} element={<RosettaListPage />} />
           <Route path={ROUTES.ROSETTA_PART} element={<RosettaPartPage />} />
           <Route path={ROUTES.ABOUT} element={<AboutPage />} />
+          <Route
+            path={ROUTES.ROSETTA_BLOCK_LIST}
+            element={<RosettaBlockListPage />}
+          />
+          <Route path={ROUTES.ROSETTA_BLOCK} element={<RosettaBlockPage />} />
         </Route>
         <Route path="*" element={<Error404Page />} />
       </Routes>

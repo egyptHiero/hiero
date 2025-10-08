@@ -1,6 +1,6 @@
 import { useClientContext } from '../../app/context/client-context';
 import { useInfinityScroll } from '../../components/infinite-table/hook';
-import { RosettaPartDto } from '../../types/types';
+import { RosettaPartDto } from '../../types';
 import { useSearchParams } from 'react-router-dom';
 
 export const useGetRosettaPartsList = () => {

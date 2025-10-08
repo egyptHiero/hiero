@@ -1,7 +1,7 @@
 import React from 'react';
 import { CButtonGroup, CFormCheck } from '@coreui/react';
 import { useFormContext } from 'react-hook-form';
-import { SignDto } from '../../types/types';
+import { SignDto } from '../../types';
 
 const dirValues = ['hlr', 'hrl', 'vlr', 'vrl'] as const;
 

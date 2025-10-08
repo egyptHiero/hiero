@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { PathParam, useParams } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
 import { useGetTranslation } from './hooks';

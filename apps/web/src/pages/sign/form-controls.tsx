@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
   CCol,
   CFormInput,
@@ -14,7 +14,7 @@ import { FontSize } from './font-size';
 import { ShowHieroes } from './show-hieroes';
 import { useTranslation } from 'react-i18next';
 import { useFormContext } from 'react-hook-form';
-import { SignDto } from '../../types/types';
+import { SignDto } from '../../types';
 import { useSignContext } from './context';
 
 type TImagesTab = 'image' | 'css';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
-import { SignDto } from '../../types/types';
+import { SignDto } from '../../types';
 import { TCurrent, TLine } from './types';
 import { shiftCurrentIndex } from './logic';
 import { splitIntoLines } from '../../utils';

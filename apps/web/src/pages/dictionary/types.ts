@@ -1,4 +1,4 @@
-import { DictionaryItemDto } from '../../types/types';
+import { DictionaryItemDto } from '../../types';
 
 export type DictionaryItemVO = Pick<DictionaryItemDto, 'id'> & {
   text: React.ReactNode;

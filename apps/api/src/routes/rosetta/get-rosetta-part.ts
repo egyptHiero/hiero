@@ -2,7 +2,7 @@ import {
   ParamIdFilterDto as ParamIdFilterSchema,
   RosettaPartDto as RosettaDtoSchema,
 } from '../../generated/typebox';
-import { toRosettaPartDto } from '../../dto';
+import { toIdentifiableDto } from '../../dto';
 import { FastifyTypeBox } from '../../types';
 
 export const getRosettaPart = (fastify: FastifyTypeBox) =>
@@ -28,6 +28,6 @@ export const getRosettaPart = (fastify: FastifyTypeBox) =>
       if (!entity) {
         return reply.notFound();
       }
-      return toRosettaPartDto(id, entity);
+      return toIdentifiableDto(id, entity);
     },
   );

@@ -1,4 +1,4 @@
-import { DictionaryInfoDto } from '../../types/types';
+import { DictionaryInfoDto } from '../../types';
 
 export const columnNames: Partial<keyof DictionaryInfoDto>[] = [
   'id',

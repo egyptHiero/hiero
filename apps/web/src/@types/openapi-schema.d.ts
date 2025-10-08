@@ -962,6 +962,129 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/rosetta/block": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * get available rosetta blocks
+         * @description returns a list of all the available rosetta blocks
+         */
+        get: {
+            parameters: {
+                query?: {
+                    /** @description starts list after this element */
+                    from?: string;
+                    /** @description starts list after this element */
+                    pageSize?: number;
+                    /** @description query string */
+                    query?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            items: {
+                                id: string;
+                                blocks: {
+                                    id: string;
+                                    part?: string;
+                                    image: string;
+                                    transliteration: string;
+                                    translation?: string;
+                                    partTranslation?: string;
+                                    gardinerCodes?: string;
+                                }[];
+                                translation: string;
+                            }[];
+                            next?: string;
+                        };
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/rosetta/block/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * get particular rosetta block
+         * @description get particular rosetta block
+         */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            id: string;
+                            blocks: {
+                                id: string;
+                                part?: string;
+                                image: string;
+                                transliteration: string;
+                                translation?: string;
+                                partTranslation?: string;
+                                gardinerCodes?: string;
+                            }[];
+                            translation: string;
+                        };
+                    };
+                };
+                /** @description Default Response */
+                404: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["def-0"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/": {
         parameters: {
             query?: never;

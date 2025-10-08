@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { useClientContext } from '../../app/context/client-context';
-import { TranslationDto } from '../../types/types';
+import { TranslationDto } from '../../types';
 
 export const useGetTranslation = (id: string | undefined) => {
   const { client } = useClientContext();
