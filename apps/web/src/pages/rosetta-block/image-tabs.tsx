@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CNav, CNavItem, CNavLink, CTabContent, CTabPane } from '@coreui/react';
-import { ImageBlock } from './image-block';
+import { ClippedImageBlock } from '../../components/image-block/clipped-block';
 
 const tabs: [string, string] = ['rosetta-hieroes1.png', 'rosetta-hieroes2.png'];
 
@@ -33,10 +33,10 @@ export const ImageTabs: React.FC = () => {
       ))}
       <CTabContent>
         <CTabPane role="tabpanel" visible={imageTab === tabs[0]}>
-          <ImageBlock image={imageTab} />
+          <ClippedImageBlock src={`rosetta/${imageTab}`} />
         </CTabPane>
         <CTabPane role="tabpanel" visible={imageTab === tabs[1]}>
-          <ImageBlock image={imageTab} />
+          <ClippedImageBlock src={`rosetta/${imageTab}`} />
         </CTabPane>
       </CTabContent>
     </CNav>

@@ -1,1 +1,1 @@
-export * from './scaled-range'
+export * from './scaled-range';

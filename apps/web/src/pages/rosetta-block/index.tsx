@@ -14,7 +14,7 @@ export const RosettaBlockPage: React.FC = () => {
   }
 
   return (
-    <CContainer>
+    <CContainer className="p-0">
       <RosettaBlockForm data={data?.data} blockId={blockId} />
     </CContainer>
   );

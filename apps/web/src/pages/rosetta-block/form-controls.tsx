@@ -31,7 +31,7 @@ export const RosettaBlockFormControls: React.FC = () => {
   const [imageSize, setImageSize] = React.useState(60);
 
   return (
-    <CContainer className="p-0">
+    <CContainer>
       <CRow>
         <CCol md={6}>
           <CFormInput
