@@ -125,17 +125,28 @@ export const RosettaPartDto = Type.Composite([
   }),
 ]);
 
+export type ClippedImageDto = Static<typeof ClippedImageDto>;
+export const ClippedImageDto = Type.Object({
+  src: Type.String(),
+  json: Type.Optional(Type.String()),
+});
+
 export type RosettaBlocksDto = Static<typeof RosettaBlocksDto>;
 export const RosettaBlocksDto = Type.Composite([
   Identifiable,
   Type.Object({
     parts: Type.Array(RosettaPartDto),
     translation: Type.String(),
-    json: Type.Optional(Type.String()),
+    images: Type.Optional(Type.Array(ClippedImageDto)),
   }),
 ]);
 
 export type RosettaPartCodesBody = Static<typeof RosettaPartCodesBody>;
 export const RosettaPartCodesBody = Type.Object({
   codes: Type.Optional(Type.String()),
+});
+
+export type RosettaBlockBody = Static<typeof RosettaBlockBody>;
+export const RosettaBlockBody = Type.Object({
+  images: Type.Optional(Type.Array(ClippedImageDto)),
 });

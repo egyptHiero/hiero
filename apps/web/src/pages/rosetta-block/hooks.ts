@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { useClientContext } from '../../app/context/client-context';
+import { ClippedImageDto } from '../../types';
 
 export const useGetRosettaBlock = (id: string | undefined) => {
   const { client } = useClientContext();
@@ -10,17 +11,26 @@ export const useGetRosettaBlock = (id: string | undefined) => {
       id
         ? client.path('/api/rosetta/block/{id}').method('get').create()({ id })
         : undefined,
+    select: (response) => {
+      if (response?.data && !response?.data.images) {
+        response.data.images = [
+          { src: 'rosetta/rosetta-hieroes1.png', json: '' },
+          { src: 'rosetta/rosetta-hieroes2.png', json: '' },
+        ];
+      }
+      return response;
+    },
   });
 };
 
-export const useUpdateCodesMutation = () => {
+export const useUpdateImagesMutation = () => {
   const { client } = useClientContext();
 
   return useMutation({
-    mutationFn: ({ id, codes }: { id: string; codes?: string }) =>
-      client.path('/api/rosetta/{id}/codes').method('put').create()({
+    mutationFn: ({ id, images }: { id: string; images?: ClippedImageDto[] }) =>
+      client.path('/api/rosetta/{id}/block').method('put').create()({
         id,
-        codes,
+        images,
       }),
   });
 };

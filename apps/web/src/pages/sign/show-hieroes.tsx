@@ -2,9 +2,8 @@ import React, { ReactEventHandler } from 'react';
 import { Hiero } from '../../controls/hiero';
 import { CContainer, CImage } from '@coreui/react';
 import { useFormContext } from 'react-hook-form';
-import { SignDto } from '../../types';
+import { SignDto, TDir } from '../../types';
 import styled from '@emotion/styled';
-import { TDir } from '../../types';
 import { Property } from 'csstype';
 import { useSignContext } from './context';
 import classNames from 'classnames';
@@ -48,6 +47,22 @@ const StyledHieroContainer = styled.div<StyledHieroContainerProps>(
   }),
 );
 
+const parseCSS = (cssText?: string) => {
+  try {
+    if (cssText) {
+      return JSON5.parse(cssText);
+    }
+  } catch (e) {
+    console.log('error', e);
+  }
+
+  return {};
+};
+
+const DynamicStyledDiv: React.FC<
+  React.PropsWithChildren<{ cssText?: string }>
+> = ({ cssText }) => <>{styled.div(parseCSS(cssText))}</>;
+
 export const ShowHieroes: React.FC = () => {
   const {
     lines,
@@ -62,17 +77,6 @@ export const ShowHieroes: React.FC = () => {
   const fontSize = watch('fontSize') || 40;
   const image = watch('image');
   const cssText = watch('imageCss');
-  const DynamicStyledDiv = React.useMemo(() => {
-    if (cssText) {
-      try {
-        return styled.div(JSON5.parse(cssText));
-      } catch (e) {
-        console.log('error', e);
-      }
-    }
-
-    return styled.div();
-  }, [cssText]);
 
   const handleClick = (lineIndex: number, hieroIndex: number) => {
     setCurrent([lineIndex, hieroIndex]);
@@ -102,7 +106,7 @@ export const ShowHieroes: React.FC = () => {
         imageDirection !== 'row' ? 'flex-column' : 'flex-row',
       )}
     >
-      <DynamicStyledDiv>
+      <DynamicStyledDiv cssText={cssText}>
         {images.map((img, index) => (
           <div key={`${img}_${index}`}>
             <CImage

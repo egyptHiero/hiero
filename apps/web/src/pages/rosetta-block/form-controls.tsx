@@ -23,12 +23,21 @@ const RotatedCImage = styled(CImage)({
 export const RosettaBlockFormControls: React.FC = () => {
   const { t } = useTranslation();
   const { register, watch } = useFormContext<RosettaBlocksDto>();
+  const reverse = false;
 
   const parts = watch('parts');
-  const reversedBlocks = React.useMemo(() => [...parts].reverse(), [parts]);
+  const reversedBlocks = React.useMemo(
+    () => (reverse ? [...parts].reverse() : parts),
+    [parts, reverse],
+  );
 
   const [fontSize, setFontSize] = React.useState(40);
-  const [imageSize, setImageSize] = React.useState(60);
+  const [imageSize, setImageSize] = React.useState(45);
+  const Image = reverse ? RotatedCImage : CImage;
+  const joinedGardinerCodes = parts
+    .map((part) => part.gardinerCodes)
+    .filter(Boolean)
+    .join('-');
 
   return (
     <CContainer>
@@ -71,10 +80,14 @@ export const RosettaBlockFormControls: React.FC = () => {
         <StyledGrid>
           {reversedBlocks.flatMap((part) => [
             <div style={{ gridRow: 1 }} key={`i-${part.image}`}>
-              <RotatedCImage src={`rosetta/${part.image}`} height={imageSize} />
+              <Image src={`rosetta/${part.image}`} height={imageSize} />
             </div>,
             <div style={{ gridRow: 2 }} key={`h-${part.image}`}>
-              <Hiero dir="hrl" fontSize={fontSize} text={part.gardinerCodes} />
+              <Hiero
+                dir={reverse ? 'hrl' : 'hlr'}
+                fontSize={fontSize}
+                text={part.gardinerCodes}
+              />
             </div>,
             <div style={{ gridRow: 3 }} key={`t-${part.image}`}>
               {part.translation}
@@ -88,6 +101,16 @@ export const RosettaBlockFormControls: React.FC = () => {
           <CFormTextarea
             {...register('translation')}
             label={t('rosetta.parts.gardinerCodes')}
+          />
+        </CCol>
+      </CRow>
+
+      <CRow>
+        <CCol xs={12}>
+          <CFormTextarea
+            readOnly
+            label={t('rosetta.parts.gardinerCodes')}
+            value={joinedGardinerCodes}
           />
         </CCol>
       </CRow>

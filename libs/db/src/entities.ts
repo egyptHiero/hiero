@@ -38,8 +38,13 @@ export interface RosettaPartEntity {
   gardinerCodes?: string;
 }
 
+interface ClippedImage {
+  src: string;
+  json?: string;
+}
+
 export interface RosettaBlockEntity {
   parts: string[];
   translation: string;
-  json?: string;
+  images?: ClippedImage[];
 }

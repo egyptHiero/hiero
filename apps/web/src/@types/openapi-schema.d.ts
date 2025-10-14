@@ -1008,7 +1008,10 @@ export interface paths {
                                     gardinerCodes?: string;
                                 }[];
                                 translation: string;
-                                json?: string;
+                                images?: {
+                                    src: string;
+                                    json?: string;
+                                }[];
                             }[];
                             next?: string;
                         };
@@ -1064,7 +1067,10 @@ export interface paths {
                                 gardinerCodes?: string;
                             }[];
                             translation: string;
-                            json?: string;
+                            images?: {
+                                src: string;
+                                json?: string;
+                            }[];
                         };
                     };
                 };
@@ -1080,6 +1086,81 @@ export interface paths {
             };
         };
         put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/rosetta/{id}/block": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        /**
+         * update rosetta block
+         * @description update rosetta block
+         */
+        put: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: {
+                content: {
+                    "application/json": {
+                        images?: {
+                            src: string;
+                            json?: string;
+                        }[];
+                    };
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            id: string;
+                            parts: {
+                                id: string;
+                                part?: string;
+                                image: string;
+                                transliteration: string;
+                                translation?: string;
+                                partTranslation?: string;
+                                gardinerCodes?: string;
+                            }[];
+                            translation: string;
+                            images?: {
+                                src: string;
+                                json?: string;
+                            }[];
+                        };
+                    };
+                };
+                /** @description Default Response */
+                404: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["def-0"];
+                    };
+                };
+            };
+        };
         post?: never;
         delete?: never;
         options?: never;

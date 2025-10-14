@@ -1,43 +1,42 @@
 import React, { useState } from 'react';
 import { CNav, CNavItem, CNavLink, CTabContent, CTabPane } from '@coreui/react';
-import { ClippedImageBlock } from '../../components/image-block/clipped-block';
-
-const tabs: [string, string] = ['rosetta-hieroes1.png', 'rosetta-hieroes2.png'];
+import { useFormContext } from 'react-hook-form';
+import { RosettaBlocksDto } from '../../types';
+import { FormClippedImageBlock } from '../../components/image-block/form-clipped-block';
 
 export const ImageTabs: React.FC = () => {
-  const [imageTab, setImageTab] = useState<string>(tabs[0]);
+  const [imageTab, setImageTab] = useState<number>(0);
+  const { watch } = useFormContext<RosettaBlocksDto>();
 
-  const getTabName = React.useCallback((tab: string) => {
-    switch (tab) {
-      case 'rosetta-hieroes1.png':
-        return 'image1';
-      case 'rosetta-hieroes2.png':
-        return 'image2';
-      default:
-        return '';
+  const images = watch('images');
+
+  const getTabName = React.useCallback((tab: number) => {
+    if (tab === 0) {
+      return 'image1';
+    } else if (tab === 1) {
+      return 'image2';
     }
   }, []);
 
   return (
     <CNav variant="tabs">
-      {tabs.map((tab) => (
-        <CNavItem key={tab}>
+      {images?.map((img, index) => (
+        <CNavItem key={img.src}>
           <CNavLink
-            active={imageTab === tab}
+            active={imageTab === index}
             role="button"
-            onClick={() => setImageTab(tab)}
+            onClick={() => setImageTab(index)}
           >
-            {getTabName(tab)}
+            {getTabName(index)}
           </CNavLink>
         </CNavItem>
       ))}
       <CTabContent>
-        <CTabPane role="tabpanel" visible={imageTab === tabs[0]}>
-          <ClippedImageBlock src={`rosetta/${imageTab}`} />
-        </CTabPane>
-        <CTabPane role="tabpanel" visible={imageTab === tabs[1]}>
-          <ClippedImageBlock src={`rosetta/${imageTab}`} />
-        </CTabPane>
+        {images?.map((img, index) => (
+          <CTabPane key={img.src} role="tabpanel" visible={imageTab === index}>
+            <FormClippedImageBlock index={index} />
+          </CTabPane>
+        ))}
       </CTabContent>
     </CNav>
   );

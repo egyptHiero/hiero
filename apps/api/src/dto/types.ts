@@ -94,12 +94,21 @@ export interface RosettaPartDto extends Identifiable {
   gardinerCodes?: string;
 }
 
+export interface ClippedImageDto {
+  src: string;
+  json?: string;
+}
+
 export interface RosettaBlocksDto extends Identifiable {
   parts: RosettaPartDto[];
   translation: string;
-  json?: string;
+  images?: ClippedImageDto[];
 }
 
 export interface RosettaPartCodesBody {
   codes?: string;
+}
+
+export interface RosettaBlockBody {
+  images?: ClippedImageDto[];
 }

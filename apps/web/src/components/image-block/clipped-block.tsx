@@ -3,27 +3,26 @@ import { CContainer } from '@coreui/react';
 import { ClippedImageFilters } from './clipped-filters';
 import { ClippedImage } from './clipped-image';
 import { ImageClipData, ImageSize } from './types';
-import { createClippedData } from './logic';
 
 interface IClippedImageBlockProps {
   src: string;
-  clipData?: ImageClipData;
+  clippedData: ImageClipData;
+  setClipData: React.Dispatch<React.SetStateAction<ImageClipData>>;
 }
 
 export const ClippedImageBlock: React.FC<IClippedImageBlockProps> = ({
   src,
-  clipData: initialClippedData = createClippedData(),
+  clippedData,
+  setClipData,
 }) => {
   const [imageSize, setImageSize] = React.useState<ImageSize>();
-  const [clipData, setClipData] =
-    React.useState<ImageClipData>(initialClippedData);
 
   return (
     <CContainer>
       {imageSize && (
         <ClippedImageFilters
           imageSize={imageSize}
-          clipData={clipData}
+          clipData={clippedData}
           setClipData={setClipData}
         />
       )}
@@ -33,7 +32,7 @@ export const ClippedImageBlock: React.FC<IClippedImageBlockProps> = ({
             imageSize={imageSize}
             setImageSize={setImageSize}
             src={src}
-            clipData={clipData}
+            clipData={clippedData}
           />
         </CContainer>
       </CContainer>

@@ -18,13 +18,9 @@ export const InterpretationBlock: React.FC<IInterpretationBlockProps> = ({
 }) => {
   const content = React.useMemo(() => {
     const { text } = item || {};
-    return (
-      <>
-        {text?.map((line: string) => (
-          <Dictionary.Text key={line} value={line} />
-        ))}
-      </>
-    );
+    return text?.map((line: string) => (
+      <Dictionary.Text key={line} value={line} />
+    ));
   }, [item]);
 
   return (

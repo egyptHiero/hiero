@@ -1,9 +1,9 @@
 import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { CForm } from '@coreui/react';
+import { CButton, CForm } from '@coreui/react';
 import { RosettaBlockFormControls } from './form-controls';
 import { useTranslation } from 'react-i18next';
-import { useUpdateCodesMutation } from './hooks';
+import { useUpdateImagesMutation } from './hooks';
 import { RosettaBlocksDto } from '../../types';
 
 interface IRosettaBlockFormProps {
@@ -16,14 +16,14 @@ export const RosettaBlockForm: React.FC<IRosettaBlockFormProps> = ({
   data,
 }) => {
   const { t } = useTranslation();
-  const saveRosettaBlockCodes = useUpdateCodesMutation();
+  const saveRosettaBlockImages = useUpdateImagesMutation();
 
   const formMethods = useForm<RosettaBlocksDto>({
     values: data,
   });
 
   const onSubmit = (values: RosettaBlocksDto) => {
-    //
+    saveRosettaBlockImages.mutateAsync({ id: blockId, images: values.images });
   };
 
   return (
@@ -34,6 +34,9 @@ export const RosettaBlockForm: React.FC<IRosettaBlockFormProps> = ({
         onSubmit={formMethods.handleSubmit(onSubmit)}
       >
         <RosettaBlockFormControls />
+        <CButton variant="outline" type="submit">
+          {t('btn.save')}
+        </CButton>
       </CForm>
     </FormProvider>
   );
