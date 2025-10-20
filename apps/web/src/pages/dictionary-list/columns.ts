@@ -1,8 +1,9 @@
-import { DictionaryInfoDto } from '../../types';
+import { TColumnName } from './types';
 
-export const columnNames: Partial<keyof DictionaryInfoDto>[] = [
+export const columnNames: Partial<TColumnName>[] = [
   'id',
   'language',
   'description',
   'link',
+  'action',
 ];

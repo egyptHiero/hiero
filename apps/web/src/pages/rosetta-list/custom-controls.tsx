@@ -1,7 +1,14 @@
 import React from 'react';
-import { CContainer, CFormSwitch } from '@coreui/react';
+import { CFormSwitch, CNavLink } from '@coreui/react';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../../app/context/app-context';
+import styled from '@emotion/styled';
+import CIcon from '@coreui/icons-react';
+import { cilSave } from '@coreui/icons';
+
+const StyledLabel = styled.div({
+  whiteSpace: 'nowrap',
+});
 
 export const CustomControls: React.FC = () => {
   const { t } = useTranslation();
@@ -12,14 +19,24 @@ export const CustomControls: React.FC = () => {
     setCustomControlsParam('blankOnly', target.checked ? 'true' : undefined);
 
   return (
-    <CContainer>
+    <>
       <CFormSwitch
         id="switch-rosetta-blank-only"
         size="xl"
-        label={t('rosetta.topbar.blankOnly')}
+        label={<StyledLabel>{t('rosetta.topbar.blankOnly')}</StyledLabel>}
         onChange={handleBlankOnly}
       />
-    </CContainer>
+      <CNavLink
+        className="mx-2"
+        title={t('btn.export')}
+        href={`/api/rosetta/part/export`}
+        target="_blank"
+        download
+        onClick={(e) => e.stopPropagation()}
+      >
+        <CIcon icon={cilSave} size="lg" />
+      </CNavLink>
+    </>
   );
 };
 

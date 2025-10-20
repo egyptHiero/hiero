@@ -228,6 +228,52 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/dictionary/{id}/export": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * export dictionary
+         * @description export dictionary
+         */
+        get: {
+            parameters: {
+                query?: {
+                    /** @description starts list after this element */
+                    from?: string;
+                    /** @description starts list after this element */
+                    pageSize?: number;
+                    /** @description query string */
+                    query?: string;
+                };
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/sign": {
         parameters: {
             query?: never;
@@ -1161,6 +1207,55 @@ export interface paths {
                 };
             };
         };
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/rosetta/part/export": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * get available rosetta parts
+         * @description returns a list of all the available rosetta parts
+         */
+        get: {
+            parameters: {
+                query?: {
+                    /** @description starts list after this element */
+                    from?: string;
+                    /** @description starts list after this element */
+                    pageSize?: number;
+                    /** @description query string */
+                    query?: string;
+                    blankOnly?: boolean;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            [key: string]: string;
+                        };
+                    };
+                };
+            };
+        };
+        put?: never;
         post?: never;
         delete?: never;
         options?: never;

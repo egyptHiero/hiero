@@ -1,7 +1,7 @@
 import React from 'react';
 import { DictionaryChainsDto } from '../../../types';
-import { CPopover } from '@coreui/react';
 import { Dictionary } from '../../../controls/dictionary';
+import { CTooltip } from '@coreui/react';
 
 interface IInterpretationBlockProps {
   column: number;
@@ -10,6 +10,21 @@ interface IInterpretationBlockProps {
   item?: DictionaryChainsDto['chains']['string']['string'];
 }
 
+const Tooltip: React.FC<React.ComponentProps<typeof CTooltip>> = ({
+  content,
+  children,
+}) => {
+  if (!content) {
+    return children;
+  }
+
+  return (
+    <CTooltip content={content} placement="left">
+      {children}
+    </CTooltip>
+  );
+};
+
 export const InterpretationBlock: React.FC<IInterpretationBlockProps> = ({
   column,
   row,
@@ -17,14 +32,21 @@ export const InterpretationBlock: React.FC<IInterpretationBlockProps> = ({
   item,
 }) => {
   const content = React.useMemo(() => {
-    const { text } = item || {};
-    return text?.map((line: string) => (
-      <Dictionary.Text key={line} value={line} />
-    ));
+    const { text, transcription } = item || {};
+    return (
+      <>
+        <div>{transcription?.join(', ')}</div>
+        {text?.map((line: string) => (
+          <div key={line}>
+            <Dictionary.Text value={line} />
+          </div>
+        ))}
+      </>
+    );
   }, [item]);
 
   return (
-    <CPopover content={content} placement="left" trigger={['focus', 'hover']}>
+    <Tooltip content={content} placement="left">
       <div
         className="form-control overflow-auto"
         style={{
@@ -36,7 +58,7 @@ export const InterpretationBlock: React.FC<IInterpretationBlockProps> = ({
       >
         {content}
       </div>
-    </CPopover>
+    </Tooltip>
   );
 };
 

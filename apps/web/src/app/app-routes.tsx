@@ -35,7 +35,10 @@ export const ApplicationRoutes: React.FC = () => (
             element={<DictionaryListPage />}
           />
           <Route path={ROUTES.DICTIONARY} element={<DictionaryPage />} />
-          <Route path={ROUTES.ROSETTA_LIST} element={<RosettaListPage />} />
+          <Route
+            path={ROUTES.ROSETTA_PART_LIST}
+            element={<RosettaListPage />}
+          />
           <Route path={ROUTES.ROSETTA_PART} element={<RosettaPartPage />} />
           <Route path={ROUTES.ABOUT} element={<AboutPage />} />
           <Route

@@ -5,7 +5,7 @@ const args = process.argv
   .map((arg) => `--args="${arg}"`)
   .join(' ');
 
-execSync(`nx serve dictionary-parser ${args}`, {
+execSync(`nx run dictionary-parser ${args}`, {
   stdio: 'inherit',
   env: { ...process.env, NX_TUI: 'false' },
 });

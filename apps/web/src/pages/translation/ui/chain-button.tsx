@@ -2,7 +2,7 @@ import React from 'react';
 import { Hiero } from '../../../controls/hiero';
 import { StyledCButton } from '../styled';
 import { DictionaryChainsDto } from '../../../types';
-import { CPopover } from '@coreui/react';
+import { CTooltip } from '@coreui/react';
 import { Dictionary } from '../../../controls/dictionary';
 
 interface IChainButtonProps {
@@ -34,7 +34,7 @@ export const ChainButton: React.FC<IChainButtonProps> = ({
   );
 
   return (
-    <CPopover content={content} placement="right" trigger={['focus', 'hover']}>
+    <CTooltip content={content} placement="right" trigger={['focus', 'hover']}>
       <StyledCButton
         variant={selected ? undefined : 'outline'}
         color="primary"
@@ -46,7 +46,7 @@ export const ChainButton: React.FC<IChainButtonProps> = ({
           <Hiero key={`${index}_${i}`} text={h} fontSize={30} />
         ))}
       </StyledCButton>
-    </CPopover>
+    </CTooltip>
   );
 };
 

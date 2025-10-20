@@ -7,6 +7,10 @@ import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
 import { InfiniteTable } from '../../controls/infinite-table';
 import { useAppContext } from '../../app/context/app-context';
+import { TColumnName } from './types';
+import { CNavLink } from '@coreui/react';
+import CIcon from '@coreui/icons-react';
+import { cilSave } from '@coreui/icons';
 
 export const DictionaryListPage: React.FC = () => {
   const { t } = useTranslation();
@@ -21,7 +25,7 @@ export const DictionaryListPage: React.FC = () => {
   }, [setCustomControls]);
 
   const getColumnLabel = React.useCallback(
-    (key: keyof DictionaryInfoDto) => {
+    (key: TColumnName) => {
       switch (key) {
         case 'id':
           return t(`dictionaries.columns.id`);
@@ -33,6 +37,8 @@ export const DictionaryListPage: React.FC = () => {
           return t(`dictionaries.columns.language`);
         case 'size':
           return t(`dictionaries.columns.size`);
+        case 'action':
+          return t(`dictionaries.columns.action`);
       }
     },
     [t],
@@ -58,12 +64,23 @@ export const DictionaryListPage: React.FC = () => {
     () =>
       scrollData.items.map((item) => ({
         ...item,
+        action: (
+          <CNavLink
+            title={t('btn.export')}
+            href={`/api/dictionary/${item.id}/export`}
+            target="_blank"
+            download
+            onClick={(e) => e.stopPropagation()}
+          >
+            <CIcon icon={cilSave} size="lg" />
+          </CNavLink>
+        ),
         _props: {
           onClick: () => handleRowClick(item),
           style: { cursor: 'pointer' },
         },
       })),
-    [scrollData.items, handleRowClick],
+    [scrollData.items, t, handleRowClick],
   );
 
   return (

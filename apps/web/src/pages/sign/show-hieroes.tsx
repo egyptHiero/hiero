@@ -59,10 +59,6 @@ const parseCSS = (cssText?: string) => {
   return {};
 };
 
-const DynamicStyledDiv: React.FC<
-  React.PropsWithChildren<{ cssText?: string }>
-> = ({ cssText }) => <>{styled.div(parseCSS(cssText))}</>;
-
 export const ShowHieroes: React.FC = () => {
   const {
     lines,
@@ -98,6 +94,11 @@ export const ShowHieroes: React.FC = () => {
 
   const images = React.useMemo(() => image?.split('\n') || [], [image]);
 
+  const DynamicStyledDiv = React.useMemo(
+    () => styled.div(parseCSS(cssText)),
+    [cssText],
+  );
+
   return (
     <CContainer
       fluid
@@ -106,7 +107,7 @@ export const ShowHieroes: React.FC = () => {
         imageDirection !== 'row' ? 'flex-column' : 'flex-row',
       )}
     >
-      <DynamicStyledDiv cssText={cssText}>
+      <DynamicStyledDiv>
         {images.map((img, index) => (
           <div key={`${img}_${index}`}>
             <CImage

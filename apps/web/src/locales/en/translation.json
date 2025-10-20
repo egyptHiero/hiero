@@ -26,6 +26,7 @@
     "cancel": "Cancel",
     "create": "Add new",
     "delete": "Delete",
+    "export": "Export",
     "insertLeft": "Insert left",
     "insertRight": "Insert right",
     "redo": "Redo",
@@ -34,6 +35,7 @@
   },
   "dictionaries": {
     "columns": {
+      "action": "Action",
       "description": "Description",
       "hieroes": "Hieroglyphs",
       "id": "Id",

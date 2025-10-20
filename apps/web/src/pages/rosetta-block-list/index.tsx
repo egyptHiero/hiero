@@ -7,12 +7,20 @@ import { useDoubleClick } from '../../hooks/double-click';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../app/routes';
 import { RosettaBlocksDto } from '../../types';
+import { CustomControls } from '../rosetta-list/custom-controls';
+import { useAppContext } from '../../app/context/app-context';
 
 export const RosettaBlockListPage: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-
   const scrollData = useGetRosettaBlocksList();
+  const { setCustomControls } = useAppContext();
+
+  React.useEffect(() => {
+    setCustomControls(<CustomControls />, 'search');
+
+    return () => setCustomControls(undefined);
+  }, [setCustomControls]);
 
   const columns = useGetColumns();
 

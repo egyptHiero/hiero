@@ -7,6 +7,7 @@ import { getRosettaCodes } from './get-rosetta-codes';
 import { getRosettaBlocks } from './get-rosetta-blocks';
 import { getRosettaBlock } from './get-rosetta-block';
 import { putRosettaBlock } from './put-rosetta-block';
+import { getRosettaPartsExport } from './get-rosetta-parts-export';
 
 export const registerRosettaRoutes = (fastify: FastifyTypeBox) => {
   getRosettaParts(fastify);
@@ -16,4 +17,5 @@ export const registerRosettaRoutes = (fastify: FastifyTypeBox) => {
   getRosettaBlocks(fastify);
   getRosettaBlock(fastify);
   putRosettaBlock(fastify);
+  getRosettaPartsExport(fastify);
 };
