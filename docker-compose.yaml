@@ -17,7 +17,7 @@ services:
     networks:
       - app-network
     volumes:
-      - db_data:/data/hiero-db
+      - db_data:/app/data/hiero-db
 
 networks:
   app-network:
