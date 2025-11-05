@@ -241,14 +241,7 @@ export interface paths {
          */
         get: {
             parameters: {
-                query?: {
-                    /** @description starts list after this element */
-                    from?: string;
-                    /** @description starts list after this element */
-                    pageSize?: number;
-                    /** @description query string */
-                    query?: string;
-                };
+                query?: never;
                 header?: never;
                 path: {
                     id: string;
