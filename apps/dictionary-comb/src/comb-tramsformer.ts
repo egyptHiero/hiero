@@ -14,7 +14,7 @@ const compare = (a: string[], b: string): number => {
 };
 
 /**
- * Sort, remove duplicates and combine values for equal keys.
+ * Sorting, removing duplicates, and merging values for identical keys.
  */
 export class CombTransformer extends Transform {
   private lines: string[] = [];
